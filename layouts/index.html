@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section id="inici" style="background:linear-gradient(rgba(0,50,107,0.85),rgba(0,50,107,0.85)), url('https://via.placeholder.com/1600x600?text=Manteniments+Lizana'); background-size:cover; text-align:center; color:white; padding:120px 20px;">
+    <h1 style="margin-bottom: 1.5rem;">Mantenim la qualitat, cuidem el teu espai</h1>
+    <p style="margin-bottom: 2.5rem;">Professionals de confiança a Girona, La Selva i segones residències</p>
+    <a href="#contacte" class="btn" style="font-size: 1.2rem; padding: 16px 40px;">Sol·licita pressupost</a>
+</section>
+
+{{ partial "servicios.html" . }}
+{{ partial "piscinas.html" . }}
+{{ partial "jardineria.html" . }}
+{{ partial "inmobiliarias.html" . }}
+{{ partial "por-que.html" . }}
+{{ partial "testimonios.html" . }}
+{{ partial "contacto-form.html" . }}
+{{ end }}

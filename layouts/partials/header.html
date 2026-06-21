@@ -1,0 +1,39 @@
+<header style="background-color: #00326B; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <div id="announcement" style="background: white; text-align: center; padding: 0.4rem; font-weight: bold; color: #00326B; font-size: 0.85rem; border-bottom: 1px solid #00326B;">
+        → Serveis +30kms a la província de Girona
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem; max-width: 1200px; margin: 0 auto;">
+        <a href="/" style="font-weight: 700; font-size: 1.6rem; color: white;">
+            Manteniments Lizana
+        </a>
+        <button id="menu-toggle" style="background: none; border: none; color: white; font-size: 2rem; cursor: pointer; display: flex; flex-direction: column; gap: 4px;">
+            <span style="display: block; width: 28px; height: 2px; background: white;"></span>
+            <span style="display: block; width: 28px; height: 2px; background: white;"></span>
+            <span style="display: block; width: 28px; height: 2px; background: white;"></span>
+        </button>
+    </div>
+</header>
+<div id="menu-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 2000; flex-direction: column; justify-content: center; align-items: center; padding: 3rem 2rem;">
+    <button id="menu-close" style="position: absolute; top: 2rem; right: 2rem; background: none; border: none; font-size: 2.5rem; cursor: pointer; color: #00326B;">✕</button>
+    <nav>
+        <ul style="list-style: none; padding: 0; margin: 0; text-align: center;">
+            <li style="margin: 1.2rem 0;"><a href="#inici" style="font-size: 2rem; font-weight: bold; color: #00326B; text-transform: uppercase;">Inici</a></li>
+            <li style="margin: 1.2rem 0;"><a href="#serveis" style="font-size: 2rem; font-weight: bold; color: #00326B; text-transform: uppercase;">Serveis</a></li>
+            <li style="margin: 1.2rem 0;"><a href="#piscines" style="font-size: 2rem; font-weight: bold; color: #00326B; text-transform: uppercase;">Piscines</a></li>
+            <li style="margin: 1.2rem 0;"><a href="#jardineria" style="font-size: 2rem; font-weight: bold; color: #00326B; text-transform: uppercase;">Jardineria</a></li>
+            <li style="margin: 1.2rem 0;"><a href="#immobiliaries" style="font-size: 2rem; font-weight: bold; color: #00326B; text-transform: uppercase;">Immobiliàries</a></li>
+            <li style="margin: 1.2rem 0;"><a href="#perque" style="font-size: 2rem; font-weight: bold; color: #00326B; text-transform: uppercase;">Per què</a></li>
+            <li style="margin: 1.2rem 0;"><a href="#testimonis" style="font-size: 2rem; font-weight: bold; color: #00326B; text-transform: uppercase;">Testimonis</a></li>
+            <li style="margin: 1.2rem 0;"><a href="#contacte" style="font-size: 2rem; font-weight: bold; color: #00326B; text-transform: uppercase;">Contacte</a></li>
+        </ul>
+    </nav>
+<style>
+    #menu-overlay a {
+        text-decoration: none;
+    }
+    #menu-overlay a:hover {
+        text-decoration: underline;
+        text-decoration-color: #00326B;
+    }
+</style>
+</div>

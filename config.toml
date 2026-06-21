@@ -1,0 +1,13 @@
+baseURL = "https://mantenimentslizana.com/"
+languageCode = "ca-es"
+title = "Manteniments Lizana | Manteniment i reparacions a Girona, La Selva"
+theme = ""
+defaultContentLanguage = "ca"
+
+[params]
+  description = "Professionals de manteniment i reparacions a Girona, La Selva i segones residències"
+  phone = "677218303"
+  email = "mantenimentlizana@gmail.com"
+
+[markup.goldmark.renderer]
+  unsafe = true
