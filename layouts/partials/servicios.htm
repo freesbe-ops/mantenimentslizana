@@ -2,7 +2,7 @@
     <div style="max-width: 100%; padding: 0 20px; margin: 0 auto; text-align:center;">
         <h2 style="color:white; font-size:2.5rem; margin-bottom:2rem;">Reparacions a casa i manteniment preventiu</h2>
         
-        <div class="carousel-container" style="position:relative; max-width:800px; margin:0 auto; overflow:hidden; cursor:grab;">
+        <div class="carousel-container" style="position:relative; max-width:800px; margin:0 auto; overflow:hidden;">
             <div class="carousel-slides" style="display:flex; transition: transform 0.8s ease-in-out;">
                 <div class="carousel-slide" style="min-width:100%; padding:2rem;">
                     <h3 style="font-size:1.8rem; margin-bottom:1rem;">Manteniment preventiu d'aire condicionat</h3>
@@ -23,6 +23,7 @@
 
 <script>
     (function() {
+        // Espera que el DOM estigui completament carregat
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initCarousel);
         } else {
@@ -33,8 +34,7 @@
             const slidesContainer = document.querySelector('.carousel-slides');
             if (!slidesContainer) return;
 
-            const slides = document.querySelectorAll('.carousel-slide');
-            const totalSlides = slides.length;
+            const totalSlides = document.querySelectorAll('.carousel-slide').length;
             if (totalSlides === 0) return;
 
             let currentIndex = 0;
@@ -53,7 +53,7 @@
 
             function startAutoPlay() {
                 if (interval) clearInterval(interval);
-                interval = setInterval(nextSlide, 6000); // 6 segons per llegir
+                interval = setInterval(nextSlide, 3000);
             }
 
             function stopAutoPlay() {
@@ -63,64 +63,63 @@
                 }
             }
 
+            // Iniciar l'autoplay
             startAutoPlay();
 
+            // Pausar en hover
             const container = document.querySelector('.carousel-container');
-            if (!container) return;
+            if (container) {
+                container.addEventListener('mouseenter', stopAutoPlay);
+                container.addEventListener('mouseleave', startAutoPlay);
+            }
 
-            // Pausa en hover
-            container.addEventListener('mouseenter', stopAutoPlay);
-            container.addEventListener('mouseleave', startAutoPlay);
-
-            // Touch swipe (mòbil)
+            // Swipe amb touch (mòbil)
             let touchStartX = 0;
             let touchEndX = 0;
 
-            container.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
+            if (container) {
+                container.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
 
-            container.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    stopAutoPlay();
-                    if (diff > 0) {
-                        showSlide(currentIndex + 1);
-                    } else {
-                        showSlide(currentIndex - 1);
+                container.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }, { passive: true });
+
+                function handleSwipe() {
+                    const threshold = 50;
+                    const diff = touchStartX - touchEndX;
+                    if (Math.abs(diff) > threshold) {
+                        stopAutoPlay();
+                        if (diff > 0) {
+                            showSlide(currentIndex + 1);
+                        } else {
+                            showSlide(currentIndex - 1);
+                        }
+                        startAutoPlay();
                     }
-                    startAutoPlay();
                 }
-            }, { passive: true });
+            }
 
-            // Scroll horitzontal amb el ratolí (roda o trackpad)
-            let wheelTimeout = null;
-            container.addEventListener('wheel', function(e) {
-                // Ignorar si el scroll és principalment vertical
-                if (Math.abs(e.deltaX) < 20) return;
-                
-                e.preventDefault();
-                
-                // Evitar canvis massa seguits
-                if (wheelTimeout) return;
-                wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 800);
-                
-                stopAutoPlay();
-                if (e.deltaX > 0) {
-                    showSlide(currentIndex + 1);
-                } else {
-                    showSlide(currentIndex - 1);
-                }
-                startAutoPlay();
-            }, { passive: false });
+            // Scroll horitzontal amb roda del ratolí
+            if (container) {
+                container.addEventListener('wheel', function(e) {
+                    if (Math.abs(e.deltaX) > 30) {
+                        e.preventDefault();
+                        stopAutoPlay();
+                        if (e.deltaX > 0) {
+                            showSlide(currentIndex + 1);
+                        } else {
+                            showSlide(currentIndex - 1);
+                        }
+                        startAutoPlay();
+                    }
+                }, { passive: false });
+            }
 
-            // Si la pàgina es torna visible, reiniciar autoplay
-            document.addEventListener('visibilitychange', function() {
-                if (!document.hidden) {
-                    startAutoPlay();
-                }
-            });
+            // Fallback: si alguna cosa falla, reiniciar autoplay després d'1 segon
+            setTimeout(startAutoPlay, 1000);
         }
     })();
 </script>

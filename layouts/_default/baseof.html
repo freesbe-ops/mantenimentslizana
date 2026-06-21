@@ -16,5 +16,22 @@
     {{ partial "footer.html" . }}
     <script src="/js/scroll.js"></script>
     <script src="/js/menu.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('btn-hero');
+        if (btn) {
+            btn.addEventListener('mouseenter', function() {
+                this.style.background = '#00326B';
+                this.style.color = 'white';
+                this.style.borderColor = '#00326B';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.background = 'white';
+                this.style.color = '#00326B';
+                this.style.borderColor = 'white';
+            });
+        }
+    });
+</script>
 </body>
 </html>
