@@ -141,3 +141,29 @@ section {
     border-color: #00326B !important;
     box-shadow: 0 4px 20px rgba(0,50,107,0.5) !important;
 }
+/* Ajust de fons per a mòbil */
+@media (max-width: 768px) {
+    section {
+        background-size: cover !important;
+        background-position: center center !important;
+        min-height: 80vh !important;
+        background-attachment: scroll !important; /* Treu l'efecte parallax en mòbil */
+    }
+    
+    /* Ajust per al hero */
+    #inici {
+        min-height: 100vh !important;
+        padding: 80px 20px !important;
+    }
+    
+    /* Ajust per al carrusel */
+    .carousel-slide {
+        padding: 1rem !important;
+    }
+    .carousel-slide h3 {
+        font-size: 1.4rem !important;
+    }
+    .carousel-slide p {
+        font-size: 1rem !important;
+    }
+}
