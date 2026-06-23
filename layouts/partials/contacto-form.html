@@ -1,33 +1,39 @@
-<section id="contacte" style="padding:4rem 0; background:#F5F7FA;">
-    <div style="max-width: 100%; padding: 0 20px; margin: 0 auto;">
-        <h2 style="color:#00326B; text-align:center;">Contacta'ns</h2>
-        <p style="text-align:center;"><i class="fas fa-phone"></i> <strong>677 218 303</strong> | <i class="fas fa-envelope"></i> <strong>mantenimentlizana@gmail.com</strong></p>
-        <p style="text-align:center;">Omple el formulari i et respondrem en menys de 24h.</p>
-
-        <form id="contact-form" style="max-width:600px; margin:0 auto; background:white; padding:2rem; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-            <div style="margin-bottom:1rem;">
-                <label for="nom" style="display:block; font-weight:bold; margin-bottom:0.3rem;">Nom i cognoms *</label>
-                <input type="text" id="nom" name="nom" required style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+<section id="contacte" style="padding:4rem 0; background: white; color: #00326B;">
+    <div style="max-width: 100%; padding: 0 20px; margin: 0 auto; text-align:center;">
+        <!-- Títol -->
+        <h2 style="color:#00326B; font-size:2.5rem; font-weight:700; margin-bottom:0.5rem; text-transform:uppercase;">Contacta'ns</h2>
+        
+        <!-- Telèfon i email -->
+<p style="font-size:1.2rem; font-weight:400; margin-bottom:0.5rem;">
+    <i class="fas fa-phone" style="color:#00326B;"></i> <strong><a href="tel:+34677218303" style="color:#00326B; text-decoration:none;">677 218 303</a></strong> 
+    | <i class="fas fa-envelope" style="color:#00326B;"></i> <strong><a href="mailto:mantenimentlizana@gmail.com" style="color:#00326B; text-decoration:none;">mantenimentlizana@gmail.com</a></strong>
+</p>        
+        <!-- FORMULARI -->
+        <form id="contact-form" style="max-width:600px; margin:0 auto; background:white; padding:2rem; text-align:left;">
+            
+            <div style="margin-bottom:1.5rem;">
+                <label for="nom" style="display:block; font-weight:600; margin-bottom:0.3rem; text-transform:uppercase; color:#00326B;">Nom i cognoms *</label>
+                <input type="text" id="nom" name="nom" required style="width:100%; padding:0.8rem; border:2px solid #00326B; border-radius:0; background:white; font-size:1rem;">
             </div>
 
-            <div style="margin-bottom:1rem;">
-                <label for="poblacio" style="display:block; font-weight:bold; margin-bottom:0.3rem;">Poble / Localitat</label>
-                <input type="text" id="poblacio" name="poblacio" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+            <div style="margin-bottom:1.5rem;">
+                <label for="poblacio" style="display:block; font-weight:600; margin-bottom:0.3rem; text-transform:uppercase; color:#00326B;">Poble / Localitat</label>
+                <input type="text" id="poblacio" name="poblacio" style="width:100%; padding:0.8rem; border:2px solid #00326B; border-radius:0; background:white; font-size:1rem;">
             </div>
 
-            <div style="margin-bottom:1rem;">
-                <label for="telefon" style="display:block; font-weight:bold; margin-bottom:0.3rem;">Telèfon *</label>
-                <input type="tel" id="telefon" name="telefon" required style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+            <div style="margin-bottom:1.5rem;">
+                <label for="telefon" style="display:block; font-weight:600; margin-bottom:0.3rem; text-transform:uppercase; color:#00326B;">Telèfon *</label>
+                <input type="tel" id="telefon" name="telefon" required style="width:100%; padding:0.8rem; border:2px solid #00326B; border-radius:0; background:white; font-size:1rem;">
             </div>
 
-            <div style="margin-bottom:1rem;">
-                <label for="email" style="display:block; font-weight:bold; margin-bottom:0.3rem;">Email *</label>
-                <input type="email" id="email" name="email" required style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+            <div style="margin-bottom:1.5rem;">
+                <label for="email" style="display:block; font-weight:600; margin-bottom:0.3rem; text-transform:uppercase; color:#00326B;">Email *</label>
+                <input type="email" id="email" name="email" required style="width:100%; padding:0.8rem; border:2px solid #00326B; border-radius:0; background:white; font-size:1rem;">
             </div>
 
-            <div style="margin-bottom:1rem;">
-                <label for="tipus" style="display:block; font-weight:bold; margin-bottom:0.3rem;">Tipus de servei</label>
-                <select id="tipus" name="tipus" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;">
+            <div style="margin-bottom:1.5rem;">
+                <label for="tipus" style="display:block; font-weight:600; margin-bottom:0.3rem; text-transform:uppercase; color:#00326B;">Tipus de servei</label>
+                <select id="tipus" name="tipus" style="width:100%; padding:0.8rem; border:2px solid #00326B; border-radius:0; background:white; font-size:1rem;">
                     <option value="">Selecciona...</option>
                     <option value="jardineria">Jardineria</option>
                     <option value="reparacio">Reparació</option>
@@ -39,15 +45,15 @@
                 </select>
             </div>
 
-            <div style="margin-bottom:1rem;">
-                <label for="comentaris" style="display:block; font-weight:bold; margin-bottom:0.3rem;">Comentaris / Descripció</label>
-                <textarea id="comentaris" name="comentaris" rows="4" style="width:100%; padding:0.8rem; border:1px solid #ddd; border-radius:4px;"></textarea>
+            <div style="margin-bottom:1.5rem;">
+                <label for="comentaris" style="display:block; font-weight:600; margin-bottom:0.3rem; text-transform:uppercase; color:#00326B;">Comentaris / Descripció</label>
+                <textarea id="comentaris" name="comentaris" rows="4" style="width:100%; padding:0.8rem; border:2px solid #00326B; border-radius:0; background:white; font-size:1rem; resize:vertical;"></textarea>
             </div>
 
-            <button type="submit" class="btn" style="width:100%; padding:1rem; font-size:1.1rem; cursor:pointer;">Enviar sol·licitud</button>
+            <button type="submit" class="btn" style="width:100%; padding:1rem; font-size:1.1rem; cursor:pointer; border:2px solid #00326B; background:transparent; color:#00326B; font-weight:bold; transition:all 0.3s ease; border-radius:0; text-transform:uppercase;">Enviar sol·licitud</button>
         </form>
 
-        <div id="form-message" style="text-align:center; font-weight:bold; margin-top:1rem;"></div>
+        <div id="form-message" style="text-align:center; font-weight:bold; margin-top:1rem; color:#00326B;"></div>
 
         <script>
             document.getElementById('contact-form').addEventListener('submit', function(e) {

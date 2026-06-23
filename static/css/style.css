@@ -1,20 +1,116 @@
+/* ============================================
+   RESET I BASE
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #1E2A3A;
-	}
-
-section {
-    scroll-margin-top: 80px;
+    scroll-snap-type: y mandatory;  /* SNAPPING AL BODY */
+    overflow-y: scroll;
+    height: 100vh;
+}
+/* ============================================
+   SNAPPING VERTICAL (menys rígid)
+   ============================================ */
+body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
-/* Botons generals */
+/* Només l'hero ocupa tota la pantalla */
+#inici {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+/* La resta de seccions (excepte testimonis, contacte i footer) tenen snap però s'ajusten al contingut */
+section:not(#inici):not(#testimonis):not(#contacte):not(#immobiliaries):not(footer) {
+    scroll-snap-align: start;
+    min-height: auto;          /* <--- CLAU: s'ajusta al contingut */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;           /* Una mica de padding per separar */
+}
+
+/* Testimonis */
+#testimonis {
+    scroll-snap-align: start;
+    min-height: auto;
+}
+
+/* Social banner: amb snap però alçada automàtica */
+#social-banner {
+    scroll-snap-align: end;
+    min-height: auto;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 4rem !important;
+    padding: 0.8rem 0 !important;  /* Marge reduït */
+    background-color: #00326B !important;
+    width: 100% !important;
+}
+
+/* Contacte i footer: sense snap */
+#contacte, footer {
+    scroll-snap-align: end;
+    min-height: auto;
+}
+/* Footer: amb snap per poder-hi arribar */
+footer {
+    scroll-snap-align: end;
+    min-height: auto;
+}
+/* ============================================
+   SOCIAL BANNER (estils per a les icones)
+   ============================================ */
+#social-banner a {
+    color: white !important;
+    font-size: 4rem !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    line-height: 1 !important;
+}
+
+#social-banner a:hover {
+    transform: scale(1.15) !important;
+    opacity: 0.85 !important;
+}
+
+@media (max-width: 768px) {
+    #social-banner {
+        gap: 2.5rem !important;
+        padding: 2rem 0 !important;
+    }
+    #social-banner a {
+        font-size: 3rem !important;
+    }
+}
+
+/* ============================================
+   BOTONS GENERALS
+   ============================================ */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -32,7 +128,9 @@ section {
     color: white;
 }
 
-/* Menu toggle */
+/* ============================================
+   MENU
+   ============================================ */
 .menu-toggle {
     background: none;
     border: none;
@@ -41,7 +139,6 @@ section {
     cursor: pointer;
 }
 
-/* Menu overlay */
 #menu-overlay a {
     text-decoration: none;
 }
@@ -51,7 +148,9 @@ section {
     text-decoration-color: #00326B;
 }
 
-/* Banner d'anunci (marketing spot) */
+/* ============================================
+   BANNER D'ANUNCI (marketing spot)
+   ============================================ */
 #announcement {
     background: white;
     text-align: center;
@@ -63,45 +162,7 @@ section {
 }
 
 /* ============================================
-   BANNER SOCIAL (el que estaves intentant)
-   ============================================ */
-.social-banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-    padding: 3rem 0;
-    background-color: #00326B;
-    width: 100%;
-}
-
-.social-banner a {
-    color: white;
-    font-size: 4rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    line-height: 1;
-}
-
-.social-banner a:hover {
-    transform: scale(1.15);
-    opacity: 0.85;
-}
-
-/* Responsive per a mòbils */
-@media (max-width: 768px) {
-    .social-banner {
-        gap: 2.5rem;
-        padding: 2rem 0;
-    }
-    .social-banner a {
-        font-size: 3rem;
-    }
-}
-
-/* ============================================
-   CARRUSEL (per si ho tens)
+   CARRUSEL (genèric)
    ============================================ */
 .carousel-container {
     position: relative;
@@ -123,7 +184,7 @@ section {
 }
 
 /* ============================================
-   BOTÓ HERO (per assegurar)
+   BOTÓ HERO
    ============================================ */
 .btn-hero {
     font-size: 1.2rem !important;
@@ -141,37 +202,18 @@ section {
     border-color: #00326B !important;
     box-shadow: 0 4px 20px rgba(0,50,107,0.5) !important;
 }
-/* Ajust de fons per a mòbil */
-@media (max-width: 768px) {
-    section {
-        background-size: cover !important;
-        background-position: center center !important;
-        min-height: 80vh !important;
-        background-attachment: scroll !important; /* Treu l'efecte parallax en mòbil */
-    }
-    
-    /* Ajust per al hero */
-    #inici {
-        min-height: 100vh !important;
-        padding: 80px 20px !important;
-    }
-    
-    /* Ajust per al carrusel */
-    .carousel-slide {
-        padding: 1rem !important;
-    }
-    .carousel-slide h3 {
-        font-size: 1.4rem !important;
-    }
-    .carousel-slide p {
-        font-size: 1rem !important;
-    }
-}
+
+/* ============================================
+   BOTONS SERVEI (piscines i jardineria)
+   ============================================ */
 .btn-servei {
     border-radius: 0 !important;
     font-weight: 400 !important;
 }
-/* Botó flotant - sense ombra amb hover */
+
+/* ============================================
+   BOTÓ FLOTANT
+   ============================================ */
 #floating-btn {
     position: fixed;
     bottom: 30px;
@@ -191,14 +233,56 @@ section {
     transition: all 0.3s ease;
 }
 
-/* Hover: fons blau, icona blanca */
 #floating-btn:hover {
     background: #00326B;
     color: white;
     border-color: white;
 }
 
-/* Perquè la icona no interfereixi */
 #floating-btn i {
     pointer-events: none;
+}
+
+/* ============================================
+   FLETXES TESTIMONIS
+   ============================================ */
+.fletxa-testimoni {
+    font-size: 3rem;
+    color: #00326B;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    padding: 0;
+    line-height: 1;
+}
+
+.fletxa-testimoni:hover {
+    transform: scale(1.2);
+}
+
+/* ============================================
+   RESPONSIVE PER A MÒBIL
+   ============================================ */
+@media (max-width: 768px) {
+    section:not(#testimonis):not(#contacte):not(footer) {
+        min-height: 80vh !important;
+        padding: 2rem 0 !important;
+        background-attachment: scroll !important;
+    }
+
+    #inici {
+        min-height: 100vh !important;
+        padding: 80px 20px !important;
+    }
+
+    .carousel-slide {
+        padding: 1rem !important;
+    }
+    .carousel-slide h3 {
+        font-size: 1.4rem !important;
+    }
+    .carousel-slide p {
+        font-size: 1rem !important;
+    }
 }
