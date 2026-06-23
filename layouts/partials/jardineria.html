@@ -3,26 +3,160 @@
         <h2 style="color:white; font-size:2.5rem; margin-bottom:0.5rem;">Jardineria integral</h2>
         <p style="font-size:1.5rem; margin-bottom:2rem; font-style:italic;">El teu espai verd, en bones mans</p>
         
-        <!-- Llista de serveis en dues columnes -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 800px; margin: 0 auto;">
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Tall de gespa</p>
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Poda d'arbustos, tanques i arbres</p>
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Desbrossament de parcel·les</p>
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Neteja de jardins i eliminació de males herbes</p>
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Plantació i manteniment de zones verdes</p>
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Posada a punt per a l'estiu</p>
-            </div>
+        <!-- Graella de botons -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+            
+            <!-- Botó 1 -->
+            <button class="btn-servei" data-modal="modalJ1" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Tall de gespa
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
+            <!-- Botó 2 -->
+            <button class="btn-servei" data-modal="modalJ2" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Poda d'arbustos i arbres
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
+            <!-- Botó 3 -->
+            <button class="btn-servei" data-modal="modalJ3" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Desbrossament de parcel·les
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
+            <!-- Botó 4 -->
+            <button class="btn-servei" data-modal="modalJ4" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Neteja de jardins
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
+            <!-- Botó 5 -->
+            <button class="btn-servei" data-modal="modalJ5" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Plantació i manteniment
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
+            <!-- Botó 6 -->
+            <button class="btn-servei" data-modal="modalJ6" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Posada a punt per a l'estiu
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
         </div>
     </div>
 </section>
+
+<!-- MODALS JARDINERIA -->
+<div id="modalJ1" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Tall de gespa</h3>
+        <p>Realitzem un tall de gespa professional, adaptant l'alçada segons l'època de l'any i el tipus de planta. Utilitzem maquinària adequada per obtenir un tall net i uniforme que afavoreixi el creixement saludable de la gespa. A més, recollim les restes i deixem el jardí net i endreçat.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Millora l'aspecte estètic, afavoreix la densitat de la gespa i redueix l'aparició de males herbes.</p>
+    </div>
+</div>
+
+<div id="modalJ2" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Poda d'arbustos i arbres</h3>
+        <p>Efectuem podes de formació, manteniment i rejoveniment per a arbustos, tanques i arbres. Eliminem branques seques o malaltes, equilibrem la copa i afavorim una floració més abundant. Treballem amb tècniques que respecten la salut de les plantes i la seguretat de l'entorn.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Millora la salut de les plantes, augmenta la floració i redueix riscos per a persones i edificis.</p>
+    </div>
+</div>
+
+<div id="modalJ3" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Desbrossament de parcel·les</h3>
+        <p>Netegem i desbrossem terrenys, parcel·les i zones verdes abandonades. Eliminem males herbes, arbustos i vegetació invasiva per recuperar l'espai i preparar-lo per a nous usos. Deixem la parcel·la neta i segura, evitant incendis i plagues.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Recupera l'ús de l'espai, redueix el risc d'incendis i plagues.</p>
+    </div>
+</div>
+
+<div id="modalJ4" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Neteja de jardins</h3>
+        <p>Realitzem una neteja integral del jardí: recollim fulles seques, restes de poda, males herbes i deixalles. Escombrem i netegem les zones de pas, i deixem el jardí net, ordenat i preparat per gaudir-ne. També podem incloure el tractament de plagues si es detecta alguna.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Millora l'estètica, prevé plagues i allarga la vida de les plantes.</p>
+    </div>
+</div>
+
+<div id="modalJ5" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Plantació i manteniment</h3>
+        <p>Plantem noves espècies adaptades al clima i al sòl, dissenyant espais verds sostenibles i de baix manteniment. Realitzem el manteniment periòdic de les noves plantacions: reg, adobat, protecció contra plagues i poda de formació.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Creació d'espais verds sostenibles, millora de la biodiversitat i valor estètic.</p>
+    </div>
+</div>
+
+<div id="modalJ6" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Posada a punt per a l'estiu</h3>
+        <p>Preparem el jardí per a la temporada d'estiu: realitzem una poda específica, millorem el sistema de reg, afegim nutrients al sòl i apliquem tractaments preventius contra la calor i la sequera. Assegurem que el jardí estigui radiant i saludable durant els mesos més càlids.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Jardí saludable i resistent a la calor, estalvi d'aigua i reducció de l'esforç de manteniment.</p>
+    </div>
+</div>
+
+<script>
+    // Reutilitzem el mateix codi per obrir/tancar modals
+    // (Els botons tenen classe btn-servei, data-modal, i els modals tenen classe modal)
+
+    // Obrir modal en fer clic al botó
+    document.querySelectorAll('.btn-servei').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modalId = this.dataset.modal;
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Tancar modal en fer clic a la creu
+    document.querySelectorAll('.modal-tancar').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // Tancar modal en fer clic fora del contingut
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // Hover dels botons
+    document.querySelectorAll('.btn-servei').forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.background = 'transparent';
+            this.style.color = 'white';
+            this.style.borderColor = 'white';
+            this.querySelector('.btn-plus').style.color = 'white';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.background = 'white';
+            this.style.color = '#00326B';
+            this.style.borderColor = 'transparent';
+            this.querySelector('.btn-plus').style.color = '#00326B';
+        });
+    });
+</script>

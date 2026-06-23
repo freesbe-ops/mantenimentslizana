@@ -167,3 +167,38 @@ section {
         font-size: 1rem !important;
     }
 }
+.btn-servei {
+    border-radius: 0 !important;
+    font-weight: 400 !important;
+}
+/* Botó flotant - sense ombra amb hover */
+#floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 64px;
+    height: 64px;
+    background: white;
+    color: #00326B;
+    border: 2px solid #00326B;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-decoration: none;
+    z-index: 99999;
+    transition: all 0.3s ease;
+}
+
+/* Hover: fons blau, icona blanca */
+#floating-btn:hover {
+    background: #00326B;
+    color: white;
+    border-color: white;
+}
+
+/* Perquè la icona no interfereixi */
+#floating-btn i {
+    pointer-events: none;
+}

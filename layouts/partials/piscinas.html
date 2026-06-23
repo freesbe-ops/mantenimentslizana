@@ -3,23 +3,128 @@
         <h2 style="color:white; font-size:2.5rem; margin-bottom:0.5rem;">Manteniment i neteja de piscines</h2>
         <p style="font-size:1.5rem; margin-bottom:2rem; font-style:italic;">Aigua neta, tranquil·litat assegurada</p>
         
-        <!-- Llista de serveis en dues columnes -->
+        <!-- Graella de botons -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 800px; margin: 0 auto;">
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Neteja del vas i del filtre</p>
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Control i ajust de productes químics</p>
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Revisió d'equips i sistema de depuració</p>
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-radius: 8px; backdrop-filter: blur(2px);">
-                <p style="font-size: 1.1rem; margin: 0;">Tractaments preventius i antialgues</p>
-            </div>
+            
+            <!-- Botó 1 -->
+            <button class="btn-servei" data-modal="modal1" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1.1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Neteja del vas i del filtre
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
+            <!-- Botó 2 -->
+            <button class="btn-servei" data-modal="modal2" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1.1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Control i ajust de productes químics
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
+            <!-- Botó 3 -->
+            <button class="btn-servei" data-modal="modal3" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1.1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Revisió d'equips i sistema de depuració
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
+            <!-- Botó 4 -->
+            <button class="btn-servei" data-modal="modal4" 
+                    style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1.1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                Tractaments preventius i antialgues
+                <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
+            </button>
+            
         </div>
         
         <!-- Text final -->
         <p style="font-size: 1.2rem; margin-top: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">Servei puntual o periòdic adaptat a tu: piscines privades, comunitats de veïns, lloguer vacacional i cases rurals.</p>
     </div>
 </section>
+
+<!-- MODALS (pop-ups) -->
+<div id="modal1" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Neteja del vas i del filtre</h3>
+        <p>Realitzem una neteja profunda del vas de la piscina, eliminant brutícia, algues i residus acumulats. També netegem i revisem el sistema de filtració per garantir que l'aigua circuli correctament i es mantingui cristal·lina. A més, revisem l'estat de les canonades i connexions per prevenir possibles fuites o avaries. El resultat és una piscina impecable, preparada per al bany, amb un funcionament òptim de tot el sistema.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Millora la qualitat de l'aigua, allarga la vida útil dels equips i redueix el consum de productes químics.</p>
+    </div>
+</div>
+
+<div id="modal2" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Control i ajust de productes químics</h3>
+        <p>Analitzem l'aigua de la piscina per determinar el nivell de pH, clor, alcalinitat i altres paràmetres essencials. Ajustem les dosis de productes químics de manera precisa per mantenir l'aigua en equilibri, evitant irritacions a la pell i ulls, i garantint una desinfecció eficaç. També recomanem el calendari de tractaments per a cada temporada, adaptant-nos a les condicions climàtiques i l'ús de la piscina.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Aigua segura i saludable, protecció dels equips de depuració i estalvi en productes químics a llarg termini.</p>
+    </div>
+</div>
+
+<div id="modal3" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Revisió d'equips i sistema de depuració</h3>
+        <p>Inspeccionem la bomba, el filtre, els skimmers, les canonades i la resta de components del sistema de depuració. Detectem possibles obstruccions, desgast o mal funcionament, i realitzem les reparacions o substitucions necessàries. Assegurem que el sistema treballi amb la màxima eficiència, reduint el consum elèctric i allargant la vida útil dels equips.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Estalvi energètic, menor risc d'avaries i manteniment més econòmic.</p>
+    </div>
+</div>
+
+<div id="modal4" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; padding: 20px;">
+    <div style="background: white; color: #1E2A3A; max-width: 600px; width: 100%; padding: 2rem; border-radius: 0; position: relative; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-tancar" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #00326B;">&times;</button>
+        <h3 style="color: #00326B; margin-top: 0;">Tractaments preventius i antialgues</h3>
+        <p>Apliquem tractaments específics per prevenir l'aparició d'algues, bacteris i fongs abans que es converteixin en un problema. Utilitzem productes de qualitat que no danyen l'aigua ni les superfícies, i que garanteixen una protecció duradora. El tractament es personalitza segons el tipus de piscina, la ubicació i la freqüència d'ús, assegurant que l'aigua es mantingui neta i transparent durant tot l'any.</p>
+        <p style="margin-top: 1rem;"><strong>Beneficis:</strong> Menys feina de manteniment, estalvi en productes correctors i una piscina sempre a punt per gaudir.</p>
+    </div>
+</div>
+
+<script>
+    // Obrir modal en fer clic al botó
+    document.querySelectorAll('.btn-servei').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modalId = this.dataset.modal;
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Tancar modal en fer clic a la creu
+    document.querySelectorAll('.modal-tancar').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // Tancar modal en fer clic fora del contingut
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // Hover dels botons (per si de cas)
+    document.querySelectorAll('.btn-servei').forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.background = 'transparent';
+            this.style.color = 'white';
+            this.style.borderColor = 'white';
+            this.querySelector('.btn-plus').style.color = 'white';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.background = 'white';
+            this.style.color = '#00326B';
+            this.style.borderColor = 'transparent';
+            this.querySelector('.btn-plus').style.color = '#00326B';
+        });
+    });
+</script>
