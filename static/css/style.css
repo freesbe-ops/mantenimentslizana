@@ -8,7 +8,7 @@
 }
 
 html, body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     margin: 0;
     padding: 0;
 }
@@ -17,21 +17,15 @@ body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #1E2A3A;
-    scroll-snap-type: y mandatory;  /* SNAPPING AL BODY */
-    overflow-y: scroll;
-    height: 100vh;
-}
-/* ============================================
-   SNAPPING VERTICAL (menys rígid)
-   ============================================ */
-body {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
 }
 
-/* Només l'hero ocupa tota la pantalla */
-#inici {
+/* ============================================
+   SNAPPING VERTICAL
+   ============================================ */
+section:not(#social-banner):not(#contacte):not(footer) {
     scroll-snap-align: start;
     min-height: 100vh;
     display: flex;
@@ -40,49 +34,40 @@ body {
     width: 100%;
 }
 
-/* La resta de seccions (excepte testimonis, contacte i footer) tenen snap però s'ajusten al contingut */
-section:not(#inici):not(#testimonis):not(#contacte):not(#immobiliaries):not(footer) {
+#testimonis {
     scroll-snap-align: start;
-    min-height: auto;          /* <--- CLAU: s'ajusta al contingut */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding: 2rem 0;           /* Una mica de padding per separar */
 }
 
-/* Testimonis */
-#testimonis {
-    scroll-snap-align: start;
-    min-height: auto;
-}
-
-/* Social banner: amb snap però alçada automàtica */
 #social-banner {
     scroll-snap-align: end;
-    min-height: auto;
+    min-height: 100vh;
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 4rem !important;
-    padding: 0.8rem 0 !important;  /* Marge reduït */
+    padding: 0.8rem 0 !important;
     background-color: #00326B !important;
     width: 100% !important;
 }
 
-/* Contacte i footer: sense snap */
-#contacte, footer {
-    scroll-snap-align: end;
+#contacte {
+    scroll-snap-align: start;
     min-height: auto;
 }
-/* Footer: amb snap per poder-hi arribar */
+
 footer {
     scroll-snap-align: end;
     min-height: auto;
 }
+
 /* ============================================
-   SOCIAL BANNER (estils per a les icones)
+   SOCIAL BANNER (ICONES)
    ============================================ */
 #social-banner a {
     color: white !important;
@@ -96,16 +81,6 @@ footer {
 #social-banner a:hover {
     transform: scale(1.15) !important;
     opacity: 0.85 !important;
-}
-
-@media (max-width: 768px) {
-    #social-banner {
-        gap: 2.5rem !important;
-        padding: 2rem 0 !important;
-    }
-    #social-banner a {
-        font-size: 3rem !important;
-    }
 }
 
 /* ============================================
@@ -149,7 +124,7 @@ footer {
 }
 
 /* ============================================
-   BANNER D'ANUNCI (marketing spot)
+   BANNER D'ANUNCI
    ============================================ */
 #announcement {
     background: white;
@@ -162,7 +137,7 @@ footer {
 }
 
 /* ============================================
-   CARRUSEL (genèric)
+   CARRUSEL GENÈRIC
    ============================================ */
 .carousel-container {
     position: relative;
@@ -262,11 +237,13 @@ footer {
 }
 
 /* ============================================
-   RESPONSIVE PER A MÒBIL
+   RESPONSIVE (TOT EN UN SOL MEDIA QUERY)
    ============================================ */
 @media (max-width: 768px) {
-    section:not(#testimonis):not(#contacte):not(footer) {
-        min-height: 80vh !important;
+
+    /* --- SNAPPING --- */
+    section:not(#social-banner):not(#contacte):not(footer) {
+        min-height: 100vh !important;
         padding: 2rem 0 !important;
         background-attachment: scroll !important;
     }
@@ -276,6 +253,79 @@ footer {
         padding: 80px 20px !important;
     }
 
+    #social-banner {
+        padding: 1.5rem 0 !important;
+        gap: 2.5rem !important;
+        min-height: auto !important;
+    }
+
+    #social-banner a {
+        font-size: 3rem !important;
+    }
+
+    /* --- GRAELLES BOTONS EN VERTICAL --- */
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- CARRUSEL TESTIMONIS --- */
+    .carousel-testimonis {
+        width: 100% !important;
+        overflow: hidden !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .slides-testimonis {
+        display: flex !important;
+        width: 100% !important;
+        transition: transform 0.6s ease-in-out !important;
+    }
+
+    .targeta-testimoni {
+        min-width: 100% !important;
+        flex-shrink: 0 !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .targeta-testimoni > div {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 1.2rem !important;
+        box-sizing: border-box !important;
+        border: 2px solid #00326B !important;
+    }
+
+    .targeta-testimoni > div p {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+        text-align: center !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .targeta-testimoni > div p:last-of-type {
+        font-size: 0.8rem !important;
+    }
+
+    .targeta-testimoni > div .fas.fa-star {
+        font-size: 1.2rem !important;
+    }
+
+    /* --- FLETXES TESTIMONIS OCULTES EN MÒBIL --- */
+    .fletxa-testimoni {
+        display: none !important;
+    }
+
+    /* --- CARRUSEL GENÈRIC --- */
     .carousel-slide {
         padding: 1rem !important;
     }
@@ -284,5 +334,11 @@ footer {
     }
     .carousel-slide p {
         font-size: 1rem !important;
+    }
+
+    /* --- BOTONS PISCINES/JARDINERIA MÉS PETITS --- */
+    .btn-servei {
+        font-size: 0.9rem !important;
+        padding: 0.7rem !important;
     }
 }
