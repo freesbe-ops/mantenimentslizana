@@ -342,3 +342,153 @@ footer {
         padding: 0.7rem !important;
     }
 }
+/* ============================================
+   TESTIMONIS EN MÒBIL - AMPLADA COMPLETA
+   ============================================ */
+@media (max-width: 768px) {
+    /* Contenidor del carrusel */
+    .carousel-testimonis {
+        width: 100% !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* Slides */
+    .slides-testimonis {
+        display: flex !important;
+        width: 100% !important;
+        transition: transform 0.6s ease-in-out !important;
+    }
+
+    /* Cada targeta */
+    .targeta-testimoni {
+        min-width: 100% !important;
+        flex-shrink: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    /* La caixa interior (el quadrat) ocupa tota l'amplada */
+    .targeta-testimoni > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem 0.8rem !important;   /* Padding lateral mínim */
+        border: 2px solid #00326B !important;
+        background: white !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: auto !important;
+        height: auto !important;
+    }
+
+    /* Estrelles */
+    .targeta-testimoni > div .fas.fa-star {
+        font-size: 1rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    /* Text del testimoni */
+    .targeta-testimoni > div p:first-of-type {
+        font-size: 0.85rem !important;
+        line-height: 1.3 !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+    }
+
+    /* Nom i localitat */
+    .targeta-testimoni > div p:nth-of-type(2),
+    .targeta-testimoni > div p:nth-of-type(3) {
+        font-size: 0.75rem !important;
+        margin: 0.2rem 0 0 0 !important;
+        text-align: center !important;
+    }
+
+    /* Fletxes ocultes */
+    .fletxa-testimoni {
+        display: none !important;
+    }
+}
+/* ============================================
+   TESTIMONIS EN MÒBIL - SOBREESCRIURE 100vw
+   ============================================ */
+@media (max-width: 768px) {
+    /* Contenidor del carrusel: 100% en lloc de 100vw */
+    .carousel-testimonis {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        position: relative !important;
+    }
+
+    /* Slides: ocupen el 100% */
+    .slides-testimonis {
+        display: flex !important;
+        width: 100% !important;
+        transition: transform 0.6s ease-in-out !important;
+        overflow: visible !important;
+    }
+
+    /* Cada targeta: 100% en lloc de 100vw */
+    .targeta-testimoni {
+        min-width: 100% !important;   /* SOBREESCRIU 100vw */
+        max-width: 100% !important;
+        flex-shrink: 0 !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+    }
+
+    /* La caixa interior ocupa tota l'amplada */
+    .targeta-testimoni > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem !important;
+        margin: 0 auto !important;
+        border: 2px solid #00326B !important;
+        background: white !important;
+        box-sizing: border-box !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+
+    /* Text del testimoni: forçar wrap */
+    .targeta-testimoni > div p {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+
+    /* Estrelles */
+    .targeta-testimoni > div .fas.fa-star {
+        font-size: 1rem !important;
+    }
+
+    /* Ocultar fletxes en mòbil */
+    .fletxa-testimoni {
+        display: none !important;
+    }
+}
