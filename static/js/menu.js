@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function openMenu() {
         overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // evitar scroll
+        document.body.style.overflow = 'hidden';
     }
     function closeMenu() {
         overlay.style.display = 'none';
@@ -15,14 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (toggle && overlay) {
         toggle.addEventListener('click', openMenu);
         if (close) close.addEventListener('click', closeMenu);
-        // Tancar en clicar un enllaç
         overlay.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', function() {
                 closeMenu();
-                // El scroll suau cap a l'element ja el tenim
             });
         });
-        // Tancar si es clica fora del contingut (opcional)
         overlay.addEventListener('click', function(e) {
             if (e.target === overlay) closeMenu();
         });

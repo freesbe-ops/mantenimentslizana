@@ -492,3 +492,220 @@ footer {
         display: none !important;
     }
 }
+
+/* ============================================
+   HEADER FIX (NO ES MOU EN SCROLL)
+   ============================================ */
+header {
+    position: fixed !important;
+    top: 40px !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: transparent !important;
+    padding: 0.8rem 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Compensar l'alçada del marketing + header */
+main {
+    padding-top: 110px !important;
+}
+
+/* Ombres per al text del header (per llegibilitat) */
+header a {
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;
+}
+header button span {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;
+}
+
+/* ============================================
+   HEADER FIX (NO ES MOU EN SCROLL)
+   ============================================ */
+header {
+    position: fixed !important;
+    top: 40px !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: transparent !important;
+    padding: 0.8rem 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
+/* TEXT DEL HEADER: BLANC, SENSE OMBRA */
+header a {
+    color: white !important;
+    text-shadow: none !important;
+}
+header button span {
+    background: white !important;
+}
+
+/* ============================================
+   MARKETING SPOT FIX (NO ES MOU EN SCROLL)
+   ============================================ */
+#announcement {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1001 !important;
+    background: white !important;
+    text-align: center !important;
+    padding: 0.4rem !important;
+    font-weight: bold !important;
+    color: #00326B !important;
+    font-size: 0.85rem !important;
+    border-bottom: 1px solid #00326B !important;
+}
+
+/* ============================================
+   HEADER I MARKETING SPOT (FIXOS I NETS)
+   ============================================ */
+
+/* HEADER: fix a 40px, transparent, sense ombres */
+header {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    padding: 0.8rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: white;
+    text-decoration: none;
+    text-shadow: none; /* sense ombra */
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: white;
+}
+
+/* MARKETING SPOT: fix a dalt */
+#announcement {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    background: white;
+    text-align: center;
+    padding: 0.4rem;
+    font-weight: bold;
+    color: #00326B;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #00326B;
+}
+
+/* COMPENSAR L'ESPAI DEL CONTINGUT (perquè el main no quedi tapadet) */
+main {
+    padding-top: 110px; /* 40px del marketing + 70px del header */
+}
+
+/* ============================================
+   HEADER I MARKETING SPOT (FIXOS)
+   ============================================ */
+#main-header {
+    position: fixed !important;
+    top: 40px !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: transparent !important;
+    padding: 0.8rem 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
+.header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.logo {
+    font-weight: 700 !important;
+    font-size: 1.6rem !important;
+    color: white !important;
+    text-decoration: none !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
+
+.menu-toggle-btn {
+    background: none !important;
+    border: none !important;
+    color: white !important;
+    font-size: 2rem !important;
+    cursor: pointer !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+}
+
+.menu-toggle-btn span {
+    display: block !important;
+    width: 28px !important;
+    height: 2px !important;
+    background: white !important;
+}
+
+/* MARKETING SPOT */
+#announcement {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1001 !important;
+    background: white !important;
+    text-align: center !important;
+    padding: 0.4rem !important;
+    font-weight: bold !important;
+    color: #00326B !important;
+    font-size: 0.85rem !important;
+    border-bottom: 1px solid #00326B !important;
+    pointer-events: none !important; /* Per no bloquejar clics */
+}
+
+/* COMPENSAR ESPAI DEL CONTINGUT */
+main {
+    padding-top: 110px !important;
+}
+
+/* Asegurar que el menú sea clicable */
+#menu-toggle {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
