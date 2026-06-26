@@ -43,19 +43,6 @@ section:not(#social-banner):not(#contacte):not(footer) {
     width: 100%;
 }
 
-#social-banner {
-    scroll-snap-align: end;
-    min-height: 100vh;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 4rem !important;
-    padding: 0.8rem 0 !important;
-    background-color: #00326B !important;
-    width: 100% !important;
-}
-
 #contacte {
     scroll-snap-align: start;
     min-height: auto;
@@ -67,20 +54,103 @@ footer {
 }
 
 /* ============================================
-   SOCIAL BANNER (ICONES)
+   HEADER FIX
    ============================================ */
+header {
+    position: fixed !important;
+    top: 40px !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: transparent !important;
+    padding: 0.8rem 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
+header a {
+    color: white !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;
+}
+
+#menu-toggle {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* ============================================
+   MARKETING SPOT FIX
+   ============================================ */
+#announcement {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1001 !important;
+    background: white !important;
+    text-align: center !important;
+    padding: 0.4rem !important;
+    font-weight: bold !important;
+    color: #00326B !important;
+    font-size: 0.85rem !important;
+    border-bottom: 1px solid #00326B !important;
+}
+
+/* ============================================
+   SOCIAL BANNER
+   ============================================ */
+#social-banner {
+    scroll-snap-align: end;
+    min-height: 100vh;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    padding: 2rem 0 !important;
+    background-color: #00326B !important;
+    width: 100% !important;
+}
+
+#social-banner h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: white;
+    margin: 0;
+}
+
+#social-banner p {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: white;
+    margin: 0.2rem 0;
+}
+
+#social-banner .social-icons {
+    display: flex;
+    gap: 4rem;
+    margin-top: 3.5rem !important;
+    justify-content: center;
+    margin-top: 3.5rem !important;
+}
+
 #social-banner a {
     color: white !important;
     font-size: 4rem !important;
     text-decoration: none !important;
     display: inline-block !important;
-    transition: all 0.3s ease !important;
+    transition: opacity 0.3s ease !important;
     line-height: 1 !important;
 }
 
 #social-banner a:hover {
-    transform: scale(1.15) !important;
     opacity: 0.85 !important;
+}
+
+#social-banner p a:hover {
+    text-decoration: underline !important;
+    text-decoration-color: white !important;
 }
 
 /* ============================================
@@ -104,7 +174,7 @@ footer {
 }
 
 /* ============================================
-   MENU
+   MENU OVERLAY
    ============================================ */
 .menu-toggle {
     background: none;
@@ -121,19 +191,6 @@ footer {
 #menu-overlay a:hover {
     text-decoration: underline;
     text-decoration-color: #00326B;
-}
-
-/* ============================================
-   BANNER D'ANUNCI
-   ============================================ */
-#announcement {
-    background: white;
-    text-align: center;
-    padding: 0.4rem;
-    font-weight: bold;
-    color: #00326B;
-    font-size: 0.85rem;
-    border-bottom: 1px solid #00326B;
 }
 
 /* ============================================
@@ -179,7 +236,7 @@ footer {
 }
 
 /* ============================================
-   BOTONS SERVEI (piscines i jardineria)
+   BOTONS SERVEI
    ============================================ */
 .btn-servei {
     border-radius: 0 !important;
@@ -225,7 +282,6 @@ footer {
     font-size: 3rem;
     color: #00326B;
     background: transparent;
-    border: none;
     cursor: pointer;
     transition: transform 0.2s ease;
     padding: 0;
@@ -237,11 +293,9 @@ footer {
 }
 
 /* ============================================
-   RESPONSIVE (TOT EN UN SOL MEDIA QUERY)
+   RESPONSIVE PER A MÒBIL
    ============================================ */
 @media (max-width: 768px) {
-
-    /* --- SNAPPING --- */
     section:not(#social-banner):not(#contacte):not(footer) {
         min-height: 100vh !important;
         padding: 2rem 0 !important;
@@ -254,21 +308,40 @@ footer {
     }
 
     #social-banner {
-        padding: 1.5rem 0 !important;
-        gap: 2.5rem !important;
-        min-height: auto !important;
+        min-height: 100vh !important;
+        padding: 1.5rem 1rem !important;
+        gap: 0.8rem !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    #social-banner h2 {
+        font-size: 1.4rem !important;
+        margin: 0 !important;
+    }
+
+    #social-banner p {
+        font-size: 0.8rem !important;
+        margin: 0.1rem 0 !important;
+        word-break: break-word !important;
+    }
+
+    #social-banner .social-icons {
+        gap: 2rem !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
     }
 
     #social-banner a {
-        font-size: 3rem !important;
+        font-size: 2.5rem !important;
     }
 
-    /* --- GRAELLES BOTONS EN VERTICAL --- */
+    /* Graelles de botons en vertical */
     div[style*="grid-template-columns: 1fr 1fr"] {
         grid-template-columns: 1fr !important;
     }
 
-    /* --- CARRUSEL TESTIMONIS --- */
+    /* Carrusel testimonis */
     .carousel-testimonis {
         width: 100% !important;
         overflow: hidden !important;
@@ -320,392 +393,31 @@ footer {
         font-size: 1.2rem !important;
     }
 
-    /* --- FLETXES TESTIMONIS OCULTES EN MÒBIL --- */
     .fletxa-testimoni {
         display: none !important;
     }
 
-    /* --- CARRUSEL GENÈRIC --- */
     .carousel-slide {
         padding: 1rem !important;
     }
+
     .carousel-slide h3 {
         font-size: 1.4rem !important;
     }
+
     .carousel-slide p {
         font-size: 1rem !important;
     }
 
-    /* --- BOTONS PISCINES/JARDINERIA MÉS PETITS --- */
     .btn-servei {
         font-size: 0.9rem !important;
         padding: 0.7rem !important;
     }
 }
-/* ============================================
-   TESTIMONIS EN MÒBIL - AMPLADA COMPLETA
-   ============================================ */
-@media (max-width: 768px) {
-    /* Contenidor del carrusel */
-    .carousel-testimonis {
-        width: 100% !important;
-        overflow: hidden !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex !important;
-        justify-content: center !important;
-    }
-
-    /* Slides */
-    .slides-testimonis {
-        display: flex !important;
-        width: 100% !important;
-        transition: transform 0.6s ease-in-out !important;
-    }
-
-    /* Cada targeta */
-    .targeta-testimoni {
-        min-width: 100% !important;
-        flex-shrink: 0 !important;
-        padding: 0 !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
-
-    /* La caixa interior (el quadrat) ocupa tota l'amplada */
-    .targeta-testimoni > div {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem 0.8rem !important;   /* Padding lateral mínim */
-        border: 2px solid #00326B !important;
-        background: white !important;
-        box-sizing: border-box !important;
-        margin: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        min-height: auto !important;
-        height: auto !important;
-    }
-
-    /* Estrelles */
-    .targeta-testimoni > div .fas.fa-star {
-        font-size: 1rem !important;
-        margin-bottom: 0.3rem !important;
-    }
-
-    /* Text del testimoni */
-    .targeta-testimoni > div p:first-of-type {
-        font-size: 0.85rem !important;
-        line-height: 1.3 !important;
-        word-break: break-word !important;
-        white-space: normal !important;
-        text-align: center !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        max-width: 100% !important;
-        overflow: visible !important;
-    }
-
-    /* Nom i localitat */
-    .targeta-testimoni > div p:nth-of-type(2),
-    .targeta-testimoni > div p:nth-of-type(3) {
-        font-size: 0.75rem !important;
-        margin: 0.2rem 0 0 0 !important;
-        text-align: center !important;
-    }
-
-    /* Fletxes ocultes */
-    .fletxa-testimoni {
-        display: none !important;
-    }
-}
-/* ============================================
-   TESTIMONIS EN MÒBIL - SOBREESCRIURE 100vw
-   ============================================ */
-@media (max-width: 768px) {
-    /* Contenidor del carrusel: 100% en lloc de 100vw */
-    .carousel-testimonis {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow: hidden !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        position: relative !important;
-    }
-
-    /* Slides: ocupen el 100% */
-    .slides-testimonis {
-        display: flex !important;
-        width: 100% !important;
-        transition: transform 0.6s ease-in-out !important;
-        overflow: visible !important;
-    }
-
-    /* Cada targeta: 100% en lloc de 100vw */
-    .targeta-testimoni {
-        min-width: 100% !important;   /* SOBREESCRIU 100vw */
-        max-width: 100% !important;
-        flex-shrink: 0 !important;
-        padding: 0 10px !important;
-        box-sizing: border-box !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        overflow: visible !important;
-    }
-
-    /* La caixa interior ocupa tota l'amplada */
-    .targeta-testimoni > div {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        margin: 0 auto !important;
-        border: 2px solid #00326B !important;
-        background: white !important;
-        box-sizing: border-box !important;
-        display: block !important;
-        overflow: visible !important;
-    }
-
-    /* Text del testimoni: forçar wrap */
-    .targeta-testimoni > div p {
-        font-size: 0.85rem !important;
-        line-height: 1.4 !important;
-        word-break: break-word !important;
-        white-space: normal !important;
-        text-align: center !important;
-        max-width: 100% !important;
-        overflow-wrap: break-word !important;
-        hyphens: auto !important;
-    }
-
-    /* Estrelles */
-    .targeta-testimoni > div .fas.fa-star {
-        font-size: 1rem !important;
-    }
-
-    /* Ocultar fletxes en mòbil */
-    .fletxa-testimoni {
-        display: none !important;
-    }
-}
 
 /* ============================================
-   HEADER FIX (NO ES MOU EN SCROLL)
+   COMPENSAR ESPAI DEL HEADER + MARKETING
    ============================================ */
-header {
-    position: fixed !important;
-    top: 40px !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 1000 !important;
-    background-color: transparent !important;
-    padding: 0.8rem 1.5rem !important;
-    box-sizing: border-box !important;
-}
-
-/* Compensar l'alçada del marketing + header */
 main {
     padding-top: 110px !important;
-}
-
-/* Ombres per al text del header (per llegibilitat) */
-header a {
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;
-}
-header button span {
-    box-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;
-}
-
-/* ============================================
-   HEADER FIX (NO ES MOU EN SCROLL)
-   ============================================ */
-header {
-    position: fixed !important;
-    top: 40px !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 1000 !important;
-    background-color: transparent !important;
-    padding: 0.8rem 1.5rem !important;
-    box-sizing: border-box !important;
-}
-
-/* TEXT DEL HEADER: BLANC, SENSE OMBRA */
-header a {
-    color: white !important;
-    text-shadow: none !important;
-}
-header button span {
-    background: white !important;
-}
-
-/* ============================================
-   MARKETING SPOT FIX (NO ES MOU EN SCROLL)
-   ============================================ */
-#announcement {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 1001 !important;
-    background: white !important;
-    text-align: center !important;
-    padding: 0.4rem !important;
-    font-weight: bold !important;
-    color: #00326B !important;
-    font-size: 0.85rem !important;
-    border-bottom: 1px solid #00326B !important;
-}
-
-/* ============================================
-   HEADER I MARKETING SPOT (FIXOS I NETS)
-   ============================================ */
-
-/* HEADER: fix a 40px, transparent, sense ombres */
-header {
-    position: fixed;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: transparent;
-    padding: 0.8rem 1.5rem;
-    box-sizing: border-box;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    font-weight: 700;
-    font-size: 1.6rem;
-    color: white;
-    text-decoration: none;
-    text-shadow: none; /* sense ombra */
-}
-
-.menu-toggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 28px;
-    height: 2px;
-    background: white;
-}
-
-/* MARKETING SPOT: fix a dalt */
-#announcement {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1001;
-    background: white;
-    text-align: center;
-    padding: 0.4rem;
-    font-weight: bold;
-    color: #00326B;
-    font-size: 0.85rem;
-    border-bottom: 1px solid #00326B;
-}
-
-/* COMPENSAR L'ESPAI DEL CONTINGUT (perquè el main no quedi tapadet) */
-main {
-    padding-top: 110px; /* 40px del marketing + 70px del header */
-}
-
-/* ============================================
-   HEADER I MARKETING SPOT (FIXOS)
-   ============================================ */
-#main-header {
-    position: fixed !important;
-    top: 40px !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 1000 !important;
-    background-color: transparent !important;
-    padding: 0.8rem 1.5rem !important;
-    box-sizing: border-box !important;
-}
-
-.header-container {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-}
-
-.logo {
-    font-weight: 700 !important;
-    font-size: 1.6rem !important;
-    color: white !important;
-    text-decoration: none !important;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
-}
-
-.menu-toggle-btn {
-    background: none !important;
-    border: none !important;
-    color: white !important;
-    font-size: 2rem !important;
-    cursor: pointer !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 4px !important;
-    padding: 0 !important;
-    pointer-events: auto !important;
-}
-
-.menu-toggle-btn span {
-    display: block !important;
-    width: 28px !important;
-    height: 2px !important;
-    background: white !important;
-}
-
-/* MARKETING SPOT */
-#announcement {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 1001 !important;
-    background: white !important;
-    text-align: center !important;
-    padding: 0.4rem !important;
-    font-weight: bold !important;
-    color: #00326B !important;
-    font-size: 0.85rem !important;
-    border-bottom: 1px solid #00326B !important;
-    pointer-events: none !important; /* Per no bloquejar clics */
-}
-
-/* COMPENSAR ESPAI DEL CONTINGUT */
-main {
-    padding-top: 110px !important;
-}
-
-/* Asegurar que el menú sea clicable */
-#menu-toggle {
-    pointer-events: auto !important;
-    cursor: pointer !important;
 }
