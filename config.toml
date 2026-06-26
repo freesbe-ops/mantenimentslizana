@@ -1,6 +1,6 @@
 baseURL = "https://mantenimentslizana.com/"
 title = "Manteniments Lizana"
-theme = ""
+# theme = ""
 defaultContentLanguage = "ca"
 
 [languages]
