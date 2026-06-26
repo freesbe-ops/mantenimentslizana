@@ -1,12 +1,3 @@
-[hero_title]
-other = "Mantenemos la calidad, cuidamos tu espacio"
-
-[hero_subtitle]
-other = "Servicio profesional de confianza"
-
-[hero_button]
-other = "Solicita presupuesto"
-
 [menu_inici]
 other = "Inicio"
 
@@ -29,16 +20,16 @@ other = "Testimonios"
 other = "Contacto"
 
 [serveis_title]
-other = "Reparaciones en casa y mantenimiento preventivo"
+other = "Nuestros servicios"
 
 [serveis_air]
-other = "Mantenimiento preventivo de aire acondicionado"
+other = "Aire acondicionado"
 
 [serveis_air_desc]
-other = "Mejora el rendimiento, ahorra energía, alarga la vida del equipo. Servicio rápido y profesional."
+other = "Instalación, mantenimiento y reparación de sistemas de climatización. Garantizamos el confort en tu hogar o negocio durante todo el año."
 
 [serveis_reparacions]
-other = "Reparaciones en casa"
+other = "Reparaciones en el hogar"
 
 [serveis_reparacions_desc]
 other = "Lámparas, enchufes, interruptores, ventiladores, grifos, cisternas, colgar cuadros, estanterías, carpintería, pintura, montaje de muebles y mucho más."
@@ -101,7 +92,7 @@ other = "Servicios para inmobiliarias y alojamientos turísticos"
 other = "Puesta a punto de viviendas"
 
 [immobiliaries_servei1_desc]
-other = "Revisión integral, limpieza y reparaciones ligeras para dejar la vivienda en condiciones óptimas para la entrada de nuevos inquilinos o propietarios."
+other = "Revisión integral, limpieza y reparaciones leves para dejar la vivienda en condiciones óptimas para la entrada de nuevos inquilinos o propietarios."
 
 [immobiliaries_servei2]
 other = "Reparaciones urgentes"
@@ -134,22 +125,22 @@ other = "Gestión integral de mantenimiento"
 other = "Coordinación de todas las tareas de mantenimiento, reparaciones y servicios asociados para comunidades, propietarios y gestores inmobiliarios."
 
 [testimonis_title]
-other = "¿Qué dicen nuestros clientes?"
+other = "Testimonios"
 
 [testimonis_subtitle]
 other = "Opinión de personas que han confiado en nosotros"
 
 [testimonis_anna]
-other = "Me instalaron una mosquitera en menos de una hora. Fueron puntuales, limpios y el resultado es perfecto. Se lo recomiendo a todo el mundo."
+other = "\"Me instalaron una mosquitera en menos de una hora. Fueron puntuales, limpios y el resultado es perfecto. Se lo recomiendo a todo el mundo.\""
 
 [testimonis_anna_nom]
 other = "Anna M."
 
 [testimonis_anna_ciutat]
-other = "Gerona"
+other = "Girona"
 
 [testimonis_carles]
-other = "Llevaba meses con la piscina verde y no sabía qué hacer. Diagnosticaron el problema, me cambiaron la bomba y me dejaron la piscina perfecta. Muy profesionales."
+other = "\"Llevaba meses con la piscina verde y no sabía qué hacer. Diagnosticaron el problema, me cambiaron la bomba y me dejaron la piscina perfecta. Muy profesionales.\""
 
 [testimonis_carles_nom]
 other = "Carles R."
@@ -158,7 +149,7 @@ other = "Carles R."
 other = "Cassà de la Selva"
 
 [testimonis_marta]
-other = "Me instalaron varios enchufes nuevos en casa y lo dejaron todo impecable. Además, me asesoraron sobre la mejor ubicación. Muy recomendables."
+other = "\"Me instalaron varios enchufes nuevos en casa y lo dejaron todo impecable. Además, me asesoraron sobre la mejor ubicación. Muy recomendables.\""
 
 [testimonis_marta_nom]
 other = "Marta L."
@@ -167,7 +158,7 @@ other = "Marta L."
 other = "Lloret de Mar"
 
 [testimonis_jordi]
-other = "Hicieron el mantenimiento de la piscina de mi casa de veraneo. Fueron muy flexibles con el horario y me dejaron unas instrucciones claras para el día a día. ¡Diez!"
+other = "\"Hicieron el mantenimiento de la piscina de mi casa de veraneo. Fueron muy flexibles con el horario y me dejaron unas instrucciones claras para el día a día. ¡De 10!\""
 
 [testimonis_jordi_nom]
 other = "Jordi F."
@@ -176,7 +167,7 @@ other = "Jordi F."
 other = "Hostalric"
 
 [testimonis_laura]
-other = "Me diagnosticaron y repararon una avería en la bomba de la piscina en un solo día. Fueron rápidos, eficientes y me explicaron qué había pasado. Confianza total."
+other = "\"Me diagnosticaron y repararon una avería en la bomba de la piscina en un solo día. Fueron rápidos, eficientes y me explicaron qué había pasado. Confianza total.\""
 
 [testimonis_laura_nom]
 other = "Laura S."
@@ -185,7 +176,7 @@ other = "Laura S."
 other = "Vidreres"
 
 [testimonis_pere]
-other = "Necesitaba arreglar unos enchufes en casa y también me hicieron una revisión de la instalación eléctrica. Lo dejaron todo limpio, seguro y con un precio más que razonable. Excelentes."
+other = "\"Necesitaba arreglar unos enchufes en casa y también me hicieron una revisión de la instalación eléctrica. Dejaron todo limpio, seguro y con un precio más que razonable. Excelentes.\""
 
 [testimonis_pere_nom]
 other = "Pere G."
@@ -194,55 +185,37 @@ other = "Pere G."
 other = "Sant Feliu de Guíxols"
 
 [social_title]
-other = "Contáctanos"
+other = "Síguenos en redes sociales"
 
-[social_phone]
-other = "677 218 303"
-
-[social_email]
-other = "mantenimentlizana@gmail.com"
+[social_desc]
+other = "Conecta con nosotros para estar al día de nuestras novedades."
 
 [contacte_title]
 other = "Contáctanos"
 
+[contacte_phone]
+other = "677 218 303"
+
+[contacte_email]
+other = "mantenimentlizana@gmail.com"
+
 [contacte_nom]
 other = "Nombre y apellidos *"
 
-[contacte_poblacio]
+[contacte_poble]
 other = "Pueblo / Localidad"
 
 [contacte_telefon]
 other = "Teléfono *"
 
-[contacte_email]
+[contacte_email_label]
 other = "Email *"
 
-[contacte_tipus]
+[contacte_servei]
 other = "Tipo de servicio"
 
-[contacte_tipus_opcio1]
+[contacte_select]
 other = "Selecciona..."
-
-[contacte_tipus_opcio2]
-other = "Jardinería"
-
-[contacte_tipus_opcio3]
-other = "Reparación"
-
-[contacte_tipus_opcio4]
-other = "Fontanería"
-
-[contacte_tipus_opcio5]
-other = "Piscina"
-
-[contacte_tipus_opcio6]
-other = "Electricidad"
-
-[contacte_tipus_opcio7]
-other = "Mobiliario / Carpintería"
-
-[contacte_tipus_opcio8]
-other = "Otros"
 
 [contacte_comentaris]
 other = "Comentarios / Descripción"
@@ -250,11 +223,17 @@ other = "Comentarios / Descripción"
 [contacte_boto]
 other = "Enviar solicitud"
 
-[contacte_missatge_ok]
-other = "✅ ¡Enviado! Nos pondremos en contacto pronto. Si tienes fotos, envíalas por WhatsApp al 677 218 303."
+[contacte_enviant]
+other = "Enviando..."
 
-[contacte_missatge_error]
-other = "❌ Error. Vuelve a intentarlo."
+[contacte_exit]
+other = "¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto."
 
-[floating_button]
-other = "Contactar"
+[contacte_error]
+other = "Error al enviar. Inténtalo de nuevo."
+
+[footer_text]
+other = "Mantenemos la calidad, cuidamos tu espacio"
+
+[footer_location]
+other = "Girona | La Selva | Segundas residencias"

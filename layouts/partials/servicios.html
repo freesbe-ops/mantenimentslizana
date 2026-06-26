@@ -1,126 +1,21 @@
 <section id="serveis" style="padding:4rem 0; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ "images/theme-photos-Klby0nxseY8-unsplash.webp" | relURL }}') center/cover no-repeat; background-attachment: fixed; color:white; min-height:100vh; display:flex; flex-direction:column; justify-content:center;">
     <div style="max-width: 100%; padding: 0 20px; margin: 0 auto; text-align:center;">
-        <h2 style="color:white; font-size:2.5rem; margin-bottom:2rem;">Reparacions a casa i manteniment preventiu</h2>
-        
-        <div class="carousel-container" style="position:relative; max-width:800px; margin:0 auto; overflow:hidden; cursor:grab;">
+        <h2 style="color:white; font-size:2.5rem; margin-bottom:2rem;">{{ if eq .Site.Language.Lang "es" }}Nuestros servicios{{ else }}Els nostres serveis{{ end }}</h2>
+        <div class="carousel-container" style="position:relative; max-width:800px; margin:0 auto; overflow:hidden;">
             <div class="carousel-slides" style="display:flex; transition: transform 0.8s ease-in-out;">
                 <div class="carousel-slide" style="min-width:100%; padding:2rem;">
-                    <h3 style="font-size:1.8rem; margin-bottom:1rem;">Manteniment preventiu d'aire condicionat</h3>
-                    <p style="font-size:1.2rem;">Millora rendiment, estalvia energia, allarga la vida de l'equip. Servei ràpid i professional.</p>
+                    <h3 style="font-size:1.8rem; margin-bottom:1rem;">{{ if eq .Site.Language.Lang "es" }}Mantenimiento preventivo de aire acondicionado{{ else }}Manteniment preventiu d'aire condicionat{{ end }}</h3>
+                    <p style="font-size:1.2rem;">{{ if eq .Site.Language.Lang "es" }}Mejora el rendimiento, ahorra energía y alarga la vida del equipo. Servicio rápido y profesional.{{ else }}Millora el rendiment, estalvia energia i allarga la vida de l'equip. Servei ràpid i professional.{{ end }}</p>
                 </div>
                 <div class="carousel-slide" style="min-width:100%; padding:2rem;">
-                    <h3 style="font-size:1.8rem; margin-bottom:1rem;">Reparacions a casa</h3>
-                    <p style="font-size:1.2rem;">Làmpades, endolls, interruptors, ventiladors, aixetes, cisternes, penjar quadres, prestatgeries, fusteria, pintura, muntatge mobles i molt més.</p>
+                    <h3 style="font-size:1.8rem; margin-bottom:1rem;">{{ if eq .Site.Language.Lang "es" }}Reparaciones en el hogar{{ else }}Reparacions a casa{{ end }}</h3>
+                    <p style="font-size:1.2rem;">{{ if eq .Site.Language.Lang "es" }}Lámparas, enchufes, interruptores, ventiladores, grifos, cisternas, colgar cuadros, estanterías, carpintería, pintura, montaje de muebles y mucho más.{{ else }}Làmpades, endolls, interruptors, ventiladors, aixetes, cisternes, penjar quadres, prestatgeries, fusteria, pintura, muntatge mobles i molt més.{{ end }}</p>
                 </div>
                 <div class="carousel-slide" style="min-width:100%; padding:2rem;">
-                    <h3 style="font-size:1.8rem; margin-bottom:1rem;">Manteniment general de la llar</h3>
-                    <p style="font-size:1.2rem;">Fontaneria, electricitat bàsica, pintura, petites reformes, fusteria. La teva llar en bones mans.</p>
+                    <h3 style="font-size:1.8rem; margin-bottom:1rem;">{{ if eq .Site.Language.Lang "es" }}Mantenimiento general del hogar{{ else }}Manteniment general de la llar{{ end }}</h3>
+                    <p style="font-size:1.2rem;">{{ if eq .Site.Language.Lang "es" }}Fontanería, electricidad básica, pintura, pequeñas reformas, carpintería. Tu hogar en buenas manos.{{ else }}Fontaneria, electricitat bàsica, pintura, petites reformes, fusteria. La teva llar en bones mans.{{ end }}</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<script>
-    (function() {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initCarousel);
-        } else {
-            initCarousel();
-        }
-
-        function initCarousel() {
-            const slidesContainer = document.querySelector('.carousel-slides');
-            if (!slidesContainer) return;
-
-            const slides = document.querySelectorAll('.carousel-slide');
-            const totalSlides = slides.length;
-            if (totalSlides === 0) return;
-
-            let currentIndex = 0;
-            let interval = null;
-
-            function showSlide(index) {
-                if (index >= totalSlides) index = 0;
-                if (index < 0) index = totalSlides - 1;
-                currentIndex = index;
-                slidesContainer.style.transform = 'translateX(-' + (index * 100) + '%)';
-            }
-
-            function nextSlide() {
-                showSlide(currentIndex + 1);
-            }
-
-            function startAutoPlay() {
-                if (interval) clearInterval(interval);
-                interval = setInterval(nextSlide, 6000); // 6 segons per llegir
-            }
-
-            function stopAutoPlay() {
-                if (interval) {
-                    clearInterval(interval);
-                    interval = null;
-                }
-            }
-
-            startAutoPlay();
-
-            const container = document.querySelector('.carousel-container');
-            if (!container) return;
-
-            // Pausa en hover
-            container.addEventListener('mouseenter', stopAutoPlay);
-            container.addEventListener('mouseleave', startAutoPlay);
-
-            // Touch swipe (mòbil)
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            container.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            container.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    stopAutoPlay();
-                    if (diff > 0) {
-                        showSlide(currentIndex + 1);
-                    } else {
-                        showSlide(currentIndex - 1);
-                    }
-                    startAutoPlay();
-                }
-            }, { passive: true });
-
-            // Scroll horitzontal amb el ratolí (roda o trackpad)
-            let wheelTimeout = null;
-            container.addEventListener('wheel', function(e) {
-                // Ignorar si el scroll és principalment vertical
-                if (Math.abs(e.deltaX) < 20) return;
-                
-                e.preventDefault();
-                
-                // Evitar canvis massa seguits
-                if (wheelTimeout) return;
-                wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 800);
-                
-                stopAutoPlay();
-                if (e.deltaX > 0) {
-                    showSlide(currentIndex + 1);
-                } else {
-                    showSlide(currentIndex - 1);
-                }
-                startAutoPlay();
-            }, { passive: false });
-
-            // Si la pàgina es torna visible, reiniciar autoplay
-            document.addEventListener('visibilitychange', function() {
-                if (!document.hidden) {
-                    startAutoPlay();
-                }
-            });
-        }
-    })();
-</script>

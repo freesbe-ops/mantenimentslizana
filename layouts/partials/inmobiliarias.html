@@ -1,180 +1,33 @@
 <section id="immobiliaries" style="padding:4rem 0; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ "images/lazar-gugleta-jICRRVqfPho-unsplash.webp" | relURL }}') center/cover no-repeat; background-attachment: fixed; color:white; min-height:100vh; display:flex; flex-direction:column; justify-content:center; width:100%; margin:0; padding-left:0; padding-right:0;">
-    
-    <!-- Títol fix (centrat) -->
     <div style="max-width: 100%; padding: 0 20px; margin: 0 auto 2rem auto; text-align:center; width:100%;">
-        <h2 style="color:white; font-size:2.5rem; font-weight:700; text-transform:uppercase;">Serveis per a immobiliàries i allotjaments turístics</h2>
+        <h2 style="color:white; font-size:2.5rem; font-weight:700; text-transform:uppercase;">{{ if eq .Site.Language.Lang "es" }}Servicios para inmobiliarias y alojamientos turísticos{{ else }}Serveis per a immobiliàries i allotjaments turístics{{ end }}</h2>
     </div>
-    
-    <!-- Carrusel a full width -->
     <div class="carousel-container-inmo" style="position:relative; width:100vw; overflow:hidden; cursor:grab; margin:0; padding:0;">
         <div class="carousel-slides-inmo" style="display:flex; transition: transform 0.6s ease-in-out; width:100%;">
-            
-            <!-- Slide 1 -->
             <div class="carousel-slide-inmo" style="min-width:100vw; padding:2rem 4rem; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">Posada a punt d'habitatges</h3>
-                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">Revisió integral, neteja i reparacions lleus per deixar l'habitatge en condicions òptimes per a l'entrada de nous inquilins o propietaris.</p>
+                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">{{ if eq .Site.Language.Lang "es" }}Puesta a punto de viviendas{{ else }}Posada a punt d'habitatges{{ end }}</h3>
+                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">{{ if eq .Site.Language.Lang "es" }}Revisión integral, limpieza y reparaciones leves para dejar la vivienda en condiciones óptimas para la entrada de nuevos inquilinos o propietarios.{{ else }}Revisió integral, neteja i reparacions lleus per deixar l'habitatge en condicions òptimes per a l'entrada de nous inquilins o propietaris.{{ end }}</p>
             </div>
-            
-            <!-- Slide 2 -->
             <div class="carousel-slide-inmo" style="min-width:100vw; padding:2rem 4rem; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">Reparacions urgents</h3>
-                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">Servei ràpid per a avaries de fontaneria, electricitat, tancaments i altres incidències que requereixen una solució immediata.</p>
+                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">{{ if eq .Site.Language.Lang "es" }}Reparaciones urgentes{{ else }}Reparacions urgents{{ end }}</h3>
+                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">{{ if eq .Site.Language.Lang "es" }}Servicio rápido para averías de fontanería, electricidad, cerramientos y otras incidencias que requieren una solución inmediata.{{ else }}Servei ràpid per a avaries de fontaneria, electricitat, tancaments i altres incidències que requereixen una solució immediata.{{ end }}</p>
             </div>
-            
-            <!-- Slide 3 -->
             <div class="carousel-slide-inmo" style="min-width:100vw; padding:2rem 4rem; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">Manteniment periòdic</h3>
-                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">Inspeccions i tasques de manteniment programades per prevenir avaries i allargar la vida útil de les instal·lacions.</p>
+                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">{{ if eq .Site.Language.Lang "es" }}Mantenimiento periódico{{ else }}Manteniment periòdic{{ end }}</h3>
+                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">{{ if eq .Site.Language.Lang "es" }}Inspecciones y tareas de mantenimiento programadas para prevenir averías y alargar la vida útil de las instalaciones.{{ else }}Inspeccions i tasques de manteniment programades per prevenir avaries i allargar la vida útil de les instal·lacions.{{ end }}</p>
             </div>
-            
-            <!-- Slide 4 -->
             <div class="carousel-slide-inmo" style="min-width:100vw; padding:2rem 4rem; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">Preparació d'immobles per a venda o lloguer</h3>
-                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">Acondicionament estètic i funcional de l'immoble per maximitzar el seu valor al mercat: pintura, petites reformes, neteja professional i més.</p>
+                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">{{ if eq .Site.Language.Lang "es" }}Preparación de inmuebles para venta o alquiler{{ else }}Preparació d'immobles per a venda o lloguer{{ end }}</h3>
+                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">{{ if eq .Site.Language.Lang "es" }}Acondicionamiento estético y funcional del inmueble para maximizar su valor en el mercado: pintura, pequeñas reformas, limpieza profesional y más.{{ else }}Acondicionament estètic i funcional de l'immoble per maximitzar el seu valor al mercat: pintura, petites reformes, neteja professional i més.{{ end }}</p>
             </div>
-            
-            <!-- Slide 5 -->
             <div class="carousel-slide-inmo" style="min-width:100vw; padding:2rem 4rem; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">Supervisió de segones residències</h3>
-                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">Revisions periòdiques de l'estat de l'habitatge, control de possibles fuites, humitats i manteniment general per evitar sorpreses.</p>
+                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">{{ if eq .Site.Language.Lang "es" }}Supervisión de segundas residencias{{ else }}Supervisió de segones residències{{ end }}</h3>
+                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">{{ if eq .Site.Language.Lang "es" }}Revisiones periódicas del estado de la vivienda, control de posibles fugas, humedades y mantenimiento general para evitar sorpresas.{{ else }}Revisions periòdiques de l'estat de l'habitatge, control de possibles fuites, humitats i manteniment general per evitar sorpreses.{{ end }}</p>
             </div>
-            
-            <!-- Slide 6 -->
             <div class="carousel-slide-inmo" style="min-width:100vw; padding:2rem 4rem; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">Gestió integral de manteniment</h3>
-                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">Coordinació de totes les tasques de manteniment, reparacions i serveis associats per a comunitats, propietaris i gestors immobiliaris.</p>
+                <h3 style="font-size:2.2rem; font-weight:300; text-transform:uppercase; margin-bottom:1rem;">{{ if eq .Site.Language.Lang "es" }}Gestión integral de mantenimiento{{ else }}Gestió integral de manteniment{{ end }}</h3>
+                <p style="font-size:1.3rem; font-weight:300; text-transform:uppercase; max-width:800px;">{{ if eq .Site.Language.Lang "es" }}Coordinación de todas las tareas de mantenimiento, reparaciones y servicios asociados para comunidades, propietarios y gestores inmobiliarios.{{ else }}Coordinació de totes les tasques de manteniment, reparacions i serveis associats per a comunitats, propietaris i gestors immobiliaris.{{ end }}</p>
             </div>
-            
         </div>
     </div>
-    
 </section>
-
-<script>
-    (function() {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initCarousel);
-        } else {
-            initCarousel();
-        }
-
-        function initCarousel() {
-            const slidesContainer = document.querySelector('.carousel-slides-inmo');
-            if (!slidesContainer) {
-                console.log('No s\'ha trobat .carousel-slides-inmo');
-                return;
-            }
-
-            const slides = document.querySelectorAll('.carousel-slide-inmo');
-            const totalSlides = slides.length;
-            if (totalSlides === 0) return;
-
-            let currentIndex = 0;
-            let interval = null;
-            let isTransitioning = false;
-
-            function showSlide(index, instant = false) {
-                if (isTransitioning && !instant) return;
-                if (index >= totalSlides) index = 0;
-                if (index < 0) index = totalSlides - 1;
-                currentIndex = index;
-                if (instant) {
-                    slidesContainer.style.transition = 'none';
-                    slidesContainer.style.transform = 'translateX(-' + (index * 100) + '%)';
-                    // Forçar reflow
-                    slidesContainer.offsetHeight;
-                    slidesContainer.style.transition = 'transform 0.6s ease-in-out';
-                } else {
-                    slidesContainer.style.transform = 'translateX(-' + (index * 100) + '%)';
-                }
-            }
-
-            function nextSlide() {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                showSlide(currentIndex + 1);
-                setTimeout(() => { isTransitioning = false; }, 700);
-            }
-
-            function startAutoPlay() {
-                if (interval) clearInterval(interval);
-                interval = setInterval(nextSlide, 4000);
-            }
-
-            function stopAutoPlay() {
-                if (interval) {
-                    clearInterval(interval);
-                    interval = null;
-                }
-            }
-
-            // Iniciar
-            startAutoPlay();
-
-            const container = document.querySelector('.carousel-container-inmo');
-            if (!container) return;
-
-            // Pausa en hover
-            container.addEventListener('mouseenter', stopAutoPlay);
-            container.addEventListener('mouseleave', startAutoPlay);
-
-            // ================================================
-            // SCROLL HORITZONTAL AMB LA RODA DEL RATOLÍ / TRACKPAD
-            // ================================================
-            let wheelTimeout = null;
-            container.addEventListener('wheel', function(e) {
-                // Ignorar si l'scroll és principalment vertical
-                if (Math.abs(e.deltaX) < 20) return;
-
-                e.preventDefault();
-
-                // Evitar canvis massa seguits
-                if (wheelTimeout) return;
-                wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 800);
-
-                stopAutoPlay();
-                if (e.deltaX > 0) {
-                    showSlide(currentIndex + 1);
-                } else {
-                    showSlide(currentIndex - 1);
-                }
-                startAutoPlay();
-            }, { passive: false });
-
-            // ================================================
-            // SCROLL AMB TOUCH (MÒBIL)
-            // ================================================
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            container.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            container.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    stopAutoPlay();
-                    if (diff > 0) {
-                        showSlide(currentIndex + 1);
-                    } else {
-                        showSlide(currentIndex - 1);
-                    }
-                    startAutoPlay();
-                }
-            }, { passive: true });
-
-            // ================================================
-            // REINICIAR AUTOPLAY QUAN LA PÀGINA ES TORNA VISIBLE
-            // ================================================
-            document.addEventListener('visibilitychange', function() {
-                if (!document.hidden) {
-                    startAutoPlay();
-                }
-            });
-
-            console.log('Carrusel immobiliàries full width iniciat amb scroll horitzontal');
-        }
-    })();
-</script>

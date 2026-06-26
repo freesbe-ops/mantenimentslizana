@@ -1,3 +1,19 @@
-<footer style="background:#00326B; color:white; text-align:center; padding:2rem 0;">
-    <div style="max-width:1200px; margin:0 auto;">© 2026 Manteniments Lizana - Mantenim la qualitat, cuidem el teu espai<br>Girona | La Selva | Segones residències</div>
+<footer style="background: #00326B; color: white; text-align:center; padding: 2rem 0; font-size: 0.9rem;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <p style="margin-bottom: 0.5rem; font-weight: 300;">
+            © 2026 Manteniments Lizana - 
+            {{ if eq .Site.Language.Lang "es" }}
+                Mantenemos la calidad, cuidamos tu espacio
+            {{ else }}
+                Mantenim la qualitat, cuidem el teu espai
+            {{ end }}
+        </p>
+        <p style="font-weight: 300; opacity: 0.8;">
+            {{ if eq .Site.Language.Lang "es" }}
+                Girona | La Selva | Segundas residencias
+            {{ else }}
+                Girona | La Selva | Segones residències
+            {{ end }}
+        </p>
+    </div>
 </footer>

@@ -1,12 +1,3 @@
-[hero_title]
-other = "Mantenim la qualitat, cuidem el teu espai"
-
-[hero_subtitle]
-other = "Servei professional de confiança"
-
-[hero_button]
-other = "Sol·licita pressupost"
-
 [menu_inici]
 other = "Inici"
 
@@ -29,13 +20,13 @@ other = "Testimonis"
 other = "Contacte"
 
 [serveis_title]
-other = "Reparacions a casa i manteniment preventiu"
+other = "Els nostres serveis"
 
 [serveis_air]
-other = "Manteniment preventiu d'aire condicionat"
+other = "Aire condicionat"
 
 [serveis_air_desc]
-other = "Millora rendiment, estalvia energia, allarga la vida de l'equip. Servei ràpid i professional."
+other = "Instal·lació, manteniment i reparació de sistemes de climatització. Garantim el confort a la teva llar o negoci durant tot l'any."
 
 [serveis_reparacions]
 other = "Reparacions a casa"
@@ -134,13 +125,13 @@ other = "Gestió integral de manteniment"
 other = "Coordinació de totes les tasques de manteniment, reparacions i serveis associats per a comunitats, propietaris i gestors immobiliaris."
 
 [testimonis_title]
-other = "Què diuen els nostres clients?"
+other = "Testimonis"
 
 [testimonis_subtitle]
 other = "Opinió de persones que han confiat en nosaltres"
 
 [testimonis_anna]
-other = "Em van instal·lar una mosquitera en menys d'una hora. Van ser puntuals, nets i el resultat és perfecte. S'ho recomano a tothom."
+other = "\"Em van instal·lar una mosquitera en menys d'una hora. Van ser puntuals, nets i el resultat és perfecte. S'ho recomano a tothom.\""
 
 [testimonis_anna_nom]
 other = "Anna M."
@@ -149,7 +140,7 @@ other = "Anna M."
 other = "Girona"
 
 [testimonis_carles]
-other = "Feia mesos que tenia la piscina verda i no sabia què fer. Van diagnosticar el problema, em van canviar la bomba i em van deixar la piscina perfecta. Molt professionals."
+other = "\"Feia mesos que tenia la piscina verda i no sabia què fer. Van diagnosticar el problema, em van canviar la bomba i em van deixar la piscina perfecta. Molt professionals.\""
 
 [testimonis_carles_nom]
 other = "Carles R."
@@ -158,7 +149,7 @@ other = "Carles R."
 other = "Cassà de la Selva"
 
 [testimonis_marta]
-other = "Em van instal·lar diversos endolls nous a casa i van deixar-ho tot impecable. A més, em van assessorar sobre la millor ubicació. Molt recomanables."
+other = "\"Em van instal·lar diversos endolls nous a casa i van deixar-ho tot impecable. A més, em van assessorar sobre la millor ubicació. Molt recomanables.\""
 
 [testimonis_marta_nom]
 other = "Marta L."
@@ -167,7 +158,7 @@ other = "Marta L."
 other = "Lloret de Mar"
 
 [testimonis_jordi]
-other = "Van fer el manteniment de la piscina de la meva casa d'estiueig. Van ser molt flexibles amb l'horari i em van deixar unes instruccions clares per al dia a dia. Deu!"
+other = "\"Van fer el manteniment de la piscina de la meva casa d'estiueig. Van ser molt flexibles amb l'horari i em van deixar unes instruccions clares per al dia a dia. Deu!\""
 
 [testimonis_jordi_nom]
 other = "Jordi F."
@@ -176,7 +167,7 @@ other = "Jordi F."
 other = "Hostalric"
 
 [testimonis_laura]
-other = "Em van diagnosticar i reparar una avaria a la bomba de la piscina en un sol dia. Van ser ràpids, eficients i em van explicar què havia passat. Confiança total."
+other = "\"Em van diagnosticar i reparar una avaria a la bomba de la piscina en un sol dia. Van ser ràpids, eficients i em van explicar què havia passat. Confiança total.\""
 
 [testimonis_laura_nom]
 other = "Laura S."
@@ -185,7 +176,7 @@ other = "Laura S."
 other = "Vidreres"
 
 [testimonis_pere]
-other = "Necessitava arreglar uns endolls a casa i també em van fer una revisió de la instal·lació elèctrica. Van deixar-ho tot net, segur i amb un preu més que raonable. Excel·lents."
+other = "\"Necessitava arreglar uns endolls a casa i també em van fer una revisió de la instal·lació elèctrica. Van deixar-ho tot net, segur i amb un preu més que raonable. Excel·lents.\""
 
 [testimonis_pere_nom]
 other = "Pere G."
@@ -194,55 +185,37 @@ other = "Pere G."
 other = "Sant Feliu de Guíxols"
 
 [social_title]
-other = "Contacta'ns"
+other = "Segueix-nos a les xarxes socials"
 
-[social_phone]
-other = "677 218 303"
-
-[social_email]
-other = "mantenimentlizana@gmail.com"
+[social_desc]
+other = "Connecta amb nosaltres per estar al dia de les nostres novetats."
 
 [contacte_title]
 other = "Contacta'ns"
 
+[contacte_phone]
+other = "677 218 303"
+
+[contacte_email]
+other = "mantenimentlizana@gmail.com"
+
 [contacte_nom]
 other = "Nom i cognoms *"
 
-[contacte_poblacio]
+[contacte_poble]
 other = "Poble / Localitat"
 
 [contacte_telefon]
 other = "Telèfon *"
 
-[contacte_email]
+[contacte_email_label]
 other = "Email *"
 
-[contacte_tipus]
+[contacte_servei]
 other = "Tipus de servei"
 
-[contacte_tipus_opcio1]
+[contacte_select]
 other = "Selecciona..."
-
-[contacte_tipus_opcio2]
-other = "Jardineria"
-
-[contacte_tipus_opcio3]
-other = "Reparació"
-
-[contacte_tipus_opcio4]
-other = "Fontaneria"
-
-[contacte_tipus_opcio5]
-other = "Piscina"
-
-[contacte_tipus_opcio6]
-other = "Electricitat"
-
-[contacte_tipus_opcio7]
-other = "Mobiliari / Fusteria"
-
-[contacte_tipus_opcio8]
-other = "Altres"
 
 [contacte_comentaris]
 other = "Comentaris / Descripció"
@@ -250,11 +223,17 @@ other = "Comentaris / Descripció"
 [contacte_boto]
 other = "Enviar sol·licitud"
 
-[contacte_missatge_ok]
-other = "✅ Enviat! Ens posarem en contacte aviat. Si tens fotos, envia-les per WhatsApp al 677 218 303."
+[contacte_enviant]
+other = "Enviant..."
 
-[contacte_missatge_error]
-other = "❌ Error. Torna-ho a provar."
+[contacte_exit]
+other = "Sol·licitud enviada amb èxit! Ens posarem en contacte amb tu aviat."
 
-[floating_button]
-other = "Contactar"
+[contacte_error]
+other = "Error en enviar. Torna-ho a provar."
+
+[footer_text]
+other = "Mantenim la qualitat, cuidem el teu espai"
+
+[footer_location]
+other = "Girona | La Selva | Segones residències"
