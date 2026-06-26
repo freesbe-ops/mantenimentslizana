@@ -1,8 +1,17 @@
 baseURL = "https://mantenimentslizana.com/"
-languageCode = "ca-es"
-title = "Manteniments Lizana | Manteniment i reparacions a Girona, La Selva"
+title = "Manteniments Lizana"
 theme = ""
 defaultContentLanguage = "ca"
+
+[languages]
+  [languages.ca]
+    languageName = "Català"
+    weight = 1
+    title = "Manteniments Lizana"
+  [languages.es]
+    languageName = "Español"
+    weight = 2
+    title = "Manteniments Lizana"
 
 [params]
   description = "Professionals de manteniment i reparacions a Girona, La Selva i segones residències"
