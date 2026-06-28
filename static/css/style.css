@@ -510,3 +510,12 @@ header a {
     display: none !important;
 }
 
+
+/* Ocultar barra de scroll del menú horitzontal */
+header div {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE i Edge */
+}
+header div::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
