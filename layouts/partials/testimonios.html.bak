@@ -4,7 +4,7 @@
         <p style="font-size:1.2rem; font-weight:300; margin-bottom:2rem; color:#00326B;">Opinió de persones que han confiat en nosaltres</p>
 
         <div class="carousel-testimonis" style="position:relative; width:100%; overflow:hidden; cursor:grab; margin:0; padding:0 0 2rem 0;">
-            <div class="slides-testimonis" style="display:flex; flex-direction:row; transition: transform 0.6s ease-in-out; width:100%;">
+            <div class="slides-testimonis" style="display:flex; transition: transform 0.6s ease-in-out; width:100%;">
 
                 <!-- TARGETA 1 -->
                 <div class="targeta-testimoni" style="min-width:100%; padding:0.5rem; box-sizing:border-box; display:flex; justify-content:center; align-items:center;">
@@ -126,11 +126,10 @@
             const totalSlides = slides.length;
             if (totalSlides === 0) return;
 
-            let currentIndex = 0;
+            let currentIndex = 0; showSlide(0, true);
             let interval = null;
             let isTransitioning = false;
 
-            // Definir la funció abans de cridar-la
             function showSlide(index, instant = false) {
                 if (isTransitioning && !instant) return;
                 if (index >= totalSlides) index = 0;
@@ -145,9 +144,6 @@
                     slidesContainer.style.transform = 'translateX(-' + (index * 100) + '%)';
                 }
             }
-
-            // Ara cridar la funció després de definir-la
-            showSlide(0, true);
 
             function nextSlide() {
                 if (isTransitioning) return;
