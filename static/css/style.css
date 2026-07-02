@@ -519,3 +519,10 @@ header div {
 header div::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
+
+/* Apilar jardineria en mòbil (3 columnes → 1 columna) */
+@media (max-width: 768px) {
+    div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+}
