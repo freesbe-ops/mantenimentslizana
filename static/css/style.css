@@ -124,39 +124,14 @@ header {
     margin: 0;
 }
 
-#social-banner p {
-    font-weight: 300;
-    text-transform: uppercase;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: white;
-    margin: 0;
-}
 
-#social-banner p a {
-    color: white !important;
-    text-decoration: none !important;
-}
 
 #social-banner p a:hover {
     text-decoration: underline !important;
     text-decoration-color: white !important;
 }
 
-#social-banner .social-icons {
-    display: flex;
-    gap: 4rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
 
-#social-banner a {
-    color: white !important;
-    font-size: 4rem !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    transition: opacity 0.3s ease !important;
-    line-height: 1 !important;
-}
 
 #social-banner a:hover {
     opacity: 0.85 !important;
@@ -329,21 +304,8 @@ header {
         margin: 0 !important;
     }
 
-    #social-banner p {
-        font-size: 0.8rem !important;
-        margin: 0.1rem 0 !important;
-        word-break: break-word !important;
-    }
 
-    #social-banner .social-icons {
-        gap: 2rem !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-    }
 
-    #social-banner a {
-        font-size: 2.5rem !important;
-    }
 
     /* Graelles de botons en vertical */
     div[style*="grid-template-columns: 1fr 1fr"] {
@@ -525,4 +487,123 @@ header div::-webkit-scrollbar {
     div[style*="grid-template-columns: 1fr 1fr 1fr"] {
         grid-template-columns: 1fr !important;
     }
+}
+
+/* Social banner: telèfon i email en majúscula i thin */
+#social-banner .contact-info a {
+    text-transform: uppercase !important;
+    font-weight: 300 !important;
+}
+
+/* Social banner: telèfon i email en majúscula i thin (forçat) */
+#social-banner .contact-info a,
+#social-banner .contact-info a:visited,
+#social-banner .contact-info a:hover,
+#social-banner .contact-info a:active {
+    text-transform: uppercase !important;
+    font-weight: 300 !important;
+}
+
+/* ============================================
+   SOCIAL BANNER - VERSIÓ FINAL NETA
+   ============================================ */
+
+/* Títol: gran, negreta, majúscula */
+
+/* Telèfon i email: thin, majúscula, en línia */
+
+
+
+/* Icònies socials (com estaven) */
+
+
+#social-banner .social-icons a:hover {
+    opacity: 0.7 !important;
+}
+
+/* ============================================
+   SOCIAL BANNER - AJUST FINAL (blanc i mida normal)
+   ============================================ */
+
+/* Títol: es manté */
+
+/* Telèfon i email: blanc, thin, mida normal (lleugerament més gran) */
+
+
+
+/* Icònies socials (sense canvis) */
+
+
+#social-banner .social-icons a:hover {
+    opacity: 0.7 !important;
+}
+
+/* ============================================
+   SOCIAL BANNER - PER A L'HTML ACTUAL
+   ============================================ */
+
+/* Títol: gran, negreta, majúscula, blanc */
+#social-banner .social-content h2 {
+    font-size: clamp(2rem, 6vw, 3.2rem) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    color: white !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Telèfon i email: blancs, majúscula, thin, en línia */
+#social-banner .social-content p {
+    display: inline !important;                /* Per posar en línia */
+    font-size: clamp(1rem, 2.5vw, 1.3rem) !important;
+    font-weight: 300 !important;
+    color: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* Separador entre telèfon i email (per si el vols) */
+#social-banner .social-content .separador {
+    display: inline !important;
+    color: rgba(255,255,255,0.5) !important;
+    font-weight: 300 !important;
+    margin: 0 0.3rem !important;
+}
+
+/* Icònies socials */
+#social-banner .social-icons {
+    display: flex !important;
+    gap: 1.5rem !important;
+    justify-content: center !important;
+    margin-top: 0.8rem !important;
+}
+
+#social-banner .social-icons a {
+    font-size: clamp(2rem, 4vw, 2.8rem) !important;
+    color: white !important;
+    transition: opacity 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+#social-banner .social-icons a:hover {
+    opacity: 0.7 !important;
+}
+
+/* Forçar que NO hi hagi cap altra regla que posi blau o minúscula */
+
+
+/* ÚLTIM AJUST: subratllat només en hover i mida lleugerament més gran */
+#social-banner .social-content p {
+    font-size: clamp(1.2rem, 3.2vw, 1.8rem) !important;
+}
+#social-banner .social-content p a:hover {
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+}
+
+/* Forçar majúscules, blanc i thin als enllaços del social banner */
+#social-banner .social-content p a {
+    text-transform: uppercase !important;
+    color: white !important;
+    font-weight: 300 !important;
 }
