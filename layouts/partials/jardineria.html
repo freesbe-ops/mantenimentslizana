@@ -1,4 +1,4 @@
-<section id="jardineria" style="padding:4rem 0; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ "images/imagelizana-jardi.webp" | relURL }}') center/cover no-repeat; color:white; min-height:100vh; display:flex; flex-direction:column; justify-content:center;">
+<section id="jardineria" style="padding:4rem 0; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ "images/imagelizana-jardi.webp" | relURL }}') center/cover no-repeat; color:white; min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding-bottom:5rem;">
     <div style="max-width: 100%; padding: 0 20px; margin: 0 auto; text-align:center;">
         <h2 style="color:white; font-size:2.5rem; margin-bottom:0.5rem;">{{ if eq .Site.Language.Lang "es" }}Jardinería integral{{ else }}Jardineria integral{{ end }}</h2>
         <p style="font-size:1.5rem; margin-bottom:2rem; font-style:italic;">{{ if eq .Site.Language.Lang "es" }}Tu espacio verde, en buenas manos{{ else }}El teu espai verd, en bones mans{{ end }}</p>
@@ -28,6 +28,24 @@
                 <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
             </button>
         </div>
+ <!-- BOTÓ PER A LA LANDING DE JARDINERIA -->
+<div style="margin-top: 2.5rem; text-align: center;">
+    <a href="{{ if eq .Site.Language.Lang "es" }}/es/jardineria/{{ else }}/ca/jardineria/{{ end }}" 
+       class="btn-jardineria"
+       style="display: inline-block; 
+              border: 2px solid white; 
+              color: white; 
+              text-transform: uppercase; 
+              font-weight: 300; 
+              font-size: 1rem; 
+              padding: 12px 30px; 
+              text-decoration: none; 
+              letter-spacing: 1px;
+              transition: all 0.3s ease;
+              background: transparent;">
+        {{ if eq .Site.Language.Lang "es" }}Más información sobre jardinería{{ else }}Més informació sobre jardineria{{ end }}
+    </a>
+</div>
     </div>
 </section>
 <!-- MODALS JARDINERIA -->

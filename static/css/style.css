@@ -607,3 +607,221 @@ header div::-webkit-scrollbar {
     color: white !important;
     font-weight: 300 !important;
 }
+<!-- BOTÓ PER A LA LANDING DE JARDINERIA -->
+<div style="margin-top: 2.5rem; text-align: center;">
+    <a href="{{ if eq .Site.Language.Lang "es" }}/es/jardineria/{{ else }}/ca/jardineria/{{ end }}" 
+       class="btn-jardineria"
+       style="display: inline-block; 
+              border: 2px solid white; 
+              color: white; 
+              text-transform: uppercase; 
+              font-weight: 300; 
+              font-size: 1rem; 
+              padding: 12px 30px; 
+              text-decoration: none; 
+              letter-spacing: 1px;
+              transition: all 0.3s ease;
+              background: transparent;">
+        {{ if eq .Site.Language.Lang "es" }}Más información sobre jardinería{{ else }}Més informació sobre jardineria{{ end }}
+    </a>
+</div>
+
+.btn-jardineria:hover {
+    background: white !important;
+    color: #00326B !important;
+}
+/* ============================================
+   LANDINGS DE SERVEIS (JARDINERIA, PISCINES, ETC)
+   ============================================ */
+.servei-page {
+    padding-top: 140px;
+    padding-bottom: 60px;
+    background: #f8f9fa;
+}
+
+.servei-page .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.servei-header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #00326B;
+}
+
+.servei-header h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: #00326B;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.servei-subtitle {
+    font-size: 1.2rem;
+    color: #1E2A3A;
+    font-weight: 300;
+}
+
+.servei-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #1E2A3A;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.servei-content h2 {
+    font-size: 2rem;
+    color: #00326B;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.servei-content h3 {
+    font-size: 1.4rem;
+    color: #00326B;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.servei-content p {
+    margin-bottom: 15px;
+}
+
+.servei-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+.servei-content ul li {
+    padding: 8px 0 8px 30px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300326B'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E") left center no-repeat;
+    background-size: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.servei-content ul li:last-child {
+    border-bottom: none;
+}
+
+.servei-content strong {
+    color: #00326B;
+}
+
+.servei-content blockquote {
+    margin: 30px 0;
+    padding: 20px 30px;
+    background: #f5f7fa;
+    border-left: 5px solid #00326B;
+    border-radius: 5px;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.servei-content blockquote p {
+    margin: 0;
+}
+
+/* CTA final de la landing */
+.servei-cta {
+    text-align: center;
+    padding: 50px 30px;
+    background: #00326B;
+    color: white;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.servei-cta h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 20px;
+    border: none;
+    padding: 0;
+    color: white;
+}
+
+.servei-cta .btn-hero {
+    background: white !important;
+    color: #00326B !important;
+    border: 2px solid white !important;
+    font-size: 1.2rem !important;
+    padding: 16px 40px !important;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    font-weight: 700;
+}
+
+.servei-cta .btn-hero:hover {
+    background: transparent !important;
+    color: white !important;
+    transform: scale(1.05);
+}
+
+/* BOTÓ JARDINERIA - Definitiu */
+.btn-jardineria {
+    display: inline-block;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 12px 30px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn-jardineria:hover {
+    background: white !important;
+    color: #00326B !important;
+    border-color: white !important;
+}
+
+/* RESPONSIVE LANDINGS */
+@media (max-width: 768px) {
+    .servei-page {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+    
+    .servei-content {
+        padding: 20px;
+    }
+    
+    .servei-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .servei-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .servei-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .servei-content ul li {
+        padding: 6px 0 6px 25px;
+        background-size: 18px;
+    }
+    
+    .servei-cta {
+        padding: 30px 20px;
+    }
+    
+    .servei-cta h2 {
+        font-size: 1.5rem;
+    }
+}
