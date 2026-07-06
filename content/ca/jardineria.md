@@ -60,4 +60,4 @@ Oferim serveis de jardineria a:
 
 Contacta'ns ara i t'enviarem un pressupost personalitzat en menys de 24 hores. Analitzarem el teu jardí i et proposarem el pla de manteniment més adequat.
 
-[Contacta'ns ara](#contacte)
+[Contacta'ns ara](/ca/contacte/)

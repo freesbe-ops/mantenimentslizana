@@ -60,4 +60,4 @@ Ofrecemos servicios de jardinería en:
 
 Contáctanos ahora y te enviaremos un presupuesto personalizado en menos de 24 horas. Analizaremos tu jardín y te propondremos el plan de mantenimiento más adecuado.
 
-[Contáctanos ahora](#contacto)
+[Contáctanos ahora](/es/contacto/)

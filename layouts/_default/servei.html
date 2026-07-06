@@ -25,7 +25,7 @@
 
         .servei-page {
             padding-top: 20px;
-            padding-bottom: 60px;
+            padding-bottom: 0;
             background: white;
             max-width: 1000px;
             margin: 0 auto;
@@ -142,49 +142,64 @@
             text-align: left;
         }
 
-        /* CTA final de la landing */
+        /* ============================================
+           CTA FULL WIDTH BLAU (FORA DEL CONTAINER)
+           ============================================ */
+        .servei-cta-wrapper {
+            width: 100%;
+            background: #00326B;
+            margin-top: 50px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         .servei-cta {
             text-align: center;
-            padding: 50px 30px;
+            padding: 60px 30px;
             background: #00326B;
             color: white;
-            border-radius: 8px;
-            margin-top: 50px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .servei-cta h2 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            margin-bottom: 20px;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 25px;
             border: none;
             padding: 0;
             color: white;
             text-transform: uppercase;
-            text-align: center;
-        }
-
-        .servei-cta .btn-hero {
-            background: white !important;
-            color: #00326B !important;
-            border: 2px solid white !important;
-            font-size: 1.2rem !important;
-            padding: 16px 40px !important;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            border-radius: 0;
             font-weight: 700;
+            text-align: center;
+            letter-spacing: 1px;
         }
 
-        .servei-cta .btn-hero:hover {
-            background: transparent !important;
-            color: white !important;
-            transform: scale(1.05);
+        .servei-cta .btn-contacte {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            font-size: 1.1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            padding: 14px 40px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        .servei-cta .btn-contacte:hover {
+            background: white;
+            color: #00326B;
+            border-color: white;
+            transform: scale(1.02);
         }
 
         @media (max-width: 768px) {
             .servei-page {
                 padding-top: 70px;
-                padding-bottom: 40px;
+                padding-bottom: 0;
                 padding-left: 15px;
                 padding-right: 15px;
             }
@@ -207,11 +222,16 @@
             }
 
             .servei-cta {
-                padding: 30px 20px;
+                padding: 40px 20px;
             }
 
             .servei-cta h2 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
+            }
+
+            .servei-cta .btn-contacte {
+                font-size: 1rem;
+                padding: 12px 30px;
             }
         }
     </style>
@@ -230,13 +250,18 @@
                 <div class="servei-content">
                     {{ .Content }}
                 </div>
-
-                <section class="servei-cta">
-                    <h2>Demana pressupost sense compromís</h2>
-                    <a href="#contacte" class="btn btn-hero">Contacta'ns</a>
-                </section>
             </div>
         </article>
+
+        <!-- CTA FULL WIDTH BLAU (FORA DEL CONTAINER) -->
+        <div class="servei-cta-wrapper">
+            <div class="servei-cta">
+                <h2>{{ if eq .Site.Language.Lang "es" }}EXPLÍCANOS TU NECESIDAD{{ else }}EXPLICA'NS LA TEVA NECESSITAT{{ end }}</h2>
+                <a href="{{ if eq .Site.Language.Lang "es" }}/es/contacto/{{ else }}/ca/contacte/{{ end }}" class="btn-contacte">
+                    {{ if eq .Site.Language.Lang "es" }}CONTÁCTANOS{{ else }}CONTACTA'NS{{ end }}
+                </a>
+            </div>
+        </div>
     </main>
 </body>
 </html>
