@@ -2,7 +2,7 @@
     <div style="max-width: 100%; padding: 0 20px; margin: 0 auto; text-align:center;">
         <h2 style="color:white; font-size:2.5rem; margin-bottom:0.5rem;">{{ if eq .Site.Language.Lang "es" }}Jardinería integral{{ else }}Jardineria integral{{ end }}</h2>
         <p style="font-size:1.5rem; margin-bottom:2rem; font-style:italic;">{{ if eq .Site.Language.Lang "es" }}Tu espacio verde, en buenas manos{{ else }}El teu espai verd, en bones mans{{ end }}</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+        <div class="grid-jardineria" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
             <button class="btn-servei" data-modal="modalJ1" style="background: white; color: #00326B; border: 2px solid transparent; padding: 1rem; font-size: 1rem; font-weight: 400; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
                 {{ if eq .Site.Language.Lang "es" }}Corte de césped{{ else }}Tall de gespa{{ end }}
                 <span class="btn-plus" style="font-size: 1.5rem; transition: color 0.3s ease;">+</span>
@@ -108,6 +108,7 @@
             }
         });
     });
+    
     document.querySelectorAll('.modal-tancar').forEach(btn => {
         btn.addEventListener('click', function() {
             const modal = this.closest('.modal');
@@ -117,6 +118,7 @@
             }
         });
     });
+    
     document.querySelectorAll('.modal').forEach(modal => {
         modal.addEventListener('click', function(e) {
             if (e.target === this) {
@@ -125,6 +127,7 @@
             }
         });
     });
+    
     document.querySelectorAll('.btn-servei').forEach(btn => {
         btn.addEventListener('mouseenter', function() {
             this.style.background = 'transparent';
@@ -139,6 +142,7 @@
             this.querySelector('.btn-plus').style.color = '#00326B';
         });
     });
+    
     // Tancar amb ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
@@ -149,5 +153,35 @@
                 }
             });
         }
+    });
+
+    // ============================================
+    // TANCAR MODALS NOMÉS SI ES FA SCROLL DE MÉS DE 50px
+    // ============================================
+    let lastScrollY = window.scrollY;
+    let scrollAcumulat = 0;
+    
+    document.addEventListener('scroll', function() {
+        const currentScrollY = window.scrollY;
+        
+        // Acumular el scroll en positiu (només cap amunt)
+        if (currentScrollY < lastScrollY) {
+            scrollAcumulat += (lastScrollY - currentScrollY);
+        } else {
+            // Si l'usuari fa scroll cap avall, reiniciem l'acumulador
+            scrollAcumulat = 0;
+        }
+        
+        // Si l'acumulat supera 50px, tanquem el modal
+        if (scrollAcumulat > 50) {
+            document.querySelectorAll('.modal').forEach(function(modal) {
+                if (modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    scrollAcumulat = 0; // Reiniciem
+                }
+            });
+        }
+        lastScrollY = currentScrollY;
     });
 </script>
