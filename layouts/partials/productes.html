@@ -7,7 +7,7 @@
             {{ if eq .Site.Language.Lang "es" }}Elige el plan que mejor se adapte a tus necesidades o solicita un presupuesto personalizado.{{ else }}Tria el pla que millor s'adapti a les teves necessitats o demana un pressupost personalitzat.{{ end }}
         </p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;">
+        <div class="grid-productes" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
             
             <!-- Producte 1 -->
             <div style="background: transparent; padding: 2rem; text-align:center; border: 2px solid #00326B; display:flex; flex-direction:column; justify-content:space-between;">
@@ -107,5 +107,22 @@
         background: #00326B !important;
         color: white !important;
         border-color: #00326B !important;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+        .grid-productes {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.5rem !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .grid-productes {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+            max-width: 400px !important;
+            margin: 0 auto !important;
+        }
     }
 </style>
