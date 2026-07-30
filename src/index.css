@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --color-cream: #F4EFE6;
+  --color-cream-dark: #EAE4D8;
+  --color-charcoal: #1A1714;
+  --color-rust: #C05A20;
+  --color-rust-light: #D4703A;
+  --color-muted: #7A6F65;
+  --color-border: #D0C9B8;
+  --color-surface: #EDEAD3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #F4EFE6;
+  color: #1A1714;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar until hover */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D0C9B8; border-radius: 3px; }
