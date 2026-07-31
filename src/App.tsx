@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
+import ReactGA from 'react-ga4'
 
 const NAV_LINKS = [
   { label: 'Serveis', href: '#serveis', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> },
@@ -160,31 +162,83 @@ function CarouselBar() {
 }
 
 export default function App() {
-  const [formData, setFormData] = useState({ nom: '', telefon: '', email: '', servei: '', missatge: '' })
+  const [formData, setFormData] = useState({ nom: '', telefon: '', email: '', poblacio: '', servei: '', missatge: '' })
   const [sent, setSent] = useState(false)
+
+  // Inicialitza GA4 (substitueix G-XXXXXXXXXX pel teu ID de mesurament)
+  ReactGA.initialize('G-CB6G5KWZS6')
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const params = new URLSearchParams()
-      params.append('nom', formData.nom)
-      params.append('telefon', formData.telefon)
-      params.append('email', formData.email)
-      params.append('servei', formData.servei)
-      params.append('missatge', formData.missatge)
-      await fetch('https://script.google.com/macros/s/AKfycbwupXElgqK9zuPYYziUOBulax-Slj1HGSYypSE66ftUEje4cCAIbiwbEhEfQEP04CDg/exec', {
+      const data = {
+        nom: formData.nom,
+        telefon: formData.telefon,
+        email: formData.email,
+        servei: formData.servei,
+        tipus: formData.servei,
+        poblacio: formData.poblacio,
+        missatge: formData.missatge,
+        comentaris: formData.missatge,
+      }
+      await fetch('https://script.google.com/macros/s/AKfycbwjfVhosVKw2o2nOxulbwbvRku7W-squiE8rRBpzzNl7JX__ApvawIgI6mNTQRqIuwi/exec', {
         method: 'POST',
         mode: 'no-cors',
-        body: params,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       })
     } catch (_) {
       // silently ignore
     }
+    console.log('Enviant esdeveniment: enviar_pressupost')
+    ;(window as any).gtag('event', 'enviar_pressupost', {
+      'event_category': 'Formulari',
+      'event_label': formData.servei || 'General'
+    })
     setSent(true)
   }
 
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", backgroundColor: '#F5F5F5', color: '#1A1714' }}>
+
+      <Helmet>
+        <html lang="ca" />
+        <title>Manteniments Lizana | Reparacions, jardineria i piscines a Girona</title>
+        <meta name="description" content="Manteniments Lizana: servei professional de reparacions, jardineria, piscines i manteniment general a Girona i comarques. Pressupost sense compromís i resposta en 2h." />
+        <link rel="canonical" href="https://mantenimentslizana.com/" />
+
+        <meta property="og:title" content="Manteniments Lizana | Reparacions, jardineria i piscines a Girona" />
+        <meta property="og:description" content="Servei professional de manteniment a Girona i comarques. Pressupost sense compromís i resposta en 2h." />
+        <meta property="og:image" content="https://mantenimentslizana.com/hero.jpg" />
+        <meta property="og:url" content="https://mantenimentslizana.com/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Manteniments Lizana",
+              "description": "Servei professional de reparacions, jardineria, piscines i manteniment general a Girona.",
+              "image": "https://mantenimentslizana.com/hero.jpg",
+              "telephone": "+34677218303",
+              "email": "mantenimentlizana@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Girona",
+                "addressCountry": "ES"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "120"
+              }
+            }
+          `}
+        </script>
+      </Helmet>
 
       {/* HEADER */}
       <header style={{ position: 'sticky', top: 20, zIndex: 50, padding: '0 24px' }}>
@@ -192,7 +246,7 @@ export default function App() {
           {/* Logo */}
           <a href="#inici" style={{ textDecoration: 'none' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <img src="/src/imports/logo-lizana.png" alt="Manteniments Lizana" style={{ width: 34, height: 34, borderRadius: '50%', objectFit: 'cover' }} />
+              <img src="/logo-lizana.png" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 34, height: 34, borderRadius: '50%', objectFit: 'cover' }} />
               <div className="logo-text">
                 <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 15, color: '#1A1714', lineHeight: 1.1 }}>Manteniments</div>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 12, color: '#7A6F65', letterSpacing: '0.08em' }}>LIZANA</div>
@@ -248,8 +302,8 @@ export default function App() {
 
           {/* Right side */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <a href="https://wa.me/34677218303?utm_source=web&utm_medium=whatsapp&utm_campaign=contacte" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '7px 14px', border: '1px solid #25D366', borderRadius: 40, textDecoration: 'none', color: '#25D366', fontSize: 13, fontWeight: 500 }}
-              className="hidden-mobile">
+            <a href="https://wa.me/34677218303?utm_source=web&utm_medium=whatsapp&utm_campaign=header" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '7px 14px', border: '1px solid #25D366', borderRadius: 40, textDecoration: 'none', color: '#25D366', fontSize: 13, fontWeight: 500 }}
+              className="hidden-mobile" onClick={() => { console.log('Clic a WhatsApp header'); (window as any).gtag('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': 'header' }) }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366" stroke="none">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
@@ -280,9 +334,9 @@ export default function App() {
       <section id="inici" style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'flex-start', marginTop: '-60px', paddingTop: '60px' }}>
         {/* Background image - full width */}
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <img
-            src="/src/imports/hero.jpg"
-            alt="Manteniments Lizana"
+            <img
+            src="/hero.jpg"
+            alt="Equip de Manteniments Lizana realitzant reparacions a Girona"
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
           />
           {/* Dark overlay for readability */}
@@ -303,7 +357,7 @@ export default function App() {
               Resultats reals.
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: '#E0E0E0', maxWidth: 440, marginBottom: 40 }}>
-              Reparacions, manteniment, jardineria i piscines a Girona i comarques. Un equip proper, puntual i professional que deixa la teva llar en perfecte estat.
+              Manteniments Lizana: reparacions a Girona, manteniment, jardineria i piscines a Girona i comarques. Un equip proper, puntual i professional que deixa la teva llar en perfecte estat.
             </p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center', marginBottom: 48 }}>
               <a href="#contacte" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', backgroundColor: '#FFFFFF', color: '#1A1714', borderRadius: 40, textDecoration: 'none', fontSize: 14, fontWeight: 500, transition: 'background 0.2s' }}
@@ -365,7 +419,7 @@ export default function App() {
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.08)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}>
               <div style={{ aspectRatio: '16/7', overflow: 'hidden', backgroundColor: '#E5E5E5' }}>
-                <img src={s.image} alt={s.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s' }}
+                <img src={s.image} alt={`${s.title} - Manteniments Lizana a Girona`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s' }}
                   onMouseEnter={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1.04)')}
                   onMouseLeave={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1)')} />
               </div>
@@ -435,12 +489,12 @@ export default function App() {
           <div style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '4/5', backgroundColor: '#E5E5E5' }}>
             <img
               src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=700&h=900&fit=crop&auto=format"
-              alt="Equip de Manteniments Lizana"
+              alt="Equip de manteniment a Girona - Manteniments Lizana"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           </div>
           <div style={{ position: 'absolute', top: 32, right: -32, backgroundColor: '#00326B', borderRadius: 12, padding: '20px 24px' }} className="about-badge">
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: '#FFFFFF', lineHeight: 1 }}>+15</div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: '#FFFFFF', lineHeight: 1 }}>+10</div>
             <div style={{ fontSize: 12, color: '#B0C4DE', marginTop: 4, lineHeight: 1.4 }}>anys<br />d'experiència</div>
           </div>
         </div>
@@ -451,7 +505,7 @@ export default function App() {
             Hola, som<br /><em style={{ color: '#00326B', fontStyle: 'italic' }}>Manteniments Lizana.</em>
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5148', marginBottom: 20 }}>
-            Som un equip local de Girona amb més de 15 anys resolent tot el que la teva llar necessita. Hem crescut gràcies a la confiança dels nostres clients i als treballs ben fets.
+            Som un equip de manteniment a Girona amb més de 10 anys resolent tot el que la teva llar necessita. Hem crescut gràcies a la confiança dels nostres clients i als treballs ben fets.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5148', marginBottom: 36 }}>
             Treballem un servei alhora, sempre amb cura. Quan diem que hi serem a l'hora, hi som. Quan diem que ho deixarem net, ho deixem net. Sense excuses ni complicacions.
@@ -571,7 +625,7 @@ export default function App() {
                   { icon: '💬', label: 'WhatsApp', val: '677 218 303', sub: '7:30h – 19:00h, de dilluns a divendres', href: 'https://wa.me/34677218303?utm_source=web&utm_medium=whatsapp&utm_campaign=contacte' },
                   { icon: '✉️', label: 'Email', val: 'mantenimentlizana@gmail.com', sub: 'Resposta en poques hores', href: 'mailto:mantenimentlizana@gmail.com' },
                 ].map(c => (
-                  <a key={c.label} href={c.href} style={{ textDecoration: 'none', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                  <a key={c.label} href={c.href} style={{ textDecoration: 'none', display: 'flex', gap: 16, alignItems: 'flex-start' }} onClick={() => { if (c.label === 'WhatsApp') { console.log('Clic a WhatsApp contacte'); (window as any).gtag('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': 'contacte' }) } }}>
                     <div style={{ width: 40, height: 40, borderRadius: 10, backgroundColor: '#E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>{c.icon}</div>
                     <div>
                       <div style={{ fontSize: 11, color: '#7A6F65', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>{c.label}</div>
@@ -620,6 +674,14 @@ export default function App() {
                   <div style={{ marginBottom: 16 }}>
                     <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 6 }}>Email</label>
                     <input value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} placeholder="correu@exemple.com" type="email" required
+                      style={{ width: '100%', padding: '11px 14px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14, backgroundColor: '#fff', color: '#1A1714', outline: 'none', fontFamily: 'inherit' }}
+                      onFocus={e => (e.currentTarget.style.borderColor = '#00326B')}
+                      onBlur={e => (e.currentTarget.style.borderColor = '#E5E5E5')} />
+                  </div>
+
+                  <div style={{ marginBottom: 16 }}>
+                    <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 6 }}>Poble / Localitat</label>
+                    <input value={formData.poblacio} onChange={e => setFormData({ ...formData, poblacio: e.target.value })} placeholder="El teu poble o localitat"
                       style={{ width: '100%', padding: '11px 14px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14, backgroundColor: '#fff', color: '#1A1714', outline: 'none', fontFamily: 'inherit' }}
                       onFocus={e => (e.currentTarget.style.borderColor = '#00326B')}
                       onBlur={e => (e.currentTarget.style.borderColor = '#E5E5E5')} />
@@ -675,7 +737,7 @@ export default function App() {
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 40, marginBottom: 40 }} className="footer-grid">
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
-                <img src="/src/imports/logo-lizana.png" alt="Manteniments Lizana" style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }} />
+                <img src="/logo-lizana.png" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }} />
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 14, color: '#1A1714', lineHeight: 1.1 }}>Manteniments Lizana</div>
                   <div style={{ fontSize: 11, color: '#7A6F65', letterSpacing: '0.08em' }}>GIRONA I MARESME · 10 ANYS D'EXPERIÈNCIA</div>
@@ -688,7 +750,7 @@ export default function App() {
                 <a href="https://www.facebook.com/p/Manteniments-Lizana-61590819927805/" target="_blank" rel="noopener noreferrer" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1877F2', fontSize: 14, textDecoration: 'none' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href="https://wa.me/34677218303" target="_blank" rel="noopener noreferrer" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366', fontSize: 14, textDecoration: 'none' }}>
+                <a href="https://wa.me/34677218303?utm_source=web&utm_medium=whatsapp&utm_campaign=footer" target="_blank" rel="noopener noreferrer" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366', fontSize: 14, textDecoration: 'none' }} onClick={() => { console.log('Clic a WhatsApp footer'); (window as any).gtag('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': 'footer' }) }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 </a>
               </div>
@@ -715,7 +777,7 @@ export default function App() {
             <div>
               <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>Contacte</div>
               <div style={{ fontSize: 13, color: '#7A6F65', lineHeight: 1.8 }}>
-                <div>💬 <a href="https://wa.me/34677218303?utm_source=web&utm_medium=whatsapp&utm_campaign=contacte" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontWeight: 500 }}>677 218 303</a></div>
+                <div>💬 <a href="https://wa.me/34677218303?utm_source=web&utm_medium=whatsapp&utm_campaign=footer" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontWeight: 500 }} onClick={() => { console.log('Clic a WhatsApp footer'); (window as any).gtag('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': 'footer' }) }}>677 218 303</a></div>
                 <div>✉️ <a href="mailto:mantenimentlizana@gmail.com" style={{ color: '#00326B', textDecoration: 'none', fontWeight: 500 }}>mantenimentlizana@gmail.com</a></div>
                 <div style={{ marginTop: 8 }}>Girona i comarques</div>
                 <div style={{ fontSize: 12, color: '#9A8F86', marginTop: 4 }}>Dl–Dv: 7:30 – 19:00h</div>
