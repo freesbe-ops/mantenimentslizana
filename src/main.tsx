@@ -8,10 +8,11 @@ import './i18n'
 import './index.css'
 
 // Redirigeix des del 404 redirect de GitHub Pages
-const redirect = sessionStorage.redirect
-if (redirect) {
+if (sessionStorage.redirect) {
+  const redirect = sessionStorage.redirect
   delete sessionStorage.redirect
-  window.location.href = redirect
+  // Reemplaça l'históric per no deixar /index.html a la navegació
+  window.history.replaceState(null, '', redirect)
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
