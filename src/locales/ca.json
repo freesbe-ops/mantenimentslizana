@@ -1,0 +1,198 @@
+{
+  "meta_title": "Manteniments Lizana | Reparacions, jardineria i piscines a Girona",
+  "meta_description": "Manteniments Lizana: servei professional de reparacions, jardineria, piscines i manteniment general a Girona i comarques. Pressupost sense compromís i resposta en 2h.",
+  "hero": {
+    "badge": "Girona i Maresme · 10 anys d'experiència",
+    "title": "Mans expertes.",
+    "subtitle": "Resultats reals.",
+    "description": "Manteniments Lizana: reparacions a Girona, manteniment, jardineria i piscines a Girona i comarques. Un equip proper, puntual i professional que deixa la teva llar en perfecte estat.",
+    "cta": "Sol·licita pressupost gratuït",
+    "secondary_cta": "Veure serveis",
+    "stars_label": "Més de 120 clients satisfets",
+    "badge_title": "Resposta garantida",
+    "badge_sub": "En menys de 2h",
+    "image_alt": "Equip de Manteniments Lizana realitzant reparacions a Girona"
+  },
+  "nav": {
+    "serveis": "Serveis",
+    "sobre": "Sobre nosaltres",
+    "piscines": "Piscines",
+    "contacte": "Contacta'ns",
+    "pressupost": "Pressupost",
+    "pressupost_cta": "Sol·licita pressupost"
+  },
+  "carousel": ["PUNTUALS SEMPRE", "SENSE COMPROMÍS", "5★ REVIEWS VERIFICADES", "PRESSUPOST RÀPID"],
+  "serveis": {
+    "title": "SERVEIS",
+    "heading": "Tot el que la teva llar<br /><em>necessita.</em>",
+    "subheading": "Un servei integral que cobreix totes les necessitats de manteniment. Si no és a la llista, pregunta'ns igualment — molt probablement t'ho podem resoldre.",
+    "items": [
+      {
+        "title": "Reparacions a la Llar",
+        "description": "Llàmpades, endolls, interruptors, ventiladors, aixetes, cisternes, penjar quadres i prestatgeries, fusteria, pintura, muntatge de mobles i molt més.",
+        "tag": "Ràpid i eficient"
+      },
+      {
+        "title": "Manteniment de Piscines",
+        "description": "Neteja del vas i filtre, control químic de l'aigua, revisió d'equips, tractaments preventius i posada a punt per a la temporada.",
+        "tag": "Aigua sempre neta"
+      },
+      {
+        "title": "Jardineria",
+        "description": "Tall de gespa, poda d'arbustos i arbres, desbrossament, neteja de jardins, plantació i manteniment, i posada a punt per a l'estiu.",
+        "tag": "Jardins sans i bonics"
+      },
+      {
+        "title": "Manteniment General",
+        "description": "Fontaneria bàsica, electricitat, pintura, petites reformes i fusteria. Mantenim la teva llar en perfecte estat tot l'any.",
+        "tag": "Tot en un servei"
+      }
+    ]
+  },
+  "forwhom": {
+    "title": "PER A QUI TREBALLEM",
+    "heading": "Per a tothom que<br /><em>confia en nosaltres.</em>",
+    "subheading": "Treballem amb particulars, empreses i comunitats a tota la província de Girona. Qualsevol necessitat de manteniment, la resolem.",
+    "items": [
+      { "title": "Particulars", "desc": "Solucions ràpides per a la llar. T'atenem amb rapidesa i cura, sense complicacions." },
+      { "title": "Immobiliàries i Turisme", "desc": "Pisos de lloguer, allotjaments i apartaments turístics sempre a punt per als hostes." },
+      { "title": "Comunitats de Veïns", "desc": "Manteniment preventiu i correctiu de zones comunes, jardins, piscines i instal·lacions." },
+      { "title": "Segones Residències", "desc": "Obrim, tanquem i mantenim la teva casa de vacances perquè sempre estigui llesta quan arribes." }
+    ]
+  },
+  "sobre": {
+    "title": "SOBRE NOSALTRES",
+    "heading": "Hola, som<br /><em>Manteniments Lizana.</em>",
+    "p1": "Som un equip de manteniment a Girona amb més de 10 anys resolent tot el que la teva llar necessita. Hem crescut gràcies a la confiança dels nostres clients i als treballs ben fets.",
+    "p2": "Treballem un servei alhora, sempre amb cura. Quan diem que hi serem a l'hora, hi som. Quan diem que ho deixarem net, ho deixem net. Sense excuses ni complicacions.",
+    "stats": [
+      { "num": "+500", "label": "Llars ateses" },
+      { "num": "+120", "label": "Clients fidels" },
+      { "num": "4.9★", "label": "Valoració" }
+    ],
+    "cta": "Contacta'ns avui",
+    "image_alt": "Equip de manteniment a Girona - Manteniments Lizana",
+    "badge_num": "+10",
+    "badge_years": "anys<br />d'experiència"
+  },
+  "whyus": {
+    "title": "PER QUÈ NOSALTRES",
+    "heading": "Per què confiar en <em>Manteniments Lizana</em>",
+    "items": [
+      { "title": "Professionals qualificats", "desc": "Equip amb formació i experiència en tots els oficis. Treballem amb garantia i seguretat." },
+      { "title": "Servei ràpid i puntual", "desc": "Responem en poques hores i complim els horaris acordats. El teu temps és el nostre temps." },
+      { "title": "Pressupost sense compromís", "desc": "T'expliquem el preu abans de començar. Sense sorpreses ni costos amagats." },
+      { "title": "Garantia en els treballs", "desc": "Tots els treballs porten garantia. Si qualsevol cosa no funciona, tornem a solucionar-ho." }
+    ]
+  },
+  "testimonis": {
+    "title": "TESTIMONIS",
+    "heading": "El que diuen els<br /><em>nostres clients.</em>",
+    "items": [
+      { "name": "Maria G.", "location": "Girona", "text": "Molt professionals i ràpids. Vaig trucar al matí i a la tarda ja tenien l'aixeta arreglada. Totalment recomanables." },
+      { "name": "Ekaterina V.", "location": "Platja d'Aro", "text": "Porten la meva piscina des de fa tres anys i sempre és perfecta. Tracte excel·lent i molt puntuals." },
+      { "name": "Anna M.", "location": "Palamós", "text": "Van fer la poda del jardí i va quedar impecable. A més, el pressupost va ser molt ajustat." },
+      { "name": "Francesc R.", "location": "Santa Cristina d'Aro", "text": "Ens gestionen el manteniment de la comunitat des de fa anys. Molt satisfets amb el servei." },
+      { "name": "Núria V.", "location": "Llagostera", "text": "Excel·lents professionals. Van muntar tots els mobles del pis nou en un sol dia i sense cap problema." },
+      { "name": "Pere T.", "location": "Castell-Platja d'Aro", "text": "La meva segona residència sempre la trobo a punt gràcies a ells. Un servei de confiança al 100%." }
+    ]
+  },
+  "contacte": {
+    "title": "CONTACTE",
+    "heading": "Explica'ns la feina — <em>t'hi responem de pressa.</em>",
+    "description": "Truca'ns, escriu-nos un WhatsApp o omple el formulari. Et donarem resposta en menys de dues hores en horari laboral.",
+    "whatsapp_label": "WhatsApp",
+    "whatsapp_sub": "7:30h – 19:00h, de dilluns a divendres",
+    "email_label": "Email",
+    "email_sub": "Resposta en poques hores",
+    "cobertura": "Zona de cobertura",
+    "cobertura_text": "Girona, Costa Brava, Baix Empordà, Gironès i comarques.",
+    "form_title": "Sol·licita pressupost gratuït",
+    "form_nom": "Nom",
+    "form_telefon": "Telèfon",
+    "form_email": "Email",
+    "form_poblacio": "Poble / Localitat",
+    "form_servei": "Tipus de servei",
+    "form_servei_placeholder": "Selecciona un servei...",
+    "form_missatge": "Explica'ns la feina",
+    "form_missatge_placeholder": "Descriu breument el que necessites. Pots enviar-nos fotos per WhatsApp si ho prefereixes.",
+    "form_submit": "Enviar sol·licitud",
+    "form_response": "Resposta garantida en menys de 2 hores en horari laboral.",
+    "form_sent_title": "Missatge enviat!",
+    "form_sent_text": "Et contactarem en menys de 2 hores. Gràcies per confiar en nosaltres.",
+    "form_altres": "Altres",
+    "form_nom_placeholder": "El teu nom",
+    "form_telefon_placeholder": "6XX XXX XXX",
+    "form_email_placeholder": "correu@exemple.com",
+    "form_poblacio_placeholder": "El teu poble o localitat"
+  },
+  "piscines": {
+    "meta_title": "Manteniment de piscines a Girona | Manteniments Lizana",
+    "meta_description": "Manteniment professional de piscines a Girona i Maresme. Neteja, tractament químic, revisió d'equips i posada a punt per a la temporada.",
+    "carousel": ["PISCINES IMPECABLES", "AIGUA CRISTAL·LINA", "SERVEI PROFESSIONAL", "PRESSUPOST RÀPID", "TOTAL CONFIANÇA"],
+    "hero": {
+      "badge": "Girona i Maresme · Especialistes en piscines",
+      "title": "Piscines impecables.",
+      "subtitle": "Tot l'any.",
+      "description": "Manteniment professional de piscines a Girona. Neteja, tractament d'aigua, revisió d'equips i posada a punt per a la temporada. Gaudiu de la vostra piscina sense preocupacions.",
+      "cta": "Sol·licita pressupost gratuït",
+      "secondary_cta": "Veure serveis",
+      "reviews": "Més de 100 clients satisfets",
+      "badge_title": "Resposta garantida",
+      "badge_sub": "En menys de 2h",
+      "image_alt": "Piscina neta i cuidada a Girona"
+    },
+    "services": {
+      "title": "EL NOSTRE SERVEI",
+      "heading": "Manteniment de piscines<br /><em>al detall.</em>",
+      "subheading": "Ens cuidem de cada detall perquè la vostra piscina estigui perfecta durant tot l'any, amb un servei professional i fiable.",
+      "items": [
+        { "title": "Neteja i Manteniment Setmanal", "description": "Filtres, skimmers, neteja de parets i fons, i control de nivells químics per mantenir l'aigua cristal·lina." },
+        { "title": "Tractament Químic de l'Aigua", "description": "Anàlisi i ajust del pH, clor, alcalinitat i altres paràmetres per garantir una aigua sana i segura." },
+        { "title": "Revisió d'Equips i Instal·lacions", "description": "Inspecció i manteniment de bombes, filtres, cloradors, il·luminació i sistemes de calefacció." },
+        { "title": "Posada a Punt per a la Temporada", "description": "Obertura i tancament de la piscina, neteja profunda, revisió de tots els sistemes i preparació per a l'estiu." }
+      ]
+    },
+    "benefits": {
+      "title": "PER QUÈ CONFIAR EN NOSALTRES",
+      "heading": "La garantia d'una piscina<br /><em>sempre cuidada.</em>",
+      "subheading": "Un equip especialitzat en piscina que combina tècnica, productes de qualitat i atenció personalitzada.",
+      "items": [
+        { "title": "Tècnics Especialitzats", "description": "Equip format en química de l'aigua i manteniment de piscines. Amb experiència i garantia." },
+        { "title": "Servei Puntual i Fiable", "description": "Complim els horaris acordats. Responem en menys de 2h." },
+        { "title": "Productes de Qualitat", "description": "Utilitzem productes químics i equips de primeres marques per garantir els millors resultats." },
+        { "title": "Garantia en els Treballs", "description": "Tots els treballs porten garantia. Si alguna cosa no funciona, ho solucionem." }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIS",
+      "heading": "La satisfacció dels nostres<br /><em>clients de piscina.</em>",
+      "items": [
+        { "name": "Jordi P.", "location": "Girona", "text": "Manteniment excel·lent. La piscina sempre cristal·lina i l'equip molt professional." },
+        { "name": "Marta R.", "location": "Platja d'Aro", "text": "Porten la meva piscina des de fa 3 anys. Mai he tingut cap problema. Molt recomanables." },
+        { "name": "Albert C.", "location": "Sant Feliu de Guíxols", "text": "Van fer la posada a punt de la piscina i va quedar impecable. Pressupost molt ajustat." }
+      ]
+    },
+    "cta": {
+      "title": "CONTACTE",
+      "text": "La teva piscina mereix el millor manteniment. Contacta'ns avui i comença a gaudir-ne sense preocupacions.",
+      "button": "Sol·licita pressupost",
+      "secondary": "Omple el formulari"
+    }
+  },
+  "footer": {
+    "tagline": "GIRONA I MARESME · 10 ANYS D'EXPERIÈNCIA",
+    "description": "Servei integral de manteniment, reparacions, jardineria i piscines a Girona i comarques. Professionals de confiança, servei proper.",
+    "serveis_title": "Serveis",
+    "empresa_title": "Empresa",
+    "contacte_title": "Contacte",
+    "legal": "2026 SprintOps. Tots els drets reservats",
+    "avis_legal": "Avís legal",
+    "politica_privacitat": "Política de privacitat",
+    "cookies": "Cookies",
+    "inici": "Inici",
+    "testimonis": "Testimonis",
+    "zona": "Girona i comarques",
+    "horari": "Dl–Dv: 7:30 – 19:00h"
+  }
+}

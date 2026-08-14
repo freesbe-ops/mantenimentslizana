@@ -1,0 +1,198 @@
+{
+  "meta_title": "Manteniments Lizana | Repairs, gardening and pools in Girona",
+  "meta_description": "Manteniments Lizana: professional service for repairs, gardening, pools and general maintenance in Girona and surrounding areas. Free quote and response within 2h.",
+  "hero": {
+    "badge": "Girona & Maresme · 10 years of experience",
+    "title": "Expert hands.",
+    "subtitle": "Real results.",
+    "description": "Manteniments Lizana: repairs in Girona, maintenance, gardening and pools in Girona and surrounding areas. A close, punctual and professional team that leaves your home in perfect condition.",
+    "cta": "Get a free quote",
+    "secondary_cta": "View services",
+    "stars_label": "Over 120 satisfied clients",
+    "badge_title": "Guaranteed response",
+    "badge_sub": "In less than 2h",
+    "image_alt": "Manteniments Lizana team performing repairs in Girona"
+  },
+  "nav": {
+    "serveis": "Services",
+    "sobre": "About us",
+    "piscines": "Pools",
+    "contacte": "Contact us",
+    "pressupost": "Quote",
+    "pressupost_cta": "Get a quote"
+  },
+  "carousel": ["ALWAYS ON TIME", "NO COMMITMENT", "5★ VERIFIED REVIEWS", "QUICK QUOTE"],
+  "serveis": {
+    "title": "SERVICES",
+    "heading": "Everything your home<br /><em>needs.</em>",
+    "subheading": "A comprehensive service covering all maintenance needs. If it's not on the list, ask us anyway — we can most likely solve it.",
+    "items": [
+      {
+        "title": "Home Repairs",
+        "description": "Lamps, sockets, switches, fans, taps, cisterns, hanging pictures and shelves, carpentry, painting, furniture assembly and much more.",
+        "tag": "Fast and efficient"
+      },
+      {
+        "title": "Pool Maintenance",
+        "description": "Pool and filter cleaning, chemical water control, equipment inspection, preventive treatments and seasonal preparation.",
+        "tag": "Always clean water"
+      },
+      {
+        "title": "Gardening",
+        "description": "Lawn mowing, shrub and tree pruning, clearing, garden cleaning, planting and maintenance, and summer preparation.",
+        "tag": "Healthy, beautiful gardens"
+      },
+      {
+        "title": "General Maintenance",
+        "description": "Basic plumbing, electricity, painting, small renovations and carpentry. We keep your home in perfect condition all year round.",
+        "tag": "All in one service"
+      }
+    ]
+  },
+  "forwhom": {
+    "title": "WHO WE WORK FOR",
+    "heading": "For everyone who<br /><em>trusts us.</em>",
+    "subheading": "We work with individuals, businesses and communities across the province of Girona. Any maintenance need, we solve it.",
+    "items": [
+      { "title": "Homeowners", "desc": "Quick solutions for your home. We assist you promptly and carefully, without complications." },
+      { "title": "Real Estate & Tourism", "desc": "Rental properties, accommodations and tourist apartments always ready for guests." },
+      { "title": "Neighbourhood Communities", "desc": "Preventive and corrective maintenance of common areas, gardens, pools and facilities." },
+      { "title": "Second Homes", "desc": "We open, close and maintain your holiday home so it's always ready when you arrive." }
+    ]
+  },
+  "sobre": {
+    "title": "ABOUT US",
+    "heading": "Hello, we are<br /><em>Manteniments Lizana.</em>",
+    "p1": "We are a maintenance team in Girona with over 10 years of experience solving everything your home needs. We have grown thanks to the trust of our clients and work well done.",
+    "p2": "We work one service at a time, always with care. When we say we'll be there on time, we are. When we say we'll leave it clean, we leave it clean. No excuses or complications.",
+    "stats": [
+      { "num": "+500", "label": "Homes served" },
+      { "num": "+120", "label": "Loyal clients" },
+      { "num": "4.9★", "label": "Rating" }
+    ],
+    "cta": "Contact us today",
+    "image_alt": "Maintenance team in Girona - Manteniments Lizana",
+    "badge_num": "+10",
+    "badge_years": "years<br />of experience"
+  },
+  "whyus": {
+    "title": "WHY US",
+    "heading": "Why trust <em>Manteniments Lizana</em>",
+    "items": [
+      { "title": "Qualified professionals", "desc": "Team with training and experience in all trades. We work with guarantee and safety." },
+      { "title": "Fast and punctual service", "desc": "We respond within hours and meet agreed schedules. Your time is our time." },
+      { "title": "No-obligation quote", "desc": "We explain the price before starting. No surprises or hidden costs." },
+      { "title": "Work guarantee", "desc": "All work comes with a guarantee. If anything doesn't work, we fix it again." }
+    ]
+  },
+  "testimonis": {
+    "title": "TESTIMONIALS",
+    "heading": "What our<br /><em>clients say.</em>",
+    "items": [
+      { "name": "Maria G.", "location": "Girona", "text": "Very professional and fast. I called in the morning and by the afternoon the tap was already fixed. Totally recommendable." },
+      { "name": "Ekaterina V.", "location": "Platja d'Aro", "text": "They've been taking care of my pool for three years and it's always perfect. Excellent service and very punctual." },
+      { "name": "Anna M.", "location": "Palamós", "text": "They pruned the garden and it was spotless. Plus, the quote was very reasonable." },
+      { "name": "Francesc R.", "location": "Santa Cristina d'Aro", "text": "They've been managing our community's maintenance for years. Very satisfied with the service." },
+      { "name": "Núria V.", "location": "Llagostera", "text": "Excellent professionals. They assembled all the furniture in the new flat in one day without any issues." },
+      { "name": "Pere T.", "location": "Castell-Platja d'Aro", "text": "My second home is always ready thanks to them. A 100% trustworthy service." }
+    ]
+  },
+  "contacte": {
+    "title": "CONTACT",
+    "heading": "Tell us about the job — <em>we'll get back to you quickly.</em>",
+    "description": "Call us, send us a WhatsApp or fill in the form. We'll respond within two hours during business hours.",
+    "whatsapp_label": "WhatsApp",
+    "whatsapp_sub": "7:30am – 7:00pm, Monday to Friday",
+    "email_label": "Email",
+    "email_sub": "Response within hours",
+    "cobertura": "Coverage area",
+    "cobertura_text": "Girona, Costa Brava, Baix Empordà, Gironès and surrounding areas.",
+    "form_title": "Get a free quote",
+    "form_nom": "Name",
+    "form_telefon": "Phone",
+    "form_email": "Email",
+    "form_poblacio": "Town / City",
+    "form_servei": "Service type",
+    "form_servei_placeholder": "Select a service...",
+    "form_missatge": "Tell us about the job",
+    "form_missatge_placeholder": "Briefly describe what you need. You can send us photos via WhatsApp if you prefer.",
+    "form_submit": "Send request",
+    "form_response": "Guaranteed response within 2 hours during business hours.",
+    "form_sent_title": "Message sent!",
+    "form_sent_text": "We'll contact you within 2 hours. Thank you for trusting us.",
+    "form_altres": "Other",
+    "form_nom_placeholder": "Your name",
+    "form_telefon_placeholder": "6XX XXX XXX",
+    "form_email_placeholder": "email@example.com",
+    "form_poblacio_placeholder": "Your town or city"
+  },
+  "piscines": {
+    "meta_title": "Pool maintenance in Girona | Manteniments Lizana",
+    "meta_description": "Professional pool maintenance in Girona and Maresme. Cleaning, chemical treatment, equipment checks and seasonal start-up.",
+    "carousel": ["SPOTLESS POOLS", "CRYSTAL WATER", "PROFESSIONAL SERVICE", "FAST QUOTE", "TOTAL TRUST"],
+    "hero": {
+      "badge": "Girona and Maresme · Pool specialists",
+      "title": "Spotless pools.",
+      "subtitle": "All year round.",
+      "description": "Professional pool maintenance in Girona. Cleaning, water treatment, equipment inspection and seasonal start-up. Enjoy your pool without worries.",
+      "cta": "Request a free quote",
+      "secondary_cta": "View services",
+      "reviews": "Over 100 satisfied clients",
+      "badge_title": "Guaranteed response",
+      "badge_sub": "In less than 2h",
+      "image_alt": "Clean and well-maintained pool in Girona"
+    },
+    "services": {
+      "title": "OUR SERVICE",
+      "heading": "Pool care<br /><em>down to the details.</em>",
+      "subheading": "We take care of every detail so your pool stays perfect all year long with a reliable, professional service.",
+      "items": [
+        { "title": "Weekly Cleaning & Maintenance", "description": "Filters, skimmers, wall and floor cleaning, and chemical level control to keep the water crystal clear." },
+        { "title": "Water Chemical Treatment", "description": "Analysis and adjustment of pH, chlorine, alkalinity and other parameters to ensure healthy and safe water." },
+        { "title": "Equipment & Systems Inspection", "description": "Inspection and maintenance of pumps, filters, chlorinators, lighting and heating systems." },
+        { "title": "Seasonal Start-up & Closing", "description": "Opening and closing of the pool, deep cleaning, review of all systems and preparation for summer." }
+      ]
+    },
+    "benefits": {
+      "title": "WHY TRUST US",
+      "heading": "The reassurance of a pool<br /><em>always in top condition.</em>",
+      "subheading": "A team specialized in pools that combines technical expertise, quality products and personalized attention.",
+      "items": [
+        { "title": "Specialized Technicians", "description": "Team trained in water chemistry and pool maintenance. Experienced and guaranteed." },
+        { "title": "Reliable & Punctual Service", "description": "We keep our schedules. We respond in less than 2 hours." },
+        { "title": "Quality Products", "description": "We use top-brand chemicals and equipment to ensure the best results." },
+        { "title": "Work Guarantee", "description": "All work is guaranteed. If something doesn't work, we fix it." }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIALS",
+      "heading": "The satisfaction of our<br /><em>pool clients.</em>",
+      "items": [
+        { "name": "Jordi P.", "location": "Girona", "text": "Excellent maintenance. The pool is always crystal clear and the team is very professional." },
+        { "name": "Marta R.", "location": "Platja d'Aro", "text": "They've been taking care of my pool for 3 years. I've never had any issues. Highly recommended." },
+        { "name": "Albert C.", "location": "Sant Feliu de Guíxols", "text": "They did the seasonal start-up and the pool was spotless. Very reasonable budget." }
+      ]
+    },
+    "cta": {
+      "title": "CONTACT",
+      "text": "Your pool deserves the best maintenance. Contact us today and start enjoying it worry-free.",
+      "button": "Request quote",
+      "secondary": "Fill in the form"
+    }
+  },
+  "footer": {
+    "tagline": "GIRONA & MARESME · 10 YEARS OF EXPERIENCE",
+    "description": "Comprehensive maintenance, repairs, gardening and pool service in Girona and surrounding areas. Trustworthy professionals, close service.",
+    "serveis_title": "Services",
+    "empresa_title": "Company",
+    "contacte_title": "Contact",
+    "legal": "2026 SprintOps. All rights reserved",
+    "avis_legal": "Legal notice",
+    "politica_privacitat": "Privacy policy",
+    "cookies": "Cookies",
+    "inici": "Home",
+    "testimonis": "Testimonials",
+    "zona": "Girona and surrounding areas",
+    "horari": "Mon–Fri: 7:30 – 19:00"
+  }
+}
