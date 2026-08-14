@@ -173,6 +173,13 @@
         { "name": "Albert C.", "location": "Sant Feliu de Guíxols", "text": "Hicieron la puesta a punto de la piscina y quedó impecable. Presupuesto muy ajustado." }
       ]
     },
+    "abans_despres": {
+      "titol": "Piscinas impecables. Todo el año.",
+      "abans": "Antes",
+      "despres": "Después",
+      "alt_abans": "Antes del mantenimiento de piscinas",
+      "alt_despres": "Después del mantenimiento de piscinas"
+    },
     "cta": {
       "title": "CONTACTO",
       "text": "Tu piscina merece el mejor mantenimiento. Contáctanos hoy y empieza a disfrutarla sin preocupaciones.",

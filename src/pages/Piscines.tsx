@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -57,6 +57,87 @@ function CarouselBar({ items }: { items: string[] }) {
         }
       `}</style>
     </div>
+  )
+}
+
+function BeforeAfterSection() {
+  const { t } = useTranslation()
+  const [imatgeActual, setImatgeActual] = useState<'abans' | 'despres'>('abans')
+
+  const imatges = {
+    abans: { src: '/antes.jpg', alt: t('piscines.abans_despres.alt_abans'), label: t('piscines.abans_despres.abans') },
+    despres: { src: '/despues.jpg', alt: t('piscines.abans_despres.alt_despres'), label: t('piscines.abans_despres.despres') },
+  }
+
+  const canviarImatge = (direccio: 'endreça' | 'esquerra') => {
+    if (direccio === 'endreça') {
+      setImatgeActual('despres')
+    } else {
+      setImatgeActual('abans')
+    }
+  }
+
+  return (
+    <section style={{ backgroundColor: '#FFFFFF', padding: '100px 24px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', paddingBottom: 60 }}>
+        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, textAlign: 'center', color: '#1A1714', marginBottom: 0 }}>
+          {t('piscines.abans_despres.titol')}
+        </h2>
+      </div>
+
+      <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', overflow: 'hidden', borderRadius: 16, paddingLeft: 24, paddingRight: 24 }}>
+        <div style={{ position: 'relative', aspectRatio: '16/9', backgroundColor: '#E5E5E5', borderRadius: 16, overflow: 'hidden' }}>
+          <img
+            src={imatges[imatgeActual].src}
+            alt={imatges[imatgeActual].alt}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'opacity 0.3s ease' }}
+          />
+          <div style={{ position: 'absolute', bottom: 40, left: '50%', transform: 'translateX(-50%)', backgroundColor: 'rgba(0,0,0,0.6)', padding: '12px 32px', borderRadius: 40, color: '#FFFFFF', fontFamily: "'DM Sans', sans-serif", fontSize: 18, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            {imatges[imatgeActual].label}
+          </div>
+        </div>
+
+        {/* Controls - Fletxes */}
+        <button
+          onClick={() => canviarImatge('esquerra')}
+          style={{ position: 'absolute', top: '50%', left: 40, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 48, height: 48, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 24, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s' }}
+          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
+          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.8)')}
+          aria-label="Imatge anterior"
+        >
+          ←
+        </button>
+        <button
+          onClick={() => canviarImatge('endreça')}
+          style={{ position: 'absolute', top: '50%', right: 40, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 48, height: 48, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 24, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s' }}
+          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
+          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.8)')}
+          aria-label="Imatge següent"
+        >
+          →
+        </button>
+
+        {/* Indicadors (punts) */}
+        <div style={{ position: 'absolute', bottom: 24, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 10 }}>
+          <button
+            onClick={() => setImatgeActual('abans')}
+            style={{ width: 12, height: 12, borderRadius: '50%', border: 'none', backgroundColor: imatgeActual === 'abans' ? '#00326B' : 'rgba(255,255,255,0.5)', cursor: 'pointer', transition: 'background 0.2s' }}
+            aria-label="Abans"
+          />
+          <button
+            onClick={() => setImatgeActual('despres')}
+            style={{ width: 12, height: 12, borderRadius: '50%', border: 'none', backgroundColor: imatgeActual === 'despres' ? '#00326B' : 'rgba(255,255,255,0.5)', cursor: 'pointer', transition: 'background 0.2s' }}
+            aria-label="Després"
+          />
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .before-after-button { width: 36px !important; height: 36px !important; }
+        }
+      `}</style>
+    </section>
   )
 }
 
@@ -325,6 +406,9 @@ export default function Piscines() {
           .services-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
+
+      {/* SECCIÓ ABANS I DESPRÉS */}
+      <BeforeAfterSection />
 
       <section style={{ backgroundColor: '#F5F5F5', padding: '100px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>

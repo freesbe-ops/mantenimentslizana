@@ -173,6 +173,13 @@
         { "name": "Albert C.", "location": "Sant Feliu de Guíxols", "text": "They did the seasonal start-up and the pool was spotless. Very reasonable budget." }
       ]
     },
+    "abans_despres": {
+      "titol": "Spotless pools. All year round.",
+      "abans": "Before",
+      "despres": "After",
+      "alt_abans": "Before pool maintenance",
+      "alt_despres": "After pool maintenance"
+    },
     "cta": {
       "title": "CONTACT",
       "text": "Your pool deserves the best maintenance. Contact us today and start enjoying it worry-free.",
