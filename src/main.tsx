@@ -7,6 +7,13 @@ import Piscines from './pages/Piscines'
 import './i18n'
 import './index.css'
 
+// Redirigeix des del 404 redirect de GitHub Pages
+const redirect = sessionStorage.redirect
+if (redirect) {
+  delete sessionStorage.redirect
+  window.location.href = redirect
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>

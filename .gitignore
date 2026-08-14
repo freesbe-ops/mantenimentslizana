@@ -1,5 +1,4 @@
 # Hugo
-public/
 resources/
 .hugo_build.lock
 
@@ -11,5 +10,9 @@ resources/
 .Trash/
 *.log
 
-# Node (si en fas servir)
+# Node
 node_modules/
+dist/
+
+# Public (permetre fitxers específics de la SPA)
+# public/
