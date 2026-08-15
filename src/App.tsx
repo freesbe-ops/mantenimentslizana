@@ -402,13 +402,13 @@ export default function App() {
                     +
                   </div>
                 </div>
-                <div style={{ padding: '28px 28px 32px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, color: '#00326B' }}>
+                <div style={{ padding: '28px 28px 32px', display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px 12px', marginBottom: 14 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, color: '#00326B', minWidth: 0 }}>
                       {SERVICE_ICONS[i]}
-                      <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, margin: 0, color: '#1A1714' }}>{s.title}</h3>
+                      <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, margin: 0, color: '#1A1714', lineHeight: 1.2 }}>{s.title}</h3>
                     </div>
-                    <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', padding: '4px 10px', backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: 40, color: '#5C5348', whiteSpace: 'nowrap' }}>{s.tag}</span>
+                    <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', padding: '4px 10px', backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: 40, color: '#5C5348', whiteSpace: 'normal', textAlign: 'center' }}>{s.tag}</span>
                   </div>
                   <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5148', margin: 0, flex: 1 }}>{s.description}</p>
                 </div>
@@ -426,6 +426,7 @@ export default function App() {
       <style>{`
         .section-header-grid { grid-template-columns: 1fr 1fr; }
         .services-grid { grid-template-columns: repeat(2, 1fr); }
+        .services-grid > * { min-width: 0; }
         @media (max-width: 768px) {
           .section-header-grid { grid-template-columns: 1fr !important; }
           .services-grid { grid-template-columns: 1fr !important; }
