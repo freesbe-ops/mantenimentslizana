@@ -122,7 +122,7 @@ export default function Jardineria() {
               <img src="/logo-lizana.webp" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 34, height: 34, borderRadius: '50%', objectFit: 'cover' }} />
               <div className="logo-text">
                 <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 15, color: '#1A1714', lineHeight: 1.1 }}>Manteniments</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 12, color: '#7A6F65', letterSpacing: '0.08em' }}>LIZANA</div>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 12, color: '#5C5348', letterSpacing: '0.08em' }}>LIZANA</div>
               </div>
             </div>
           </Link>
@@ -133,9 +133,9 @@ export default function Jardineria() {
                 key={link.label}
                 to={link.href}
                 title={link.label}
-                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 10px', borderRadius: 40, color: '#7A6F65', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
+                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 10px', borderRadius: 40, color: '#5C5348', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = '#1A1714'; e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.04)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = '#7A6F65'; e.currentTarget.style.backgroundColor = 'transparent' }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#5C5348'; e.currentTarget.style.backgroundColor = 'transparent' }}
               >
                 {link.icon}
                 <span style={{ fontSize: 9, fontWeight: 500, letterSpacing: '0.02em', whiteSpace: 'nowrap' }}>{link.label}</span>
@@ -237,7 +237,7 @@ export default function Jardineria() {
           <div style={{ position: 'sticky', top: 100 }}>
             <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: gardenAccent, textTransform: 'uppercase', marginBottom: 16 }}>{t('jardineria.services.title')}</div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', letterSpacing: '-0.02em', marginBottom: 24 }} dangerouslySetInnerHTML={{ __html: t('jardineria.services.heading') }} />
-            <p style={{ fontSize: 16, color: '#7A6F65', lineHeight: 1.7, maxWidth: 360, marginBottom: 40 }}>
+            <p style={{ fontSize: 16, color: '#5C5348', lineHeight: 1.7, maxWidth: 360, marginBottom: 40 }}>
               {t('jardineria.services.subheading')}
             </p>
 
@@ -277,7 +277,7 @@ export default function Jardineria() {
                   <img src={s.img} alt={s.title} style={{ width: '100%', height: 340, objectFit: 'cover', display: 'block' }} />
                 </div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, fontWeight: 700, color: '#1A1714', marginBottom: 12 }}>{s.title}</h3>
-                <p style={{ fontSize: 16, color: '#7A6F65', lineHeight: 1.7, marginBottom: 24 }}>{s.description}</p>
+                <p style={{ fontSize: 16, color: '#5C5348', lineHeight: 1.7, marginBottom: 24 }}>{s.description}</p>
                 <Link to={`/${currentLang}/#contacte`} style={{
                   display: 'inline-block',
                   padding: '11px 26px',
@@ -330,7 +330,7 @@ export default function Jardineria() {
             <div>
               <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: gardenAccent, textTransform: 'uppercase', marginBottom: 16 }}>{t('jardineria.benefits.title')}</div>
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 700, lineHeight: 1.1, color: '#1A1714', letterSpacing: '-0.02em', marginBottom: 32 }} dangerouslySetInnerHTML={{ __html: t('jardineria.benefits.heading') }} />
-              <p style={{ fontSize: 16, color: '#7A6F65', lineHeight: 1.7, maxWidth: 420, marginBottom: 32 }}>{t('jardineria.benefits.subheading')}</p>
+              <p style={{ fontSize: 16, color: '#5C5348', lineHeight: 1.7, maxWidth: 420, marginBottom: 32 }}>{t('jardineria.benefits.subheading')}</p>
               <img src={GARDEN_IMAGES[currentLang]} alt="Professional de jardineria en acció" style={{ width: '100%', borderRadius: 14, objectFit: 'cover', height: 340 }} />
             </div>
 
@@ -348,7 +348,7 @@ export default function Jardineria() {
                   </span>
                   <div>
                     <h3 style={{ fontSize: 17, fontWeight: 600, color: '#1A1714', marginBottom: 6, letterSpacing: '-0.01em' }}>{r.title}</h3>
-                    <p style={{ fontSize: 15, color: '#7A6F65', lineHeight: 1.65 }}>{r.desc}</p>
+                    <p style={{ fontSize: 15, color: '#5C5348', lineHeight: 1.65 }}>{r.desc}</p>
                   </div>
                 </div>
               ))}
@@ -396,7 +396,7 @@ export default function Jardineria() {
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {s.tasks.map((task) => (
-                    <li key={task} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14, color: isActive ? 'rgba(255,255,255,0.85)' : '#7A6F65', lineHeight: 1.4 }}>
+                    <li key={task} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14, color: isActive ? 'rgba(255,255,255,0.85)' : '#5C5348', lineHeight: 1.4 }}>
                       <span style={{ color: isActive ? '#A5D6A7' : gardenAccent, marginTop: 1, flexShrink: 0 }}>—</span>
                       {task}
                     </li>
@@ -436,7 +436,7 @@ export default function Jardineria() {
                   </div>
                   <div>
                     <div style={{ fontSize: 13, fontWeight: 600, color: '#1A1714' }}>{item.name}</div>
-                    <div style={{ fontSize: 12, color: '#7A6F65' }}>{item.location}</div>
+                    <div style={{ fontSize: 12, color: '#5C5348' }}>{item.location}</div>
                   </div>
                 </div>
               </div>
@@ -459,7 +459,7 @@ export default function Jardineria() {
             {t('jardineria.cta.text')}
           </h2>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
-            <a href={waFooter} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 24px', borderRadius: 40, backgroundColor: '#25D366', color: '#FFFFFF', textDecoration: 'none', fontWeight: 600, boxShadow: '0 10px 24px rgba(37, 211, 102, 0.25)' }}>
+            <a href={waFooter} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 24px', borderRadius: 40, backgroundColor: '#25D366', color: '#FFFFFF', textDecoration: 'none', fontWeight: 600, boxShadow: '0 10px 24px rgba(37, 211, 102, 0.25)' }}>
               {t('jardineria.cta.button')}
             </a>
             <Link to={`/${currentLang}/#contacte`} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 24px', borderRadius: 40, border: '1px solid #D9D9D9', backgroundColor: '#FFFFFF', color: '#1A1714', textDecoration: 'none', fontWeight: 600 }}>
@@ -478,51 +478,51 @@ export default function Jardineria() {
                 <img src="/logo-lizana.webp" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }} />
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 14, color: '#1A1714', lineHeight: 1.1 }}>Manteniments Lizana</div>
-                  <div style={{ fontSize: 11, color: '#7A6F65', letterSpacing: '0.08em' }}>{t('footer.tagline')}</div>
+                  <div style={{ fontSize: 11, color: '#5C5348', letterSpacing: '0.08em' }}>{t('footer.tagline')}</div>
                 </div>
               </div>
-              <p style={{ fontSize: 13, color: '#7A6F65', lineHeight: 1.7, maxWidth: 280 }}>{t('footer.description')}</p>
+              <p style={{ fontSize: 13, color: '#5C5348', lineHeight: 1.7, maxWidth: 280 }}>{t('footer.description')}</p>
               <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
-                <a href="https://www.facebook.com/p/Manteniments-Lizana-61590819927805/" target="_blank" rel="noopener noreferrer" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1877F2', fontSize: 14, textDecoration: 'none' }}>
+                <a href="https://www.facebook.com/p/Manteniments-Lizana-61590819927805/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1877F2', fontSize: 14, textDecoration: 'none' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
                 </a>
-                <a href={waFooter} target="_blank" rel="noopener noreferrer" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366', fontSize: 14, textDecoration: 'none' }}>
+                <a href={waFooter} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366', fontSize: 14, textDecoration: 'none' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
                 </a>
               </div>
             </div>
 
             <div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.serveis_title')}</div>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.serveis_title')}</div>
               {[t('serveis.items.0.title'), t('serveis.items.1.title'), t('serveis.items.2.title'), t('serveis.items.3.title')].map((service) => (
-                <Link key={service} to={`/${currentLang}`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{service}</Link>
+                <Link key={service} to={`/${currentLang}`} style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{service}</Link>
               ))}
             </div>
 
             <div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.empresa_title')}</div>
-              <Link to={`/${currentLang}`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('footer.inici')}</Link>
-              <Link to={`/${currentLang}/#sobre`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('nav.sobre')}</Link>
-              <Link to={`/${currentLang}/#contacte`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('nav.contacte')}</Link>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.empresa_title')}</div>
+              <Link to={`/${currentLang}`} style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('footer.inici')}</Link>
+              <Link to={`/${currentLang}/#sobre`} style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('nav.sobre')}</Link>
+              <Link to={`/${currentLang}/#contacte`} style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('nav.contacte')}</Link>
             </div>
 
             <div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.contacte_title')}</div>
-              <div style={{ fontSize: 13, color: '#7A6F65', lineHeight: 1.8 }}>
-                <div>💬 <a href={waFooter} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontWeight: 500 }}>677 218 303</a></div>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.contacte_title')}</div>
+              <div style={{ fontSize: 13, color: '#5C5348', lineHeight: 1.8 }}>
+                <div>💬 <a href={waFooter} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ color: '#25D366', textDecoration: 'none', fontWeight: 500 }}>677 218 303</a></div>
                 <div>✉️ <a href="mailto:mantenimentlizana@gmail.com" style={{ color: lizanaBlue, textDecoration: 'none', fontWeight: 500 }}>mantenimentlizana@gmail.com</a></div>
                 <div style={{ marginTop: 8 }}>{t('footer.zona')}</div>
-                <div style={{ fontSize: 12, color: '#9A8F86', marginTop: 4 }}>{t('footer.horari')}</div>
+                <div style={{ fontSize: 12, color: '#6B6258', marginTop: 4 }}>{t('footer.horari')}</div>
               </div>
             </div>
           </div>
 
           <div style={{ borderTop: '1px solid #E5E5E5', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-            <a href="https://www.sprintops.es" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: '#9A8F86', textDecoration: 'none' }}>{t('footer.legal')}</a>
+            <a href="https://www.sprintops.es" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.legal')}</a>
             <div style={{ display: 'flex', gap: 24 }}>
-              <a href="#" style={{ fontSize: 12, color: '#9A8F86', textDecoration: 'none' }}>{t('footer.avis_legal')}</a>
-              <a href="#" style={{ fontSize: 12, color: '#9A8F86', textDecoration: 'none' }}>{t('footer.politica_privacitat')}</a>
-              <a href="#" style={{ fontSize: 12, color: '#9A8F86', textDecoration: 'none' }}>{t('footer.cookies')}</a>
+              <a href="#" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.avis_legal')}</a>
+              <a href="#" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.politica_privacitat')}</a>
+              <a href="#" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.cookies')}</a>
             </div>
           </div>
         </div>

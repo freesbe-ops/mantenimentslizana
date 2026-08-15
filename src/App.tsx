@@ -218,7 +218,7 @@ export default function App() {
               <img src="/logo-lizana.webp" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 34, height: 34, borderRadius: '50%', objectFit: 'cover' }} />
               <div className="logo-text">
                 <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 15, color: '#1A1714', lineHeight: 1.1 }}>Manteniments</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 12, color: '#7A6F65', letterSpacing: '0.08em' }}>LIZANA</div>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 12, color: '#5C5348', letterSpacing: '0.08em' }}>LIZANA</div>
               </div>
             </div>
           </a>
@@ -226,16 +226,16 @@ export default function App() {
           {/* Desktop Nav - Icons with labels */}
           <nav style={{ display: 'flex', gap: 4, alignItems: 'center' }} className="hidden-mobile">
             {navLinks.map(l => l.href.startsWith('/') ? (
-              <Link key={l.label} to={l.href} title={l.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 10px', borderRadius: 40, color: '#7A6F65', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
+              <Link key={l.label} to={l.href} title={l.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 10px', borderRadius: 40, color: '#5C5348', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
                 onMouseEnter={e => { e.currentTarget.style.color = '#1A1714'; e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.04)'; }}
-                onMouseLeave={e => { e.currentTarget.style.color = '#7A6F65'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
+                onMouseLeave={e => { e.currentTarget.style.color = '#5C5348'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
                 {l.icon}
                 <span style={{ fontSize: 9, fontWeight: 500, letterSpacing: '0.02em', whiteSpace: 'nowrap' }}>{l.label}</span>
               </Link>
             ) : (
-              <a key={l.label} href={l.href} title={l.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 10px', borderRadius: 40, color: '#7A6F65', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
+              <a key={l.label} href={l.href} title={l.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 10px', borderRadius: 40, color: '#5C5348', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
                 onMouseEnter={e => { e.currentTarget.style.color = '#1A1714'; e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.04)'; }}
-                onMouseLeave={e => { e.currentTarget.style.color = '#7A6F65'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
+                onMouseLeave={e => { e.currentTarget.style.color = '#5C5348'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
                 {l.icon}
                 <span style={{ fontSize: 9, fontWeight: 500, letterSpacing: '0.02em', whiteSpace: 'nowrap' }}>{l.label}</span>
               </a>
@@ -346,7 +346,7 @@ export default function App() {
 
         {/* Floating badge */}
         <div style={{ position: 'absolute', bottom: 40, right: 40, zIndex: 1, backgroundColor: 'rgba(255,255,255,0.95)', border: '1px solid rgba(255,255,255,0.8)', borderRadius: 12, padding: '14px 18px', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }} className="hero-badge">
-          <div style={{ fontSize: 11, color: '#7A6F65', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>{t('hero.badge_title')}</div>
+          <div style={{ fontSize: 11, color: '#5C5348', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>{t('hero.badge_title')}</div>
           <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: '#1A1714' }}>{t('hero.badge_sub')}</div>
         </div>
       </section>
@@ -363,10 +363,10 @@ export default function App() {
       {/* SERVICES */}
       <section id="serveis" style={{ maxWidth: 1200, margin: '0 auto', padding: '100px 24px' }}>
         <div style={{ marginBottom: 64 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('serveis.title')}</div>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('serveis.title')}</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'end' }} className="section-header-grid">
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', margin: 0 }} dangerouslySetInnerHTML={{ __html: t('serveis.heading') }} />
-            <p style={{ fontSize: 16, color: '#7A6F65', lineHeight: 1.65, margin: 0 }}>
+            <p style={{ fontSize: 16, color: '#5C5348', lineHeight: 1.65, margin: 0 }}>
               {t('serveis.subheading')}
             </p>
           </div>
@@ -407,7 +407,7 @@ export default function App() {
                       {SERVICE_ICONS[i]}
                       <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, margin: 0, color: '#1A1714' }}>{s.title}</h3>
                     </div>
-                    <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', padding: '4px 10px', backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: 40, color: '#7A6F65', whiteSpace: 'nowrap' }}>{s.tag}</span>
+                    <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', padding: '4px 10px', backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: 40, color: '#5C5348', whiteSpace: 'nowrap' }}>{s.tag}</span>
                   </div>
                   <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5148', margin: 0, flex: 1 }}>{s.description}</p>
                 </div>
@@ -436,10 +436,10 @@ export default function App() {
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ marginBottom: 60, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'end' }} className="section-header-grid">
             <div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('forwhom.title')}</div>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('forwhom.title')}</div>
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', margin: 0 }} dangerouslySetInnerHTML={{ __html: t('forwhom.heading') }} />
             </div>
-            <p style={{ fontSize: 16, color: '#7A6F65', lineHeight: 1.65, margin: 0 }}>
+            <p style={{ fontSize: 16, color: '#5C5348', lineHeight: 1.65, margin: 0 }}>
               {t('forwhom.subheading')}
             </p>
           </div>
@@ -451,7 +451,7 @@ export default function App() {
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = '#E5E5E5'; (e.currentTarget as HTMLElement).style.backgroundColor = '#FFFFFF'; }}>
                 <div style={{ color: '#00326B', marginBottom: 18 }}>{FOR_WHOM_ICONS[i]}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 700, color: '#1A1714', marginBottom: 10, lineHeight: 1.2 }}>{f.title}</h3>
-                <p style={{ fontSize: 13, color: '#7A6F65', lineHeight: 1.65, margin: 0 }}>{f.desc}</p>
+                <p style={{ fontSize: 13, color: '#5C5348', lineHeight: 1.65, margin: 0 }}>{f.desc}</p>
               </div>
             ))}
           </div>
@@ -481,7 +481,7 @@ export default function App() {
         </div>
 
         <div>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('sobre.title')}</div>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('sobre.title')}</div>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, lineHeight: 1.2, color: '#1A1714', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: t('sobre.heading') }} />
           <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5148', marginBottom: 20 }}>
             {t('sobre.p1')}
@@ -494,7 +494,7 @@ export default function App() {
             {sobreStats.map(s => (
               <div key={s.label}>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, fontWeight: 700, color: '#00326B' }}>{s.num}</div>
-                <div style={{ fontSize: 12, color: '#7A6F65', marginTop: 2 }}>{s.label}</div>
+                <div style={{ fontSize: 12, color: '#5C5348', marginTop: 2 }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -519,7 +519,7 @@ export default function App() {
       <section style={{ backgroundColor: '#F5F5F5', padding: '100px 24px', borderTop: '1px solid #E5E5E5' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 64 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 16 }}>{t('whyus.title')}</div>
+            <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 16 }}>{t('whyus.title')}</div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 4vw, 48px)', fontWeight: 700, color: '#1A1714', lineHeight: 1.2, margin: '0 auto', maxWidth: 540 }} dangerouslySetInnerHTML={{ __html: t('whyus.heading') }} />
           </div>
 
@@ -530,7 +530,7 @@ export default function App() {
                   {WHY_US_ICONS[i]}
                 </div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 700, color: '#1A1714', marginBottom: 10, lineHeight: 1.2 }}>{w.title}</h3>
-                <p style={{ fontSize: 14, color: '#7A6F65', lineHeight: 1.7, margin: 0 }}>{w.desc}</p>
+                <p style={{ fontSize: 14, color: '#5C5348', lineHeight: 1.7, margin: 0 }}>{w.desc}</p>
               </div>
             ))}
           </div>
@@ -546,7 +546,7 @@ export default function App() {
       {/* TESTIMONIALS */}
       <section style={{ maxWidth: 1200, margin: '0 auto', padding: '100px 24px' }}>
         <div style={{ marginBottom: 60 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 16 }}>{t('testimonis.title')}</div>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 16 }}>{t('testimonis.title')}</div>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 4vw, 48px)', fontWeight: 700, color: '#1A1714', lineHeight: 1.2, maxWidth: 540 }} dangerouslySetInnerHTML={{ __html: t('testimonis.heading') }} />
         </div>
 
@@ -565,7 +565,7 @@ export default function App() {
                 </div>
                 <div>
                   <div style={{ fontSize: 13, fontWeight: 600, color: '#1A1714' }}>{tItem.name}</div>
-                  <div style={{ fontSize: 12, color: '#7A6F65' }}>{tItem.location}</div>
+                  <div style={{ fontSize: 12, color: '#5C5348' }}>{tItem.location}</div>
                 </div>
               </div>
             </div>
@@ -586,9 +586,9 @@ export default function App() {
 
             {/* Left */}
             <div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('contacte.title')}</div>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('contacte.title')}</div>
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, lineHeight: 1.2, color: '#1A1714', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: t('contacte.heading') }} />
-              <p style={{ fontSize: 15, color: '#7A6F65', lineHeight: 1.7, marginBottom: 48 }}>
+              <p style={{ fontSize: 15, color: '#5C5348', lineHeight: 1.7, marginBottom: 48 }}>
                 {t('contacte.description')}
               </p>
 
@@ -600,15 +600,15 @@ export default function App() {
                   <a key={c.label} href={c.href} style={{ textDecoration: 'none', display: 'flex', gap: 16, alignItems: 'flex-start' }} onClick={() => { if (c.label === 'WhatsApp') { console.log('Clic a WhatsApp contacte'); (window as any).gtag('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': 'contacte' }) } }}>
                     <div style={{ width: 40, height: 40, borderRadius: 10, backgroundColor: '#E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>{c.icon}</div>
                     <div>
-                      <div style={{ fontSize: 11, color: '#7A6F65', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>{c.label}</div>
+                      <div style={{ fontSize: 11, color: '#5C5348', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>{c.label}</div>
                       <div style={{ fontSize: 15, fontWeight: 600, color: '#1A1714', marginBottom: 2 }}>{c.val}</div>
-                      <div style={{ fontSize: 12, color: '#7A6F65' }}>{c.sub}</div>
+                      <div style={{ fontSize: 12, color: '#5C5348' }}>{c.sub}</div>
                     </div>
                   </a>
                 ))}
 
                 <div style={{ marginTop: 8 }}>
-                  <div style={{ fontSize: 11, color: '#7A6F65', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>{t('contacte.cobertura')}</div>
+                  <div style={{ fontSize: 11, color: '#5C5348', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>{t('contacte.cobertura')}</div>
                   <div style={{ fontSize: 14, color: '#5A5148', lineHeight: 1.6 }}>{t('contacte.cobertura_text')}</div>
                 </div>
               </div>
@@ -620,7 +620,7 @@ export default function App() {
                 <div style={{ textAlign: 'center', padding: '40px 0' }}>
                   <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
                   <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, fontWeight: 700, color: '#1A1714', marginBottom: 12 }}>{t('contacte.form_sent_title')}</h3>
-                  <p style={{ fontSize: 15, color: '#7A6F65' }}>{t('contacte.form_sent_text')}</p>
+                  <p style={{ fontSize: 15, color: '#5C5348' }}>{t('contacte.form_sent_text')}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
@@ -628,14 +628,14 @@ export default function App() {
 
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
                     <div>
-                      <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_nom')}</label>
+                      <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_nom')}</label>
                       <input value={formData.nom} onChange={e => setFormData({ ...formData, nom: e.target.value })} placeholder={t('contacte.form_nom_placeholder')} required
                         style={{ width: '100%', padding: '11px 14px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14, backgroundColor: '#fff', color: '#1A1714', outline: 'none', fontFamily: 'inherit' }}
                         onFocus={e => (e.currentTarget.style.borderColor = '#00326B')}
                         onBlur={e => (e.currentTarget.style.borderColor = '#E5E5E5')} />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_telefon')}</label>
+                      <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_telefon')}</label>
                       <input value={formData.telefon} onChange={e => setFormData({ ...formData, telefon: e.target.value })} placeholder={t('contacte.form_telefon_placeholder')} type="tel"
                         style={{ width: '100%', padding: '11px 14px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14, backgroundColor: '#fff', color: '#1A1714', outline: 'none', fontFamily: 'inherit' }}
                         onFocus={e => (e.currentTarget.style.borderColor = '#00326B')}
@@ -644,7 +644,7 @@ export default function App() {
                   </div>
 
                   <div style={{ marginBottom: 16 }}>
-                    <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_email')}</label>
+                    <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_email')}</label>
                     <input value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} placeholder={t('contacte.form_email_placeholder')} type="email" required
                       style={{ width: '100%', padding: '11px 14px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14, backgroundColor: '#fff', color: '#1A1714', outline: 'none', fontFamily: 'inherit' }}
                       onFocus={e => (e.currentTarget.style.borderColor = '#00326B')}
@@ -652,7 +652,7 @@ export default function App() {
                   </div>
 
                   <div style={{ marginBottom: 16 }}>
-                    <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_poblacio')}</label>
+                    <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_poblacio')}</label>
                     <input value={formData.poblacio} onChange={e => setFormData({ ...formData, poblacio: e.target.value })} placeholder={t('contacte.form_poblacio_placeholder')}
                       style={{ width: '100%', padding: '11px 14px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14, backgroundColor: '#fff', color: '#1A1714', outline: 'none', fontFamily: 'inherit' }}
                       onFocus={e => (e.currentTarget.style.borderColor = '#00326B')}
@@ -660,9 +660,9 @@ export default function App() {
                   </div>
 
                   <div style={{ marginBottom: 16 }}>
-                    <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_servei')}</label>
-                    <select value={formData.servei} onChange={e => setFormData({ ...formData, servei: e.target.value })}
-                      style={{ width: '100%', padding: '11px 14px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14, backgroundColor: '#fff', color: formData.servei ? '#1A1714' : '#9A8F86', outline: 'none', fontFamily: 'inherit', appearance: 'none' }}
+                    <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_servei')}</label>
+                    <select value={formData.servei} onChange={e => setFormData({ ...formData, servei: e.target.value })} aria-label={t('contacte.form_servei')}
+                      style={{ width: '100%', padding: '11px 14px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14, backgroundColor: '#fff', color: formData.servei ? '#1A1714' : '#6B6258', outline: 'none', fontFamily: 'inherit', appearance: 'none' }}
                       onFocus={e => (e.currentTarget.style.borderColor = '#00326B')}
                       onBlur={e => (e.currentTarget.style.borderColor = '#E5E5E5')}>
                       <option value="">{t('contacte.form_servei_placeholder')}</option>
@@ -675,7 +675,7 @@ export default function App() {
                   </div>
 
                   <div style={{ marginBottom: 24 }}>
-                    <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_missatge')}</label>
+                    <label style={{ display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 6 }}>{t('contacte.form_missatge')}</label>
                     <textarea value={formData.missatge} onChange={e => setFormData({ ...formData, missatge: e.target.value })} rows={4}
                       placeholder={t('contacte.form_missatge_placeholder')}
                       style={{ width: '100%', padding: '11px 14px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14, backgroundColor: '#fff', color: '#1A1714', outline: 'none', fontFamily: 'inherit', resize: 'vertical' }}
@@ -688,7 +688,7 @@ export default function App() {
                     onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#00326B')}>
                     {t('contacte.form_submit')}
                   </button>
-                  <p style={{ fontSize: 12, color: '#9A8F86', textAlign: 'center', marginTop: 12, lineHeight: 1.5 }}>
+                  <p style={{ fontSize: 12, color: '#6B6258', textAlign: 'center', marginTop: 12, lineHeight: 1.5 }}>
                     {t('contacte.form_response')}
                   </p>
                 </form>
@@ -712,64 +712,64 @@ export default function App() {
                 <img src="/logo-lizana.webp" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }} />
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 14, color: '#1A1714', lineHeight: 1.1 }}>Manteniments Lizana</div>
-                  <div style={{ fontSize: 11, color: '#7A6F65', letterSpacing: '0.08em' }}>{t('footer.tagline')}</div>
+                  <div style={{ fontSize: 11, color: '#5C5348', letterSpacing: '0.08em' }}>{t('footer.tagline')}</div>
                 </div>
               </div>
-              <p style={{ fontSize: 13, color: '#7A6F65', lineHeight: 1.7, maxWidth: 280 }}>
+              <p style={{ fontSize: 13, color: '#5C5348', lineHeight: 1.7, maxWidth: 280 }}>
                 {t('footer.description')}
               </p>
               <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
-                <a href="https://www.facebook.com/p/Manteniments-Lizana-61590819927805/" target="_blank" rel="noopener noreferrer" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1877F2', fontSize: 14, textDecoration: 'none' }}>
+                <a href="https://www.facebook.com/p/Manteniments-Lizana-61590819927805/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1877F2', fontSize: 14, textDecoration: 'none' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href={waFooter} target="_blank" rel="noopener noreferrer" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366', fontSize: 14, textDecoration: 'none' }} onClick={() => { console.log('Clic a WhatsApp footer'); (window as any).gtag('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': 'footer' }) }}>
+                <a href={waFooter} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366', fontSize: 14, textDecoration: 'none' }} onClick={() => { console.log('Clic a WhatsApp footer'); (window as any).gtag('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': 'footer' }) }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 </a>
               </div>
             </div>
 
             <div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.serveis_title')}</div>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.serveis_title')}</div>
               {[t('serveis.items.0.title'), t('serveis.items.1.title'), t('serveis.items.2.title'), t('serveis.items.3.title')].map(s => (
-                <a key={s} href="#serveis" style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
+                <a key={s} href="#serveis" style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.currentTarget.style.color = '#00326B')}
-                  onMouseLeave={e => (e.currentTarget.style.color = '#7A6F65')}>{s}</a>
+                  onMouseLeave={e => (e.currentTarget.style.color = '#5C5348')}>{s}</a>
               ))}
             </div>
 
             <div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.empresa_title')}</div>
-              <a href="#inici" style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.empresa_title')}</div>
+              <a href="#inici" style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#00326B')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#7A6F65')}>{t('footer.inici')}</a>
-              <a href="#sobre" style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
+                onMouseLeave={e => (e.currentTarget.style.color = '#5C5348')}>{t('footer.inici')}</a>
+              <a href="#sobre" style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#00326B')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#7A6F65')}>{t('nav.sobre')}</a>
-              <a href="#sobre" style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
+                onMouseLeave={e => (e.currentTarget.style.color = '#5C5348')}>{t('nav.sobre')}</a>
+              <a href="#sobre" style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#00326B')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#7A6F65')}>{t('footer.testimonis')}</a>
-              <a href="#contacte" style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
+                onMouseLeave={e => (e.currentTarget.style.color = '#5C5348')}>{t('footer.testimonis')}</a>
+              <a href="#contacte" style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#00326B')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#7A6F65')}>{t('nav.contacte')}</a>
+                onMouseLeave={e => (e.currentTarget.style.color = '#5C5348')}>{t('nav.contacte')}</a>
             </div>
 
             <div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.contacte_title')}</div>
-              <div style={{ fontSize: 13, color: '#7A6F65', lineHeight: 1.8 }}>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.contacte_title')}</div>
+              <div style={{ fontSize: 13, color: '#5C5348', lineHeight: 1.8 }}>
                 <div>💬 <a href={waFooter} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontWeight: 500 }} onClick={() => { console.log('Clic a WhatsApp footer'); (window as any).gtag('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': 'footer' }) }}>677 218 303</a></div>
                 <div>✉️ <a href="mailto:mantenimentlizana@gmail.com" style={{ color: '#00326B', textDecoration: 'none', fontWeight: 500 }}>mantenimentlizana@gmail.com</a></div>
                 <div style={{ marginTop: 8 }}>{t('footer.zona')}</div>
-                <div style={{ fontSize: 12, color: '#9A8F86', marginTop: 4 }}>{t('footer.horari')}</div>
+                <div style={{ fontSize: 12, color: '#6B6258', marginTop: 4 }}>{t('footer.horari')}</div>
               </div>
             </div>
           </div>
 
           <div style={{ borderTop: '1px solid #E5E5E5', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-            <a href="https://www.sprintops.es" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: '#9A8F86', textDecoration: 'none' }}>{t('footer.legal')}</a>
+            <a href="https://www.sprintops.es" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.legal')}</a>
             <div style={{ display: 'flex', gap: 24 }}>
-              <a href="#" style={{ fontSize: 12, color: '#9A8F86', textDecoration: 'none' }}>{t('footer.avis_legal')}</a>
-              <a href="#" style={{ fontSize: 12, color: '#9A8F86', textDecoration: 'none' }}>{t('footer.politica_privacitat')}</a>
-              <a href="#" style={{ fontSize: 12, color: '#9A8F86', textDecoration: 'none' }}>{t('footer.cookies')}</a>
+              <a href="#" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.avis_legal')}</a>
+              <a href="#" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.politica_privacitat')}</a>
+              <a href="#" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.cookies')}</a>
             </div>
           </div>
         </div>
