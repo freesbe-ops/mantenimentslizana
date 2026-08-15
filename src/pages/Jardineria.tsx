@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 const HERO_IMAGES: Record<string, string> = {
-  ca: 'https://images.unsplash.com/photo-1783159144730-abbde99fe3ee?w=1600&h=1000&fit=crop&auto=format',
-  es: 'https://images.unsplash.com/photo-1783159144730-abbde99fe3ee?w=1600&h=1000&fit=crop&auto=format',
-  en: 'https://images.unsplash.com/photo-1783159144730-abbde99fe3ee?w=1600&h=1000&fit=crop&auto=format',
+  ca: '/garden.jpg',
+  es: '/garden.jpg',
+  en: '/garden.jpg',
 }
 
 const BREAK_IMAGES: Record<string, string> = {
