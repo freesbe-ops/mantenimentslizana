@@ -414,8 +414,8 @@
       "subheading": "Adaptamos nuestros servicios a tus necesidades. Desde pequeñas instalaciones hasta proyectos completos.",
       "items": [
         { "title": "Hogar particular", "desc": "Instalaciones y montajes para pisos, casas y chalets. Personalizamos cada proyecto según tus necesidades.", "img": "https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=600&h=400&fit=crop&auto=format" },
-        { "title": "Comunidades de vecinos", "desc": "Instalaciones eléctricas en zonas comunes, iluminación de escaleras, garajes y sistemas de seguridad.", "img": "https://images.unsplash.com/photo-1682888813913-e13f18692019?w=600&h=400&fit=crop&auto=format" },
-        { "title": "Locales comerciales", "desc": "Iluminación de tiendas, restaurantes, oficinas e instalaciones eléctricas para negocios.", "img": "https://images.unsplash.com/photo-1721245321889-5e3dfdf7929b?w=600&h=400&fit=crop&auto=format" }
+        { "title": "Comunidades de vecinos", "desc": "Instalaciones eléctricas en zonas comunes, iluminación de escaleras, garajes y sistemas de seguridad.", "img": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop&auto=format" },
+        { "title": "Locales comerciales", "desc": "Iluminación de tiendas, restaurantes, oficinas e instalaciones eléctricas para negocios.", "img": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&auto=format" }
       ]
     },
     "why": {
