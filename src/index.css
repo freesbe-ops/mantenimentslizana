@@ -84,15 +84,3 @@ body {
   }
 }
 
-/* Badge "Resposta garantida / En menys de 2h" — text llegible i ben proporcionat */
-.hero-badge {
-  transform: none;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
-}
-.hero-badge > div:first-child {
-  margin-bottom: 2px !important;
-  letter-spacing: 0.08em !important;
-}
-.hero-badge > div:last-child {
-  line-height: 1.15 !important;
-}
