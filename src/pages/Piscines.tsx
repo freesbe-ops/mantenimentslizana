@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -63,137 +63,96 @@ function CarouselBar({ items }: { items: string[] }) {
 
 function BeforeAfterSection() {
   const { t } = useTranslation()
-  const sliderRef = useRef<HTMLDivElement>(null)
-  const [slideActiu, setSlideActiu] = useState(0)
+  const [pos, setPos] = useState(50)
+  const dragging = useRef(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  const imatges = [
-    { src: '/antes.webp', alt: t('piscines.abans_despres.alt_abans'), label: t('piscines.abans_despres.abans') },
-    { src: '/despues.webp', alt: t('piscines.abans_despres.alt_despres'), label: t('piscines.abans_despres.despres') },
-  ]
+  const abans = '/antes.webp'
+  const despres = '/despues.webp'
+  const abansLabel = t('piscines.abans_despres.abans')
+  const despresLabel = t('piscines.abans_despres.despres')
 
-  const scrollToSlide = (index: number) => {
-    sliderRef.current?.scrollTo({ left: index * sliderRef.current.clientWidth, behavior: 'smooth' })
-    setSlideActiu(index)
+  const updatePos = useCallback((clientX: number) => {
+    if (!containerRef.current) return
+    const rect = containerRef.current.getBoundingClientRect()
+    const pct = Math.min(Math.max(((clientX - rect.left) / rect.width) * 100, 2), 98)
+    setPos(pct)
+  }, [])
+
+  const onMouseDown = () => { dragging.current = true }
+  const onMouseUp = () => { dragging.current = false }
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (dragging.current) updatePos(e.clientX)
   }
-
-  const handleScroll = () => {
-    const el = sliderRef.current
-    if (el) {
-      const index = Math.round(el.scrollLeft / el.clientWidth)
-      setSlideActiu(index)
-    }
+  const onTouchMove = (e: React.TouchEvent) => {
+    updatePos(e.touches[0].clientX)
   }
 
   return (
-    <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0 0' }}>
-      {/* Capçalera de secció - mateixa estructura que "El Nostre Servei" */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', marginBottom: 40 }}>
-        <div style={{ marginBottom: 32 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('piscines.abans_despres.title')}</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'end' }} className="section-header-grid">
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', margin: 0 }} dangerouslySetInnerHTML={{ __html: t('piscines.abans_despres.heading') }} />
-            <p style={{ fontSize: 16, color: '#7A6F65', lineHeight: 1.65, margin: 0 }}>
-              {t('piscines.abans_despres.subheading')}
-            </p>
+    <section style={{ padding: '96px 24px', background: '#1A1714' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#60D394', textTransform: 'uppercase', marginBottom: 16 }}>{t('piscines.abans_despres.title')}</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.15 }} dangerouslySetInnerHTML={{ __html: t('piscines.abans_despres.heading') }} />
+        </div>
+
+        {/* Slider drag */}
+        <div
+          ref={containerRef}
+          style={{
+            position: 'relative',
+            borderRadius: 16,
+            overflow: 'hidden',
+            height: 'clamp(280px, 50vw, 560px)',
+            cursor: 'col-resize',
+            userSelect: 'none',
+            touchAction: 'pan-y',
+          }}
+          onMouseDown={onMouseDown}
+          onMouseUp={onMouseUp}
+          onMouseMove={onMouseMove}
+          onTouchMove={onTouchMove}
+        >
+          {/* Després (full) */}
+          <img src={despres} alt={despresLabel} draggable={false} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+
+          {/* Abans (clipped) */}
+          <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', width: `${pos}%` }}>
+            <img src={abans} alt={abansLabel} draggable={false} style={{ position: 'absolute', inset: 0, height: '100%', width: '100%', objectFit: 'cover' }} />
+            <div style={{ position: 'absolute', top: 16, left: 16, borderRadius: 40, padding: '4px 12px', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#1A1714', color: '#FFFFFF' }}>{abansLabel}</div>
+          </div>
+
+          {/* Després label */}
+          <div style={{ position: 'absolute', top: 16, right: 16, borderRadius: 40, padding: '4px 12px', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#00326B', color: '#FFFFFF' }}>{despresLabel}</div>
+
+          {/* Divider */}
+          <div style={{ position: 'absolute', top: 0, bottom: 0, left: `${pos}%`, transform: 'translateX(-50%)', width: 2, background: '#FFFFFF', pointerEvents: 'none' }} />
+
+          {/* Handle */}
+          <div style={{
+            position: 'absolute',
+            top: '50%',
+            left: `${pos}%`,
+            transform: 'translate(-50%, -50%)',
+            width: 44,
+            height: 44,
+            borderRadius: '50%',
+            background: '#FFFFFF',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.25)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'col-resize',
+          }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00326B" strokeWidth="2.5">
+              <path d="M8 4l-4 8 4 8M16 4l4 8-4 8" />
+            </svg>
           </div>
         </div>
+
+        <p style={{ textAlign: 'center', marginTop: 12, fontSize: 13, color: 'rgba(255,255,255,0.4)' }}>{t('piscines.abans_despres.hint')}</p>
       </div>
-
-      {/* Scroll horitzontal suau - 2 slides */}
-      <div style={{ position: 'relative', width: '100%' }}>
-        <div
-          ref={sliderRef}
-          onScroll={handleScroll}
-          className="before-after-slider"
-          style={{
-            display: 'flex',
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            WebkitOverflowScrolling: 'touch',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-          }}
-        >
-          {imatges.map((img, i) => (
-            <div
-              key={i}
-              className="before-after-slide"
-              style={{
-                flex: '0 0 100%',
-                scrollSnapAlign: 'start',
-                position: 'relative',
-                aspectRatio: '16/9',
-                overflow: 'hidden',
-              }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading={i === 0 ? 'eager' : 'lazy'}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-              <div style={{ position: 'absolute', bottom: 60, left: '50%', transform: 'translateX(-50%)', color: '#FFFFFF', fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4.5vw, 56px)', fontWeight: 700, fontStyle: 'italic', lineHeight: 1.1, textShadow: '0 2px 8px rgba(0,0,0,0.3)', whiteSpace: 'nowrap' }}>
-                {img.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Fletxes - només desktop (a mobile es navega amb swipe) */}
-        <button
-          onClick={() => scrollToSlide(0)}
-          className="before-after-arrow hidden-mobile"
-          style={{ position: 'absolute', top: '50%', left: 24, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: 44, height: 44, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 22, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s', backdropFilter: 'blur(8px)' }}
-          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
-          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.85)')}
-          aria-label="Abans"
-        >
-          ←
-        </button>
-        <button
-          onClick={() => scrollToSlide(1)}
-          className="before-after-arrow hidden-mobile"
-          style={{ position: 'absolute', top: '50%', right: 24, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: 44, height: 44, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 22, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s', backdropFilter: 'blur(8px)' }}
-          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
-          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.85)')}
-          aria-label="Després"
-        >
-          →
-        </button>
-
-        {/* Indicadors (punts) */}
-        <div style={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 10 }}>
-          {imatges.map((img, i) => (
-            <button
-              key={img.src}
-              onClick={() => scrollToSlide(i)}
-              className="before-after-dot"
-              data-active={i === slideActiu}
-              aria-label={img.label}
-              style={{ width: 10, height: 10, borderRadius: '50%', border: 'none', backgroundColor: 'rgba(255,255,255,0.6)', cursor: 'pointer', transition: 'background 0.3s, width 0.3s', padding: 0 }}
-            />
-          ))}
-        </div>
-      </div>
-
-      <style>{`
-        /* Amaga la scrollbar del slider */
-        .before-after-slider::-webkit-scrollbar { display: none; }
-
-        /* Indicador actiu per defecte (Abans) */
-        .before-after-dot[data-active="true"] {
-          background-color: #FFFFFF;
-          width: 22px;
-          border-radius: 5px;
-        }
-
-        @media (max-width: 768px) {
-          /* Proporció vertical (més alta que ampla) a mòbil perquè les imatges es vegin bé */
-          .before-after-slide { aspect-ratio: 3/4 !important; }
-          /* Label ajustat en mòbil */
-          .before-after-slide > div { font-size: clamp(24px, 7vw, 34px) !important; bottom: 32px !important; }
-        }
-      `}</style>
     </section>
   )
 }

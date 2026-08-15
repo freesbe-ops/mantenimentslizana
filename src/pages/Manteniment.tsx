@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import MobileNav from '../components/MobileNav'
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1600&h=900&fit=crop&auto=format'
-const BEFORE_IMG = 'https://images.unsplash.com/photo-1692890659047-079b769ee3e6?w=1200&h=700&fit=crop&auto=format'
-const AFTER_IMG = 'https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1200&h=700&fit=crop&auto=format'
 
 function CarouselBar({ items, dark = false }: { items: string[]; dark?: boolean }) {
   const all = [...items, ...items, ...items]
@@ -30,103 +28,6 @@ function CarouselBar({ items, dark = false }: { items: string[]; dark?: boolean 
         }
       `}</style>
     </div>
-  )
-}
-
-function BeforeAfterSlider({ before, after, beforeLabel, afterLabel, hint, title, badge }: { before: string; after: string; beforeLabel: string; afterLabel: string; hint: string; title: string; badge: string }) {
-  const [pos, setPos] = useState(50)
-  const dragging = useRef(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  const updatePos = useCallback((clientX: number) => {
-    if (!containerRef.current) return
-    const rect = containerRef.current.getBoundingClientRect()
-    const pct = Math.min(Math.max(((clientX - rect.left) / rect.width) * 100, 2), 98)
-    setPos(pct)
-  }, [])
-
-  const onMouseDown = () => { dragging.current = true }
-  const onMouseUp = () => { dragging.current = false }
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (dragging.current) updatePos(e.clientX)
-  }
-  const onTouchMove = (e: React.TouchEvent) => {
-    updatePos(e.touches[0].clientX)
-  }
-
-  useEffect(() => {
-    const up = () => { dragging.current = false }
-    window.addEventListener('mouseup', up)
-    return () => window.removeEventListener('mouseup', up)
-  }, [])
-
-  return (
-    <section style={{ padding: '96px 24px', background: '#1A1714' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: 48 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#60D394', textTransform: 'uppercase', marginBottom: 16 }}>{badge}</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.15 }} dangerouslySetInnerHTML={{ __html: title }} />
-        </div>
-
-        {/* Slider */}
-        <div
-          ref={containerRef}
-          style={{
-            position: 'relative',
-            borderRadius: 16,
-            overflow: 'hidden',
-            height: 'clamp(280px, 50vw, 560px)',
-            cursor: 'col-resize',
-            userSelect: 'none',
-            touchAction: 'pan-y',
-          }}
-          onMouseDown={onMouseDown}
-          onMouseUp={onMouseUp}
-          onMouseMove={onMouseMove}
-          onTouchMove={onTouchMove}
-        >
-          {/* After (full) */}
-          <img src={after} alt={afterLabel} draggable={false} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-
-          {/* Before (clipped) */}
-          <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', width: `${pos}%` }}>
-            <img src={before} alt={beforeLabel} draggable={false} style={{ position: 'absolute', inset: 0, height: '100%', width: '100%', objectFit: 'cover' }} />
-            {/* Before label */}
-            <div style={{ position: 'absolute', top: 16, left: 16, borderRadius: 40, padding: '4px 12px', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#1A1714', color: '#FFFFFF' }}>{beforeLabel}</div>
-          </div>
-
-          {/* After label */}
-          <div style={{ position: 'absolute', top: 16, right: 16, borderRadius: 40, padding: '4px 12px', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#00326B', color: '#FFFFFF' }}>{afterLabel}</div>
-
-          {/* Divider */}
-          <div style={{ position: 'absolute', top: 0, bottom: 0, left: `${pos}%`, transform: 'translateX(-50%)', width: 2, background: '#FFFFFF', pointerEvents: 'none' }} />
-
-          {/* Handle */}
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: `${pos}%`,
-            transform: 'translate(-50%, -50%)',
-            width: 44,
-            height: 44,
-            borderRadius: '50%',
-            background: '#FFFFFF',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.25)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'col-resize',
-          }}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00326B" strokeWidth="2.5">
-              <path d="M8 4l-4 8 4 8M16 4l4 8-4 8" />
-            </svg>
-          </div>
-        </div>
-
-        <p style={{ textAlign: 'center', marginTop: 12, fontSize: 13, color: 'rgba(255,255,255,0.4)' }}>{hint}</p>
-      </div>
-    </section>
   )
 }
 
@@ -181,8 +82,7 @@ export default function Manteniment() {
   const lizanaDark = '#00245A'
   const muted = '#7A6F65'
 
-  const beforeLabel = t('manteniment.before_after.before')
-  const afterLabel = t('manteniment.before_after.after')
+  const beforeAfterPresent = false // Abans i Després s'ha mogut a Piscines
 
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", backgroundColor: '#F5F5F5', color: '#1A1714' }}>
@@ -370,16 +270,8 @@ export default function Manteniment() {
         @media (max-width: 560px) { .mant-services-grid { grid-template-columns: 1fr !important; } }
       `}</style>
 
-      {/* ABANS I DESPRÉS - slider interactiu */}
-      <BeforeAfterSlider
-        before={BEFORE_IMG}
-        after={AFTER_IMG}
-        beforeLabel={beforeLabel}
-        afterLabel={afterLabel}
-        hint={t('manteniment.before_after.hint')}
-        title={t('manteniment.before_after.heading')}
-        badge={t('manteniment.before_after.title')}
-      />
+      {/* ABANS I DESPRÉS - s'ha mogut a la pàgina de Piscines */}
+      {beforeAfterPresent && null}
 
       {/* PER QUÈ NOSALTRES */}
       <section id="sobre" style={{ padding: '96px 24px', background: '#FFFFFF', maxWidth: 1200, margin: '0 auto' }}>
