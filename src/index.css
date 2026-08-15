@@ -64,3 +64,21 @@ body {
     margin-top: 0 !important;
   }
 }
+
+/* Reduïm l'espai inicial: els continguts comencen més amunt */
+@media (min-width: 769px) {
+  section[id="inici"] {
+    min-height: 82vh !important;
+  }
+  section[id="inici"] > div > div {
+    padding-top: 40px !important;
+  }
+}
+@media (max-width: 768px) {
+  section[id="inici"] {
+    min-height: 72vh !important;
+  }
+  section[id="inici"] > div > div {
+    padding-top: 16px !important;
+  }
+}
