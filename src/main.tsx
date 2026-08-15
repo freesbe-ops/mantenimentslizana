@@ -6,6 +6,7 @@ import App from './App'
 import Piscines from './pages/Piscines'
 import Jardineria from './pages/Jardineria'
 import Manteniment from './pages/Manteniment'
+import Instalacions from './pages/Instalacions'
 import './i18n'
 import './index.css'
 
@@ -66,6 +67,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path="/:lang/serveis/piscines" element={<Piscines />} />
             <Route path="/:lang/serveis/jardineria" element={<Jardineria />} />
             <Route path="/:lang/serveis/manteniment" element={<Manteniment />} />
+            <Route path="/:lang/serveis/instalacions" element={<Instalacions />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

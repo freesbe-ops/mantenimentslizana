@@ -362,6 +362,90 @@
       "button": "Solicita presupuesto"
     }
   },
+  "instalacions": {
+    "meta_title": "Instalaciones en Girona | Mantenimientos Lizana",
+    "meta_description": "Instalaciones eléctricas, puntos de luz, iluminación y montaje de cocinas y muebles en Girona. Profesionales cualificados con garantía.",
+    "carousel": [
+      "INSTALACIONES SEGURAS",
+      "PROFESIONALES CUALIFICADOS",
+      "PRESUPUESTO SIN COMPROMISO",
+      "GARANTÍA EN LOS TRABAJOS",
+      "MONTAJE DE COCINAS",
+      "LUZ Y FUNCIONALIDAD"
+    ],
+    "hero": {
+      "badge": "Girona y Maresme · Expertos en instalaciones",
+      "title": "Luz y funcionalidad",
+      "subtitle": "para tu hogar.",
+      "description": "Instalaciones eléctricas, puntos de luz, iluminación interior y exterior, montaje de cocinas y muebles. Un equipo profesional que hace realidad tus proyectos.",
+      "cta": "Solicita presupuesto",
+      "secondary_cta": "Ver servicios",
+      "badge_title": "Respuesta garantizada",
+      "badge_sub": "En menos de 2h",
+      "image_alt": "Instalaciones eléctricas profesionales en Girona"
+    },
+    "services": {
+      "title": "NUESTROS SERVICIOS",
+      "heading": "Todo lo que necesitas<br /><em>para tu hogar.</em>",
+      "subheading": "Ofrecemos soluciones completas: desde instalaciones eléctricas hasta el montaje de cocinas y muebles. Un equipo a tu disposición.",
+      "items": [
+        { "icon": "💡", "title": "Instalaciones eléctricas", "desc": "Instalaciones eléctricas completas: cuadros de distribución, circuitos, tomas de tierra y todo tipo de trabajos eléctricos con garantías de seguridad." },
+        { "icon": "🔌", "title": "Puntos de luz e iluminación", "desc": "Instalamos puntos de luz, lámparas, iluminación interior y exterior, sistemas de encendido automático, reguladores y luces LED. Damos vida a tu hogar." },
+        { "icon": "🛠️", "title": "Montaje de cocinas", "desc": "Montamos e instalamos cocinas completas: muebles, encimeras, electrodomésticos, campanas extractoras y todo tipo de accesorios. Cocinas funcionales y bonitas." },
+        { "icon": "🔧", "title": "Montaje de muebles", "desc": "Montamos muebles, estanterías y bastidores. Dejamos tu hogar perfecto." }
+      ],
+      "link": "Más información"
+    },
+    "includes": {
+      "title": "QUÉ INCLUYE NUESTRA INSTALACIÓN",
+      "heading": "Servicio completo<br /><em>de principio a fin.</em>",
+      "subheading": "Nos encargamos de todo el proceso: desde la planificación hasta la instalación y la puesta en marcha. No te preocupes de nada.",
+      "pas": "Paso",
+      "items": [
+        { "icon": "📋", "title": "Planificación y asesoramiento", "desc": "Visitamos tu hogar, te asesoramos sobre las mejores soluciones y te ofrecemos un presupuesto detallado sin compromiso." },
+        { "icon": "🔌", "title": "Instalación de calidad", "desc": "Utilizamos materiales de primera calidad y técnicas profesionales para garantizar resultados duraderos y seguros." },
+        { "icon": "✅", "title": "Seguridad y certificación", "desc": "Todos nuestros trabajos cumplen la normativa vigente y llevan garantía. Instalaciones seguras y certificadas." },
+        { "icon": "🧹", "title": "Limpieza y lo dejamos listo", "desc": "Una vez finalizado el trabajo, dejamos el espacio limpio y listo para que puedas disfrutarlo de inmediato." }
+      ]
+    },
+    "projects": {
+      "title": "TIPOS DE PROYECTOS",
+      "heading": "Soluciones para<br /><em>cada espacio.</em>",
+      "subheading": "Adaptamos nuestros servicios a tus necesidades. Desde pequeñas instalaciones hasta proyectos completos.",
+      "items": [
+        { "icon": "🏠", "title": "Hogar particular", "desc": "Instalaciones y montajes para pisos, casas y chalets. Personalizamos cada proyecto según tus necesidades.", "img": "https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=600&h=400&fit=crop&auto=format" },
+        { "icon": "🏢", "title": "Comunidades de vecinos", "desc": "Instalaciones eléctricas en zonas comunes, iluminación de escaleras, garajes y sistemas de seguridad.", "img": "https://images.unsplash.com/photo-1682888813913-e13f18692019?w=600&h=400&fit=crop&auto=format" },
+        { "icon": "🏘️", "title": "Locales comerciales", "desc": "Iluminación de tiendas, restaurantes, oficinas e instalaciones eléctricas para negocios.", "img": "https://images.unsplash.com/photo-1721245321889-5e3dfdf7929b?w=600&h=400&fit=crop&auto=format" }
+      ]
+    },
+    "why": {
+      "title": "POR QUÉ NOSOTROS",
+      "heading": "Compromiso con<br /><em>cada instalación.</em>",
+      "subheading": "Profesionales con años de experiencia en instalaciones eléctricas y montaje de cocinas. Trabajamos con cuidado, garantía y seguridad.",
+      "cta": "Solicita presupuesto",
+      "items": [
+        { "title": "Profesionales cualificados", "desc": "Equipo con formación y experiencia en instalaciones eléctricas, montaje de cocinas y muebles. Trabajamos con garantía y seguridad." },
+        { "title": "Servicio rápido y puntual", "desc": "Respondemos en pocas horas y cumplimos los horarios acordados. Tu tiempo es nuestro tiempo." },
+        { "title": "Presupuesto sin compromiso", "desc": "Te explicamos el precio antes de empezar. Sin sorpresas ni costes ocultos." },
+        { "title": "Garantía en los trabajos", "desc": "Todos los trabajos llevan garantía. Si algo no funciona, volvemos a solucionarlo." }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIOS",
+      "heading": "Lo que dicen<br /><em>nuestros clientes.</em>",
+      "items": [
+        { "text": "Hicieron la instalación eléctrica de toda la casa. Trabajo impecable y muy profesionales. Totalmente recomendables.", "name": "Jordi F.", "location": "Girona" },
+        { "text": "Montar la cocina fue un acierto. La dejaron perfecta y en muy poco tiempo. Excelentes profesionales.", "name": "Anna R.", "location": "Platja d'Aro" },
+        { "text": "Instalaron puntos de luz en toda la casa y quedó espectacular. Más que recomendables.", "name": "Carles M.", "location": "Sant Feliu" }
+      ]
+    },
+    "cta": {
+      "title": "CONTACTA CON NOSOTROS",
+      "text": "¿Necesitas instalaciones o montaje?",
+      "description": "Contáctanos y te damos una solución rápida y profesional.",
+      "button": "Solicita presupuesto"
+    }
+  },
   "footer": {
     "tagline": "GIRONA Y MARESME · 10 AÑOS DE EXPERIENCIA",
     "description": "Servicio integral de mantenimiento, reparaciones, jardinería y piscinas en Girona y comarcas. Profesionales de confianza, servicio cercano.",

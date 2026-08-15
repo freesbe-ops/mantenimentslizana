@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 const SERVICES_ICONS = [
-  <svg key="rep" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+  <svg key="inst" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z" />
   </svg>,
   <svg key="pool" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <path d="M2 18c2-3 4-4.5 7-4.5S14 15 16.5 18" /><path d="M4 9.5C5.5 8 7.5 7 9.5 7s3.5 1 5 2.5" /><path d="M13 3.5c1.6 1.2 2.8 3 3.5 5" />
@@ -13,7 +13,7 @@ const SERVICES_ICONS = [
     <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
   </svg>,
   <svg key="main" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
   </svg>,
 ]
 
@@ -46,7 +46,7 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
   const prefix = isHome ? '' : `/${currentLang}`
 
   const services = [
-    { label: t('serveis.items.3.title'), href: `${prefix}/#contacte`, icon: SERVICES_ICONS[0] },
+    { label: t('serveis.items.3.title'), href: `/${currentLang}/serveis/instalacions`, icon: SERVICES_ICONS[0] },
     { label: t('serveis.items.1.title'), href: `/${currentLang}/serveis/piscines`, icon: SERVICES_ICONS[1] },
     { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria`, icon: SERVICES_ICONS[2] },
     { label: t('serveis.items.0.title'), href: `/${currentLang}/serveis/manteniment`, icon: SERVICES_ICONS[3] },

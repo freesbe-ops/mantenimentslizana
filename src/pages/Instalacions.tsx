@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import MobileNav from '../components/MobileNav'
 
-const HERO_IMG = 'https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1600&h=900&fit=crop&auto=format'
+const HERO_IMG = 'https://images.unsplash.com/photo-1738130892621-ea936f363089?w=1600&h=900&fit=crop&auto=format'
 
 function CarouselBar({ items, dark = false }: { items: string[]; dark?: boolean }) {
   const all = [...items, ...items, ...items]
@@ -31,7 +31,7 @@ function CarouselBar({ items, dark = false }: { items: string[]; dark?: boolean 
   )
 }
 
-export default function Manteniment() {
+export default function Instalacions() {
   const { t, i18n } = useTranslation()
   const { lang: langParam } = useParams<{ lang?: string }>()
   const navigate = useNavigate()
@@ -51,14 +51,14 @@ export default function Manteniment() {
       }
       localStorage.setItem('i18nextLng', nextLang)
     } else {
-      navigate('/ca/serveis/manteniment', { replace: true })
+      navigate('/ca/serveis/instalacions', { replace: true })
     }
   }, [langParam, navigate, i18n])
 
   const changeLanguage = (value: string) => {
     i18n.changeLanguage(value)
     localStorage.setItem('i18nextLng', value)
-    navigate(`/${value}/serveis/manteniment`, { replace: false })
+    navigate(`/${value}/serveis/instalacions`, { replace: false })
   }
 
   const navLinks = [
@@ -70,35 +70,35 @@ export default function Manteniment() {
     { label: t('serveis.items.3.title'), href: `/${currentLang}/serveis/instalacions`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg> },
   ]
 
-  const services = t('manteniment.services.items', { returnObjects: true }) as Array<{ icon: string; title: string; desc: string }>
-  const whyItems = t('manteniment.why.items', { returnObjects: true }) as Array<{ title: string; desc: string }>
-  const testimonials = t('manteniment.testimonials.items', { returnObjects: true }) as Array<{ text: string; name: string; location: string }>
-  const carouselItems = t('manteniment.carousel', { returnObjects: true }) as string[]
+  const services = t('instalacions.services.items', { returnObjects: true }) as Array<{ icon: string; title: string; desc: string }>
+  const includes = t('instalacions.includes.items', { returnObjects: true }) as Array<{ icon: string; title: string; desc: string }>
+  const projects = t('instalacions.projects.items', { returnObjects: true }) as Array<{ icon: string; title: string; desc: string; img: string }>
+  const whyItems = t('instalacions.why.items', { returnObjects: true }) as Array<{ title: string; desc: string }>
+  const testimonials = t('instalacions.testimonials.items', { returnObjects: true }) as Array<{ text: string; name: string; location: string }>
+  const carouselItems = t('instalacions.carousel', { returnObjects: true }) as string[]
 
   const whatsappBase = 'https://wa.me/34677218303'
-  const waHeader = `${whatsappBase}?utm_source=web&utm_medium=whatsapp&utm_campaign=manteniment&utm_content=${currentLang}`
-  const waFooter = `${whatsappBase}?utm_source=web&utm_medium=whatsapp&utm_campaign=manteniment&utm_content=${currentLang}`
+  const waHeader = `${whatsappBase}?utm_source=web&utm_medium=whatsapp&utm_campaign=instalacions&utm_content=${currentLang}`
+  const waFooter = `${whatsappBase}?utm_source=web&utm_medium=whatsapp&utm_campaign=instalacions&utm_content=${currentLang}`
 
   const lizanaBlue = '#00326B'
   const lizanaDark = '#00245A'
   const muted = '#5C5348'
 
-  const beforeAfterPresent = false // Abans i Després s'ha mogut a Piscines
-
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", backgroundColor: '#F5F5F5', color: '#1A1714' }}>
       <Helmet>
         <html lang={currentLang} />
-        <title>{t('manteniment.meta_title')}</title>
-        <meta name="description" content={t('manteniment.meta_description')} />
-        <link rel="canonical" href={`https://mantenimentslizana.com/${currentLang}/serveis/manteniment`} />
-        <link rel="alternate" hrefLang="ca" href="https://mantenimentslizana.com/ca/serveis/manteniment" />
-        <link rel="alternate" hrefLang="es" href="https://mantenimentslizana.com/es/serveis/manteniment" />
-        <link rel="alternate" hrefLang="en" href="https://mantenimentslizana.com/en/serveis/manteniment" />
-        <link rel="alternate" hrefLang="x-default" href="https://mantenimentslizana.com/ca/serveis/manteniment" />
-        <meta property="og:title" content={t('manteniment.meta_title')} />
-        <meta property="og:description" content={t('manteniment.meta_description')} />
-        <meta property="og:url" content={`https://mantenimentslizana.com/${currentLang}/serveis/manteniment`} />
+        <title>{t('instalacions.meta_title')}</title>
+        <meta name="description" content={t('instalacions.meta_description')} />
+        <link rel="canonical" href={`https://mantenimentslizana.com/${currentLang}/serveis/instalacions`} />
+        <link rel="alternate" hrefLang="ca" href="https://mantenimentslizana.com/ca/serveis/instalacions" />
+        <link rel="alternate" hrefLang="es" href="https://mantenimentslizana.com/es/serveis/instalacions" />
+        <link rel="alternate" hrefLang="en" href="https://mantenimentslizana.com/en/serveis/instalacions" />
+        <link rel="alternate" hrefLang="x-default" href="https://mantenimentslizana.com/ca/serveis/instalacions" />
+        <meta property="og:title" content={t('instalacions.meta_title')} />
+        <meta property="og:description" content={t('instalacions.meta_description')} />
+        <meta property="og:url" content={`https://mantenimentslizana.com/${currentLang}/serveis/instalacions`} />
         <meta property="og:type" content="website" />
       </Helmet>
 
@@ -162,11 +162,11 @@ export default function Manteniment() {
         }
       `}</style>
 
-      {/* HERO - Figma design adaptat */}
+      {/* HERO */}
       <section id="inici" style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', marginTop: '-60px', background: '#0D1F35' }}>
         <img
           src={HERO_IMG}
-          alt={t('manteniment.hero.image_alt')}
+          alt={t('instalacions.hero.image_alt')}
           fetchPriority="high"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
         />
@@ -194,18 +194,18 @@ export default function Manteniment() {
             {/* Badge */}
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, borderRadius: 40, padding: '6px 16px', marginBottom: 24, fontSize: 12, fontWeight: 500, letterSpacing: '0.04em', background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)', color: '#FFFFFF', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}>
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#60D394', display: 'inline-block' }} />
-              {t('manteniment.hero.badge')}
+              {t('instalacions.hero.badge')}
             </div>
 
             {/* Title */}
             <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 80px)', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.1, marginBottom: 24 }}>
-              {t('manteniment.hero.title')}{' '}
-              <em style={{ fontStyle: 'italic' }}>{t('manteniment.hero.subtitle')}</em>
+              {t('instalacions.hero.title')}{' '}
+              <em style={{ fontStyle: 'italic' }}>{t('instalacions.hero.subtitle')}</em>
             </h1>
 
             {/* Description */}
             <p style={{ fontSize: 17, lineHeight: 1.7, color: 'rgba(255,255,255,0.82)', maxWidth: 540, marginBottom: 40 }}>
-              {t('manteniment.hero.description')}
+              {t('instalacions.hero.description')}
             </p>
 
             {/* CTAs */}
@@ -213,19 +213,19 @@ export default function Manteniment() {
               <a href="#contacte" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 32px', backgroundColor: lizanaBlue, color: '#FFFFFF', borderRadius: 40, textDecoration: 'none', fontSize: 14, fontWeight: 600, boxShadow: '0 4px 20px rgba(0,50,107,0.5)', transition: 'background 0.2s' }}
                 onMouseEnter={(e) => (e.currentTarget.style.background = lizanaDark)}
                 onMouseLeave={(e) => (e.currentTarget.style.background = lizanaBlue)}>
-                {t('manteniment.hero.cta')}
+                {t('instalacions.hero.cta')}
               </a>
               <a href="#serveis" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 32px', borderRadius: 40, border: '1.5px solid rgba(255,255,255,0.6)', color: '#FFFFFF', textDecoration: 'none', fontSize: 14, fontWeight: 600, transition: 'background 0.2s' }}
                 onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}
                 onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}>
-                {t('manteniment.hero.secondary_cta')}
+                {t('instalacions.hero.secondary_cta')}
               </a>
             </div>
 
             {/* Floating badge */}
             <div style={{ position: 'absolute', bottom: 24, right: 24, zIndex: 1, background: '#FFFFFF', borderRadius: 16, padding: '16px 20px', boxShadow: '0 8px 32px rgba(0,0,0,0.18)', textAlign: 'center', display: 'none' }} className="hero-badge">
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', color: lizanaBlue, marginBottom: 2, textTransform: 'uppercase' }}>{t('manteniment.hero.badge_title')}</div>
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 700, color: '#1A1714' }}>{t('manteniment.hero.badge_sub')}</div>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', color: lizanaBlue, marginBottom: 2, textTransform: 'uppercase' }}>{t('instalacions.hero.badge_title')}</div>
+              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 700, color: '#1A1714' }}>{t('instalacions.hero.badge_sub')}</div>
             </div>
           </div>
         </div>
@@ -243,12 +243,12 @@ export default function Manteniment() {
       {/* SERVEIS */}
       <section id="serveis" style={{ padding: '96px 24px', background: '#F5F5F5', maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ marginBottom: 56, maxWidth: 640 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: lizanaBlue, textTransform: 'uppercase', marginBottom: 16 }}>{t('manteniment.services.title')}</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: t('manteniment.services.heading') }} />
-          <p style={{ fontSize: 16, color: muted, lineHeight: 1.7 }}>{t('manteniment.services.subheading')}</p>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: lizanaBlue, textTransform: 'uppercase', marginBottom: 16 }}>{t('instalacions.services.title')}</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: t('instalacions.services.heading') }} />
+          <p style={{ fontSize: 16, color: muted, lineHeight: 1.7 }}>{t('instalacions.services.subheading')}</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }} className="mant-services-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }} className="inst-services-grid">
           {services.map((s) => (
             <div key={s.title} style={{ borderRadius: 16, padding: '28px', display: 'flex', flexDirection: 'column', gap: 16, background: '#FFFFFF', boxShadow: '0 2px 16px rgba(0,0,0,0.06)', transition: 'box-shadow 0.3s, transform 0.3s', cursor: 'pointer' }}
               onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,50,107,0.14)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
@@ -257,7 +257,7 @@ export default function Manteniment() {
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 600, color: '#1A1714', lineHeight: 1.2, margin: 0 }}>{s.title}</h3>
               <p style={{ fontSize: 14, lineHeight: 1.65, color: muted, margin: 0, flex: 1 }}>{s.desc}</p>
               <a href="#contacte" style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 600, color: lizanaBlue, textDecoration: 'none' }}>
-                {t('manteniment.services.link')}
+                {t('instalacions.services.link')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
@@ -266,24 +266,84 @@ export default function Manteniment() {
       </section>
 
       <style>{`
-        .mant-services-grid { grid-template-columns: repeat(4, 1fr); }
-        @media (max-width: 900px) { .mant-services-grid { grid-template-columns: 1fr 1fr !important; } }
-        @media (max-width: 560px) { .mant-services-grid { grid-template-columns: 1fr !important; } }
+        .inst-services-grid { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 900px) { .inst-services-grid { grid-template-columns: 1fr 1fr !important; } }
+        @media (max-width: 560px) { .inst-services-grid { grid-template-columns: 1fr !important; } }
       `}</style>
 
-      {/* ABANS I DESPRÉS - s'ha mogut a la pàgina de Piscines */}
-      {beforeAfterPresent && null}
+      {/* QUÈ INCLOU */}
+      <section style={{ padding: '96px 24px', background: '#FFFFFF', maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ marginBottom: 56, textAlign: 'center' }}>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: lizanaBlue, textTransform: 'uppercase', marginBottom: 16 }}>{t('instalacions.includes.title')}</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: t('instalacions.includes.heading') }} />
+          <p style={{ fontSize: 16, color: muted, lineHeight: 1.7, maxWidth: 560, margin: '0 auto' }}>{t('instalacions.includes.subheading')}</p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }} className="inst-includes-grid">
+          {includes.map((item, i) => (
+            <div key={item.title} style={{ borderRadius: 16, padding: '28px 24px', background: '#F5F5F5', display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <div style={{ width: 48, height: 48, borderRadius: 12, background: lizanaBlue, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>
+                {item.icon}
+              </div>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', color: lizanaBlue, textTransform: 'uppercase' }}>
+                {t('instalacions.includes.pas')} {String(i + 1).padStart(2, '0')}
+              </div>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 600, color: '#1A1714', lineHeight: 1.25, margin: 0 }}>{item.title}</h3>
+              <p style={{ fontSize: 14, lineHeight: 1.65, color: muted, margin: 0 }}>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <style>{`
+        .inst-includes-grid { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 900px) { .inst-includes-grid { grid-template-columns: 1fr 1fr !important; } }
+        @media (max-width: 560px) { .inst-includes-grid { grid-template-columns: 1fr !important; } }
+      `}</style>
+
+      {/* TIPUS DE PROJECTES */}
+      <section style={{ padding: '96px 24px', background: '#F5F5F5', maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ marginBottom: 56 }}>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: lizanaBlue, textTransform: 'uppercase', marginBottom: 16 }}>{t('instalacions.projects.title')}</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: t('instalacions.projects.heading') }} />
+          <p style={{ fontSize: 16, color: muted, lineHeight: 1.7, maxWidth: 480 }}>{t('instalacions.projects.subheading')}</p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="inst-projects-grid">
+          {projects.map((p) => (
+            <div key={p.title} style={{ borderRadius: 16, overflow: 'hidden', background: '#FFFFFF', boxShadow: '0 2px 16px rgba(0,0,0,0.06)', transition: 'box-shadow 0.3s, transform 0.3s' }}
+              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,50,107,0.14)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 2px 16px rgba(0,0,0,0.06)'; e.currentTarget.style.transform = 'translateY(0)' }}>
+              <div style={{ position: 'relative', height: 200, backgroundColor: '#00326B' }}>
+                <img src={p.img} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,50,107,0.5) 0%, transparent 60%)' }} />
+                <span style={{ position: 'absolute', bottom: 16, left: 20, fontSize: 28 }}>{p.icon}</span>
+              </div>
+              <div style={{ padding: '24px 24px 28px' }}>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 600, color: '#1A1714', lineHeight: 1.2, margin: '0 0 10px' }}>{p.title}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.65, color: muted, margin: 0 }}>{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <style>{`
+        .inst-projects-grid { grid-template-columns: repeat(3, 1fr); }
+        @media (max-width: 900px) { .inst-projects-grid { grid-template-columns: 1fr 1fr !important; } }
+        @media (max-width: 600px) { .inst-projects-grid { grid-template-columns: 1fr !important; } }
+      `}</style>
 
       {/* PER QUÈ NOSALTRES */}
       <section id="sobre" style={{ padding: '96px 24px', background: '#FFFFFF', maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }} className="mant-why-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }} className="inst-why-grid">
           {/* Left - sticky */}
           <div style={{ position: 'sticky', top: 100 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: lizanaBlue, textTransform: 'uppercase', marginBottom: 16 }}>{t('manteniment.why.title')}</div>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 3.5vw, 44px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: t('manteniment.why.heading') }} />
-            <p style={{ fontSize: 16, color: muted, lineHeight: 1.7, maxWidth: 440, marginBottom: 32 }}>{t('manteniment.why.subheading')}</p>
+            <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: lizanaBlue, textTransform: 'uppercase', marginBottom: 16 }}>{t('instalacions.why.title')}</div>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 3.5vw, 44px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: t('instalacions.why.heading') }} />
+            <p style={{ fontSize: 16, color: muted, lineHeight: 1.7, maxWidth: 440, marginBottom: 32 }}>{t('instalacions.why.subheading')}</p>
             <a href="#contacte" style={{ display: 'inline-block', padding: '14px 28px', backgroundColor: lizanaBlue, color: '#FFFFFF', borderRadius: 40, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>
-              {t('manteniment.why.cta')}
+              {t('instalacions.why.cta')}
             </a>
           </div>
 
@@ -306,19 +366,19 @@ export default function Manteniment() {
 
       <style>{`
         @media (max-width: 900px) {
-          .mant-why-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-          .mant-why-grid > div:first-child { position: static !important; }
+          .inst-why-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .inst-why-grid > div:first-child { position: static !important; }
         }
       `}</style>
 
       {/* TESTIMONIS */}
       <section style={{ padding: '96px 24px', background: '#F5F5F5', maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 56 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: lizanaBlue, textTransform: 'uppercase', marginBottom: 16 }}>{t('manteniment.testimonials.title')}</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, color: '#1A1714', letterSpacing: '-0.02em', margin: 0 }} dangerouslySetInnerHTML={{ __html: t('manteniment.testimonials.heading') }} />
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: lizanaBlue, textTransform: 'uppercase', marginBottom: 16 }}>{t('instalacions.testimonials.title')}</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, color: '#1A1714', letterSpacing: '-0.02em', margin: 0 }} dangerouslySetInnerHTML={{ __html: t('instalacions.testimonials.heading') }} />
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="mant-testimonials-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="inst-testimonials-grid">
           {testimonials.map((item) => (
             <div key={item.name} style={{ padding: '32px', borderRadius: 16, background: '#FFFFFF', boxShadow: '0 2px 16px rgba(0,0,0,0.06)', display: 'flex', flexDirection: 'column', gap: 20, transition: 'box-shadow 0.2s, transform 0.2s' }}
               onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,50,107,0.12)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
@@ -342,21 +402,21 @@ export default function Manteniment() {
       </section>
 
       <style>{`
-        .mant-testimonials-grid { grid-template-columns: repeat(3, 1fr); }
-        @media (max-width: 900px) { .mant-testimonials-grid { grid-template-columns: 1fr 1fr !important; } }
-        @media (max-width: 600px) { .mant-testimonials-grid { grid-template-columns: 1fr !important; } }
+        .inst-testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+        @media (max-width: 900px) { .inst-testimonials-grid { grid-template-columns: 1fr 1fr !important; } }
+        @media (max-width: 600px) { .inst-testimonials-grid { grid-template-columns: 1fr !important; } }
       `}</style>
 
       {/* CTA FINAL */}
       <section id="contacte" style={{ padding: '112px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden', background: lizanaBlue }}>
         <div style={{ position: 'absolute', inset: 0, opacity: 0.05, backgroundImage: 'radial-gradient(circle at center, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         <div style={{ position: 'relative', maxWidth: 640, margin: '0 auto' }}>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.2em', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', marginBottom: 20 }}>{t('manteniment.cta.title')}</div>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.2em', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', marginBottom: 20 }}>{t('instalacions.cta.title')}</div>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.2, margin: '0 auto 24px' }}>
-            {t('manteniment.cta.text')}
+            {t('instalacions.cta.text')}
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.7, color: 'rgba(255,255,255,0.75)', marginBottom: 40 }}>
-            {t('manteniment.cta.description')}
+            {t('instalacions.cta.description')}
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
             <a href={waFooter} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 32px', borderRadius: 40, backgroundColor: '#25D366', color: '#FFFFFF', textDecoration: 'none', fontSize: 14, fontWeight: 600, transition: 'background 0.2s', boxShadow: '0 10px 24px rgba(37, 211, 102, 0.25)' }}>
@@ -364,7 +424,7 @@ export default function Manteniment() {
               WhatsApp: 677 218 303
             </a>
             <Link to={`/${currentLang}/#contacte`} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 32px', borderRadius: 40, border: '1.5px solid rgba(255,255,255,0.6)', color: '#FFFFFF', textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>
-              {t('manteniment.cta.button')}
+              {t('instalacions.cta.button')}
             </Link>
           </div>
         </div>

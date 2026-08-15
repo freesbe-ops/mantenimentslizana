@@ -316,6 +316,83 @@
       "button": "Sol·licita pressupost"
     }
   },
+  "instalacions": {
+    "meta_title": "Instal·lacions a Girona | Manteniments Lizana",
+    "meta_description": "Instal·lacions elèctriques, punts de llum, il·luminació i muntatge de cuines i mobles a Girona. Professionals qualificats amb garantia.",
+    "carousel": ["INSTAL·LACIONS SEGURES", "PROFESSIONALS QUALIFICATS", "PRESSUPOST SENSE COMPROMÍS", "GARANTIA EN ELS TREBALLS", "MUNTATGE DE CUINES", "LLUM I FUNCIONALITAT"],
+    "hero": {
+      "badge": "Girona i Maresme · Experts en instal·lacions",
+      "title": "Llum i funcionalitat",
+      "subtitle": "per a la teva llar.",
+      "description": "Instal·lacions elèctriques, punts de llum, il·luminació interior i exterior, muntatge de cuines i mobles. Un equip professional que fa realitat els teus projectes.",
+      "cta": "Sol·licita pressupost",
+      "secondary_cta": "Veure serveis",
+      "badge_title": "Resposta garantida",
+      "badge_sub": "En menys de 2h",
+      "image_alt": "Instal·lacions elèctriques professionals a Girona"
+    },
+    "services": {
+      "title": "ELS NOSTRES SERVEIS",
+      "heading": "Tot el que necessites<br /><em>per a la teva llar.</em>",
+      "subheading": "Oferim solucions completes: des d'instal·lacions elèctriques fins al muntatge de cuines i mobles. Un equip a la teva disposició.",
+      "items": [
+        { "icon": "💡", "title": "Instal·lacions elèctriques", "desc": "Instal·lacions elèctriques completes: quadres de distribució, circuits, preses de terra i tot tipus de treballs elèctrics amb garanties de seguretat." },
+        { "icon": "🔌", "title": "Punts de llum i il·luminació", "desc": "Instal·lem punts de llum, llums, làmpades, il·luminació interior i exterior, sistemes d'encesa automàtica, dimmers i llums LED. Donem vida a la teva llar." },
+        { "icon": "🛠️", "title": "Muntatge de cuines", "desc": "Muntem i instal·lem cuines completes: mobles, taulells, electrodomèstics, campanes extractores i tot tipus d'accessoris. Cuines funcionals i boniques." },
+        { "icon": "🔧", "title": "Muntatge de mobles", "desc": "Muntem mobles, prestatgeries i bastidors. Deixem la teva llar perfecta." }
+      ],
+      "link": "Més informació"
+    },
+    "includes": {
+      "title": "QUÈ INCLOU LA NOSTRA INSTAL·LACIÓ",
+      "heading": "Servei complet<br /><em>de principi a fi.</em>",
+      "subheading": "Ens encarreguem de tot el procés: des de la planificació fins a la instal·lació i la posada en marxa. No et preocupis de res.",
+      "pas": "Pas",
+      "items": [
+        { "icon": "📋", "title": "Planificació i assessorament", "desc": "Visitem la teva llar, t'assessorem sobre les millors solucions i t'oferim un pressupost detallat sense compromís." },
+        { "icon": "🔌", "title": "Instal·lació de qualitat", "desc": "Utilitzem materials de primera qualitat i tècniques professionals per garantir resultats duradors i segurs." },
+        { "icon": "✅", "title": "Seguretat i certificació", "desc": "Tots els nostres treballs compleixen la normativa vigent i porten garantia. Instal·lacions segures i certificades." },
+        { "icon": "🧹", "title": "Neteja i ho deixem a punt", "desc": "Un cop finalitzada la feina, deixem l'espai net i a punt perquè puguis gaudir immediatament." }
+      ]
+    },
+    "projects": {
+      "title": "TIPUS DE PROJECTES",
+      "heading": "Solucions per a<br /><em>cada espai.</em>",
+      "subheading": "Adaptem els nostres serveis a les teves necessitats. Des de petites instal·lacions fins a projectes complets.",
+      "items": [
+        { "icon": "🏠", "title": "Llar particular", "desc": "Instal·lacions i muntatge per a pisos, cases i xalets. Personalitzem cada projecte segons les teves necessitats.", "img": "https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=600&h=400&fit=crop&auto=format" },
+        { "icon": "🏢", "title": "Comunitats de veïns", "desc": "Instal·lacions elèctriques en zones comunes, il·luminació d'escales, garatges i sistemes de seguretat.", "img": "https://images.unsplash.com/photo-1682888813913-e13f18692019?w=600&h=400&fit=crop&auto=format" },
+        { "icon": "🏘️", "title": "Locals comercials", "desc": "Il·luminació de botigues, restaurants, oficines i instal·lacions elèctriques per a negocis.", "img": "https://images.unsplash.com/photo-1721245321889-5e3dfdf7929b?w=600&h=400&fit=crop&auto=format" }
+      ]
+    },
+    "why": {
+      "title": "PER QUÈ NOSALTRES",
+      "heading": "Compromís amb<br /><em>cada instal·lació.</em>",
+      "subheading": "Professionals amb anys d'experiència en instal·lacions elèctriques i muntatge de cuines. Treballem amb cura, garantia i seguretat.",
+      "cta": "Sol·licita pressupost",
+      "items": [
+        { "title": "Professionals qualificats", "desc": "Equip amb formació i experiència en instal·lacions elèctriques, muntatge de cuines i mobles. Treballem amb garantia i seguretat." },
+        { "title": "Servei ràpid i puntual", "desc": "Responem en poques hores i complim els horaris acordats. El teu temps és el nostre temps." },
+        { "title": "Pressupost sense compromís", "desc": "T'expliquem el preu abans de començar. Sense sorpreses ni costos amagats." },
+        { "title": "Garantia en els treballs", "desc": "Tots els treballs porten garantia. Si alguna cosa no funciona, tornem a solucionar-ho." }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIS",
+      "heading": "El que diuen<br /><em>els nostres clients.</em>",
+      "items": [
+        { "text": "Van fer la instal·lació elèctrica de tota la casa. Treball impecable i molt professionals. Totalment recomanables.", "name": "Jordi F.", "location": "Girona" },
+        { "text": "Muntar la cuina va ser un encert. Van deixar-la perfecta i en molt poc temps. Excel·lents professionals.", "name": "Anna R.", "location": "Platja d'Aro" },
+        { "text": "Van instal·lar punts de llum a tota la casa i va quedar espectacular. Més que recomanables.", "name": "Carles M.", "location": "Sant Feliu" }
+      ]
+    },
+    "cta": {
+      "title": "CONTACTA AMB NOSALTRES",
+      "text": "Necessites instal·lacions o muntatge?",
+      "description": "Contacta'ns i et donem solució ràpida i professional.",
+      "button": "Sol·licita pressupost"
+    }
+  },
   "footer": {
     "tagline": "GIRONA I MARESME · 10 ANYS D'EXPERIÈNCIA",
     "description": "Servei integral de manteniment, reparacions, jardineria i piscines a Girona i comarques. Professionals de confiança, servei proper.",

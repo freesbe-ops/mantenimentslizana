@@ -362,6 +362,90 @@
       "button": "Get a quote"
     }
   },
+  "instalacions": {
+    "meta_title": "Installations in Girona | Manteniments Lizana",
+    "meta_description": "Electrical installations, light points, lighting and kitchen and furniture assembly in Girona. Qualified professionals with guarantee.",
+    "carousel": [
+      "SAFE INSTALLATIONS",
+      "QUALIFIED PROFESSIONALS",
+      "NO-OBLIGATION QUOTE",
+      "WORK GUARANTEE",
+      "KITCHEN ASSEMBLY",
+      "LIGHT AND FUNCTIONALITY"
+    ],
+    "hero": {
+      "badge": "Girona & Maresme · Installation experts",
+      "title": "Light and functionality",
+      "subtitle": "for your home.",
+      "description": "Electrical installations, light points, indoor and outdoor lighting, kitchen and furniture assembly. A professional team that makes your projects a reality.",
+      "cta": "Get a quote",
+      "secondary_cta": "View services",
+      "badge_title": "Guaranteed response",
+      "badge_sub": "In less than 2h",
+      "image_alt": "Professional electrical installations in Girona"
+    },
+    "services": {
+      "title": "OUR SERVICES",
+      "heading": "Everything you need<br /><em>for your home.</em>",
+      "subheading": "We offer complete solutions: from electrical installations to kitchen and furniture assembly. A team at your disposal.",
+      "items": [
+        { "icon": "💡", "title": "Electrical installations", "desc": "Complete electrical installations: distribution boards, circuits, earthing and all types of electrical work with safety guarantees." },
+        { "icon": "🔌", "title": "Light points & lighting", "desc": "We install light points, lamps, indoor and outdoor lighting, automatic switch systems, dimmers and LED lights. We bring your home to life." },
+        { "icon": "🛠️", "title": "Kitchen assembly", "desc": "We assemble and install complete kitchens: cabinets, countertops, appliances, extractor hoods and all types of accessories. Functional and beautiful kitchens." },
+        { "icon": "🔧", "title": "Furniture assembly", "desc": "We assemble furniture, shelving and frames. We leave your home perfect." }
+      ],
+      "link": "More info"
+    },
+    "includes": {
+      "title": "WHAT OUR INSTALLATION INCLUDES",
+      "heading": "Complete service<br /><em>from start to finish.</em>",
+      "subheading": "We handle the entire process: from planning to installation and start-up. Don't worry about a thing.",
+      "pas": "Step",
+      "items": [
+        { "icon": "📋", "title": "Planning & advice", "desc": "We visit your home, advise you on the best solutions and offer you a detailed quote with no obligation." },
+        { "icon": "🔌", "title": "Quality installation", "desc": "We use top-quality materials and professional techniques to ensure durable and safe results." },
+        { "icon": "✅", "title": "Safety & certification", "desc": "All our work complies with current regulations and comes with a guarantee. Safe and certified installations." },
+        { "icon": "🧹", "title": "Cleaning & ready to use", "desc": "Once the work is finished, we leave the space clean and ready for you to enjoy immediately." }
+      ]
+    },
+    "projects": {
+      "title": "PROJECT TYPES",
+      "heading": "Solutions for<br /><em>every space.</em>",
+      "subheading": "We adapt our services to your needs. From small installations to complete projects.",
+      "items": [
+        { "icon": "🏠", "title": "Private homes", "desc": "Installations and assembly for flats, houses and villas. We customise each project to your needs.", "img": "https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=600&h=400&fit=crop&auto=format" },
+        { "icon": "🏢", "title": "Neighbourhood communities", "desc": "Electrical installations in common areas, stairway lighting, garages and security systems.", "img": "https://images.unsplash.com/photo-1682888813913-e13f18692019?w=600&h=400&fit=crop&auto=format" },
+        { "icon": "🏘️", "title": "Commercial premises", "desc": "Lighting for shops, restaurants, offices and electrical installations for businesses.", "img": "https://images.unsplash.com/photo-1721245321889-5e3dfdf7929b?w=600&h=400&fit=crop&auto=format" }
+      ]
+    },
+    "why": {
+      "title": "WHY US",
+      "heading": "Commitment to<br /><em>every installation.</em>",
+      "subheading": "Professionals with years of experience in electrical installations and kitchen assembly. We work with care, guarantee and safety.",
+      "cta": "Get a quote",
+      "items": [
+        { "title": "Qualified professionals", "desc": "Team with training and experience in electrical installations, kitchen and furniture assembly. We work with guarantee and safety." },
+        { "title": "Fast and punctual service", "desc": "We respond within hours and meet agreed schedules. Your time is our time." },
+        { "title": "No-obligation quote", "desc": "We explain the price before starting. No surprises or hidden costs." },
+        { "title": "Work guarantee", "desc": "All work comes with a guarantee. If anything doesn't work, we fix it again." }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIALS",
+      "heading": "What our<br /><em>clients say.</em>",
+      "items": [
+        { "text": "They did the electrical installation for the whole house. Flawless work and very professional. Totally recommendable.", "name": "Jordi F.", "location": "Girona" },
+        { "text": "Assembling the kitchen was a great choice. They left it perfect in no time. Excellent professionals.", "name": "Anna R.", "location": "Platja d'Aro" },
+        { "text": "They installed light points throughout the house and it looks spectacular. More than recommendable.", "name": "Carles M.", "location": "Sant Feliu" }
+      ]
+    },
+    "cta": {
+      "title": "CONTACT US",
+      "text": "Need installations or assembly?",
+      "description": "Contact us and we'll give you a fast, professional solution.",
+      "button": "Get a quote"
+    }
+  },
   "footer": {
     "tagline": "GIRONA & MARESME · 10 YEARS OF EXPERIENCE",
     "description": "Comprehensive maintenance, repairs, gardening and pool service in Girona and surrounding areas. Trustworthy professionals, close service.",
