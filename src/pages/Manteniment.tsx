@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import MobileNav from '../components/MobileNav'
 
-const HERO_IMG = 'https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1600&h=900&fit=crop&auto=format'
+const HERO_IMG = 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=1600&h=900&fit=crop&auto=format'
 
 function CarouselBar({ items, dark = false }: { items: string[]; dark?: boolean }) {
   const all = [...items, ...items, ...items]
