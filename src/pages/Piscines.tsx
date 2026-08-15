@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -62,18 +62,24 @@ function CarouselBar({ items }: { items: string[] }) {
 
 function BeforeAfterSection() {
   const { t } = useTranslation()
-  const [imatgeActual, setImatgeActual] = useState<'abans' | 'despres'>('abans')
+  const sliderRef = useRef<HTMLDivElement>(null)
+  const [slideActiu, setSlideActiu] = useState(0)
 
-  const imatges = {
-    abans: { src: '/antes.jpg', alt: t('piscines.abans_despres.alt_abans'), label: t('piscines.abans_despres.abans') },
-    despres: { src: '/despues.jpg', alt: t('piscines.abans_despres.alt_despres'), label: t('piscines.abans_despres.despres') },
+  const imatges = [
+    { src: '/antes.jpg', alt: t('piscines.abans_despres.alt_abans'), label: t('piscines.abans_despres.abans') },
+    { src: '/despues.jpg', alt: t('piscines.abans_despres.alt_despres'), label: t('piscines.abans_despres.despres') },
+  ]
+
+  const scrollToSlide = (index: number) => {
+    sliderRef.current?.scrollTo({ left: index * sliderRef.current.clientWidth, behavior: 'smooth' })
+    setSlideActiu(index)
   }
 
-  const canviarImatge = (direccio: 'endreça' | 'esquerra') => {
-    if (direccio === 'endreça') {
-      setImatgeActual('despres')
-    } else {
-      setImatgeActual('abans')
+  const handleScroll = () => {
+    const el = sliderRef.current
+    if (el) {
+      const index = Math.round(el.scrollLeft / el.clientWidth)
+      setSlideActiu(index)
     }
   }
 
@@ -86,57 +92,101 @@ function BeforeAfterSection() {
         </h2>
       </div>
 
-      {/* Slider full width - sense cap contenidor que el limiti */}
-      <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-        <div style={{ position: 'relative', aspectRatio: '16/9', backgroundColor: '#E5E5E5' }}>
-          <img
-            src={imatges[imatgeActual].src}
-            alt={imatges[imatgeActual].alt}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'opacity 0.3s ease' }}
-          />
-          <div style={{ position: 'absolute', bottom: 60, left: '50%', transform: 'translateX(-50%)', color: '#FFFFFF', fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 4.8vw, 58px)', fontWeight: 700, fontStyle: 'italic', lineHeight: 1.1, textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
-            {imatges[imatgeActual].label}
-          </div>
+      {/* Scroll horitzontal suau - 2 slides */}
+      <div style={{ position: 'relative', width: '100%' }}>
+        <div
+          ref={sliderRef}
+          onScroll={handleScroll}
+          className="before-after-slider"
+          style={{
+            display: 'flex',
+            overflowX: 'auto',
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          }}
+        >
+          {imatges.map((img, i) => (
+            <div
+              key={i}
+              className="before-after-slide"
+              style={{
+                flex: '0 0 100%',
+                scrollSnapAlign: 'start',
+                position: 'relative',
+                aspectRatio: '16/9',
+                overflow: 'hidden',
+              }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+              <div style={{ position: 'absolute', bottom: 60, left: '50%', transform: 'translateX(-50%)', color: '#FFFFFF', fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4.5vw, 56px)', fontWeight: 700, fontStyle: 'italic', lineHeight: 1.1, textShadow: '0 2px 8px rgba(0,0,0,0.3)', whiteSpace: 'nowrap' }}>
+                {img.label}
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Controls - Fletxes */}
+        {/* Fletxes (hidden a mòbil) */}
         <button
-          onClick={() => canviarImatge('esquerra')}
-          style={{ position: 'absolute', top: '50%', left: 40, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 48, height: 48, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 24, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s' }}
+          onClick={() => scrollToSlide(0)}
+          className="before-after-arrow"
+          style={{ position: 'absolute', top: '50%', left: 24, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: 44, height: 44, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 22, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s', backdropFilter: 'blur(8px)' }}
           onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
-          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.8)')}
-          aria-label="Imatge anterior"
+          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.85)')}
+          aria-label="Abans"
         >
           ←
         </button>
         <button
-          onClick={() => canviarImatge('endreça')}
-          style={{ position: 'absolute', top: '50%', right: 40, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 48, height: 48, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 24, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s' }}
+          onClick={() => scrollToSlide(1)}
+          className="before-after-arrow"
+          style={{ position: 'absolute', top: '50%', right: 24, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: 44, height: 44, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 22, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s', backdropFilter: 'blur(8px)' }}
           onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
-          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.8)')}
-          aria-label="Imatge següent"
+          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.85)')}
+          aria-label="Després"
         >
           →
         </button>
 
-        {/* Indicadors (punts) - ELIMINAT */}
-        {/* <div style={{ position: 'absolute', bottom: 24, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 10 }}>
-          <button
-            onClick={() => setImatgeActual('abans')}
-            style={{ width: 12, height: 12, borderRadius: '50%', border: 'none', backgroundColor: imatgeActual === 'abans' ? '#00326B' : 'rgba(255,255,255,0.5)', cursor: 'pointer', transition: 'background 0.2s' }}
-            aria-label="Abans"
-          />
-          <button
-            onClick={() => setImatgeActual('despres')}
-            style={{ width: 12, height: 12, borderRadius: '50%', border: 'none', backgroundColor: imatgeActual === 'despres' ? '#00326B' : 'rgba(255,255,255,0.5)', cursor: 'pointer', transition: 'background 0.2s' }}
-            aria-label="Després"
-          />
-        </div> */}
+        {/* Indicadors (punts) */}
+        <div style={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 10 }}>
+          {imatges.map((img, i) => (
+            <button
+              key={img.src}
+              onClick={() => scrollToSlide(i)}
+              className="before-after-dot"
+              data-active={i === slideActiu}
+              aria-label={img.label}
+              style={{ width: 10, height: 10, borderRadius: '50%', border: 'none', backgroundColor: 'rgba(255,255,255,0.6)', cursor: 'pointer', transition: 'background 0.3s, width 0.3s', padding: 0 }}
+            />
+          ))}
+        </div>
       </div>
 
       <style>{`
+        /* Amaga la scrollbar del slider */
+        .before-after-slider::-webkit-scrollbar { display: none; }
+
+        /* Indicador actiu per defecte (Abans) */
+        .before-after-dot[data-active="true"] {
+          background-color: #FFFFFF;
+          width: 22px;
+          border-radius: 5px;
+        }
+
         @media (max-width: 768px) {
-          .before-after-button { width: 36px !important; height: 36px !important; }
+          /* Fletxes més petites en mòbil, semi ocultes */
+          .before-after-arrow { width: 36px !important; height: 36px !important; font-size: 18px !important; left: 12px !important; right: 12px !important; }
+          /* Ajusta aspect ratio a mòbil (4/3) */
+          .before-after-slide { aspect-ratio: 4/3 !important; }
+          /* Label més gran relatiu en mòbil */
+          .before-after-slide > div { font-size: clamp(24px, 7vw, 34px) !important; bottom: 48px !important; }
         }
       `}</style>
     </section>
