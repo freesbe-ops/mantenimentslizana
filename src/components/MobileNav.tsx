@@ -46,10 +46,10 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
   const prefix = isHome ? '' : `/${currentLang}`
 
   const services = [
-    { label: t('serveis.items.3.title'), href: `/${currentLang}/serveis/instalacions`, icon: SERVICES_ICONS[0] },
+    { label: t('serveis.items.0.title'), href: `/${currentLang}/serveis/manteniment`, icon: SERVICES_ICONS[3] },
     { label: t('serveis.items.1.title'), href: `/${currentLang}/serveis/piscines`, icon: SERVICES_ICONS[1] },
     { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria`, icon: SERVICES_ICONS[2] },
-    { label: t('serveis.items.0.title'), href: `/${currentLang}/serveis/manteniment`, icon: SERVICES_ICONS[3] },
+    { label: t('serveis.items.3.title'), href: `/${currentLang}/serveis/instalacions`, icon: SERVICES_ICONS[0] },
   ]
 
   const navItemStyle: React.CSSProperties = {
@@ -145,14 +145,14 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
 
       {/* DESPLEGABLE SERVEIS — liquid glass */}
       {open && (
-        <div
+          <div
           style={{
             position: 'absolute',
-            top: 'calc(100% + 14px)',
+            bottom: 'calc(100% + 14px)',
             left: '50%',
             transform: 'translateX(-50%)',
             zIndex: 60,
-            animation: 'mobileServicesDrop 0.22s ease-out',
+            animation: 'mobileServicesDropUp 0.22s ease-out',
           }}
         >
           <div style={{
@@ -205,8 +205,8 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
       )}
 
       <style>{`
-        @keyframes mobileServicesDrop {
-          from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+        @keyframes mobileServicesDropUp {
+          from { opacity: 0; transform: translateX(-50%) translateY(10px); }
           to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
       `}</style>
