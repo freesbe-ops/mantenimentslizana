@@ -5,9 +5,9 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import MobileNav from '../components/MobileNav'
 
 const HERO_IMAGES: Record<string, string> = {
-  ca: '/garden.jpg',
-  es: '/garden.jpg',
-  en: '/garden.jpg',
+  ca: '/garden.webp',
+  es: '/garden.webp',
+  en: '/garden.webp',
 }
 
 const BREAK_IMAGES: Record<string, string> = {
@@ -118,7 +118,7 @@ export default function Jardineria() {
         <div style={{ width: 'fit-content', margin: '0 auto', backgroundColor: 'rgba(255,255,255,0.75)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderRadius: 100, padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 32, height: 60, boxShadow: '0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)', border: '1px solid rgba(255,255,255,0.3)' }}>
           <Link to={`/${currentLang}`} style={{ textDecoration: 'none' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <img src="/logo-lizana.png" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 34, height: 34, borderRadius: '50%', objectFit: 'cover' }} />
+              <img src="/logo-lizana.webp" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 34, height: 34, borderRadius: '50%', objectFit: 'cover' }} />
               <div className="logo-text">
                 <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 15, color: '#1A1714', lineHeight: 1.1 }}>Manteniments</div>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 12, color: '#7A6F65', letterSpacing: '0.08em' }}>LIZANA</div>
@@ -176,7 +176,7 @@ export default function Jardineria() {
       {/* HERO */}
       <section id="inici" style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'flex-start', marginTop: '-60px', paddingTop: '60px' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <img src={HERO_IMAGES[currentLang] || HERO_IMAGES.ca} alt={t('jardineria.hero.image_alt')} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+          <img src={HERO_IMAGES[currentLang] || HERO_IMAGES.ca} alt={t('jardineria.hero.image_alt')} fetchPriority="high" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(43,94,50,0.3) 0%, rgba(43,94,50,0.72) 100%)' }} />
         </div>
 
@@ -474,7 +474,7 @@ export default function Jardineria() {
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 40, marginBottom: 40 }} className="footer-grid">
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
-                <img src="/logo-lizana.png" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }} />
+                <img src="/logo-lizana.webp" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }} />
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 14, color: '#1A1714', lineHeight: 1.1 }}>Manteniments Lizana</div>
                   <div style={{ fontSize: 11, color: '#7A6F65', letterSpacing: '0.08em' }}>{t('footer.tagline')}</div>
