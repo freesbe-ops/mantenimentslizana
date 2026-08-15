@@ -46,10 +46,10 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
   const prefix = isHome ? '' : `/${currentLang}`
 
   const services = [
-    { label: t('serveis.items.0.title'), href: `${prefix}/#serveis` },
-    { label: t('serveis.items.1.title'), href: `/${currentLang}/serveis/piscines` },
-    { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria` },
-    { label: t('serveis.items.3.title'), href: `/${currentLang}/serveis/manteniment` },
+    { label: t('serveis.items.3.title'), href: `${prefix}/#contacte`, icon: SERVICES_ICONS[0] },
+    { label: t('serveis.items.1.title'), href: `/${currentLang}/serveis/piscines`, icon: SERVICES_ICONS[1] },
+    { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria`, icon: SERVICES_ICONS[2] },
+    { label: t('serveis.items.0.title'), href: `/${currentLang}/serveis/manteniment`, icon: SERVICES_ICONS[3] },
   ]
 
   const navItemStyle: React.CSSProperties = {
@@ -168,7 +168,7 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
             boxShadow: '0 16px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.05)',
             minWidth: 205,
           }}>
-            {services.map((s, i) => (
+            {services.map((s) => (
               <Link
                 key={s.label}
                 to={s.href}
@@ -194,7 +194,7 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
                 onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
               >
                 <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 28, height: 28, borderRadius: 8, backgroundColor: 'rgba(0,50,107,0.08)', color: '#00326B', flexShrink: 0 }}>
-                  {SERVICES_ICONS[i]}
+                  {s.icon}
                 </span>
                 <span style={{ fontSize: 13, fontWeight: 500, color: '#1A1714', letterSpacing: '0.01em' }}>{s.label}</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9A8F86" strokeWidth="2.5" style={{ marginLeft: 'auto', flexShrink: 0 }}><polyline points="9,6 15,12 9,18"/></svg>

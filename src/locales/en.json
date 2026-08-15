@@ -33,24 +33,24 @@
     "subheading": "A comprehensive service covering all maintenance needs. If it's not on the list, ask us anyway — we can most likely solve it.",
     "items": [
       {
-        "title": "Home Repairs",
-        "description": "Lamps, sockets, switches, fans, taps, cisterns, hanging pictures and shelves, carpentry, painting, furniture assembly and much more.",
-        "tag": "Fast and efficient"
+        "title": "Maintenance",
+        "description": "Basic plumbing, electricity, painting, small renovations and carpentry. We keep your home in perfect condition all year round.",
+        "tag": "All in one service"
       },
       {
-        "title": "Pool Maintenance",
+        "title": "Pools",
         "description": "Pool and filter cleaning, chemical water control, equipment inspection, preventive treatments and seasonal preparation.",
         "tag": "Always clean water"
       },
       {
-        "title": "Gardening",
+        "title": "Gardens",
         "description": "Lawn mowing, shrub and tree pruning, clearing, garden cleaning, planting and maintenance, and summer preparation.",
         "tag": "Healthy, beautiful gardens"
       },
       {
-        "title": "General Maintenance",
-        "description": "Basic plumbing, electricity, painting, small renovations and carpentry. We keep your home in perfect condition all year round.",
-        "tag": "All in one service"
+        "title": "Installations",
+        "description": "Kitchen assembly, light points and fans, lamps, sockets and switches. Professional home and electrical installations with guarantee.",
+        "tag": "Professional installations"
       }
     ]
   },

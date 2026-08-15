@@ -33,24 +33,24 @@
     "subheading": "Un servicio integral que cubre todas las necesidades de mantenimiento. Si no está en la lista, pregúntanos igualmente — muy probablemente podemos resolverlo.",
     "items": [
       {
-        "title": "Reparaciones en el Hogar",
-        "description": "Lámparas, enchufes, interruptores, ventiladores, grifos, cisternas, colgar cuadros y estanterías, carpintería, pintura, montaje de muebles y mucho más.",
-        "tag": "Rápido y eficiente"
+        "title": "Mantenimiento",
+        "description": "Fontanería básica, electricidad, pintura, pequeñas reformas y carpintería. Mantenemos tu hogar en perfecto estado todo el año.",
+        "tag": "Todo en un servicio"
       },
       {
-        "title": "Mantenimiento de Piscinas",
+        "title": "Piscinas",
         "description": "Limpieza del vaso y filtro, control químico del agua, revisión de equipos, tratamientos preventivos y puesta a punto para la temporada.",
         "tag": "Agua siempre limpia"
       },
       {
-        "title": "Jardinería",
+        "title": "Jardines",
         "description": "Corte de césped, poda de arbustos y árboles, desbroce, limpieza de jardines, plantación y mantenimiento, y puesta a punto para el verano.",
         "tag": "Jardines sanos y bonitos"
       },
       {
-        "title": "Mantenimiento General",
-        "description": "Fontanería básica, electricidad, pintura, pequeñas reformas y carpintería. Mantenemos tu hogar en perfecto estado todo el año.",
-        "tag": "Todo en un servicio"
+        "title": "Instalaciones",
+        "description": "Montaje de cocinas, puntos de luz y ventiladores, lámparas, enchufes e interruptores. Instalaciones eléctricas y del hogar con garantía.",
+        "tag": "Instalaciones profesionales"
       }
     ]
   },

@@ -28,24 +28,24 @@
     "subheading": "Un servei integral que cobreix totes les necessitats de manteniment. Si no és a la llista, pregunta'ns igualment — molt probablement t'ho podem resoldre.",
     "items": [
       {
-        "title": "Reparacions a la Llar",
-        "description": "Llàmpades, endolls, interruptors, ventiladors, aixetes, cisternes, penjar quadres i prestatgeries, fusteria, pintura, muntatge de mobles i molt més.",
-        "tag": "Ràpid i eficient"
+        "title": "Manteniment",
+        "description": "Fontaneria bàsica, electricitat, pintura, petites reformes i fusteria. Mantenim la teva llar en perfecte estat tot l'any.",
+        "tag": "Tot en un servei"
       },
       {
-        "title": "Manteniment de Piscines",
+        "title": "Piscines",
         "description": "Neteja del vas i filtre, control químic de l'aigua, revisió d'equips, tractaments preventius i posada a punt per a la temporada.",
         "tag": "Aigua sempre neta"
       },
       {
-        "title": "Jardineria",
+        "title": "Jardins",
         "description": "Tall de gespa, poda d'arbustos i arbres, desbrossament, neteja de jardins, plantació i manteniment, i posada a punt per a l'estiu.",
         "tag": "Jardins sans i bonics"
       },
       {
-        "title": "Manteniment General",
-        "description": "Fontaneria bàsica, electricitat, pintura, petites reformes i fusteria. Mantenim la teva llar en perfecte estat tot l'any.",
-        "tag": "Tot en un servei"
+        "title": "Instal·lacions",
+        "description": "Muntatge de cuines, punts de llum i ventiladors, llums, endolls i interruptors. Instal·lacions elèctriques i de llar amb garantia.",
+        "tag": "Instal·lacions professionals"
       }
     ]
   },

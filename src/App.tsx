@@ -374,17 +374,20 @@ export default function App() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }} className="services-grid">
           {services.map((s, i) => {
-            const isManteniment = i === 3 // Manteniment General is the 4th service (index 3)
+            const isManteniment = i === 0 // Manteniment is the first service (index 0)
             const isPiscines = i === 1 // Piscines is the second service (index 1)
-            const isJardineria = i === 2 // Jardineria is the third service (index 2)
-            const isLinkable = isManteniment || isPiscines || isJardineria
+            const isJardineria = i === 2 // Jardins is the third service (index 2)
+            const isInstalacions = i === 3 // Instal·lacions is the 4th service (index 3)
+            const isLinkable = isManteniment || isPiscines || isJardineria || isInstalacions
             const serviceLink = isManteniment
               ? `/${currentLang}/serveis/manteniment`
               : isPiscines
                 ? `/${currentLang}/serveis/piscines`
                 : isJardineria
                   ? `/${currentLang}/serveis/jardineria`
-                  : undefined
+                  : isInstalacions
+                    ? `/${currentLang}/#contacte`
+                    : undefined
             const element = (
               <div key={s.title} style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid #E5E5E5', backgroundColor: '#FAFAFA', transition: 'transform 0.2s, box-shadow 0.2s', cursor: isLinkable ? 'pointer' : 'default' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.08)'; }}
