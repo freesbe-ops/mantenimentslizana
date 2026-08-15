@@ -472,7 +472,7 @@ export default function App() {
         <div style={{ position: 'relative' }}>
           <div style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '4/5', backgroundColor: '#E5E5E5' }}>
             <img
-              src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=700&h=900&fit=crop&auto=format"
+              src="/aleix-mantenimentslizana.png"
               alt={t('sobre.image_alt')}
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
