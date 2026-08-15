@@ -1,14 +1,15 @@
-import React, { Suspense, useEffect, useRef } from 'react'
+import React, { Suspense, lazy, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import App from './App'
-import Piscines from './pages/Piscines'
-import Jardineria from './pages/Jardineria'
-import Manteniment from './pages/Manteniment'
-import Instalacions from './pages/Instalacions'
 import './i18n'
 import './index.css'
+
+const Piscines = lazy(() => import('./pages/Piscines'))
+const Jardineria = lazy(() => import('./pages/Jardineria'))
+const Manteniment = lazy(() => import('./pages/Manteniment'))
+const Instalacions = lazy(() => import('./pages/Instalacions'))
 
 // Redirigeix des del 404 redirect de GitHub Pages
 if (sessionStorage.redirect) {
