@@ -408,10 +408,14 @@ export default function App() {
               <div key={s.title} style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid #E5E5E5', backgroundColor: '#FAFAFA', transition: 'transform 0.2s, box-shadow 0.2s', cursor: isPiscines ? 'pointer' : 'default' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.08)'; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}>
-                <div style={{ aspectRatio: '16/7', overflow: 'hidden', backgroundColor: '#E5E5E5' }}>
+                <div style={{ position: 'relative', aspectRatio: '16/7', overflow: 'hidden', backgroundColor: '#E5E5E5' }}>
                   <img src={SERVICE_IMAGES[i]} alt={`${s.title} - Manteniments Lizana a Girona`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s' }}
                     onMouseEnter={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1.04)')}
                     onMouseLeave={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1)')} />
+                  {/* Botó + liquid glass */}
+                  <div style={{ position: 'absolute', top: 16, right: 16, zIndex: 5, width: 40, height: 40, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontSize: 22, fontWeight: 400, lineHeight: 1, backgroundColor: 'rgba(255,255,255,0.18)', border: '1px solid rgba(255,255,255,0.4)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: '0 4px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3)', cursor: 'pointer', userSelect: 'none', pointerEvents: 'none' }}>
+                    +
+                  </div>
                 </div>
                 <div style={{ padding: '28px 28px 32px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
@@ -486,7 +490,7 @@ export default function App() {
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           </div>
-          <div style={{ position: 'absolute', top: 32, right: -32, backgroundColor: '#00326B', borderRadius: 12, padding: '20px 24px' }} className="about-badge">
+          <div style={{ position: 'absolute', top: 32, right: 16, backgroundColor: '#00326B', borderRadius: 12, padding: '20px 24px' }} className="about-badge">
             <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: '#FFFFFF', lineHeight: 1 }}>{t('sobre.badge_num')}</div>
             <div style={{ fontSize: 12, color: '#B0C4DE', marginTop: 4, lineHeight: 1.4 }} dangerouslySetInnerHTML={{ __html: t('sobre.badge_years') }} />
           </div>
