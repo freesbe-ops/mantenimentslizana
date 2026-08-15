@@ -40,11 +40,14 @@ function CarouselBar({ items }: { items: string[] }) {
   )
 }
 
+const SEASON_EMOJIS = ['🌷', '☀️', '🍂', '❄️']
+
 export default function Jardineria() {
   const { t, i18n } = useTranslation()
   const { lang: langParam } = useParams<{ lang?: string }>()
   const navigate = useNavigate()
   const [activeService, setActiveService] = useState(0)
+  const [activeSeason, setActiveSeason] = useState(0)
 
   const validLangs = ['ca', 'es', 'en'] as const
   const urlLang = langParam && validLangs.includes(langParam as (typeof validLangs)[number])
@@ -75,6 +78,7 @@ export default function Jardineria() {
     { label: t('nav.serveis'), href: `/${currentLang}/#serveis`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> },
     { label: t('nav.sobre'), href: `/${currentLang}/#sobre`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg> },
     { label: t('nav.piscines'), href: `/${currentLang}/serveis/piscines`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 18c2-3 4-4.5 7-4.5S14 15 16.5 18" /><path d="M4 9.5C5.5 8 7.5 7 9.5 7s3.5 1 5 2.5" /><path d="M13 3.5c1.6 1.2 2.8 3 3.5 5" /><path d="M8 5.5c-1.2 1.3-2 3.2-2.2 5.1" /></svg> },
+    { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> },
   ]
 
   const services = t('jardineria.services.items', { returnObjects: true }) as Array<{ title: string; description: string; img: string; icon: string }>
@@ -89,7 +93,6 @@ export default function Jardineria() {
 
   const gardenAccent = '#3A7D44'
   const gardenDark = '#2B5E32'
-  const gardenLight = '#4CAF50'
   const lizanaBlue = '#00326B'
 
   return (
@@ -377,24 +380,39 @@ export default function Jardineria() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }} className="seasons-grid">
           {seasons.map((s, i) => {
-            const isFirst = i === 0
+            const isActive = i === activeSeason
             return (
-              <div key={s.season} style={{
-                padding: '32px 24px',
-                borderRadius: 14,
-                background: isFirst ? gardenDark : '#FFFFFF',
-                border: isFirst ? 'none' : '1px solid rgba(58,125,68,0.15)',
-              }}>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, fontStyle: 'italic', color: isFirst ? '#FFFFFF' : gardenAccent, marginBottom: 20 }}>{s.season}</h3>
+              <button
+                key={s.season}
+                onClick={() => setActiveSeason(i)}
+                style={{
+                  padding: '32px 24px',
+                  borderRadius: 14,
+                  textAlign: 'left',
+                  fontFamily: 'inherit',
+                  cursor: 'pointer',
+                  transition: 'all 0.25s',
+                  background: isActive ? gardenDark : '#FFFFFF',
+                  border: isActive ? 'none' : '1px solid rgba(58,125,68,0.15)',
+                  boxShadow: isActive ? '0 10px 30px rgba(43,94,50,0.25)' : 'none',
+                  transform: isActive ? 'translateY(-2px)' : 'translateY(0)',
+                }}
+                onMouseEnter={(e) => { if (!isActive) { e.currentTarget.style.background = 'rgba(58,125,68,0.06)'; e.currentTarget.style.borderColor = 'rgba(58,125,68,0.35)'; } }}
+                onMouseLeave={(e) => { if (!isActive) { e.currentTarget.style.background = '#FFFFFF'; e.currentTarget.style.borderColor = 'rgba(58,125,68,0.15)'; } }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+                  <span style={{ fontSize: 24, lineHeight: 1 }}>{isActive ? SEASON_EMOJIS[i] : '🌱'}</span>
+                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, fontStyle: 'italic', color: isActive ? '#FFFFFF' : gardenAccent, margin: 0 }}>{s.season}</h3>
+                </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {s.tasks.map((task) => (
-                    <li key={task} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14, color: isFirst ? 'rgba(255,255,255,0.85)' : '#7A6F65', lineHeight: 1.4 }}>
-                      <span style={{ color: isFirst ? '#A5D6A7' : gardenAccent, marginTop: 1, flexShrink: 0 }}>—</span>
+                    <li key={task} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14, color: isActive ? 'rgba(255,255,255,0.85)' : '#7A6F65', lineHeight: 1.4 }}>
+                      <span style={{ color: isActive ? '#A5D6A7' : gardenAccent, marginTop: 1, flexShrink: 0 }}>—</span>
                       {task}
                     </li>
                   ))}
                 </ul>
-              </div>
+              </button>
             )
           })}
         </div>
