@@ -42,7 +42,7 @@ body {
   header {
     position: fixed !important;
     top: auto !important;
-    bottom: 12px !important;
+    bottom: 48px !important;
     left: 0 !important;
     right: 0 !important;
     z-index: 100 !important;
@@ -56,7 +56,7 @@ body {
     border: 1px solid rgba(255,255,255,0.4) !important;
   }
   body {
-    padding-bottom: 84px !important;
+    padding-bottom: 120px !important;
   }
   /* Els heros tenien margin-top: -60px perquè el header era a dalt.
      Ara que el header és a baix, eliminar el margin negatiu perquè no talli l'hero. */
@@ -87,15 +87,15 @@ body {
 /* Badge "Resposta garantida / En menys de 2h" — text llegible i ben proporcionat */
 .hero-badge {
   transform: none;
-  padding: 18px 24px !important;
-  border-radius: 14px !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
 }
 .hero-badge > div:first-child {
-  font-size: 13px !important;
-  margin-bottom: 4px !important;
-  letter-spacing: 0.1em !important;
+  font-size: 11px !important;
+  margin-bottom: 2px !important;
+  letter-spacing: 0.08em !important;
 }
 .hero-badge > div:last-child {
-  font-size: 24px !important;
+  font-size: 18px !important;
 }

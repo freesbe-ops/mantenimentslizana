@@ -413,9 +413,9 @@
       "heading": "Solutions for<br /><em>every space.</em>",
       "subheading": "We adapt our services to your needs. From small installations to complete projects.",
       "items": [
-        { "icon": "🏠", "title": "Private homes", "desc": "Installations and assembly for flats, houses and villas. We customise each project to your needs.", "img": "https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=600&h=400&fit=crop&auto=format" },
-        { "icon": "🏢", "title": "Neighbourhood communities", "desc": "Electrical installations in common areas, stairway lighting, garages and security systems.", "img": "https://images.unsplash.com/photo-1682888813913-e13f18692019?w=600&h=400&fit=crop&auto=format" },
-        { "icon": "🏘️", "title": "Commercial premises", "desc": "Lighting for shops, restaurants, offices and electrical installations for businesses.", "img": "https://images.unsplash.com/photo-1721245321889-5e3dfdf7929b?w=600&h=400&fit=crop&auto=format" }
+        { "title": "Private homes", "desc": "Installations and assembly for flats, houses and villas. We customise each project to your needs.", "img": "https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=600&h=400&fit=crop&auto=format" },
+        { "title": "Neighbourhood communities", "desc": "Electrical installations in common areas, stairway lighting, garages and security systems.", "img": "https://images.unsplash.com/photo-1682888813913-e13f18692019?w=600&h=400&fit=crop&auto=format" },
+        { "title": "Commercial premises", "desc": "Lighting for shops, restaurants, offices and electrical installations for businesses.", "img": "https://images.unsplash.com/photo-1721245321889-5e3dfdf7929b?w=600&h=400&fit=crop&auto=format" }
       ]
     },
     "why": {
