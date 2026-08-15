@@ -87,16 +87,12 @@ body {
 /* Badge "Resposta garantida / En menys de 2h" — text llegible i ben proporcionat */
 .hero-badge {
   transform: none;
-  padding: 4px 8px !important;
-  border-radius: 8px !important;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
 }
 .hero-badge > div:first-child {
-  font-size: 8px !important;
-  margin-bottom: 1px !important;
-  letter-spacing: 0.06em !important;
+  margin-bottom: 2px !important;
+  letter-spacing: 0.08em !important;
 }
 .hero-badge > div:last-child {
-  font-size: 12px !important;
-  line-height: 1.2 !important;
+  line-height: 1.15 !important;
 }
