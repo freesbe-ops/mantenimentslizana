@@ -347,9 +347,9 @@ export default function App() {
         </div>
 
         {/* Floating badge */}
-        <div style={{ position: 'absolute', bottom: 40, right: 40, zIndex: 1, backgroundColor: 'rgba(255,255,255,0.95)', border: '1px solid rgba(255,255,255,0.8)', borderRadius: 12, padding: '14px 18px', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }} className="hero-badge">
-          <div style={{ fontSize: 11, color: '#5C5348', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>{t('hero.badge_title')}</div>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: '#1A1714' }}>{t('hero.badge_sub')}</div>
+        <div style={{ position: 'absolute', bottom: 40, right: 40, zIndex: 1, backgroundColor: 'rgba(255,255,255,0.95)', border: '1px solid rgba(255,255,255,0.8)', borderRadius: 8, padding: '6px 10px', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }} className="hero-badge">
+          <div style={{ fontSize: 9, color: '#5C5348', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 1 }}>{t('hero.badge_title')}</div>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 14, fontWeight: 700, color: '#1A1714', lineHeight: 1.2 }}>{t('hero.badge_sub')}</div>
         </div>
       </section>
 
