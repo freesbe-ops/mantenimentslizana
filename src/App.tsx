@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 
 const SERVICE_ICONS = [
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -222,7 +222,14 @@ export default function App() {
 
           {/* Desktop Nav - Icons with labels */}
           <nav style={{ display: 'flex', gap: 4, alignItems: 'center' }} className="hidden-mobile">
-            {navLinks.map(l => (
+            {navLinks.map(l => l.href.startsWith('/') ? (
+              <Link key={l.label} to={l.href} title={l.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 10px', borderRadius: 40, color: '#7A6F65', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#1A1714'; e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.04)'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = '#7A6F65'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
+                {l.icon}
+                <span style={{ fontSize: 9, fontWeight: 500, letterSpacing: '0.02em', whiteSpace: 'nowrap' }}>{l.label}</span>
+              </Link>
+            ) : (
               <a key={l.label} href={l.href} title={l.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 10px', borderRadius: 40, color: '#7A6F65', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
                 onMouseEnter={e => { e.currentTarget.style.color = '#1A1714'; e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.04)'; }}
                 onMouseLeave={e => { e.currentTarget.style.color = '#7A6F65'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
@@ -419,9 +426,9 @@ export default function App() {
               </div>
             )
             return isPiscines ? (
-              <a key={s.title} href={serviceLink} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Link key={s.title} to={serviceLink!} style={{ textDecoration: 'none', color: 'inherit' }}>
                 {element}
-              </a>
+              </Link>
             ) : element
           })}
         </div>

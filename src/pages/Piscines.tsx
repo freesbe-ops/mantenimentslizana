@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 const SERVICE_ICONS = [
   <svg key="clean" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -175,7 +175,7 @@ export default function Piscines() {
 
   const navLinks = [
     { label: t('nav.serveis'), href: '#serveis', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> },
-    { label: t('nav.sobre'), href: '#sobre', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg> },
+    { label: t('nav.sobre'), href: `/${currentLang}/#sobre`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg> },
     { label: t('nav.piscines'), href: `/${currentLang}/serveis/piscines`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 18c2-3 4-4.5 7-4.5S14 15 16.5 18" /><path d="M4 9.5C5.5 8 7.5 7 9.5 7s3.5 1 5 2.5" /><path d="M13 3.5c1.6 1.2 2.8 3 3.5 5" /><path d="M8 5.5c-1.2 1.3-2 3.2-2.2 5.1" /></svg> },
   ]
 
@@ -207,7 +207,7 @@ export default function Piscines() {
 
       <header style={{ position: 'sticky', top: 20, zIndex: 50, padding: '0 24px' }}>
         <div style={{ width: 'fit-content', margin: '0 auto', backgroundColor: 'rgba(255,255,255,0.75)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderRadius: 100, padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 32, height: 60, boxShadow: '0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)', border: '1px solid rgba(255,255,255,0.3)' }}>
-          <a href={`/${currentLang}`} style={{ textDecoration: 'none' }}>
+          <Link to={`/${currentLang}`} style={{ textDecoration: 'none' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <img src="/logo-lizana.png" alt="Manteniments Lizana - Reparacions a Girona" style={{ width: 34, height: 34, borderRadius: '50%', objectFit: 'cover' }} />
               <div className="logo-text">
@@ -215,10 +215,22 @@ export default function Piscines() {
                 <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 12, color: '#7A6F65', letterSpacing: '0.08em' }}>LIZANA</div>
               </div>
             </div>
-          </a>
+          </Link>
 
           <nav style={{ display: 'flex', gap: 4, alignItems: 'center' }} className="hidden-mobile">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => link.href.startsWith('/') ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                title={link.label}
+                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 10px', borderRadius: 40, color: '#7A6F65', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#1A1714'; e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.04)' }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#7A6F65'; e.currentTarget.style.backgroundColor = 'transparent' }}
+              >
+                {link.icon}
+                <span style={{ fontSize: 9, fontWeight: 500, letterSpacing: '0.02em', whiteSpace: 'nowrap' }}>{link.label}</span>
+              </Link>
+            ) : (
               <a
                 key={link.label}
                 href={link.href}
@@ -234,7 +246,18 @@ export default function Piscines() {
           </nav>
 
           <nav className="show-mobile" style={{ display: 'none', gap: 2, alignItems: 'center', justifyContent: 'center', padding: '4px 0' }}>
-            {navLinks.map((link) => (
+            {navLinks.map((link) => link.href.startsWith('/') ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 8px', borderRadius: 40, color: '#7A6F65', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#1A1714'; e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.04)' }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#7A6F65'; e.currentTarget.style.backgroundColor = 'transparent' }}
+              >
+                {link.icon}
+                <span style={{ fontSize: 9, fontWeight: 500, letterSpacing: '0.02em', whiteSpace: 'nowrap' }}>{link.label}</span>
+              </Link>
+            ) : (
               <a
                 key={link.label}
                 href={link.href}
@@ -255,9 +278,9 @@ export default function Piscines() {
               </svg>
               677 218 303
             </a>
-            <a href={`/${currentLang}#contacte`} style={{ padding: '8px 18px', backgroundColor: '#00326B', color: '#FFFFFF', borderRadius: 40, textDecoration: 'none', fontSize: 13, fontWeight: 500, whiteSpace: 'nowrap' }} className="hidden-mobile">
+            <Link to={`/${currentLang}#contacte`} style={{ padding: '8px 18px', backgroundColor: '#00326B', color: '#FFFFFF', borderRadius: 40, textDecoration: 'none', fontSize: 13, fontWeight: 500, whiteSpace: 'nowrap' }} className="hidden-mobile">
               {t('nav.pressupost_cta')}
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -485,9 +508,9 @@ export default function Piscines() {
             <a href={waFooter} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 24px', borderRadius: 40, backgroundColor: '#25D366', color: '#FFFFFF', textDecoration: 'none', fontWeight: 600, boxShadow: '0 10px 24px rgba(37, 211, 102, 0.25)' }}>
               {t('piscines.cta.button')}
             </a>
-            <a href={`/${currentLang}/#contacte`} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 24px', borderRadius: 40, border: '1px solid #D9D9D9', backgroundColor: '#FFFFFF', color: '#1A1714', textDecoration: 'none', fontWeight: 600 }}>
+            <Link to={`/${currentLang}/#contacte`} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 24px', borderRadius: 40, border: '1px solid #D9D9D9', backgroundColor: '#FFFFFF', color: '#1A1714', textDecoration: 'none', fontWeight: 600 }}>
               {t('piscines.cta.secondary')}
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -517,15 +540,15 @@ export default function Piscines() {
             <div>
               <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.serveis_title')}</div>
               {[t('serveis.items.0.title'), t('serveis.items.1.title'), t('serveis.items.2.title'), t('serveis.items.3.title')].map((service) => (
-                <a key={service} href={`/${currentLang}`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{service}</a>
+                <Link key={service} to={`/${currentLang}`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{service}</Link>
               ))}
             </div>
 
             <div>
               <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.empresa_title')}</div>
-              <a href={`/${currentLang}`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('footer.inici')}</a>
-              <a href={`/${currentLang}/#sobre`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('nav.sobre')}</a>
-              <a href={`/${currentLang}/#contacte`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('nav.contacte')}</a>
+              <Link to={`/${currentLang}`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('footer.inici')}</Link>
+              <Link to={`/${currentLang}/#sobre`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('nav.sobre')}</Link>
+              <Link to={`/${currentLang}/#contacte`} style={{ display: 'block', fontSize: 13, color: '#7A6F65', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{t('nav.contacte')}</Link>
             </div>
 
             <div>
