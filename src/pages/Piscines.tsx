@@ -92,7 +92,7 @@ function BeforeAfterSection() {
             alt={imatges[imatgeActual].alt}
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'opacity 0.3s ease' }}
           />
-          <div style={{ position: 'absolute', bottom: 40, left: '50%', transform: 'translateX(-50%)', backgroundColor: 'rgba(0,0,0,0.6)', padding: '12px 32px', borderRadius: 40, color: '#FFFFFF', fontFamily: "'DM Sans', sans-serif", fontSize: 18, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+          <div style={{ position: 'absolute', bottom: 60, left: '50%', transform: 'translateX(-50%)', color: '#FFFFFF', fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 4.8vw, 58px)', fontWeight: 700, fontStyle: 'italic', lineHeight: 1.1, textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
             {imatges[imatgeActual].label}
           </div>
         </div>
@@ -117,8 +117,8 @@ function BeforeAfterSection() {
           →
         </button>
 
-        {/* Indicadors (punts) */}
-        <div style={{ position: 'absolute', bottom: 24, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 10 }}>
+        {/* Indicadors (punts) - ELIMINAT */}
+        {/* <div style={{ position: 'absolute', bottom: 24, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 10 }}>
           <button
             onClick={() => setImatgeActual('abans')}
             style={{ width: 12, height: 12, borderRadius: '50%', border: 'none', backgroundColor: imatgeActual === 'abans' ? '#00326B' : 'rgba(255,255,255,0.5)', cursor: 'pointer', transition: 'background 0.2s' }}
@@ -129,7 +129,7 @@ function BeforeAfterSection() {
             style={{ width: 12, height: 12, borderRadius: '50%', border: 'none', backgroundColor: imatgeActual === 'despres' ? '#00326B' : 'rgba(255,255,255,0.5)', cursor: 'pointer', transition: 'background 0.2s' }}
             aria-label="Després"
           />
-        </div>
+        </div> */}
       </div>
 
       <style>{`
