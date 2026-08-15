@@ -21,7 +21,12 @@
     "pressupost": "Quote",
     "pressupost_cta": "Get a quote"
   },
-  "carousel": ["ALWAYS ON TIME", "NO COMMITMENT", "5★ VERIFIED REVIEWS", "QUICK QUOTE"],
+  "carousel": [
+    "ALWAYS ON TIME",
+    "NO COMMITMENT",
+    "5★ VERIFIED REVIEWS",
+    "QUICK QUOTE"
+  ],
   "serveis": {
     "title": "SERVICES",
     "heading": "Everything your home<br /><em>needs.</em>",
@@ -54,10 +59,22 @@
     "heading": "For everyone who<br /><em>trusts us.</em>",
     "subheading": "We work with individuals, businesses and communities across the province of Girona. Any maintenance need, we solve it.",
     "items": [
-      { "title": "Homeowners", "desc": "Quick solutions for your home. We assist you promptly and carefully, without complications." },
-      { "title": "Real Estate & Tourism", "desc": "Rental properties, accommodations and tourist apartments always ready for guests." },
-      { "title": "Neighbourhood Communities", "desc": "Preventive and corrective maintenance of common areas, gardens, pools and facilities." },
-      { "title": "Second Homes", "desc": "We open, close and maintain your holiday home so it's always ready when you arrive." }
+      {
+        "title": "Homeowners",
+        "desc": "Quick solutions for your home. We assist you promptly and carefully, without complications."
+      },
+      {
+        "title": "Real Estate & Tourism",
+        "desc": "Rental properties, accommodations and tourist apartments always ready for guests."
+      },
+      {
+        "title": "Neighbourhood Communities",
+        "desc": "Preventive and corrective maintenance of common areas, gardens, pools and facilities."
+      },
+      {
+        "title": "Second Homes",
+        "desc": "We open, close and maintain your holiday home so it's always ready when you arrive."
+      }
     ]
   },
   "sobre": {
@@ -66,9 +83,18 @@
     "p1": "We are a maintenance team in Girona with over 10 years of experience solving everything your home needs. We have grown thanks to the trust of our clients and work well done.",
     "p2": "We work one service at a time, always with care. When we say we'll be there on time, we are. When we say we'll leave it clean, we leave it clean. No excuses or complications.",
     "stats": [
-      { "num": "+500", "label": "Homes served" },
-      { "num": "+120", "label": "Loyal clients" },
-      { "num": "4.9★", "label": "Rating" }
+      {
+        "num": "+500",
+        "label": "Homes served"
+      },
+      {
+        "num": "+120",
+        "label": "Loyal clients"
+      },
+      {
+        "num": "4.9★",
+        "label": "Rating"
+      }
     ],
     "cta": "Contact us today",
     "image_alt": "Maintenance team in Girona - Manteniments Lizana",
@@ -79,22 +105,58 @@
     "title": "WHY US",
     "heading": "Why trust <em>Manteniments Lizana</em>",
     "items": [
-      { "title": "Qualified professionals", "desc": "Team with training and experience in all trades. We work with guarantee and safety." },
-      { "title": "Fast and punctual service", "desc": "We respond within hours and meet agreed schedules. Your time is our time." },
-      { "title": "No-obligation quote", "desc": "We explain the price before starting. No surprises or hidden costs." },
-      { "title": "Work guarantee", "desc": "All work comes with a guarantee. If anything doesn't work, we fix it again." }
+      {
+        "title": "Qualified professionals",
+        "desc": "Team with training and experience in all trades. We work with guarantee and safety."
+      },
+      {
+        "title": "Fast and punctual service",
+        "desc": "We respond within hours and meet agreed schedules. Your time is our time."
+      },
+      {
+        "title": "No-obligation quote",
+        "desc": "We explain the price before starting. No surprises or hidden costs."
+      },
+      {
+        "title": "Work guarantee",
+        "desc": "All work comes with a guarantee. If anything doesn't work, we fix it again."
+      }
     ]
   },
   "testimonis": {
     "title": "TESTIMONIALS",
     "heading": "What our<br /><em>clients say.</em>",
     "items": [
-      { "name": "Maria G.", "location": "Girona", "text": "Very professional and fast. I called in the morning and by the afternoon the tap was already fixed. Totally recommendable." },
-      { "name": "Ekaterina V.", "location": "Platja d'Aro", "text": "They've been taking care of my pool for three years and it's always perfect. Excellent service and very punctual." },
-      { "name": "Anna M.", "location": "Palamós", "text": "They pruned the garden and it was spotless. Plus, the quote was very reasonable." },
-      { "name": "Francesc R.", "location": "Santa Cristina d'Aro", "text": "They've been managing our community's maintenance for years. Very satisfied with the service." },
-      { "name": "Núria V.", "location": "Llagostera", "text": "Excellent professionals. They assembled all the furniture in the new flat in one day without any issues." },
-      { "name": "Pere T.", "location": "Castell-Platja d'Aro", "text": "My second home is always ready thanks to them. A 100% trustworthy service." }
+      {
+        "name": "Maria G.",
+        "location": "Girona",
+        "text": "Very professional and fast. I called in the morning and by the afternoon the tap was already fixed. Totally recommendable."
+      },
+      {
+        "name": "Ekaterina V.",
+        "location": "Platja d'Aro",
+        "text": "They've been taking care of my pool for three years and it's always perfect. Excellent service and very punctual."
+      },
+      {
+        "name": "Anna M.",
+        "location": "Palamós",
+        "text": "They pruned the garden and it was spotless. Plus, the quote was very reasonable."
+      },
+      {
+        "name": "Francesc R.",
+        "location": "Santa Cristina d'Aro",
+        "text": "They've been managing our community's maintenance for years. Very satisfied with the service."
+      },
+      {
+        "name": "Núria V.",
+        "location": "Llagostera",
+        "text": "Excellent professionals. They assembled all the furniture in the new flat in one day without any issues."
+      },
+      {
+        "name": "Pere T.",
+        "location": "Castell-Platja d'Aro",
+        "text": "My second home is always ready thanks to them. A 100% trustworthy service."
+      }
     ]
   },
   "contacte": {
@@ -129,7 +191,13 @@
   "piscines": {
     "meta_title": "Pool maintenance in Girona | Manteniments Lizana",
     "meta_description": "Professional pool maintenance in Girona and Maresme. Cleaning, chemical treatment, equipment checks and seasonal start-up.",
-    "carousel": ["SPOTLESS POOLS", "CRYSTAL WATER", "PROFESSIONAL SERVICE", "FAST QUOTE", "TOTAL TRUST"],
+    "carousel": [
+      "SPOTLESS POOLS",
+      "CRYSTAL WATER",
+      "PROFESSIONAL SERVICE",
+      "FAST QUOTE",
+      "TOTAL TRUST"
+    ],
     "hero": {
       "badge": "Girona and Maresme · Pool specialists",
       "title": "Spotless pools.",
@@ -147,10 +215,22 @@
       "heading": "Pool care<br /><em>down to the details.</em>",
       "subheading": "We take care of every detail so your pool stays perfect all year long with a reliable, professional service.",
       "items": [
-        { "title": "Weekly Cleaning & Maintenance", "description": "Filters, skimmers, wall and floor cleaning, and chemical level control to keep the water crystal clear." },
-        { "title": "Water Chemical Treatment", "description": "Analysis and adjustment of pH, chlorine, alkalinity and other parameters to ensure healthy and safe water." },
-        { "title": "Equipment & Systems Inspection", "description": "Inspection and maintenance of pumps, filters, chlorinators, lighting and heating systems." },
-        { "title": "Seasonal Start-up & Closing", "description": "Opening and closing of the pool, deep cleaning, review of all systems and preparation for summer." }
+        {
+          "title": "Weekly Cleaning & Maintenance",
+          "description": "Filters, skimmers, wall and floor cleaning, and chemical level control to keep the water crystal clear."
+        },
+        {
+          "title": "Water Chemical Treatment",
+          "description": "Analysis and adjustment of pH, chlorine, alkalinity and other parameters to ensure healthy and safe water."
+        },
+        {
+          "title": "Equipment & Systems Inspection",
+          "description": "Inspection and maintenance of pumps, filters, chlorinators, lighting and heating systems."
+        },
+        {
+          "title": "Seasonal Start-up & Closing",
+          "description": "Opening and closing of the pool, deep cleaning, review of all systems and preparation for summer."
+        }
       ]
     },
     "benefits": {
@@ -158,19 +238,43 @@
       "heading": "The reassurance of a pool<br /><em>always in top condition.</em>",
       "subheading": "A team specialized in pools that combines technical expertise, quality products and personalized attention.",
       "items": [
-        { "title": "Specialized Technicians", "description": "Team trained in water chemistry and pool maintenance. Experienced and guaranteed." },
-        { "title": "Reliable & Punctual Service", "description": "We keep our schedules. We respond in less than 2 hours." },
-        { "title": "Quality Products", "description": "We use top-brand chemicals and equipment to ensure the best results." },
-        { "title": "Work Guarantee", "description": "All work is guaranteed. If something doesn't work, we fix it." }
+        {
+          "title": "Specialized Technicians",
+          "description": "Team trained in water chemistry and pool maintenance. Experienced and guaranteed."
+        },
+        {
+          "title": "Reliable & Punctual Service",
+          "description": "We keep our schedules. We respond in less than 2 hours."
+        },
+        {
+          "title": "Quality Products",
+          "description": "We use top-brand chemicals and equipment to ensure the best results."
+        },
+        {
+          "title": "Work Guarantee",
+          "description": "All work is guaranteed. If something doesn't work, we fix it."
+        }
       ]
     },
     "testimonials": {
       "title": "TESTIMONIALS",
       "heading": "The satisfaction of our<br /><em>pool clients.</em>",
       "items": [
-        { "name": "Jordi P.", "location": "Girona", "text": "Excellent maintenance. The pool is always crystal clear and the team is very professional." },
-        { "name": "Marta R.", "location": "Platja d'Aro", "text": "They've been taking care of my pool for 3 years. I've never had any issues. Highly recommended." },
-        { "name": "Albert C.", "location": "Sant Feliu de Guíxols", "text": "They did the seasonal start-up and the pool was spotless. Very reasonable budget." }
+        {
+          "name": "Jordi P.",
+          "location": "Girona",
+          "text": "Excellent maintenance. The pool is always crystal clear and the team is very professional."
+        },
+        {
+          "name": "Marta R.",
+          "location": "Platja d'Aro",
+          "text": "They've been taking care of my pool for 3 years. I've never had any issues. Highly recommended."
+        },
+        {
+          "name": "Albert C.",
+          "location": "Sant Feliu de Guíxols",
+          "text": "They did the seasonal start-up and the pool was spotless. Very reasonable budget."
+        }
       ]
     },
     "abans_despres": {
@@ -203,5 +307,151 @@
     "testimonis": "Testimonials",
     "zona": "Girona and surrounding areas",
     "horari": "Mon–Fri: 7:30 – 19:00"
+  },
+  "jardineria": {
+    "meta_title": "Gardening in Girona | Manteniments Lizana",
+    "meta_description": "Professional gardening service in Girona. Pruning, garden design, automatic irrigation, lawn care and year-round maintenance.",
+    "carousel": [
+      "WELL-CARED GARDENS",
+      "MEDITERRANEAN DESIGN",
+      "AUTOMATIC IRRIGATION",
+      "ANNUAL MAINTENANCE",
+      "TOTAL TRUST"
+    ],
+    "hero": {
+      "badge": "Girona & Maresme · Gardening specialists",
+      "title": "The garden you",
+      "subtitle": "deserve, cared for properly.",
+      "description": "We design, plant and maintain Mediterranean gardens with years of local experience. From the small patio to the large plot.",
+      "cta": "Request a quote",
+      "secondary_cta": "View services",
+      "reviews": "Over 350 maintained gardens",
+      "badge_title": "Guaranteed response",
+      "badge_sub": "In less than 2h",
+      "image_alt": "Formal garden with geometric hedges"
+    },
+    "services": {
+      "title": "OUR SERVICES",
+      "heading": "Everything your<br /><em>garden needs.</em>",
+      "subheading": "We offer a comprehensive gardening service: from initial design to regular maintenance. A team of professionals at your disposal all year round.",
+      "items": [
+        {
+          "title": "Pruning & Trimming",
+          "description": "Professional pruning of trees, shrubs and hedges. Regular maintenance to keep plants healthy and well-shaped.",
+          "img": "https://images.unsplash.com/photo-1680124744811-f779e4ad6985?w=600&h=400&fit=crop&auto=format",
+          "icon": "✂"
+        },
+        {
+          "title": "Garden Design",
+          "description": "Creation and design of Mediterranean gardens adapted to the local climate. Selection of resilient and aesthetic plants.",
+          "img": "https://images.unsplash.com/photo-1783159144730-abbde99fe3ee?w=600&h=400&fit=crop&auto=format",
+          "icon": "🌿"
+        },
+        {
+          "title": "Automatic Irrigation",
+          "description": "Installation and maintenance of drip and sprinkler irrigation systems. Water efficiency and guaranteed savings.",
+          "img": "https://images.unsplash.com/photo-1596916783053-b4515643e028?w=600&h=400&fit=crop&auto=format",
+          "icon": "💧"
+        },
+        {
+          "title": "Lawn & Landscaping",
+          "description": "Lawn planting, land leveling and complete landscaping of plots. Professional results.",
+          "img": "https://images.unsplash.com/photo-1781458708730-c35e7c7ee998?w=600&h=400&fit=crop&auto=format",
+          "icon": "🌳"
+        }
+      ]
+    },
+    "benefits": {
+      "title": "WHY US",
+      "heading": "Commitment to<br /><em>every leaf.</em>",
+      "subheading": "Professionals with years of experience in local gardens. We know the climate and native species.",
+      "items": [
+        {
+          "title": "Local experience",
+          "desc": "Over 15 years working in local gardens. We know the climate and native species."
+        },
+        {
+          "title": "Qualified team",
+          "desc": "Professionals trained in gardening, landscaping and sustainable irrigation techniques."
+        },
+        {
+          "title": "No-obligation quote",
+          "desc": "Free visit and detailed quote with no commitment whatsoever."
+        },
+        {
+          "title": "Continuous maintenance",
+          "desc": "Monthly or seasonal maintenance contracts tailored to your needs."
+        }
+      ]
+    },
+    "seasons": {
+      "title": "ANNUAL MAINTENANCE",
+      "heading": "Each season,<br /><em>a task.</em>",
+      "items": [
+        {
+          "season": "Spring",
+          "tasks": [
+            "Formative pruning",
+            "Fertilisation",
+            "Irrigation check",
+            "Flower planting"
+          ]
+        },
+        {
+          "season": "Summer",
+          "tasks": [
+            "Intensive irrigation",
+            "Pest control",
+            "Weekly mowing",
+            "Light pruning"
+          ]
+        },
+        {
+          "season": "Autumn",
+          "tasks": [
+            "Leaf collection",
+            "Bulb planting",
+            "Autumn pruning",
+            "Winter preparation"
+          ]
+        },
+        {
+          "season": "Winter",
+          "tasks": [
+            "Fruiting pruning",
+            "Phytosanitary treatments",
+            "Soil analysis",
+            "Annual planning"
+          ]
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIALS",
+      "heading": "What our gardening<br /><em>clients say.</em>",
+      "items": [
+        {
+          "name": "Lluís M.",
+          "location": "Girona",
+          "text": "They completely transformed my garden. Impressive design and professional results."
+        },
+        {
+          "name": "Carme P.",
+          "location": "Platja d'Aro",
+          "text": "The weekly maintenance is impeccable. The garden is always perfect."
+        },
+        {
+          "name": "Joan G.",
+          "location": "Sant Feliu de Guíxols",
+          "text": "They installed automatic irrigation and I have saved so much water. Highly recommended."
+        }
+      ]
+    },
+    "cta": {
+      "title": "CONTACT",
+      "text": "Let's talk about your garden. Contact us for a free quote.",
+      "button": "Request quote",
+      "secondary": "Fill in the form"
+    }
   }
 }

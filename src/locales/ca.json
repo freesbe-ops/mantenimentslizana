@@ -189,6 +189,70 @@
       "secondary": "Omple el formulari"
     }
   },
+  "jardineria": {
+    "meta_title": "Jardineria a Girona | Manteniments Lizana",
+    "meta_description": "Servei professional de jardineria a Girona. Poda, disseny de jardins, reg automàtic, gespa i manteniment continu durant tot l'any.",
+    "carousel": ["JARDINS BEN CUIDATS", "DISSENY MEDITERRANI", "REG AUTOMÀTIC", "MANTENIMENT ANUAL", "TOTAL CONFIANÇA"],
+    "hero": {
+      "badge": "Girona i Maresme · Especialistes en jardineria",
+      "title": "El jardí que",
+      "subtitle": "mereixes, cuidat com cal.",
+      "description": "Dissenyem, plantem i mantenim jardins mediterranis amb anys d'experiència local. Del petit pati a la gran parcel·la.",
+      "cta": "Demana pressupost",
+      "secondary_cta": "Veure serveis",
+      "reviews": "Més de 350 jardins mantinguts",
+      "badge_title": "Resposta garantida",
+      "badge_sub": "En menys de 2h",
+      "image_alt": "Jardí formal amb tanques geomètriques"
+    },
+    "services": {
+      "title": "ELS NOSTRES SERVEIS",
+      "heading": "Tot el que<br /><em>necessita</em><br />el teu jardí.",
+      "subheading": "Oferim un servei integral de jardineria: des del disseny inicial fins al manteniment periòdic. Un equip de professionals a la teva disposició durant tot l'any.",
+      "items": [
+        { "title": "Poda i Retall", "description": "Poda professional d'arbres, arbustos i tanques vives. Manteniment periòdic per mantenir la forma i la salut de les plantes.", "img": "https://images.unsplash.com/photo-1680124744811-f779e4ad6985?w=600&h=400&fit=crop&auto=format", "icon": "✂" },
+        { "title": "Disseny de Jardins", "description": "Creació i disseny de jardins mediterranis adaptats al clima local. Selecció de plantes resistents i estètiques.", "img": "https://images.unsplash.com/photo-1783159144730-abbde99fe3ee?w=600&h=400&fit=crop&auto=format", "icon": "🌿" },
+        { "title": "Reg Automàtic", "description": "Instal·lació i manteniment de sistemes de reg per degoteig i aspersió. Eficiència hídrica i estalvi garantits.", "img": "https://images.unsplash.com/photo-1596916783053-b4515643e028?w=600&h=400&fit=crop&auto=format", "icon": "💧" },
+        { "title": "Gespa i Enjardinament", "description": "Plantació de gespa, anivellació del terreny i enjardinament complet de parcel·les. Resultats professionals.", "img": "https://images.unsplash.com/photo-1781458708730-c35e7c7ee998?w=600&h=400&fit=crop&auto=format", "icon": "🌳" }
+      ]
+    },
+    "benefits": {
+      "title": "PER QUÈ NOSALTRES",
+      "heading": "Compromís amb<br /><em>cada fulla.</em>",
+      "subheading": "Professionals amb anys d'experiència en jardins de la zona. Coneixem el clima i les espècies autòctones.",
+      "items": [
+        { "title": "Experiència local", "desc": "Més de 15 anys treballant en jardins de la zona. Coneixem el clima i les espècies autòctones." },
+        { "title": "Equip qualificat", "desc": "Professionals amb formació en jardineria, paisatgisme i tècniques de reg sostenible." },
+        { "title": "Pressupost sense compromís", "desc": "Visita gratuïta i pressupost detallat sense cap tipus de compromís." },
+        { "title": "Manteniment continu", "desc": "Contractes de manteniment mensuals o estacionals adaptats a les teves necessitats." }
+      ]
+    },
+    "seasons": {
+      "title": "MANTENIMENT ANUAL",
+      "heading": "Cada estació,<br /><em>una feina.</em>",
+      "items": [
+        { "season": "Primavera", "tasks": ["Poda de formació", "Fertilització", "Revisió del reg", "Plantació de flors"] },
+        { "season": "Estiu", "tasks": ["Reg intensiu", "Control de plagues", "Sega setmanal", "Poda lleugera"] },
+        { "season": "Tardor", "tasks": ["Recollida de fulles", "Plantació de bulbs", "Poda de tardor", "Preparació hivernal"] },
+        { "season": "Hivern", "tasks": ["Poda de fructificació", "Tractaments fitosanitaris", "Anàlisi del sòl", "Planificació anual"] }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIS",
+      "heading": "El que diuen els nostres<br /><em>clients de jardineria.</em>",
+      "items": [
+        { "name": "Lluís M.", "location": "Girona", "text": "Van transformar el meu jardí completament. Disseny impressionant i resultats professionals." },
+        { "name": "Carme P.", "location": "Platja d'Aro", "text": "El manteniment setmanal és impecable. El jardí sempre està perfecte." },
+        { "name": "Joan G.", "location": "Sant Feliu de Guíxols", "text": "Van instal·lar el reg automàtic i he estalviat moltíssima aigua. Molt recomanables." }
+      ]
+    },
+    "cta": {
+      "title": "CONTACTE",
+      "text": "Parlem del teu jardí. Contacta'ns per demanar un pressupost gratuït.",
+      "button": "Demana pressupost",
+      "secondary": "Omple el formulari"
+    }
+  },
   "footer": {
     "tagline": "GIRONA I MARESME · 10 ANYS D'EXPERIÈNCIA",
     "description": "Servei integral de manteniment, reparacions, jardineria i piscines a Girona i comarques. Professionals de confiança, servei proper.",
