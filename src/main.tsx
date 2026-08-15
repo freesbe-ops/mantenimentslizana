@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react'
+import React, { Suspense, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
@@ -17,24 +17,37 @@ if (sessionStorage.redirect) {
 
 function ScrollManager() {
   const location = useLocation()
+  const prevPathname = useRef(location.pathname)
 
-  // Quan canvia la ruta (sense hash), torna al top
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location.pathname])
-
-  // Quan hi ha hash a la URL (navegació SPA), fa scroll a l'element
+  // Scroll a l'element amb hash.
+  // ORDRE IMPORTANT: aquest effect ha d'anar ABANS del de pathname, perquè
+  // necessita llegir prevPathname abans que s'actualitzi a l'altre effect.
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.slice(1)
       const element = document.getElementById(id)
       if (element) {
+        // Si venim d'una altra pàgina (ex: de /ca/serveis/piscines a /ca#sobre),
+        // esperem que el component es munti abans de fer scroll.
+        // Si és la mateixa pàgina amb un hash nou, actuem immediatament.
+        const isNewPage = prevPathname.current !== location.pathname
+        const delay = isNewPage ? 250 : 0
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }, 100)
+        }, delay)
       }
     }
-  }, [location.hash])
+  }, [location.hash, location.pathname])
+
+  // Quan canvia la ruta, actualitza el ref i torna a top si no hi ha hash.
+  useEffect(() => {
+    if (location.pathname !== prevPathname.current) {
+      prevPathname.current = location.pathname
+      if (!location.hash) {
+        window.scrollTo(0, 0)
+      }
+    }
+  }, [location.pathname, location.hash])
 
   return null
 }
