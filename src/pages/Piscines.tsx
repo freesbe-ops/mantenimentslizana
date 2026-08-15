@@ -48,7 +48,7 @@ function CarouselBar({ items }: { items: string[] }) {
 
   return (
     <div style={{ borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5', backgroundColor: '#F5F5F5', padding: '20px 0', overflow: 'hidden' }}>
-      <div style={{ display: 'flex', whiteSpace: 'nowrap', animation: 'scrollCarousel 30s linear infinite' }}>
+      <div style={{ display: 'flex', whiteSpace: 'nowrap', animation: 'scrollCarousel 20s linear infinite' }}>
         <span style={{ fontSize: 16, fontWeight: 600, color: '#1A1714', letterSpacing: '0.12em', paddingRight: 0 }} dangerouslySetInnerHTML={{ __html: text }} />
       </div>
       <style>{`
