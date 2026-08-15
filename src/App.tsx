@@ -113,6 +113,7 @@ export default function App() {
     { label: t('nav.sobre'), href: '#sobre', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg> },
     { label: t('nav.piscines'), href: `/${currentLang}/serveis/piscines`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 18c2-3 4-4.5 7-4.5S14 15 16.5 18" /><path d="M4 9.5C5.5 8 7.5 7 9.5 7s3.5 1 5 2.5" /><path d="M13 3.5c1.6 1.2 2.8 3 3.5 5" /><path d="M8 5.5c-1.2 1.3-2 3.2-2.2 5.1" /></svg> },
     { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> },
+    { label: t('serveis.items.0.title'), href: `/${currentLang}/serveis/manteniment`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> },
   ]
 
   const services = t('serveis.items', { returnObjects: true }) as Array<{ title: string; description: string; tag: string }>
@@ -373,7 +374,7 @@ export default function App() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }} className="services-grid">
           {services.map((s, i) => {
-            const isManteniment = i === 0 // Manteniment General is the first service (index 0)
+            const isManteniment = i === 3 // Manteniment General is the 4th service (index 3)
             const isPiscines = i === 1 // Piscines is the second service (index 1)
             const isJardineria = i === 2 // Jardineria is the third service (index 2)
             const isLinkable = isManteniment || isPiscines || isJardineria
