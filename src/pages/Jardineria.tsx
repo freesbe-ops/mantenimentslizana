@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import MobileNav from '../components/MobileNav'
 
 const HERO_IMAGES: Record<string, string> = {
   ca: '/garden.jpg',
@@ -141,20 +142,8 @@ export default function Jardineria() {
             ))}
           </nav>
 
-          <nav className="show-mobile" style={{ display: 'none', gap: 2, alignItems: 'center', justifyContent: 'center', padding: '4px 0' }}>
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1, padding: '4px 8px', borderRadius: 40, color: '#7A6F65', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#1A1714'; e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.04)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = '#7A6F65'; e.currentTarget.style.backgroundColor = 'transparent' }}
-              >
-                {link.icon}
-                <span style={{ fontSize: 9, fontWeight: 500, letterSpacing: '0.02em', whiteSpace: 'nowrap' }}>{link.label}</span>
-              </Link>
-            ))}
-          </nav>
+          {/* Mobile Nav - amb desplegable de serveis (liquid glass) */}
+          <MobileNav currentLang={currentLang} waHeader={waHeader} />
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <a href={waHeader} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '7px 14px', border: '1px solid #25D366', borderRadius: 40, textDecoration: 'none', color: '#25D366', fontSize: 13, fontWeight: 500 }} className="hidden-mobile">
