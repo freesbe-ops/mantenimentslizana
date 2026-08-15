@@ -389,10 +389,10 @@ export default function App() {
                     ? `/${currentLang}/#contacte`
                     : undefined
             const element = (
-              <div key={s.title} style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid #E5E5E5', backgroundColor: '#FAFAFA', transition: 'transform 0.2s, box-shadow 0.2s', cursor: isLinkable ? 'pointer' : 'default' }}
+              <div key={s.title} style={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: 16, overflow: 'hidden', border: '1px solid #E5E5E5', backgroundColor: '#FAFAFA', transition: 'transform 0.2s, box-shadow 0.2s', cursor: isLinkable ? 'pointer' : 'default' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.08)'; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}>
-                <div style={{ position: 'relative', aspectRatio: '16/7', overflow: 'hidden', backgroundColor: '#E5E5E5' }}>
+                <div style={{ position: 'relative', aspectRatio: '16/7', overflow: 'hidden', backgroundColor: '#E5E5E5', flexShrink: 0 }}>
                   <img src={SERVICE_IMAGES[i]} alt={`${s.title} - Manteniments Lizana a Girona`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s' }}
                     onMouseEnter={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1.04)')}
                     onMouseLeave={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1)')} />
@@ -401,7 +401,7 @@ export default function App() {
                     +
                   </div>
                 </div>
-                <div style={{ padding: '28px 28px 32px' }}>
+                <div style={{ padding: '28px 28px 32px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, color: '#00326B' }}>
                       {SERVICE_ICONS[i]}
@@ -409,12 +409,12 @@ export default function App() {
                     </div>
                     <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', padding: '4px 10px', backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: 40, color: '#7A6F65', whiteSpace: 'nowrap' }}>{s.tag}</span>
                   </div>
-                  <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5148', margin: 0 }}>{s.description}</p>
+                  <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5148', margin: 0, flex: 1 }}>{s.description}</p>
                 </div>
               </div>
             )
             return isLinkable ? (
-              <Link key={s.title} to={serviceLink!} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Link key={s.title} to={serviceLink!} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', height: '100%' }}>
                 {element}
               </Link>
             ) : element
