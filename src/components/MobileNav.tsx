@@ -104,7 +104,6 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
           <span style={navLabelStyle}>{t('nav.serveis')}</span>
-          <span style={{ fontSize: 7, lineHeight: 1, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>▼</span>
         </button>
 
         {/* SOBRE */}
@@ -151,12 +150,12 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
             position: 'absolute',
             top: 'calc(100% + 14px)',
             left: '50%',
+            transform: 'translateX(-50%)',
             zIndex: 60,
             animation: 'mobileServicesDrop 0.22s ease-out',
           }}
         >
           <div style={{
-            transform: 'translateX(-50%)',
             display: 'flex',
             flexDirection: 'column',
             gap: 4,
@@ -207,7 +206,7 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
 
       <style>{`
         @keyframes mobileServicesDrop {
-          from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+          from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
           to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
       `}</style>
