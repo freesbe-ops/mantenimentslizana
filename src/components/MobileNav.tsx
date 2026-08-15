@@ -49,7 +49,7 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
     { label: t('serveis.items.0.title'), href: `${prefix}/#serveis` },
     { label: t('serveis.items.1.title'), href: `/${currentLang}/serveis/piscines` },
     { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria` },
-    { label: t('serveis.items.3.title'), href: `${prefix}/#serveis` },
+    { label: t('serveis.items.3.title'), href: `/${currentLang}/serveis/manteniment` },
   ]
 
   const navItemStyle: React.CSSProperties = {

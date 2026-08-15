@@ -293,6 +293,74 @@
       "secondary": "Rellena el formulario"
     }
   },
+  "manteniment": {
+    "meta_title": "Mantenimiento General en Girona | Mantenimientos Lizana",
+    "meta_description": "Servicio integral de mantenimiento general en Girona: reparaciones, electricidad, fontanería, calderas, electrodomésticos, pintura y pequeñas reformas.",
+    "carousel": [
+      "REPARACIONES EN 24H",
+      "PRESUPUESTO SIN COMPROMISO",
+      "PROFESIONALES CUALIFICADOS",
+      "GARANTÍA EN LOS TRABAJOS",
+      "TOTAL CONFIANZA"
+    ],
+    "hero": {
+      "badge": "Girona y Maresme · Expertos en mantenimiento",
+      "title": "Soluciones para",
+      "subtitle": "toda la casa.",
+      "description": "Reparaciones, electricidad, fontanería, calderas, electrodomésticos, pintura y pequeñas reformas. Un equipo profesional que deja tu hogar como nuevo.",
+      "cta": "Solicita presupuesto",
+      "secondary_cta": "Ver servicios",
+      "badge_title": "Respuesta garantizada",
+      "badge_sub": "En menos de 2h",
+      "image_alt": "Profesional de mantenimiento trabajando"
+    },
+    "services": {
+      "title": "NUESTROS SERVICIOS",
+      "heading": "Todo lo que tu hogar<br /><em>necesita.</em>",
+      "subheading": "Ofrecemos un servicio integral de mantenimiento para tu hogar. Desde pequeñas reparaciones hasta reformas completas, incluyendo la reparación de calderas y electrodomésticos.",
+      "items": [
+        { "icon": "🔧", "title": "Reparaciones generales", "desc": "Arreglamos averías, montamos muebles, colgamos cuadros, instalamos estanterías y resolvemos cualquier imprevisto en el hogar." },
+        { "icon": "⚡", "title": "Electricidad", "desc": "Instalaciones eléctricas, reparaciones, cambio de luminarias, enchufes, cuadros eléctricos y pequeñas averías." },
+        { "icon": "🚿", "title": "Fontanería y calderas", "desc": "Reparación de grifos, cisternas, tuberías, instalación de lavadoras, calefactores, y mantenimiento y reparación de calderas." },
+        { "icon": "🛠️", "title": "Electrodomésticos y pintura", "desc": "Reparamos lavadoras, frigoríficos, hornos, y también pintamos paredes, reparamos goteras y hacemos pequeñas reformas." }
+      ],
+      "link": "Más información"
+    },
+    "before_after": {
+      "title": "RESULTADOS REALES",
+      "heading": "Antes y Después —<br /><em>Tu hogar, renovado.</em>",
+      "before": "Antes",
+      "after": "Después",
+      "hint": "Arrastra para comparar"
+    },
+    "why": {
+      "title": "POR QUÉ NOSOTROS",
+      "heading": "Compromiso con<br /><em>cada reparación.</em>",
+      "subheading": "Profesionales con años de experiencia en todos los oficios del hogar. Trabajamos con cuidado y garantía.",
+      "cta": "Solicita presupuesto",
+      "items": [
+        { "title": "Profesionales cualificados", "desc": "Equipo con formación y experiencia en todos los oficios (electricidad, fontanería, calderas, electrodomésticos). Trabajamos con garantía y seguridad." },
+        { "title": "Servicio rápido y puntual", "desc": "Respondemos en pocas horas y cumplimos los horarios acordados. Tu tiempo es nuestro tiempo." },
+        { "title": "Presupuesto sin compromiso", "desc": "Te explicamos el precio antes de empezar. Sin sorpresas ni costes ocultos." },
+        { "title": "Garantía en los trabajos", "desc": "Todos los trabajos (incluyendo calderas y electrodomésticos) tienen garantía. Si algo no funciona, volvemos a solucionarlo." }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIOS",
+      "heading": "Lo que dicen<br /><em>nuestros clientes.</em>",
+      "items": [
+        { "text": "Muy profesionales y rápidos. Llamé por la mañana y por la tarde ya tenían el grifo arreglado. Totalmente recomendables.", "name": "Maria G.", "location": "Girona" },
+        { "text": "Montaron todos los muebles del piso nuevo en un solo día y sin ningún problema. Excelentes profesionales.", "name": "Núria V.", "location": "Llagostera" },
+        { "text": "Me repararon la caldera en menos de 24h. Un servicio de confianza al 100%.", "name": "Pere T.", "location": "Castell-Platja d'Aro" }
+      ]
+    },
+    "cta": {
+      "title": "CONTACTA CON NOSOTROS",
+      "text": "¿Necesitas un profesional?",
+      "description": "Contáctanos y te damos solución para cualquier reparación o mantenimiento.",
+      "button": "Solicita presupuesto"
+    }
+  },
   "footer": {
     "tagline": "GIRONA Y MARESME · 10 AÑOS DE EXPERIENCIA",
     "description": "Servicio integral de mantenimiento, reparaciones, jardinería y piscinas en Girona y comarcas. Profesionales de confianza, servicio cercano.",

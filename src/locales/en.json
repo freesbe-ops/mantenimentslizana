@@ -293,6 +293,74 @@
       "secondary": "Fill in the form"
     }
   },
+  "manteniment": {
+    "meta_title": "General Maintenance in Girona | Manteniments Lizana",
+    "meta_description": "Comprehensive general maintenance service in Girona: repairs, electrical work, plumbing, boilers, appliances, painting and small renovations.",
+    "carousel": [
+      "REPAIRS IN 24H",
+      "NO-OBLIGATION QUOTE",
+      "QUALIFIED PROFESSIONALS",
+      "WORK GUARANTEE",
+      "TOTAL TRUST"
+    ],
+    "hero": {
+      "badge": "Girona & Maresme · Maintenance experts",
+      "title": "Solutions for",
+      "subtitle": "your whole home.",
+      "description": "Repairs, electrical work, plumbing, boilers, appliances, painting and small renovations. A professional team that leaves your home looking new.",
+      "cta": "Get a quote",
+      "secondary_cta": "View services",
+      "badge_title": "Guaranteed response",
+      "badge_sub": "In less than 2h",
+      "image_alt": "Maintenance professional at work"
+    },
+    "services": {
+      "title": "OUR SERVICES",
+      "heading": "Everything your home<br /><em>needs.</em>",
+      "subheading": "We offer a comprehensive maintenance service for your home. From small repairs to complete renovations, including boiler and appliance repair.",
+      "items": [
+        { "icon": "🔧", "title": "General repairs", "desc": "We fix faults, assemble furniture, hang pictures, install shelving and solve any household issue." },
+        { "icon": "⚡", "title": "Electrical work", "desc": "Electrical installations, repairs, lighting changes, sockets, breaker panels and small faults." },
+        { "icon": "🚿", "title": "Plumbing & boilers", "desc": "Tap, cistern and pipe repair, washing machine and heater installation, and boiler maintenance and repair." },
+        { "icon": "🛠️", "title": "Appliances & painting", "desc": "We repair washing machines, fridges, ovens, and also paint walls, fix leaks and do small renovations." }
+      ],
+      "link": "More info"
+    },
+    "before_after": {
+      "title": "REAL RESULTS",
+      "heading": "Before and After —<br /><em>Your home, renewed.</em>",
+      "before": "Before",
+      "after": "After",
+      "hint": "Drag to compare"
+    },
+    "why": {
+      "title": "WHY US",
+      "heading": "Commitment to<br /><em>every repair.</em>",
+      "subheading": "Professionals with years of experience in all home trades. We work with care and guarantee.",
+      "cta": "Get a quote",
+      "items": [
+        { "title": "Qualified professionals", "desc": "Team with training and experience in all trades (electrical, plumbing, boilers, appliances). We work with guarantee and safety." },
+        { "title": "Fast and punctual service", "desc": "We respond within hours and meet agreed schedules. Your time is our time." },
+        { "title": "No-obligation quote", "desc": "We explain the price before starting. No surprises or hidden costs." },
+        { "title": "Work guarantee", "desc": "All work (including boilers and appliances) is guaranteed. If something doesn't work, we fix it again." }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIALS",
+      "heading": "What our<br /><em>clients say.</em>",
+      "items": [
+        { "text": "Very professional and fast. I called in the morning and by the afternoon the tap was already fixed. Totally recommendable.", "name": "Maria G.", "location": "Girona" },
+        { "text": "They assembled all the furniture in the new flat in one day without any issues. Excellent professionals.", "name": "Núria V.", "location": "Llagostera" },
+        { "text": "They repaired my boiler in less than 24h. A 100% trustworthy service.", "name": "Pere T.", "location": "Castell-Platja d'Aro" }
+      ]
+    },
+    "cta": {
+      "title": "CONTACT US",
+      "text": "Need a professional?",
+      "description": "Contact us and we'll find a solution for any repair or maintenance.",
+      "button": "Get a quote"
+    }
+  },
   "footer": {
     "tagline": "GIRONA & MARESME · 10 YEARS OF EXPERIENCE",
     "description": "Comprehensive maintenance, repairs, gardening and pool service in Girona and surrounding areas. Trustworthy professionals, close service.",

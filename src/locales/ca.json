@@ -253,6 +253,68 @@
       "secondary": "Omple el formulari"
     }
   },
+  "manteniment": {
+    "meta_title": "Manteniment General a Girona | Manteniments Lizana",
+    "meta_description": "Servei integral de manteniment general a Girona: reparacions, electricitat, fontaneria, calderes, electrodomèstics, pintura i petites reformes.",
+    "carousel": ["REPARACIONS EN 24H", "PRESSUPOST SENSE COMPROMÍS", "PROFESSIONALS QUALIFICATS", "GARANTIA EN ELS TREBALLS", "TOTAL CONFIANÇA"],
+    "hero": {
+      "badge": "Girona i Maresme · Experts en manteniment",
+      "title": "Solucions per a",
+      "subtitle": "tota la casa.",
+      "description": "Reparacions, electricitat, fontaneria, calderes, electrodomèstics, pintura i petites reformes. Un equip professional que deixa la teva llar com nova.",
+      "cta": "Sol·licita pressupost",
+      "secondary_cta": "Veure serveis",
+      "badge_title": "Resposta garantida",
+      "badge_sub": "En menys de 2h",
+      "image_alt": "Professional de manteniment treballant"
+    },
+    "services": {
+      "title": "ELS NOSTRES SERVEIS",
+      "heading": "Tot el que la teva llar<br /><em>necessita.</em>",
+      "subheading": "Oferim un servei integral de manteniment per a la teva llar. Des de petites reparacions fins a reformes completes, incloent la reparació de calderes i electrodomèstics.",
+      "items": [
+        { "icon": "🔧", "title": "Reparacions generals", "desc": "Arreglem avaries, muntem mobles, pengem quadres, instal·lem prestatgeries i resolem qualsevol imprevist de la llar." },
+        { "icon": "⚡", "title": "Electricitat", "desc": "Instal·lacions elèctriques, reparacions, canvi de lluminàries, endolls, quadres elèctrics i petites avaries." },
+        { "icon": "🚿", "title": "Fontaneria i calderes", "desc": "Reparació d'aixetes, cisternes, canonades, instal·lació de rentadores, calefactors i manteniment i reparació de calderes." },
+        { "icon": "🛠️", "title": "Electrodomèstics i pintura", "desc": "Reparem rentadores, frigorífics, forns, i també pintem parets, reparem goteres i fem petites reformes." }
+      ],
+      "link": "Més informació"
+    },
+    "before_after": {
+      "title": "RESULTATS REALS",
+      "heading": "Abans i Després —<br /><em>La teva llar, renovada.</em>",
+      "before": "Abans",
+      "after": "Després",
+      "hint": "Arrossega per comparar"
+    },
+    "why": {
+      "title": "PER QUÈ NOSALTRES",
+      "heading": "Compromís amb<br /><em>cada reparació.</em>",
+      "subheading": "Professionals amb anys d'experiència en tots els oficis de la llar. Treballem amb cura i garantia.",
+      "cta": "Sol·licita pressupost",
+      "items": [
+        { "title": "Professionals qualificats", "desc": "Equip amb formació i experiència en tots els oficis (electricitat, fontaneria, calderes, electrodomèstics). Treballem amb garantia i seguretat." },
+        { "title": "Servei ràpid i puntual", "desc": "Responem en poques hores i complim els horaris acordats. El teu temps és el nostre temps." },
+        { "title": "Pressupost sense compromís", "desc": "T'expliquem el preu abans de començar. Sense sorpreses ni costos amagats." },
+        { "title": "Garantia en els treballs", "desc": "Tots els treballs (incloent calderes i electrodomèstics) tenen garantia. Si alguna cosa no funciona, ho tornem a solucionar." }
+      ]
+    },
+    "testimonials": {
+      "title": "TESTIMONIS",
+      "heading": "El que diuen<br /><em>els nostres clients.</em>",
+      "items": [
+        { "text": "Molt professionals i ràpids. Vaig trucar al matí i a la tarda ja tenien l'aixeta arreglada. Totalment recomanables.", "name": "Maria G.", "location": "Girona" },
+        { "text": "Van muntar tots els mobles del pis nou en un sol dia i sense cap problema. Excel·lents professionals.", "name": "Núria V.", "location": "Llagostera" },
+        { "text": "Em van reparar la caldera en menys de 24h. Un servei de confiança al 100%.", "name": "Pere T.", "location": "Castell-Platja d'Aro" }
+      ]
+    },
+    "cta": {
+      "title": "CONTACTA AMB NOSALTRES",
+      "text": "Necessites un professional?",
+      "description": "Contacta'ns i et donem solució per a qualsevol reparació o manteniment.",
+      "button": "Sol·licita pressupost"
+    }
+  },
   "footer": {
     "tagline": "GIRONA I MARESME · 10 ANYS D'EXPERIÈNCIA",
     "description": "Servei integral de manteniment, reparacions, jardineria i piscines a Girona i comarques. Professionals de confiança, servei proper.",
