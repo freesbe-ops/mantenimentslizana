@@ -174,7 +174,9 @@
       ]
     },
     "abans_despres": {
-      "titol": "Piscines impecables. Tot l'any.",
+      "title": "ABANS I DESPRÉS",
+      "heading": "Piscines impecables.<br /><em>Tot l'any.</em>",
+      "subheading": "Ens cuidem de cada detall perquè la vostra piscina estigui perfecta durant tot l'any, amb un servei professional i fiable.",
       "abans": "Abans",
       "despres": "Després",
       "alt_abans": "Abans del manteniment de piscines",

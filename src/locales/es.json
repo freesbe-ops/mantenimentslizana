@@ -174,7 +174,9 @@
       ]
     },
     "abans_despres": {
-      "titol": "Piscinas impecables. Todo el año.",
+      "title": "ANTES Y DESPUÉS",
+      "heading": "Piscinas impecables.<br /><em>Todo el año.</em>",
+      "subheading": "Nos ocupamos de cada detalle para que su piscina esté perfecta durante todo el año, con un servicio profesional y fiable.",
       "abans": "Antes",
       "despres": "Después",
       "alt_abans": "Antes del mantenimiento de piscinas",

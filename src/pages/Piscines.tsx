@@ -84,12 +84,18 @@ function BeforeAfterSection() {
   }
 
   return (
-    <section style={{ backgroundColor: '#FFFFFF', padding: '60px 0' }}>
-      {/* Títol centrat amb contenidor */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', marginBottom: 32 }}>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, textAlign: 'center', color: '#1A1714', margin: 0 }}>
-          {t('piscines.abans_despres.titol')}
-        </h2>
+    <section style={{ backgroundColor: '#FFFFFF', padding: '100px 0' }}>
+      {/* Capçalera de secció - mateixa estructura que "El Nostre Servei" */}
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', marginBottom: 64 }}>
+        <div style={{ marginBottom: 60 }}>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('piscines.abans_despres.title')}</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'end' }} className="section-header-grid">
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', margin: 0 }} dangerouslySetInnerHTML={{ __html: t('piscines.abans_despres.heading') }} />
+            <p style={{ fontSize: 16, color: '#7A6F65', lineHeight: 1.65, margin: 0 }}>
+              {t('piscines.abans_despres.subheading')}
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Scroll horitzontal suau - 2 slides */}
@@ -132,28 +138,6 @@ function BeforeAfterSection() {
           ))}
         </div>
 
-        {/* Fletxes (hidden a mòbil) */}
-        <button
-          onClick={() => scrollToSlide(0)}
-          className="before-after-arrow"
-          style={{ position: 'absolute', top: '50%', left: 24, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: 44, height: 44, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 22, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s', backdropFilter: 'blur(8px)' }}
-          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
-          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.85)')}
-          aria-label="Abans"
-        >
-          ←
-        </button>
-        <button
-          onClick={() => scrollToSlide(1)}
-          className="before-after-arrow"
-          style={{ position: 'absolute', top: '50%', right: 24, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: 44, height: 44, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 22, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s', backdropFilter: 'blur(8px)' }}
-          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
-          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.85)')}
-          aria-label="Després"
-        >
-          →
-        </button>
-
         {/* Indicadors (punts) */}
         <div style={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 10 }}>
           {imatges.map((img, i) => (
@@ -181,8 +165,6 @@ function BeforeAfterSection() {
         }
 
         @media (max-width: 768px) {
-          /* Fletxes més petites en mòbil, semi ocultes */
-          .before-after-arrow { width: 36px !important; height: 36px !important; font-size: 18px !important; left: 12px !important; right: 12px !important; }
           /* Ajusta aspect ratio a mòbil (4/3) */
           .before-after-slide { aspect-ratio: 4/3 !important; }
           /* Label més gran relatiu en mòbil */

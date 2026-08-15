@@ -174,7 +174,9 @@
       ]
     },
     "abans_despres": {
-      "titol": "Spotless pools. All year round.",
+      "title": "BEFORE AND AFTER",
+      "heading": "Spotless pools.<br /><em>All year round.</em>",
+      "subheading": "We take care of every detail so your pool stays perfect all year round, with professional and reliable service.",
       "abans": "Before",
       "despres": "After",
       "alt_abans": "Before pool maintenance",
