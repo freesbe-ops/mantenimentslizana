@@ -34,7 +34,7 @@
     "items": [
       {
         "title": "Mantenimiento",
-        "description": "Fontanería básica, electricidad, pintura, pequeñas reformas y carpintería. Mantenemos tu hogar en perfecto estado todo el año.",
+        "description": "Fontanería básica, electricidad, montaje de muebles, pequeñas reformas y carpintería. Mantenemos tu hogar en perfecto estado todo el año.",
         "tag": "Todo en un servicio"
       },
       {
@@ -296,7 +296,7 @@
   },
   "manteniment": {
     "meta_title": "Mantenimiento General en Girona | Mantenimientos Lizana",
-    "meta_description": "Servicio integral de mantenimiento general en Girona: reparaciones, electricidad, fontanería, calderas, electrodomésticos, pintura y pequeñas reformas.",
+    "meta_description": "Servicio integral de mantenimiento general en Girona: reparaciones, electricidad, fontanería, calderas, montaje de muebles y pequeñas reformas.",
     "carousel": [
       "REPARACIONES EN 24H",
       "PRESUPUESTO SIN COMPROMISO",
@@ -308,7 +308,7 @@
       "badge": "Girona y Maresme · Expertos en mantenimiento",
       "title": "Soluciones para",
       "subtitle": "toda la casa.",
-      "description": "Reparaciones, electricidad, fontanería, calderas, electrodomésticos, pintura y pequeñas reformas. Un equipo profesional que deja tu hogar como nuevo.",
+      "description": "Reparaciones, electricidad, fontanería, calderas, montaje de muebles y pequeñas reformas. Un equipo profesional que deja tu hogar como nuevo.",
       "cta": "Solicita presupuesto",
       "secondary_cta": "Ver servicios",
       "badge_title": "Respuesta garantizada",
@@ -318,12 +318,12 @@
     "services": {
       "title": "NUESTROS SERVICIOS",
       "heading": "Todo lo que tu hogar<br /><em>necesita.</em>",
-      "subheading": "Ofrecemos un servicio integral de mantenimiento para tu hogar. Desde pequeñas reparaciones hasta reformas completas, incluyendo la reparación de calderas y electrodomésticos.",
+      "subheading": "Ofrecemos un servicio integral de mantenimiento para tu hogar. Desde pequeñas reparaciones hasta reformas completas, incluyendo el montaje de muebles.",
       "items": [
         { "icon": "🔧", "title": "Reparaciones generales", "desc": "Arreglamos averías, montamos muebles, colgamos cuadros, instalamos estanterías y resolvemos cualquier imprevisto en el hogar." },
         { "icon": "⚡", "title": "Electricidad", "desc": "Instalaciones eléctricas, reparaciones, cambio de luminarias, enchufes, cuadros eléctricos y pequeñas averías." },
-        { "icon": "🚿", "title": "Fontanería y calderas", "desc": "Reparación de grifos, cisternas, tuberías, instalación de lavadoras, calefactores, y mantenimiento y reparación de calderas." },
-        { "icon": "🛠️", "title": "Electrodomésticos y pintura", "desc": "Reparamos lavadoras, frigoríficos, hornos, y también pintamos paredes, reparamos goteras y hacemos pequeñas reformas." }
+        { "icon": "🚿", "title": "Fontanería y calderas", "desc": "Reparación de grifos, cisternas, tuberías, instalación de calefactores, y mantenimiento y reparación de calderas." },
+        { "icon": "🛠️", "title": "Montaje de muebles", "desc": "Montamos muebles, estanterías, bastidores y hacemos pequeñas reformas. Dejamos tu hogar perfecto." }
       ],
       "link": "Más información"
     },
@@ -340,10 +340,10 @@
       "subheading": "Profesionales con años de experiencia en todos los oficios del hogar. Trabajamos con cuidado y garantía.",
       "cta": "Solicita presupuesto",
       "items": [
-        { "title": "Profesionales cualificados", "desc": "Equipo con formación y experiencia en todos los oficios (electricidad, fontanería, calderas, electrodomésticos). Trabajamos con garantía y seguridad." },
+        { "title": "Profesionales cualificados", "desc": "Equipo con formación y experiencia en todos los oficios (electricidad, fontanería, calderas, montajes). Trabajamos con garantía y seguridad." },
         { "title": "Servicio rápido y puntual", "desc": "Respondemos en pocas horas y cumplimos los horarios acordados. Tu tiempo es nuestro tiempo." },
         { "title": "Presupuesto sin compromiso", "desc": "Te explicamos el precio antes de empezar. Sin sorpresas ni costes ocultos." },
-        { "title": "Garantía en los trabajos", "desc": "Todos los trabajos (incluyendo calderas y electrodomésticos) tienen garantía. Si algo no funciona, volvemos a solucionarlo." }
+        { "title": "Garantía en los trabajos", "desc": "Todos los trabajos (incluyendo montajes de muebles) tienen garantía. Si algo no funciona, volvemos a solucionarlo." }
       ]
     },
     "testimonials": {
@@ -391,7 +391,7 @@
       "items": [
         { "icon": "💡", "title": "Instalaciones eléctricas", "desc": "Instalaciones eléctricas completas: cuadros de distribución, circuitos, tomas de tierra y todo tipo de trabajos eléctricos con garantías de seguridad." },
         { "icon": "🔌", "title": "Puntos de luz e iluminación", "desc": "Instalamos puntos de luz, lámparas, iluminación interior y exterior, sistemas de encendido automático, reguladores y luces LED. Damos vida a tu hogar." },
-        { "icon": "🛠️", "title": "Montaje de cocinas", "desc": "Montamos e instalamos cocinas completas: muebles, encimeras, electrodomésticos, campanas extractoras y todo tipo de accesorios. Cocinas funcionales y bonitas." },
+        { "icon": "🛠️", "title": "Montaje de cocinas", "desc": "Montamos e instalamos cocinas completas: muebles, encimeras, campanas extractoras y todo tipo de accesorios. Cocinas funcionales y bonitas." },
         { "icon": "🔧", "title": "Montaje de muebles", "desc": "Montamos muebles, estanterías y bastidores. Dejamos tu hogar perfecto." }
       ],
       "link": "Más información"

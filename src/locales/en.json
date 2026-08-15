@@ -34,7 +34,7 @@
     "items": [
       {
         "title": "Maintenance",
-        "description": "Basic plumbing, electricity, painting, small renovations and carpentry. We keep your home in perfect condition all year round.",
+        "description": "Basic plumbing, electricity, furniture assembly, small renovations and carpentry. We keep your home in perfect condition all year round.",
         "tag": "All in one service"
       },
       {
@@ -296,7 +296,7 @@
   },
   "manteniment": {
     "meta_title": "General Maintenance in Girona | Manteniments Lizana",
-    "meta_description": "Comprehensive general maintenance service in Girona: repairs, electrical work, plumbing, boilers, appliances, painting and small renovations.",
+    "meta_description": "Comprehensive general maintenance service in Girona: repairs, electrical work, plumbing, boilers, furniture assembly and small renovations.",
     "carousel": [
       "REPAIRS IN 24H",
       "NO-OBLIGATION QUOTE",
@@ -308,7 +308,7 @@
       "badge": "Girona & Maresme · Maintenance experts",
       "title": "Solutions for",
       "subtitle": "your whole home.",
-      "description": "Repairs, electrical work, plumbing, boilers, appliances, painting and small renovations. A professional team that leaves your home looking new.",
+      "description": "Repairs, electrical work, plumbing, boilers, furniture assembly and small renovations. A professional team that leaves your home looking new.",
       "cta": "Get a quote",
       "secondary_cta": "View services",
       "badge_title": "Guaranteed response",
@@ -318,12 +318,12 @@
     "services": {
       "title": "OUR SERVICES",
       "heading": "Everything your home<br /><em>needs.</em>",
-      "subheading": "We offer a comprehensive maintenance service for your home. From small repairs to complete renovations, including boiler and appliance repair.",
+      "subheading": "We offer a comprehensive maintenance service for your home. From small repairs to complete renovations, including furniture assembly.",
       "items": [
         { "icon": "🔧", "title": "General repairs", "desc": "We fix faults, assemble furniture, hang pictures, install shelving and solve any household issue." },
         { "icon": "⚡", "title": "Electrical work", "desc": "Electrical installations, repairs, lighting changes, sockets, breaker panels and small faults." },
         { "icon": "🚿", "title": "Plumbing & boilers", "desc": "Tap, cistern and pipe repair, washing machine and heater installation, and boiler maintenance and repair." },
-        { "icon": "🛠️", "title": "Appliances & painting", "desc": "We repair washing machines, fridges, ovens, and also paint walls, fix leaks and do small renovations." }
+        { "icon": "🛠️", "title": "Furniture assembly", "desc": "We assemble furniture, shelving, frames and do small renovations. We leave your home perfect." }
       ],
       "link": "More info"
     },
@@ -340,10 +340,10 @@
       "subheading": "Professionals with years of experience in all home trades. We work with care and guarantee.",
       "cta": "Get a quote",
       "items": [
-        { "title": "Qualified professionals", "desc": "Team with training and experience in all trades (electrical, plumbing, boilers, appliances). We work with guarantee and safety." },
+        { "title": "Qualified professionals", "desc": "Team with training and experience in all trades (electrical, plumbing, boilers, assemblies). We work with guarantee and safety." },
         { "title": "Fast and punctual service", "desc": "We respond within hours and meet agreed schedules. Your time is our time." },
         { "title": "No-obligation quote", "desc": "We explain the price before starting. No surprises or hidden costs." },
-        { "title": "Work guarantee", "desc": "All work (including boilers and appliances) is guaranteed. If something doesn't work, we fix it again." }
+        { "title": "Work guarantee", "desc": "All work (including furniture assembly) is guaranteed. If something doesn't work, we fix it again." }
       ]
     },
     "testimonials": {
@@ -391,7 +391,7 @@
       "items": [
         { "icon": "💡", "title": "Electrical installations", "desc": "Complete electrical installations: distribution boards, circuits, earthing and all types of electrical work with safety guarantees." },
         { "icon": "🔌", "title": "Light points & lighting", "desc": "We install light points, lamps, indoor and outdoor lighting, automatic switch systems, dimmers and LED lights. We bring your home to life." },
-        { "icon": "🛠️", "title": "Kitchen assembly", "desc": "We assemble and install complete kitchens: cabinets, countertops, appliances, extractor hoods and all types of accessories. Functional and beautiful kitchens." },
+        { "icon": "🛠️", "title": "Kitchen assembly", "desc": "We assemble and install complete kitchens: cabinets, countertops, extractor hoods and all types of accessories. Functional and beautiful kitchens." },
         { "icon": "🔧", "title": "Furniture assembly", "desc": "We assemble furniture, shelving and frames. We leave your home perfect." }
       ],
       "link": "More info"

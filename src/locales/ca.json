@@ -29,7 +29,7 @@
     "items": [
       {
         "title": "Manteniment",
-        "description": "Fontaneria bàsica, electricitat, pintura, petites reformes i fusteria. Mantenim la teva llar en perfecte estat tot l'any.",
+        "description": "Fontaneria bàsica, electricitat, muntatge de mobles, petites reformes i fusteria. Mantenim la teva llar en perfecte estat tot l'any.",
         "tag": "Tot en un servei"
       },
       {
@@ -256,13 +256,13 @@
   },
   "manteniment": {
     "meta_title": "Manteniment General a Girona | Manteniments Lizana",
-    "meta_description": "Servei integral de manteniment general a Girona: reparacions, electricitat, fontaneria, calderes, electrodomèstics, pintura i petites reformes.",
+    "meta_description": "Servei integral de manteniment general a Girona: reparacions, electricitat, fontaneria, calderes, muntatge de mobles i petites reformes.",
     "carousel": ["REPARACIONS EN 24H", "PRESSUPOST SENSE COMPROMÍS", "PROFESSIONALS QUALIFICATS", "GARANTIA EN ELS TREBALLS", "TOTAL CONFIANÇA"],
     "hero": {
       "badge": "Girona i Maresme · Experts en manteniment",
       "title": "Solucions per a",
       "subtitle": "tota la casa.",
-      "description": "Reparacions, electricitat, fontaneria, calderes, electrodomèstics, pintura i petites reformes. Un equip professional que deixa la teva llar com nova.",
+      "description": "Reparacions, electricitat, fontaneria, calderes, muntatge de mobles i petites reformes. Un equip professional que deixa la teva llar com nova.",
       "cta": "Sol·licita pressupost",
       "secondary_cta": "Veure serveis",
       "badge_title": "Resposta garantida",
@@ -272,12 +272,12 @@
     "services": {
       "title": "ELS NOSTRES SERVEIS",
       "heading": "Tot el que la teva llar<br /><em>necessita.</em>",
-      "subheading": "Oferim un servei integral de manteniment per a la teva llar. Des de petites reparacions fins a reformes completes, incloent la reparació de calderes i electrodomèstics.",
+      "subheading": "Oferim un servei integral de manteniment per a la teva llar. Des de petites reparacions fins a reformes completes, incloent el muntatge de mobles.",
       "items": [
         { "icon": "🔧", "title": "Reparacions generals", "desc": "Arreglem avaries, muntem mobles, pengem quadres, instal·lem prestatgeries i resolem qualsevol imprevist de la llar." },
         { "icon": "⚡", "title": "Electricitat", "desc": "Instal·lacions elèctriques, reparacions, canvi de lluminàries, endolls, quadres elèctrics i petites avaries." },
-        { "icon": "🚿", "title": "Fontaneria i calderes", "desc": "Reparació d'aixetes, cisternes, canonades, instal·lació de rentadores, calefactors i manteniment i reparació de calderes." },
-        { "icon": "🛠️", "title": "Electrodomèstics i pintura", "desc": "Reparem rentadores, frigorífics, forns, i també pintem parets, reparem goteres i fem petites reformes." }
+        { "icon": "🚿", "title": "Fontaneria i calderes", "desc": "Reparació d'aixetes, cisternes, canonades, instal·lació de calefactors i manteniment i reparació de calderes." },
+        { "icon": "🛠️", "title": "Muntatge de mobles", "desc": "Muntem mobles, prestatgeries, bastidors i fem petites reformes. Deixem la teva llar perfecta." }
       ],
       "link": "Més informació"
     },
@@ -294,10 +294,10 @@
       "subheading": "Professionals amb anys d'experiència en tots els oficis de la llar. Treballem amb cura i garantia.",
       "cta": "Sol·licita pressupost",
       "items": [
-        { "title": "Professionals qualificats", "desc": "Equip amb formació i experiència en tots els oficis (electricitat, fontaneria, calderes, electrodomèstics). Treballem amb garantia i seguretat." },
+        { "title": "Professionals qualificats", "desc": "Equip amb formació i experiència en tots els oficis (electricitat, fontaneria, calderes, muntatges). Treballem amb garantia i seguretat." },
         { "title": "Servei ràpid i puntual", "desc": "Responem en poques hores i complim els horaris acordats. El teu temps és el nostre temps." },
         { "title": "Pressupost sense compromís", "desc": "T'expliquem el preu abans de començar. Sense sorpreses ni costos amagats." },
-        { "title": "Garantia en els treballs", "desc": "Tots els treballs (incloent calderes i electrodomèstics) tenen garantia. Si alguna cosa no funciona, ho tornem a solucionar." }
+        { "title": "Garantia en els treballs", "desc": "Tots els treballs (incloent muntatges de mobles) tenen garantia. Si alguna cosa no funciona, ho tornem a solucionar." }
       ]
     },
     "testimonials": {
@@ -338,7 +338,7 @@
       "items": [
         { "icon": "💡", "title": "Instal·lacions elèctriques", "desc": "Instal·lacions elèctriques completes: quadres de distribució, circuits, preses de terra i tot tipus de treballs elèctrics amb garanties de seguretat." },
         { "icon": "🔌", "title": "Punts de llum i il·luminació", "desc": "Instal·lem punts de llum, llums, làmpades, il·luminació interior i exterior, sistemes d'encesa automàtica, dimmers i llums LED. Donem vida a la teva llar." },
-        { "icon": "🛠️", "title": "Muntatge de cuines", "desc": "Muntem i instal·lem cuines completes: mobles, taulells, electrodomèstics, campanes extractores i tot tipus d'accessoris. Cuines funcionals i boniques." },
+        { "icon": "🛠️", "title": "Muntatge de cuines", "desc": "Muntem i instal·lem cuines completes: mobles, taulells, campanes extractores i tot tipus d'accessoris. Cuines funcionals i boniques." },
         { "icon": "🔧", "title": "Muntatge de mobles", "desc": "Muntem mobles, prestatgeries i bastidors. Deixem la teva llar perfecta." }
       ],
       "link": "Més informació"
