@@ -78,15 +78,17 @@ function BeforeAfterSection() {
   }
 
   return (
-    <section style={{ backgroundColor: '#FFFFFF', padding: '100px 24px' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', paddingBottom: 60 }}>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, textAlign: 'center', color: '#1A1714', marginBottom: 0 }}>
+    <section style={{ backgroundColor: '#FFFFFF', padding: '60px 0' }}>
+      {/* Títol centrat amb contenidor */}
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', marginBottom: 32 }}>
+        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, textAlign: 'center', color: '#1A1714', margin: 0 }}>
           {t('piscines.abans_despres.titol')}
         </h2>
       </div>
 
-      <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', overflow: 'hidden', borderRadius: 16, paddingLeft: 24, paddingRight: 24 }}>
-        <div style={{ position: 'relative', aspectRatio: '16/9', backgroundColor: '#E5E5E5', borderRadius: 16, overflow: 'hidden' }}>
+      {/* Slider full width - sense cap contenidor que el limiti */}
+      <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+        <div style={{ position: 'relative', aspectRatio: '16/9', backgroundColor: '#E5E5E5' }}>
           <img
             src={imatges[imatgeActual].src}
             alt={imatges[imatgeActual].alt}
