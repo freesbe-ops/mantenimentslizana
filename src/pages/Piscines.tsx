@@ -84,10 +84,10 @@ function BeforeAfterSection() {
   }
 
   return (
-    <section style={{ backgroundColor: '#FFFFFF', padding: '100px 0' }}>
+    <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0 0' }}>
       {/* Capçalera de secció - mateixa estructura que "El Nostre Servei" */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', marginBottom: 64 }}>
-        <div style={{ marginBottom: 60 }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', marginBottom: 40 }}>
+        <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: '#7A6F65', textTransform: 'uppercase', marginBottom: 20 }}>{t('piscines.abans_despres.title')}</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'end' }} className="section-header-grid">
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, lineHeight: 1.15, color: '#1A1714', margin: 0 }} dangerouslySetInnerHTML={{ __html: t('piscines.abans_despres.heading') }} />
@@ -138,6 +138,28 @@ function BeforeAfterSection() {
           ))}
         </div>
 
+        {/* Fletxes - només desktop (a mobile es navega amb swipe) */}
+        <button
+          onClick={() => scrollToSlide(0)}
+          className="before-after-arrow hidden-mobile"
+          style={{ position: 'absolute', top: '50%', left: 24, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: 44, height: 44, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 22, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s', backdropFilter: 'blur(8px)' }}
+          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
+          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.85)')}
+          aria-label="Abans"
+        >
+          ←
+        </button>
+        <button
+          onClick={() => scrollToSlide(1)}
+          className="before-after-arrow hidden-mobile"
+          style={{ position: 'absolute', top: '50%', right: 24, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: 44, height: 44, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1714', fontSize: 22, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', zIndex: 10, transition: 'background 0.2s', backdropFilter: 'blur(8px)' }}
+          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,1)')}
+          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,255,255,0.85)')}
+          aria-label="Després"
+        >
+          →
+        </button>
+
         {/* Indicadors (punts) */}
         <div style={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 10 }}>
           {imatges.map((img, i) => (
@@ -165,10 +187,10 @@ function BeforeAfterSection() {
         }
 
         @media (max-width: 768px) {
-          /* Ajusta aspect ratio a mòbil (4/3) */
-          .before-after-slide { aspect-ratio: 4/3 !important; }
-          /* Label més gran relatiu en mòbil */
-          .before-after-slide > div { font-size: clamp(24px, 7vw, 34px) !important; bottom: 48px !important; }
+          /* Proporció vertical (més alta que ampla) a mòbil perquè les imatges es vegin bé */
+          .before-after-slide { aspect-ratio: 3/4 !important; }
+          /* Label ajustat en mòbil */
+          .before-after-slide > div { font-size: clamp(24px, 7vw, 34px) !important; bottom: 32px !important; }
         }
       `}</style>
     </section>
