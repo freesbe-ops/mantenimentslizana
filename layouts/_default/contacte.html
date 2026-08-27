@@ -328,6 +328,8 @@
                 this.reset();
                 btn.textContent = '{{ if eq .Site.Language.Lang "es" }}Enviar solicitud{{ else }}Enviar sol·licitud{{ end }}';
                 btn.disabled = false;
+                // Event de conversió Google Ads
+                gtag('event', 'conversion', {'send_to': 'AW-18273495657/JRRlCLet-eMcEOnUvYlE'});
             })
             .catch(error => {
                 msg.style.display = 'block';

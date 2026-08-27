@@ -10,6 +10,7 @@ const Piscines = lazy(() => import('./pages/Piscines'))
 const Jardineria = lazy(() => import('./pages/Jardineria'))
 const Manteniment = lazy(() => import('./pages/Manteniment'))
 const Instalacions = lazy(() => import('./pages/Instalacions'))
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
 
 // Redirigeix des del 404 redirect de GitHub Pages
 if (sessionStorage.redirect) {
@@ -69,6 +70,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path="/:lang/serveis/jardineria" element={<Jardineria />} />
             <Route path="/:lang/serveis/manteniment" element={<Manteniment />} />
             <Route path="/:lang/serveis/instalacions" element={<Instalacions />} />
+            <Route path="/:lang/politica-de-privacitat" element={<PrivacyPolicy />} />
+            <Route path="/:lang/politica-de-privacidad" element={<PrivacyPolicy />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
