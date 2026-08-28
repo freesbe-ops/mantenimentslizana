@@ -1,11 +1,11 @@
 {
   "meta_title": "Mantenimientos Lizana | Reparaciones, jardinería y piscinas en Girona",
-  "meta_description": "Mantenimientos Lizana: servicio profesional de reparaciones, jardinería, piscinas y mantenimiento general en Girona y comarcas. Presupuesto sin compromiso y respuesta en 2h.",
+  "meta_description": "Mantenimientos Lizana: servicio profesional de reparaciones, jardinería, piscinas y mantenimiento general en Girona, Maresme y Costa Brava. Presupuesto sin compromiso y respuesta en 2h.",
   "hero": {
     "badge": "Girona y Maresme · 10 años de experiencia",
     "title": "Manos expertas.",
     "subtitle": "Resultados reales.",
-    "description": "Mantenimientos Lizana: reparaciones en Girona, mantenimiento, jardinería y piscinas en Girona y comarcas. Un equipo cercano, puntual y profesional que deja tu hogar en perfecto estado.",
+    "description": "Mantenimientos Lizana: reparaciones en Girona, mantenimiento, jardinería y piscinas en Girona, Maresme y Costa Brava. Un equipo cercano, puntual y profesional que deja tu hogar en perfecto estado.",
     "cta": "Solicita presupuesto gratuito",
     "secondary_cta": "Ver servicios",
     "stars_label": "Más de 120 clientes satisfechos",
@@ -57,7 +57,7 @@
   "forwhom": {
     "title": "PARA QUIÉN TRABAJAMOS",
     "heading": "Para todos los que<br /><em>confían en nosotros.</em>",
-    "subheading": "Trabajamos con particulares, empresas y comunidades en toda la provincia de Girona. Cualquier necesidad de mantenimiento, la resolvemos.",
+    "subheading": "Trabajamos con particulares, empresas y comunidades en Girona, Maresme y Costa Brava. Cualquier necesidad de mantenimiento, la resolvemos.",
     "items": [
       {
         "title": "Particulares",
@@ -168,7 +168,7 @@
     "email_label": "Email",
     "email_sub": "Respuesta en pocas horas",
     "cobertura": "Zona de cobertura",
-    "cobertura_text": "Girona, Costa Brava, Baix Empordà, Gironès y comarcas.",
+    "cobertura_text": "Girona, Maresme y Costa Brava.",
     "form_title": "Solicita presupuesto gratuito",
     "form_nom": "Nombre",
     "form_telefon": "Teléfono",
@@ -448,7 +448,7 @@
   },
   "footer": {
     "tagline": "GIRONA Y MARESME · 10 AÑOS DE EXPERIENCIA",
-    "description": "Servicio integral de mantenimiento, reparaciones, jardinería y piscinas en Girona y comarcas. Profesionales de confianza, servicio cercano.",
+    "description": "Servicio integral de mantenimiento, reparaciones, jardinería y piscinas en Girona, Maresme y Costa Brava. Profesionales de confianza, servicio cercano.",
     "serveis_title": "Servicios",
     "empresa_title": "Empresa",
     "contacte_title": "Contacto",
@@ -458,8 +458,7 @@
     "cookies": "Cookies",
     "inici": "Inicio",
     "testimonis": "Testimonios",
-    "zona": "Girona y comarcas",
-    "adreca": "Carrer d'Aleix Lizana Martínez, Girona",
+    "zona": "Girona, Maresme y Costa Brava",
     "horari": "Lun–Vie: 7:30 – 19:00h"
   },
   "jardineria": {

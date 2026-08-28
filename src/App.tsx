@@ -777,7 +777,6 @@ export default function App() {
               <div style={{ fontSize: 13, color: '#5C5348', lineHeight: 1.8 }}>
                 <div>💬 <a href={waFooter} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontWeight: 500 }} onClick={() => trackWhatsApp('footer')}>677 218 303</a></div>
                 <div>✉️ <a href="mailto:mantenimentlizana@gmail.com" style={{ color: '#00326B', textDecoration: 'none', fontWeight: 500 }}>mantenimentlizana@gmail.com</a></div>                <div style={{ marginTop: 8 }}>{t('footer.zona')}</div>
-                <div style={{ fontSize: 12, color: '#6B6258', marginTop: 4 }}>📍 {t('footer.adreca')}</div>
                 <div style={{ fontSize: 12, color: '#6B6258', marginTop: 4 }}>{t('footer.horari')}</div>
               </div>
             </div>

@@ -112,7 +112,7 @@ function CatalanContent() {
       <p style={SECTION_STYLES.p}>
         <strong style={SECTION_STYLES.strong}>Titular:</strong> Aleix Lizana Martínez (Manteniments Lizana)<br />
         <strong style={SECTION_STYLES.strong}>Activitat:</strong> Servei integral de manteniment, reparacions, jardineria,
-        piscines i instal·lacions a Girona i comarques.<br />
+        piscines i instal·lacions a Girona, Maresme i Costa Brava.<br />
         <strong style={SECTION_STYLES.strong}>Adreça:</strong> Carrer d'Aleix Lizana Martínez, Girona<br />
         <strong style={SECTION_STYLES.strong}>Telèfon:</strong> 677 218 303<br />
         <strong style={SECTION_STYLES.strong}>Email:</strong> mantenimentlizana@gmail.com
@@ -226,7 +226,7 @@ function SpanishContent() {
       <p style={SECTION_STYLES.p}>
         <strong style={SECTION_STYLES.strong}>Titular:</strong> Aleix Lizana Martínez (Manteniments Lizana)<br />
         <strong style={SECTION_STYLES.strong}>Actividad:</strong> Servicio integral de mantenimiento, reparaciones, jardinería,
-        piscinas e instalaciones en Girona y comarcas.<br />
+        piscinas e instalaciones en Girona, Maresme y Costa Brava.<br />
         <strong style={SECTION_STYLES.strong}>Dirección:</strong> Carrer d'Aleix Lizana Martínez, Girona<br />
         <strong style={SECTION_STYLES.strong}>Teléfono:</strong> 677 218 303<br />
         <strong style={SECTION_STYLES.strong}>Email:</strong> mantenimentlizana@gmail.com

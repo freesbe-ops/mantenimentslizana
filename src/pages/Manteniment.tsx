@@ -437,7 +437,6 @@ export default function Manteniment() {
                 <div>💬 <a href={waFooter} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" onClick={() => trackWhatsApp('footer')} style={{ color: '#25D366', textDecoration: 'none', fontWeight: 500 }}>677 218 303</a></div>
                 <div>✉️ <a href="mailto:mantenimentlizana@gmail.com" style={{ color: lizanaBlue, textDecoration: 'none', fontWeight: 500 }}>mantenimentlizana@gmail.com</a></div>
                 <div style={{ marginTop: 8 }}>{t('footer.zona')}</div>
-                <div style={{ fontSize: 12, color: '#6B6258', marginTop: 4 }}>📍 {t('footer.adreca')}</div>
                 <div style={{ fontSize: 12, color: '#6B6258', marginTop: 4 }}>{t('footer.horari')}</div>
               </div>
             </div>

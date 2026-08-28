@@ -1,11 +1,11 @@
 {
   "meta_title": "Manteniments Lizana | Repairs, gardening and pools in Girona",
-  "meta_description": "Manteniments Lizana: professional service for repairs, gardening, pools and general maintenance in Girona and surrounding areas. Free quote and response within 2h.",
+  "meta_description": "Manteniments Lizana: professional service for repairs, gardening, pools and general maintenance in Girona, Maresme and Costa Brava. Free quote and response within 2h.",
   "hero": {
     "badge": "Girona & Maresme · 10 years of experience",
     "title": "Expert hands.",
     "subtitle": "Real results.",
-    "description": "Manteniments Lizana: repairs in Girona, maintenance, gardening and pools in Girona and surrounding areas. A close, punctual and professional team that leaves your home in perfect condition.",
+    "description": "Manteniments Lizana: repairs in Girona, maintenance, gardening and pools in Girona, Maresme and Costa Brava. A close, punctual and professional team that leaves your home in perfect condition.",
     "cta": "Get a free quote",
     "secondary_cta": "View services",
     "stars_label": "Over 120 satisfied clients",
@@ -57,7 +57,7 @@
   "forwhom": {
     "title": "WHO WE WORK FOR",
     "heading": "For everyone who<br /><em>trusts us.</em>",
-    "subheading": "We work with individuals, businesses and communities across the province of Girona. Any maintenance need, we solve it.",
+    "subheading": "We work with individuals, businesses and communities in Girona, Maresme and Costa Brava. Any maintenance need, we solve it.",
     "items": [
       {
         "title": "Homeowners",
@@ -168,7 +168,7 @@
     "email_label": "Email",
     "email_sub": "Response within hours",
     "cobertura": "Coverage area",
-    "cobertura_text": "Girona, Costa Brava, Baix Empordà, Gironès and surrounding areas.",
+    "cobertura_text": "Girona, Maresme and Costa Brava.",
     "form_title": "Get a free quote",
     "form_nom": "Name",
     "form_telefon": "Phone",
@@ -448,7 +448,7 @@
   },
   "footer": {
     "tagline": "GIRONA & MARESME · 10 YEARS OF EXPERIENCE",
-    "description": "Comprehensive maintenance, repairs, gardening and pool service in Girona and surrounding areas. Trustworthy professionals, close service.",
+    "description": "Comprehensive maintenance, repairs, gardening and pool service in Girona, Maresme and Costa Brava. Trustworthy professionals, close service.",
     "serveis_title": "Services",
     "empresa_title": "Company",
     "contacte_title": "Contact",
@@ -458,8 +458,7 @@
     "cookies": "Cookies",
     "inici": "Home",
     "testimonis": "Testimonials",
-    "zona": "Girona and surrounding areas",
-    "adreca": "Carrer d'Aleix Lizana Martínez, Girona",
+    "zona": "Girona, Maresme and Costa Brava",
     "horari": "Mon–Fri: 7:30 – 19:00"
   },
   "jardineria": {
