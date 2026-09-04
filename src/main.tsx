@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import App from './App'
+import { useUtmParams } from './hooks/useUtmParams'
+import { trackPageView } from './lib/tracking'
 import './i18n'
 import './index.css'
 
@@ -68,11 +70,32 @@ function CatchAllRedirect() {
   return <Navigate to={`/${lang}`} replace />
 }
 
+// SPA analytics: keeps the session UTM in sync with the URL and sends GA4
+// page_view on client-side route changes (the initial load is already tracked
+// automatically by gtag.js loaded in index.html).
+function AnalyticsSync() {
+  const location = useLocation()
+  const isFirstRender = useRef(true)
+
+  useUtmParams()
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    trackPageView(location.pathname + location.search)
+  }, [location.pathname, location.search])
+
+  return null
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
         <ScrollManager />
+        <AnalyticsSync />
         <Suspense fallback={<div>Carregant...</div>}>
           <Routes>
             <Route path="/" element={<App />} />

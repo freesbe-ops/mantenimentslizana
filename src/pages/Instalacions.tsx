@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import MobileNav from '../components/MobileNav'
 import Seo from '../components/Seo'
+import { trackWhatsAppClick } from '../lib/tracking'
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1738130892621-ea936f363089?w=1600&h=900&fit=crop&auto=format'
 
@@ -65,11 +66,7 @@ export default function Instalacions() {
   const waHeader = `${whatsappBase}?utm_source=web&utm_medium=whatsapp&utm_campaign=instalacions&utm_content=${currentLang}`
   const waFooter = `${whatsappBase}?utm_source=web&utm_medium=whatsapp&utm_campaign=instalacions&utm_content=${currentLang}`
 
-  const trackWhatsApp = (label: string) => {
-    console.log(`Clic a WhatsApp ${label}`)
-    ;(window as any).gtag?.('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': label })
-    ;(window as any).gtag?.('event', 'conversion', { 'send_to': 'AW-18273495657/JRRlCLet-eMcEOnUvYlE' })
-  }
+  const trackWhatsApp = (label: string) => trackWhatsAppClick(label)
 
   const navLinks = [
     { label: t('nav.serveis'), href: `/${currentLang}/#serveis`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> },

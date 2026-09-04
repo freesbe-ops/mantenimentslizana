@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import Seo from './components/Seo'
+import { trackFormLead, trackWhatsAppClick } from './lib/tracking'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import MobileNav from './components/MobileNav'
 
@@ -104,12 +104,6 @@ export default function App() {
     }
   }, [langParam, i18n, navigate])
 
-  // Inicialitza GA4 sense bloquejar el render inicial
-  useEffect(() => {
-    ReactGA.initialize('G-CB6G5KWZS6')
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search })
-  }, [])
-
   const whatsappBase = 'https://wa.me/34677218303'
   const waHeader = `${whatsappBase}?utm_source=web&utm_medium=whatsapp&utm_campaign=header&utm_content=${currentLang}`
   const waContacte = `${whatsappBase}?utm_source=web&utm_medium=whatsapp&utm_campaign=contacte&utm_content=${currentLang}`
@@ -133,9 +127,7 @@ export default function App() {
   const sobreStats = t('sobre.stats', { returnObjects: true }) as Array<{ num: string; label: string }>
 
   const trackWhatsApp = (label: string) => {
-    console.log(`Clic a WhatsApp ${label}`)
-    ;(window as any).gtag?.('event', 'whatsapp_click', { 'event_category': 'WhatsApp', 'event_label': label })
-    ;(window as any).gtag?.('event', 'conversion', { 'send_to': 'AW-18273495657/JRRlCLet-eMcEOnUvYlE' })
+    trackWhatsAppClick(label)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -161,13 +153,7 @@ export default function App() {
       // silently ignore
     }
     console.log('Enviant esdeveniment: enviar_pressupost')
-    ;(window as any).gtag('event', 'enviar_pressupost', {
-      'event_category': 'Formulari',
-      'event_label': formData.servei || 'General'
-    })
-    ;(window as any).gtag('event', 'conversion', {
-      'send_to': 'AW-18273495657/JRRlCLet-eMcEOnUvYlE'
-    })
+    trackFormLead({ service: formData.servei || 'General' })
     setSent(true)
   }
 
