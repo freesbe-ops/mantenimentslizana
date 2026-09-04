@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import MobileNav from '../components/MobileNav'
+import Seo from '../components/Seo'
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=1600&h=900&fit=crop&auto=format'
 
@@ -94,20 +94,12 @@ export default function Manteniment() {
 
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", backgroundColor: '#F5F5F5', color: '#1A1714' }}>
-      <Helmet>
-        <html lang={currentLang} />
-        <title>{t('manteniment.meta_title')}</title>
-        <meta name="description" content={t('manteniment.meta_description')} />
-        <link rel="canonical" href={`https://mantenimentslizana.com/${currentLang}/serveis/manteniment`} />
-        <link rel="alternate" hrefLang="ca" href="https://mantenimentslizana.com/ca/serveis/manteniment" />
-        <link rel="alternate" hrefLang="es" href="https://mantenimentslizana.com/es/serveis/manteniment" />
-        <link rel="alternate" hrefLang="en" href="https://mantenimentslizana.com/en/serveis/manteniment" />
-        <link rel="alternate" hrefLang="x-default" href="https://mantenimentslizana.com/ca/serveis/manteniment" />
-        <meta property="og:title" content={t('manteniment.meta_title')} />
-        <meta property="og:description" content={t('manteniment.meta_description')} />
-        <meta property="og:url" content={`https://mantenimentslizana.com/${currentLang}/serveis/manteniment`} />
-        <meta property="og:type" content="website" />
-      </Helmet>
+      <Seo
+        lang={currentLang}
+        path={`/${currentLang}/serveis/manteniment`}
+        title={t('manteniment.meta_title')}
+        description={t('manteniment.meta_description')}
+      />
 
       {/* HEADER - unificat */}
       <header style={{ position: 'sticky', top: 20, zIndex: 50, padding: '0 24px' }}>

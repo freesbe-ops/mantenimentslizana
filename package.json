@@ -6,7 +6,8 @@
   "homepage": "https://mantenimentslizana.com/",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "node scripts/generate-sitemap.mjs && vite build",
+    "sitemap": "node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "format": "oxfmt",
     "predeploy": "pnpm run build",

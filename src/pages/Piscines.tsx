@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import MobileNav from '../components/MobileNav'
+import Seo from '../components/Seo'
 
 const SERVICE_ICONS = [
   <svg key="clean" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -165,20 +165,12 @@ export default function Piscines() {
 
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", backgroundColor: '#F5F5F5', color: '#1A1714' }}>
-      <Helmet>
-        <html lang={currentLang} />
-        <title>{t('piscines.meta_title')}</title>
-        <meta name="description" content={t('piscines.meta_description')} />
-        <link rel="canonical" href={`https://mantenimentslizana.com/${currentLang}/serveis/piscines`} />
-        <link rel="alternate" hrefLang="ca" href="https://mantenimentslizana.com/ca/serveis/piscines" />
-        <link rel="alternate" hrefLang="es" href="https://mantenimentslizana.com/es/serveis/piscines" />
-        <link rel="alternate" hrefLang="en" href="https://mantenimentslizana.com/en/serveis/piscines" />
-        <link rel="alternate" hrefLang="x-default" href="https://mantenimentslizana.com/ca/serveis/piscines" />
-        <meta property="og:title" content={t('piscines.meta_title')} />
-        <meta property="og:description" content={t('piscines.meta_description')} />
-        <meta property="og:url" content={`https://mantenimentslizana.com/${currentLang}/serveis/piscines`} />
-        <meta property="og:type" content="website" />
-      </Helmet>
+      <Seo
+        lang={currentLang}
+        path={`/${currentLang}/serveis/piscines`}
+        title={t('piscines.meta_title')}
+        description={t('piscines.meta_description')}
+      />
 
       <header style={{ position: 'sticky', top: 20, zIndex: 50, padding: '0 24px' }}>
         <div style={{ width: 'fit-content', margin: '0 auto', backgroundColor: 'rgba(255,255,255,0.75)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderRadius: 100, padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 32, height: 60, boxShadow: '0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)', border: '1px solid rgba(255,255,255,0.3)' }}>

@@ -1,7 +1,7 @@
 import React, { Suspense, lazy, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import App from './App'
 import './i18n'
 import './index.css'
@@ -57,6 +57,17 @@ function ScrollManager() {
   return null
 }
 
+// Ruta desconeguda (URL antiga / esborrada): en comptes de deixar una pàgina en
+// blanc (soft-404), redirigim a la home de l'idioma detectat a la URL.
+function CatchAllRedirect() {
+  const location = useLocation()
+  const firstSegment = location.pathname.split('/').filter(Boolean)[0]
+  const lang = firstSegment === 'ca' || firstSegment === 'es' || firstSegment === 'en'
+    ? firstSegment
+    : 'ca'
+  return <Navigate to={`/${lang}`} replace />
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
@@ -72,6 +83,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path="/:lang/serveis/instalacions" element={<Instalacions />} />
             <Route path="/:lang/politica-de-privacitat" element={<PrivacyPolicy />} />
             <Route path="/:lang/politica-de-privacidad" element={<PrivacyPolicy />} />
+            <Route path="*" element={<CatchAllRedirect />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

@@ -1,6 +1,6 @@
-import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import Seo, { SITE_URL } from '../components/Seo'
 
 // Ruta de la política de privacitat segons l'idioma
 export const privacyPath = (lang: string) =>
@@ -354,15 +354,24 @@ export default function PrivacyPolicy() {
   const description = isCa
     ? 'Política de privacitat de Manteniments Lizana (Aleix Lizana Martínez). Protecció de dades, RGPD i drets de les persones usuàries.'
     : 'Política de privacidad de Manteniments Lizana (Aleix Lizana Martínez). Protección de datos, RGPD y derechos de los usuarios.'
+  // La política de privacitat només té versions CA i ES. Si s'accedeix en un altre
+  // idioma, el contingut mostrat és l'ES i la canonical sempre apunta a CA/ES.
+  const privacyCanonical = isCa ? '/ca/politica-de-privacitat' : '/es/politica-de-privacidad'
+  const privacyHreflang = {
+    ca: `${SITE_URL}/ca/politica-de-privacitat`,
+    es: `${SITE_URL}/es/politica-de-privacidad`,
+    'x-default': `${SITE_URL}/ca/politica-de-privacitat`,
+  }
 
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", backgroundColor: '#FFFFFF', color: '#1A1714', minHeight: '100vh' }}>
-      <Helmet>
-        <html lang={currentLang} />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={`https://mantenimentslizana.com/${currentLang === 'ca' ? 'ca' : 'es'}/politica-de-${currentLang === 'ca' ? 'privacitat' : 'privacidad'}`} />
-      </Helmet>
+      <Seo
+        lang={isCa ? 'ca' : 'es'}
+        path={privacyCanonical}
+        title={title}
+        description={description}
+        alternates={privacyHreflang}
+      />
 
       <HeaderBar currentLang={currentLang} onLanguageChange={changeLanguage} />
 

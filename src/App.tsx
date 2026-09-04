@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Helmet } from 'react-helmet-async'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
+import Seo from './components/Seo'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import MobileNav from './components/MobileNav'
 
@@ -180,47 +180,13 @@ export default function App() {
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", backgroundColor: '#F5F5F5', color: '#1A1714' }}>
 
-      <Helmet>
-        <html lang={currentLang} />
-        <title>{t('meta_title')}</title>
-        <meta name="description" content={t('meta_description')} />
-        <link rel="canonical" href={`https://mantenimentslizana.com/${currentLang}/`} />
-        <link rel="alternate" hrefLang="ca" href="https://mantenimentslizana.com/ca/" />
-        <link rel="alternate" hrefLang="es" href="https://mantenimentslizana.com/es/" />
-        <link rel="alternate" hrefLang="en" href="https://mantenimentslizana.com/en/" />
-        <link rel="alternate" hrefLang="x-default" href="https://mantenimentslizana.com/ca/" />
-
-        <meta property="og:title" content={t('meta_title')} />
-        <meta property="og:description" content={t('meta_description')} />
-        <meta property="og:image" content="https://mantenimentslizana.com/hero.webp" />
-        <meta property="og:url" content={`https://mantenimentslizana.com/${currentLang}/`} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Manteniments Lizana",
-              "description": "Servei professional de reparacions, jardineria, piscines i manteniment general a Girona.",
-              "image": "https://mantenimentslizana.com/hero.webp",
-              "telephone": "+34677218303",
-              "email": "mantenimentlizana@gmail.com",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Girona",
-                "addressCountry": "ES"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "120"
-              }
-            }
-          `}
-        </script>
-      </Helmet>
+      <Seo
+        lang={currentLang}
+        path={`/${currentLang}`}
+        title={t('meta_title')}
+        description={t('meta_description')}
+        image="/hero.webp"
+      />
 
       {/* HEADER */}
       <header style={{ position: 'sticky', top: 20, zIndex: 50, padding: '0 24px' }}>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import MobileNav from '../components/MobileNav'
+import Seo from '../components/Seo'
 
 const HERO_IMAGES: Record<string, string> = {
   ca: '/garden.webp',
@@ -107,20 +107,12 @@ export default function Jardineria() {
 
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", backgroundColor: '#F5F5F5', color: '#1A1714' }}>
-      <Helmet>
-        <html lang={currentLang} />
-        <title>{t('jardineria.meta_title')}</title>
-        <meta name="description" content={t('jardineria.meta_description')} />
-        <link rel="canonical" href={`https://mantenimentslizana.com/${currentLang}/serveis/jardineria`} />
-        <link rel="alternate" hrefLang="ca" href="https://mantenimentslizana.com/ca/serveis/jardineria" />
-        <link rel="alternate" hrefLang="es" href="https://mantenimentslizana.com/es/serveis/jardineria" />
-        <link rel="alternate" hrefLang="en" href="https://mantenimentslizana.com/en/serveis/jardineria" />
-        <link rel="alternate" hrefLang="x-default" href="https://mantenimentslizana.com/ca/serveis/jardineria" />
-        <meta property="og:title" content={t('jardineria.meta_title')} />
-        <meta property="og:description" content={t('jardineria.meta_description')} />
-        <meta property="og:url" content={`https://mantenimentslizana.com/${currentLang}/serveis/jardineria`} />
-        <meta property="og:type" content="website" />
-      </Helmet>
+      <Seo
+        lang={currentLang}
+        path={`/${currentLang}/serveis/jardineria`}
+        title={t('jardineria.meta_title')}
+        description={t('jardineria.meta_description')}
+      />
 
       {/* HEADER - unificat blau Lizana */}
       <header style={{ position: 'sticky', top: 20, zIndex: 50, padding: '0 24px' }}>
