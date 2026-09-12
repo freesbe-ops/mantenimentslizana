@@ -1,6 +1,6 @@
 {
   "meta_title": "Manteniments Lizana | Maintenance and services in Girona",
-  "meta_description": "Manteniments Lizana: repairs, gardening, pools and general maintenance in Girona, La Selva, Costa Brava and Maresme. Free quote, no obligation.",
+  "meta_description": "Manteniments Lizana: repairs, gardening, pool care and general maintenance in Girona, La Selva, Costa Brava and Maresme. Free quote with no obligation.",
   "hero": {
     "badge": "Girona & Maresme · 10 years of experience",
     "title": "Expert hands.",
@@ -189,8 +189,8 @@
     "form_poblacio_placeholder": "Your town or city"
   },
   "piscines": {
-    "meta_title": "Pool maintenance in Girona | Manteniments Lizana",
-    "meta_description": "Professional pool maintenance in Girona, La Selva, Costa Brava and Maresme. Cleaning, chemical treatment, equipment checks and seasonal start-up.",
+    "meta_title": "Pool maintenance in Girona and Maresme | Manteniments Lizana",
+    "meta_description": "Professional pool maintenance in Girona, La Selva, Costa Brava and Maresme. Cleaning, chemical treatment, equipment checks and seasonal start-up and closing.",
     "carousel": [
       "SPOTLESS POOLS",
       "CRYSTAL WATER",
@@ -296,7 +296,7 @@
   },
   "manteniment": {
     "meta_title": "General Maintenance in Girona | Manteniments Lizana",
-    "meta_description": "Comprehensive general maintenance service in Girona, La Selva and Costa Brava: repairs, electrical work, plumbing, boilers and small renovations.",
+    "meta_description": "Comprehensive general maintenance service in Girona, La Selva and Costa Brava: repairs, electrical work, plumbing, boilers, small renovations and more.",
     "carousel": [
       "REPAIRS IN 24H",
       "NO-OBLIGATION QUOTE",
@@ -363,8 +363,8 @@
     }
   },
   "instalacions": {
-    "meta_title": "Installations in Girona | Manteniments Lizana",
-    "meta_description": "Electrical installations, lighting and kitchen and furniture assembly in Girona, La Selva, Costa Brava and Maresme. Qualified professionals.",
+    "meta_title": "Electrical installations in Girona | Manteniments Lizana",
+    "meta_description": "Electrical installations, lighting and kitchen and furniture assembly in Girona, La Selva, Costa Brava and Maresme. Qualified professionals with guarantee.",
     "carousel": [
       "SAFE INSTALLATIONS",
       "QUALIFIED PROFESSIONALS",
@@ -462,8 +462,10 @@
     "horari": "Mon–Fri: 7:30 – 19:00"
   },
   "jardineria": {
-    "meta_title": "Gardening in Girona | Manteniments Lizana",
-    "meta_description": "Professional gardening service in Girona, La Selva, Costa Brava and Maresme. Pruning, garden design, automatic irrigation, lawn care and maintenance.",
+    "meta_title": "Gardening in Girona & Costa Brava | Manteniments Lizana",
+    "meta_description": "Professional gardening service in Girona, La Selva, Costa Brava and Maresme. Pruning, garden design, automatic irrigation, lawn care and regular maintenance.",
+    "break_alt": "Professional geometric garden",
+    "garden_alt": "Gardening professional at work",
     "carousel": [
       "WELL-CARED GARDENS",
       "MEDITERRANEAN DESIGN",

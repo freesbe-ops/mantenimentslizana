@@ -4,6 +4,15 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import MobileNav from '../components/MobileNav'
 import Seo from '../components/Seo'
 import { trackWhatsAppClick } from '../lib/tracking'
+import {
+  DEFAULT_LANG,
+  LANG_LABELS,
+  LANGS,
+  isLang,
+  normalizeLang,
+  privacyPath,
+  servicePath,
+} from '../lib/lang'
 
 const SERVICE_ICONS = [
   <svg key="clean" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -114,29 +123,24 @@ export default function Piscines() {
   const { lang: langParam } = useParams<{ lang?: string }>()
   const navigate = useNavigate()
 
-  const validLangs = ['ca', 'es', 'en'] as const
-  const urlLang = langParam && validLangs.includes(langParam as (typeof validLangs)[number])
-    ? (langParam as 'ca' | 'es' | 'en')
-    : null
-  const lang = urlLang || i18n.language || 'ca'
-  const currentLang = lang.startsWith('ca') ? 'ca' : lang.startsWith('es') ? 'es' : 'en'
+  const urlLang = isLang(langParam) ? langParam : null
+  const currentLang = urlLang ?? normalizeLang(i18n.language)
 
   useEffect(() => {
-    if (langParam && validLangs.includes(langParam as (typeof validLangs)[number])) {
-      const nextLang = langParam as string
-      if (i18n.language !== nextLang) {
-        i18n.changeLanguage(nextLang)
+    if (isLang(langParam)) {
+      if (i18n.language !== langParam) {
+        i18n.changeLanguage(langParam)
       }
-      localStorage.setItem('i18nextLng', nextLang)
+      localStorage.setItem('i18nextLng', langParam)
     } else {
-      navigate('/ca/serveis/piscines', { replace: true })
+      navigate(servicePath(DEFAULT_LANG, 'piscines'), { replace: true })
     }
   }, [langParam, navigate, i18n])
 
   const changeLanguage = (value: string) => {
     i18n.changeLanguage(value)
     localStorage.setItem('i18nextLng', value)
-    navigate(`/${value}/serveis/piscines`, { replace: false })
+    navigate(servicePath(normalizeLang(value), 'piscines'), { replace: false })
   }
 
   const whatsappBase = 'https://wa.me/34677218303'
@@ -148,10 +152,10 @@ export default function Piscines() {
   const navLinks = [
     { label: t('nav.serveis'), href: '#serveis', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> },
     { label: t('nav.sobre'), href: `/${currentLang}/#sobre`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg> },
-    { label: t('nav.piscines'), href: `/${currentLang}/serveis/piscines`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 18c2-3 4-4.5 7-4.5S14 15 16.5 18" /><path d="M4 9.5C5.5 8 7.5 7 9.5 7s3.5 1 5 2.5" /><path d="M13 3.5c1.6 1.2 2.8 3 3.5 5" /><path d="M8 5.5c-1.2 1.3-2 3.2-2.2 5.1" /></svg> },
-    { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> },
-    { label: t('serveis.items.0.title'), href: `/${currentLang}/serveis/manteniment`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> },
-    { label: t('serveis.items.3.title'), href: `/${currentLang}/serveis/instalacions`, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg> },
+    { label: t('nav.piscines'), href: servicePath(currentLang, 'piscines'), icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 18c2-3 4-4.5 7-4.5S14 15 16.5 18" /><path d="M4 9.5C5.5 8 7.5 7 9.5 7s3.5 1 5 2.5" /><path d="M13 3.5c1.6 1.2 2.8 3 3.5 5" /><path d="M8 5.5c-1.2 1.3-2 3.2-2.2 5.1" /></svg> },
+    { label: t('serveis.items.2.title'), href: servicePath(currentLang, 'jardineria'), icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> },
+    { label: t('serveis.items.0.title'), href: servicePath(currentLang, 'manteniment'), icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> },
+    { label: t('serveis.items.3.title'), href: servicePath(currentLang, 'instalacions'), icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg> },
     { label: 'WhatsApp', href: waHeader, external: true, icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> },
   ]
 
@@ -164,7 +168,7 @@ export default function Piscines() {
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", backgroundColor: '#F5F5F5', color: '#1A1714' }}>
       <Seo
         lang={currentLang}
-        path={`/${currentLang}/serveis/piscines`}
+        path={servicePath(currentLang, 'piscines')}
         title={t('piscines.meta_title')}
         description={t('piscines.meta_description')}
       />
@@ -262,12 +266,12 @@ export default function Piscines() {
                 <select
                   value={currentLang}
                   onChange={(e) => changeLanguage(e.target.value)}
-                  aria-label="Idioma / Language / Idioma"
+                  aria-label="Idioma / Language / Idioma / Langue"
                   style={{ background: 'transparent', border: 'none', color: '#B0C4DE', fontWeight: 700, textDecoration: 'underline', fontSize: 12, fontFamily: "'DM Sans', system-ui, sans-serif", letterSpacing: '0.12em', textTransform: 'uppercase', outline: 'none', cursor: 'pointer', padding: 0, margin: 0, appearance: 'none', WebkitAppearance: 'none' }}
                 >
-                  <option value="ca" style={{ color: '#1A1714', textTransform: 'uppercase' }}>CAT</option>
-                  <option value="es" style={{ color: '#1A1714', textTransform: 'uppercase' }}>ES</option>
-                  <option value="en" style={{ color: '#1A1714', textTransform: 'uppercase' }}>ENG</option>
+                  {LANGS.map(l => (
+                    <option key={l} value={l} style={{ color: '#1A1714', textTransform: 'uppercase' }}>{LANG_LABELS[l]}</option>
+                  ))}
                 </select>
                 <span style={{ fontSize: 9, color: '#B0C4DE', fontWeight: 700, pointerEvents: 'none', lineHeight: 1 }}>▼</span>
               </div>
@@ -494,10 +498,10 @@ export default function Piscines() {
             <div>
               <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#5C5348', textTransform: 'uppercase', marginBottom: 20 }}>{t('footer.serveis_title')}</div>
               {[
-                { label: t('serveis.items.0.title'), href: `/${currentLang}/serveis/manteniment` },
-                { label: t('serveis.items.1.title'), href: `/${currentLang}/serveis/piscines` },
-                { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria` },
-                { label: t('serveis.items.3.title'), href: `/${currentLang}/serveis/instalacions` },
+                { label: t('serveis.items.0.title'), href: servicePath(currentLang, 'manteniment') },
+                { label: t('serveis.items.1.title'), href: servicePath(currentLang, 'piscines') },
+                { label: t('serveis.items.2.title'), href: servicePath(currentLang, 'jardineria') },
+                { label: t('serveis.items.3.title'), href: servicePath(currentLang, 'instalacions') },
               ].map((service) => (
                 <Link key={service.label} to={service.href} style={{ display: 'block', fontSize: 13, color: '#5C5348', textDecoration: 'none', marginBottom: 10, transition: 'color 0.2s' }}>{service.label}</Link>
               ))}
@@ -525,7 +529,7 @@ export default function Piscines() {
             <a href="https://www.sprintops.es" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.legal')}</a>
             <div style={{ display: 'flex', gap: 24 }}>
               <a href="#" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.avis_legal')}</a>
-              <Link to={currentLang === 'ca' ? `/${currentLang}/politica-de-privacitat` : `/${currentLang}/politica-de-privacidad`} style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.politica_privacitat')}</Link>
+              <Link to={privacyPath(currentLang)} style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.politica_privacitat')}</Link>
               <a href="#" style={{ fontSize: 12, color: '#6B6258', textDecoration: 'none' }}>{t('footer.cookies')}</a>
             </div>
           </div>

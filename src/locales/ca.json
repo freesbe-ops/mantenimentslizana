@@ -191,8 +191,10 @@
     }
   },
   "jardineria": {
-    "meta_title": "Jardineria a Girona | Manteniments Lizana",
+    "meta_title": "Jardineria a Girona i Costa Brava | Manteniments Lizana",
     "meta_description": "Servei professional de jardineria a Girona, la Selva i la Costa Brava. Poda, disseny de jardins, reg automàtic, gespa i manteniment continu tot l'any.",
+    "break_alt": "Jardí geomètric professional",
+    "garden_alt": "Professional de jardineria en acció",
     "carousel": ["JARDINS BEN CUIDATS", "DISSENY MEDITERRANI", "REG AUTOMÀTIC", "MANTENIMENT ANUAL", "TOTAL CONFIANÇA"],
     "hero": {
       "badge": "Girona i Maresme · Especialistes en jardineria",
@@ -256,7 +258,7 @@
   },
   "manteniment": {
     "meta_title": "Manteniment General a Girona | Manteniments Lizana",
-    "meta_description": "Servei integral de manteniment general a Girona, la Selva i la Costa Brava: reparacions, electricitat, fontaneria, calderes i petites reformes.",
+    "meta_description": "Servei integral de manteniment general a Girona, la Selva i la Costa Brava: reparacions, electricitat, fontaneria, calderes i petites reformes i molt més.",
     "carousel": ["REPARACIONS EN 24H", "PRESSUPOST SENSE COMPROMÍS", "PROFESSIONALS QUALIFICATS", "GARANTIA EN ELS TREBALLS", "TOTAL CONFIANÇA"],
     "hero": {
       "badge": "Girona i Maresme · Experts en manteniment",
@@ -317,7 +319,7 @@
     }
   },
   "instalacions": {
-    "meta_title": "Instal·lacions a Girona | Manteniments Lizana",
+    "meta_title": "Instal·lacions elèctriques a Girona | Manteniments Lizana",
     "meta_description": "Instal·lacions elèctriques, punts de llum, il·luminació i muntatge de cuines i mobles a Girona, la Selva i el Maresme. Professionals qualificats amb garantia.",
     "carousel": ["INSTAL·LACIONS SEGURES", "PROFESSIONALS QUALIFICATS", "PRESSUPOST SENSE COMPROMÍS", "GARANTIA EN ELS TREBALLS", "MUNTATGE DE CUINES", "LLUM I FUNCIONALITAT"],
     "hero": {

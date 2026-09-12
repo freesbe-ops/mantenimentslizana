@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { trackWhatsAppClick } from '../lib/tracking'
+import { servicePath, type Lang } from '../lib/lang'
 
 const SERVICES_ICONS = [
   <svg key="inst" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -19,7 +20,7 @@ const SERVICES_ICONS = [
 ]
 
 interface MobileNavProps {
-  currentLang: string
+  currentLang: Lang
   waHeader: string
   isHome?: boolean
 }
@@ -47,10 +48,10 @@ export default function MobileNav({ currentLang, waHeader, isHome = false }: Mob
   const prefix = isHome ? '' : `/${currentLang}`
 
   const services = [
-    { label: t('serveis.items.0.title'), href: `/${currentLang}/serveis/manteniment`, icon: SERVICES_ICONS[3] },
-    { label: t('serveis.items.1.title'), href: `/${currentLang}/serveis/piscines`, icon: SERVICES_ICONS[1] },
-    { label: t('serveis.items.2.title'), href: `/${currentLang}/serveis/jardineria`, icon: SERVICES_ICONS[2] },
-    { label: t('serveis.items.3.title'), href: `/${currentLang}/serveis/instalacions`, icon: SERVICES_ICONS[0] },
+    { label: t('serveis.items.0.title'), href: servicePath(currentLang, 'manteniment'), icon: SERVICES_ICONS[3] },
+    { label: t('serveis.items.1.title'), href: servicePath(currentLang, 'piscines'), icon: SERVICES_ICONS[1] },
+    { label: t('serveis.items.2.title'), href: servicePath(currentLang, 'jardineria'), icon: SERVICES_ICONS[2] },
+    { label: t('serveis.items.3.title'), href: servicePath(currentLang, 'instalacions'), icon: SERVICES_ICONS[0] },
   ]
 
   const navItemStyle: React.CSSProperties = {

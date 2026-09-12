@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import App from './App'
 import { useUtmParams } from './hooks/useUtmParams'
 import { trackPageView } from './lib/tracking'
+import { DEFAULT_LANG, canonicalPath, isLang, pathSegments, routePath } from './lib/lang'
 import './i18n'
 import './index.css'
 
@@ -13,14 +14,6 @@ const Jardineria = lazy(() => import('./pages/Jardineria'))
 const Manteniment = lazy(() => import('./pages/Manteniment'))
 const Instalacions = lazy(() => import('./pages/Instalacions'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
-
-// Redirigeix des del 404 redirect de GitHub Pages
-if (sessionStorage.redirect) {
-  const redirect = sessionStorage.redirect
-  delete sessionStorage.redirect
-  // Reemplaça l'históric per no deixar /index.html a la navegació
-  window.history.replaceState(null, '', redirect)
-}
 
 function ScrollManager() {
   const location = useLocation()
@@ -63,11 +56,48 @@ function ScrollManager() {
 // blanc (soft-404), redirigim a la home de l'idioma detectat a la URL.
 function CatchAllRedirect() {
   const location = useLocation()
-  const firstSegment = location.pathname.split('/').filter(Boolean)[0]
-  const lang = firstSegment === 'ca' || firstSegment === 'es' || firstSegment === 'en'
-    ? firstSegment
-    : 'ca'
-  return <Navigate to={`/${lang}`} replace />
+  const [firstSegment] = pathSegments(location.pathname)
+  const lang = isLang(firstSegment) ? firstSegment : DEFAULT_LANG
+  return <Navigate to={routePath(lang, 'home')} replace />
+}
+
+// Canonicalitza les URLs localitzades: cada idioma té els seus slugs
+// (/ca/serveis/jardineria, /fr/services/jardins...), de manera que qualsevol
+// variant retorna a la forma canònica abans que es renderitzi cap pàgina.
+function AppRoutes() {
+  const location = useLocation()
+  const canonical = canonicalPath(location.pathname)
+
+  if (canonical && canonical !== location.pathname) {
+    return <Navigate to={`${canonical}${location.search}`} replace />
+  }
+
+  return (
+    <Suspense fallback={<div>Carregant...</div>}>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/:lang" element={<App />} />
+
+        {/* Serveis — slugs compartits a CA/ES/EN i slugs francesos a FR */}
+        <Route path="/:lang/serveis/piscines" element={<Piscines />} />
+        <Route path="/:lang/serveis/jardineria" element={<Jardineria />} />
+        <Route path="/:lang/serveis/manteniment" element={<Manteniment />} />
+        <Route path="/:lang/serveis/instalacions" element={<Instalacions />} />
+        <Route path="/:lang/services/piscines" element={<Piscines />} />
+        <Route path="/:lang/services/jardins" element={<Jardineria />} />
+        <Route path="/:lang/services/maintenance" element={<Manteniment />} />
+        <Route path="/:lang/services/installations" element={<Instalacions />} />
+
+        {/* Privacitat — un slug per idioma */}
+        <Route path="/:lang/politica-de-privacitat" element={<PrivacyPolicy />} />
+        <Route path="/:lang/politica-de-privacidad" element={<PrivacyPolicy />} />
+        <Route path="/:lang/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/:lang/politique-de-confidentialite" element={<PrivacyPolicy />} />
+
+        <Route path="*" element={<CatchAllRedirect />} />
+      </Routes>
+    </Suspense>
+  )
 }
 
 // SPA analytics: keeps the session UTM in sync with the URL and sends GA4
@@ -96,19 +126,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <ScrollManager />
         <AnalyticsSync />
-        <Suspense fallback={<div>Carregant...</div>}>
-          <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/:lang" element={<App />} />
-            <Route path="/:lang/serveis/piscines" element={<Piscines />} />
-            <Route path="/:lang/serveis/jardineria" element={<Jardineria />} />
-            <Route path="/:lang/serveis/manteniment" element={<Manteniment />} />
-            <Route path="/:lang/serveis/instalacions" element={<Instalacions />} />
-            <Route path="/:lang/politica-de-privacitat" element={<PrivacyPolicy />} />
-            <Route path="/:lang/politica-de-privacidad" element={<PrivacyPolicy />} />
-            <Route path="*" element={<CatchAllRedirect />} />
-          </Routes>
-        </Suspense>
+        <AppRoutes />
       </BrowserRouter>
     </HelmetProvider>
   </React.StrictMode>,

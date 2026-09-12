@@ -363,7 +363,7 @@
     }
   },
   "instalacions": {
-    "meta_title": "Instalaciones en Girona | Mantenimientos Lizana",
+    "meta_title": "Instalaciones eléctricas en Girona | Mantenimientos Lizana",
     "meta_description": "Instalaciones eléctricas, puntos de luz, iluminación y montaje de cocinas y muebles en Girona, la Selva y el Maresme. Profesionales cualificados con garantía.",
     "carousel": [
       "INSTALACIONES SEGURAS",
@@ -462,8 +462,10 @@
     "horari": "Lun–Vie: 7:30 – 19:00h"
   },
   "jardineria": {
-    "meta_title": "Jardinería en Girona | Mantenimientos Lizana",
-    "meta_description": "Servicio profesional de jardinería en Girona, la Selva y la Costa Brava. Poda, diseño de jardines, riego automático, césped y mantenimiento continuo.",
+    "meta_title": "Jardinería en Girona y Costa Brava | Mantenimientos Lizana",
+    "meta_description": "Servicio profesional de jardinería en Girona, la Selva y la Costa Brava. Poda, diseño de jardines, riego automático, césped y mantenimiento continuo anual.",
+    "break_alt": "Jardín geométrico profesional",
+    "garden_alt": "Profesional de jardinería en acción",
     "carousel": [
       "JARDINES BIEN CUIDADOS",
       "DISEÑO MEDITERRÁNEO",

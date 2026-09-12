@@ -28,8 +28,6 @@
  * as conversions / import them in Google Ads.
  */
 
-console.log('tracking loaded') // ← si NO surt a la consola, el build NO té aquest mòdul (versió antiga desplegada)
-
 export const GA4_MEASUREMENT_ID = 'G-CB6G5KWZS6'
 export const ADS_CONVERSION_ID = 'AW-18273495657'
 /** Conversion label currently used for BOTH WhatsApp clicks and form submits. */
@@ -186,6 +184,14 @@ export function getTraffic(): Traffic {
   const googleAds =
     !!(c.gclid || c.gclsrc || c.gbraid || c.wbraid) ||
     (/google/i.test(source) && isGoogleMedium(medium))
+
+  // Google Ads auto-tagging (gclid / gbraid / wbraid) comes with no utm_source,
+  // so without this the click would be reported as direct/none. Label it as
+  // google/cpc so the custom params in GA4 match the real campaign source.
+  if (googleAds && !c.source) {
+    source = 'google'
+    medium = 'cpc'
+  }
 
   return {
     source,

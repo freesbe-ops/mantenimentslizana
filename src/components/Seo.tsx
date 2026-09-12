@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { LANGS, DEFAULT_LANG, alternatesForPath, type Lang } from '../lib/lang'
 
 /* ------------------------------------------------------------------ */
 /*  Single source of truth for SEO (canonical, hreflang, meta, JSON-LD)*/
@@ -6,9 +7,9 @@ import { Helmet } from 'react-helmet-async'
 
 export const SITE_URL = 'https://mantenimentslizana.com'
 
-export const LANGS = ['ca', 'es', 'en'] as const
-export type Lang = (typeof LANGS)[number]
-export const DEFAULT_LANG: Lang = 'ca'
+// Re-exported so every page keeps a single import source for languages.
+export { LANGS, DEFAULT_LANG }
+export type { Lang }
 
 /* NAP + business data — MUST stay consistent with Google Business Profile */
 export const BUSINESS_NAP = {
@@ -23,10 +24,18 @@ export const BUSINESS_NAP = {
   geo: { latitude: 41.7794, longitude: 2.7333 },
 } as const
 
+/** Official profiles, used for `sameAs` (helps the Google knowledge panel). */
+const SOCIAL_PROFILES = [
+  'https://www.facebook.com/p/Manteniments-Lizana-61590819927805/',
+  'https://www.instagram.com/manteniments_lizana',
+  'https://share.google/MP6A0EmNCzBuHSuTd',
+]
+
 const BUSINESS_DESCRIPTION: Record<Lang, string> = {
   ca: 'Servei professional de manteniment general, piscines, jardineria i instal·lacions a Girona, la Selva, la Costa Brava i el Maresme.',
   es: 'Servicio profesional de mantenimiento general, piscinas, jardinería e instalaciones en Girona, la Selva, la Costa Brava y el Maresme.',
   en: 'Professional general maintenance, pool, gardening and installation services in Girona, La Selva, Costa Brava and Maresme.',
+  fr: 'Service professionnel de maintenance générale, piscines, jardinage et installations à Girona, La Selva, Costa Brava et Maresme.',
 }
 
 const SERVICE_AREAS: Array<{ name: string; type?: 'City' | 'Place' }> = [
@@ -38,11 +47,13 @@ const SERVICE_AREAS: Array<{ name: string; type?: 'City' | 'Place' }> = [
   { name: 'Maresme' },
 ]
 
+// Must match the hours shown on the site (contact + footer): Mon–Fri 7:30–19:00,
+// Sat 9:00–13:00. Keep in sync with the Google Business Profile.
 const OPENING_HOURS = [
   {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '08:00',
+    opens: '07:30',
     closes: '19:00',
   },
   {
@@ -57,6 +68,7 @@ const OG_LOCALE: Record<Lang, string> = {
   ca: 'ca_ES',
   es: 'es_ES',
   en: 'en_US',
+  fr: 'fr_FR',
 }
 
 /** Replaces the language segment of a canonical path (e.g. /ca/serveis/x -> /es/serveis/x). */
@@ -70,13 +82,19 @@ export function localizePath(path: string, lang: Lang): string {
   return `/${segments.join('/')}`
 }
 
-export function hreflangUrls(path: string): Record<Lang | 'x-default', string> {
-  return {
-    ca: `${SITE_URL}${localizePath(path, 'ca')}`,
-    es: `${SITE_URL}${localizePath(path, 'es')}`,
-    en: `${SITE_URL}${localizePath(path, 'en')}`,
-    'x-default': `${SITE_URL}${localizePath(path, 'ca')}`,
-  }
+/**
+ * hreflang alternates (absolute URLs) for a canonical page path.
+ * Uses the shared route map so localised French slugs are resolved correctly
+ * (/ca/serveis/jardineria <-> /fr/services/jardins) and only routes that really
+ * exist in a language are listed (there is no English privacy page).
+ */
+export function hreflangUrls(path: string): Record<string, string> {
+  return Object.fromEntries(
+    Object.entries(alternatesForPath(path)).map(([hreflang, href]) => [
+      hreflang,
+      href.startsWith('http') ? href : `${SITE_URL}${href}`,
+    ]),
+  )
 }
 
 export interface SeoProps {
@@ -87,8 +105,11 @@ export interface SeoProps {
   description: string
   /** Path or absolute URL of the social image (defaults to /hero.webp) */
   image?: string
-  /** Optional per-page hreflang overrides (needed when slugs differ per language, e.g. privacy pages) */
-  alternates?: Partial<Record<Lang | 'x-default', string>>
+  /**
+   * Optional hreflang overrides (absolute URLs). When omitted the alternates are
+   * derived from the shared route map, which already knows every localised slug.
+   */
+  alternates?: Record<string, string>
 }
 
 export default function Seo({ lang, path, title, description, image, alternates }: SeoProps) {
@@ -99,14 +120,13 @@ export default function Seo({ lang, path, title, description, image, alternates 
       : `${SITE_URL}${image}`
     : `${SITE_URL}/hero.webp`
 
-  // When explicit alternates are provided (e.g. privacy: CA/ES slugs differ and
-  // there is no real EN page) they fully control the list; otherwise we derive
-  // the ca/es/en/x-default set from the canonical path.
-  const allAlternates = alternates ? { ...alternates } : hreflangUrls(path)
+  // Explicit alternates fully control the list; otherwise the ca/es/en/fr/x-default
+  // set is derived from the canonical path through the shared route map.
+  const allAlternates: Record<string, string> = alternates ? { ...alternates } : hreflangUrls(path)
 
   const localBusiness = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
     '@id': `${SITE_URL}/#localbusiness`,
     name: BUSINESS_NAP.name,
     url: SITE_URL,
@@ -116,6 +136,8 @@ export default function Seo({ lang, path, title, description, image, alternates 
     telephone: BUSINESS_NAP.telephone,
     email: BUSINESS_NAP.email,
     priceRange: '€€',
+    sameAs: SOCIAL_PROFILES,
+    knowsLanguage: ['ca', 'es', 'en', 'fr'],
     address: {
       '@type': 'PostalAddress',
       addressLocality: BUSINESS_NAP.locality,
@@ -145,8 +167,8 @@ export default function Seo({ lang, path, title, description, image, alternates 
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
 
-      {(Object.keys(allAlternates) as Array<Lang | 'x-default'>).map((h) => (
-        <link key={h} rel="alternate" hrefLang={h} href={allAlternates[h]} />
+      {Object.entries(allAlternates).map(([hreflang, href]) => (
+        <link key={hreflang} rel="alternate" hrefLang={hreflang} href={href} />
       ))}
 
       <meta property="og:locale" content={OG_LOCALE[lang]} />
